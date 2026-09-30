@@ -1,0 +1,545 @@
+{
+  "not_solved": [],
+  "not_submitted": [
+    "PvsNP.polyTimeComputable_comp"
+  ],
+  "reference_count": 89,
+  "references": {
+    "PvsNP.polyTimeComputable_comp": {
+      "accepted_submission_id": "72f1f4b2-9ac8-47ae-88c0-a894ef6a0bf5",
+      "checked_status": "Proved",
+      "theorem_id": "becb77d8-732b-4c31-8bee-4d0284e71760",
+      "visibility": "public"
+    },
+    "ShiBQP.polyBound_three_phase_compose": {
+      "accepted_submission_id": "f39a3b32-d92e-47af-904c-d3c3a0fd5004",
+      "checked_status": "Proved",
+      "theorem_id": "c9470be5-59e7-4662-b824-2a4f8ede7dd6",
+      "visibility": "public"
+    },
+    "ShiClassQMA.acceptWith_eq_majority_weight_before_readout": {
+      "accepted_submission_id": "a60c75ee-35c3-4389-b078-ed1b039b3f7c",
+      "checked_status": "Proved",
+      "theorem_id": "99179418-ad1c-4c12-ab42-fd11ecdf2a3c",
+      "visibility": "public"
+    },
+    "ShiClassQMA.acceptWith_eq_quadratic_form": {
+      "accepted_submission_id": "5d7dbc31-8de5-4bdc-a085-44e832602b09",
+      "checked_status": "Proved",
+      "theorem_id": "80e02098-9ffc-498c-9626-78ebada48a52",
+      "visibility": "public"
+    },
+    "ShiClassQMA.amplified_acceptWith_le_maj3_of_single_copy_bound": {
+      "accepted_submission_id": "7a0c8824-dbda-4d22-84d3-c80dc299303e",
+      "checked_status": "Proved",
+      "theorem_id": "7853cdb5-88c2-4182-afc8-146cda6be3b7",
+      "visibility": "public"
+    },
+    "ShiClassQMA.amplifier_prefix_action_is_spread": {
+      "accepted_submission_id": "aceca677-533e-48f9-a175-8a07fa71010a",
+      "checked_status": "Proved",
+      "theorem_id": "7ab248cf-7b12-4053-9a03-b80b151e637e",
+      "visibility": "public"
+    },
+    "ShiClassQMA.exists_amplified_witness_maj3_ge_of_single_copy_bound": {
+      "accepted_submission_id": "90e22ac7-f02a-4967-b4ad-e70d51525866",
+      "checked_status": "Proved",
+      "theorem_id": "2901f268-ccec-42a7-a4c0-2ab874dc4131",
+      "visibility": "public"
+    },
+    "ShiClassQMA.exists_amplifier_three_block_embedding": {
+      "accepted_submission_id": "beea8cd7-efb4-401d-8b05-bbc9140f2c17",
+      "checked_status": "Proved",
+      "theorem_id": "824bec86-1c2c-4853-a820-86756525ec7c",
+      "visibility": "public"
+    },
+    "ShiClassQMA.exists_threefold_amplifier_structure_at_output_wires": {
+      "accepted_submission_id": "98a75589-a3fd-4d1e-9606-251a442a39a9",
+      "checked_status": "Proved",
+      "theorem_id": "5b341624-0988-4a0c-a530-cbbffa1a22ee",
+      "visibility": "public"
+    },
+    "ShiClassQMA.exists_witnessInputState_isometry": {
+      "accepted_submission_id": "4c67de10-23c3-4ff6-8cd6-424b3ed2f106",
+      "checked_status": "Proved",
+      "theorem_id": "2ba8b40d-cd77-4752-8183-df6937588c63",
+      "visibility": "public"
+    },
+    "ShiClassQMA.exists_witness_space_acceptance_operator": {
+      "accepted_submission_id": "e978d17e-eba4-4b96-a827-0cba34b2caf0",
+      "checked_status": "Proved",
+      "theorem_id": "1f8f848f-d717-467c-88b8-da1c4abf4a89",
+      "visibility": "public"
+    },
+    "ShiClassQMA.fanout_replicates_input_across_copies": {
+      "accepted_submission_id": "3d85b052-0b8e-47b8-a9ee-5141b86e6788",
+      "checked_status": "Proved",
+      "theorem_id": "a59666a2-a346-4498-b233-4212c6d95fc3",
+      "visibility": "public"
+    },
+    "ShiClassQMA.polyBounded_of_affine_depth_size_bounds": {
+      "accepted_submission_id": "810bc8f3-8ad0-4d23-94ec-d26d1af9e445",
+      "checked_status": "Proved",
+      "theorem_id": "6be2aaad-f860-422d-854c-4e9beb373e74",
+      "visibility": "public"
+    },
+    "ShiClassQMA.wellFormed_amplified_pullback_fanout_decomposition": {
+      "accepted_submission_id": "7dc5e6dd-3caa-41ff-9572-174e9fdb65b8",
+      "checked_status": "Proved",
+      "theorem_id": "e495a0bd-3328-4ff4-b407-8ea8352479e2",
+      "visibility": "public"
+    },
+    "ShiClassQMA.witnessInputState_isometry_entries_and_threefold_action": {
+      "accepted_submission_id": "a79ae0c0-0ab4-4f3f-b466-f773b5f0e025",
+      "checked_status": "Proved",
+      "theorem_id": "58a58820-f619-468e-a799-dfd0caf57a0c",
+      "visibility": "public"
+    },
+    "ShiClassQMAAmp.ampFamily_resource_identities_and_depth": {
+      "accepted_submission_id": "8893693e-7f41-4e02-9ee1-a7599e2b377c",
+      "checked_status": "Proved",
+      "theorem_id": "9ac59186-f832-4a40-a21b-185881256996",
+      "visibility": "public"
+    },
+    "ShiClassQMAAmp.ampFamily_threefold_structure_package": {
+      "accepted_submission_id": "8897e060-491b-4ce5-8024-9aee027265f1",
+      "checked_status": "Proved",
+      "theorem_id": "66f86501-03e4-4f57-bd2e-3534ebf44b94",
+      "visibility": "public"
+    },
+    "ShiClassQMAAmpX.ampFamilyX_resource_identities_and_regularity": {
+      "accepted_submission_id": "ca911e9c-48cd-457e-b1ff-1fb6e41eaea5",
+      "checked_status": "Proved",
+      "theorem_id": "86fa3e2d-d37b-47d5-8ec9-d3d0cd1bcc73",
+      "visibility": "public"
+    },
+    "ShiClassQMAAmpX.ampFamilyX_semantically_eq_ampFamily": {
+      "accepted_submission_id": "71561337-9c61-46ba-b845-03657e1e0bec",
+      "checked_status": "Proved",
+      "theorem_id": "eedeea33-56d7-4dc6-a857-9b3c5426902f",
+      "visibility": "public"
+    },
+    "ShiEmbed.embedCirc_depth_append_comp": {
+      "accepted_submission_id": "b6f1bb16-6c12-4cb1-9eae-b0e8e2b16b7f",
+      "checked_status": "Proved",
+      "theorem_id": "dda80abd-1f49-430e-94ed-ec8633ac0518",
+      "visibility": "public"
+    },
+    "ShiEmbed.layerOk_closure_append_embedCirc": {
+      "accepted_submission_id": "ca8e8357-8136-4675-a179-41492afea26e",
+      "checked_status": "Proved",
+      "theorem_id": "425b38f9-3215-4d6d-ab75-a369c7f46269",
+      "visibility": "public"
+    },
+    "ShiShallow.acceptOperator_isHermitian": {
+      "accepted_submission_id": "8e8bd695-cc04-44d8-84c7-1899ac7dd6b7",
+      "checked_status": "Proved",
+      "theorem_id": "19a228de-a06c-45dd-92f8-78db98f98026",
+      "visibility": "public"
+    },
+    "ShiShallow.apply1_eq_apply1Matrix_mulVec": {
+      "accepted_submission_id": "85c03ecf-90fe-41a5-91d5-aea5165b98f4",
+      "checked_status": "Proved",
+      "theorem_id": "e8258266-3f3a-46bf-9e2a-58255ee559f7",
+      "visibility": "public"
+    },
+    "ShiShallow.apply1_tMat_eq_phase": {
+      "accepted_submission_id": "aaafa0a3-3da6-48d2-be1a-0c4eb9bc0659",
+      "checked_status": "Proved",
+      "theorem_id": "a5e1f5b8-7dc0-4a4f-b529-bdb65d1ab180",
+      "visibility": "public"
+    },
+    "ShiShallow.ccz_phase_exponent_eq": {
+      "accepted_submission_id": "0161c27b-d8b9-4508-a511-38b8b72eba9a",
+      "checked_status": "Proved",
+      "theorem_id": "5ff75d79-ee34-4adf-ac47-728285df3d42",
+      "visibility": "public"
+    },
+    "ShiShallow.circMatrix_unitary": {
+      "accepted_submission_id": "1f1f6dbb-9c80-400c-9dbf-7fd9077f6c52",
+      "checked_status": "Proved",
+      "theorem_id": "1c092548-9ca5-4333-80f7-50faccc0aaf5",
+      "visibility": "public"
+    },
+    "ShiShallow.cnotState_eq_cnotMatrix_mulVec": {
+      "accepted_submission_id": "e8ec6a68-de67-4ade-9403-01ea3694e4e0",
+      "checked_status": "Proved",
+      "theorem_id": "de1180c1-44d7-4f19-8b37-c49a02e403a5",
+      "visibility": "public"
+    },
+    "ShiShallow.cnot_conj_phase_map": {
+      "accepted_submission_id": "8c2d5f5c-0f47-42eb-9817-e009847285a8",
+      "checked_status": "Proved",
+      "theorem_id": "f1e60dea-00d4-46cd-b6a8-d99c004440a3",
+      "visibility": "public"
+    },
+    "ShiShallow.conj_majority_inclusion_exclusion_of_unitary": {
+      "accepted_submission_id": "76cb082e-14ad-4d34-933f-028f97f6cf74",
+      "checked_status": "Proved",
+      "theorem_id": "d839b732-8ccf-4f9b-aeab-481bc14da7a1",
+      "visibility": "public"
+    },
+    "ShiShallow.eigenvalues_le_of_quadratic_form_le": {
+      "accepted_submission_id": "4294750e-b1c4-4278-a4e5-7559e4c04cc6",
+      "checked_status": "Proved",
+      "theorem_id": "77ae2bba-b045-4a4a-9bd3-5c25a55a9dd8",
+      "visibility": "public"
+    },
+    "ShiShallow.eigenvalues_nonneg_of_quadratic_form_nonneg": {
+      "accepted_submission_id": "5c8571eb-bc75-4531-af9e-b6ab7dddfb01",
+      "checked_status": "Proved",
+      "theorem_id": "872f4302-0a83-4800-8e94-759030a9a9c6",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_fanout_embedded_pullback": {
+      "accepted_submission_id": "c5bb12c8-da0d-417e-80ca-6085e88825e1",
+      "checked_status": "Proved",
+      "theorem_id": "233a4caa-b222-465a-a144-9714b2a07c4f",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_layout_bijection": {
+      "accepted_submission_id": "93363cc5-09d1-4993-879c-b9dda84dabf5",
+      "checked_status": "Proved",
+      "theorem_id": "7b839337-564b-443e-a6fb-cb697f7fa503",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_majority_readout_at_wires_layerOk_depth": {
+      "accepted_submission_id": "40994d11-e88c-4fe6-9bce-94330613a61e",
+      "checked_status": "Proved",
+      "theorem_id": "1fc1fb45-ef2f-414e-a087-152960386f3e",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_sum_form_eigenbasis": {
+      "accepted_submission_id": "c1cd4c2b-7963-438a-affe-f1e12f3e6d10",
+      "checked_status": "Proved",
+      "theorem_id": "2407ac9c-a131-4187-ba95-364454d50d03",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_toffoli_at_wires_layerOk_depth": {
+      "accepted_submission_id": "0e31c4f8-58d0-47de-9762-e103382bc357",
+      "checked_status": "Proved",
+      "theorem_id": "f7ba5d55-d9e3-4258-9813-0c800cd33a5a",
+      "visibility": "public"
+    },
+    "ShiShallow.exists_width_cast_reindexing_isometry": {
+      "accepted_submission_id": "d26b005c-8c05-4efa-a75b-a99441668c7a",
+      "checked_status": "Proved",
+      "theorem_id": "006c4532-32c7-4d2c-a014-00cfe5d48fca",
+      "visibility": "public"
+    },
+    "ShiShallow.explicit_embedded_fanout_circuit": {
+      "accepted_submission_id": "979989c2-6a40-4591-bb88-cb0890b6544b",
+      "checked_status": "Proved",
+      "theorem_id": "5f1d78ac-f0f7-44b7-acb6-999f4c6fc728",
+      "visibility": "public"
+    },
+    "ShiShallow.explicit_toffoli_majority_readout_and_fanout_circuits": {
+      "accepted_submission_id": "f1b176ab-f9e6-4898-908a-1c9208e9ba4d",
+      "checked_status": "Proved",
+      "theorem_id": "0b2801e7-bd34-4044-8e76-75003bbc7e2a",
+      "visibility": "public"
+    },
+    "ShiShallow.gateCount_le_depth_mul_width_of_layerOk_core": {
+      "accepted_submission_id": "a31fd01b-1523-4353-b940-f5e64be4c943",
+      "checked_status": "Proved",
+      "theorem_id": "fedd4f12-f3ce-44cd-8a4c-3b3228be4a7b",
+      "visibility": "public"
+    },
+    "ShiShallow.inv_sqrt_two_mul_self": {
+      "accepted_submission_id": "0498433f-cf64-4da5-bbbf-1e5a7092985b",
+      "checked_status": "Proved",
+      "theorem_id": "8e9259fd-9961-4b59-9f0f-1b812e0d86ef",
+      "visibility": "public"
+    },
+    "ShiShallow.majority3_accum": {
+      "accepted_submission_id": "44c89590-3122-47a3-8997-9403d6f637c2",
+      "checked_status": "Proved",
+      "theorem_id": "491ece43-49fc-45ca-9adc-35741776e90f",
+      "visibility": "public"
+    },
+    "ShiShallow.majority_readout_scratch_accept_weight_eq_majority_weight": {
+      "accepted_submission_id": "beb5fc97-8705-44c3-a383-2990462d4723",
+      "checked_status": "Proved",
+      "theorem_id": "4cd86d6b-0524-4648-82ba-34f205e396fe",
+      "visibility": "public"
+    },
+    "ShiShallow.majority_weight_eq_conj_majority_quadratic_form": {
+      "accepted_submission_id": "81cc44be-1b52-46d4-bee4-49d133d06bca",
+      "checked_status": "Proved",
+      "theorem_id": "a6b687bd-de9a-49e8-acaf-be318f80ec24",
+      "visibility": "public"
+    },
+    "ShiShallow.mulVec_majority_inclusion_exclusion_of_common_eigenvector": {
+      "accepted_submission_id": "88804e86-b56a-4958-91e4-38f52c577b52",
+      "checked_status": "Proved",
+      "theorem_id": "ddecef31-a583-404a-95d7-3cd4cae8ca8f",
+      "visibility": "public"
+    },
+    "ShiShallow.ofReal_norm_sq": {
+      "accepted_submission_id": "73dc5ad6-69ba-43a2-be81-736aa93ed32a",
+      "checked_status": "Proved",
+      "theorem_id": "be91a31a-731d-4483-a77b-f246fae84ad0",
+      "visibility": "public"
+    },
+    "ShiShallow.phase_composition": {
+      "accepted_submission_id": "84e61008-bdfd-4023-a44d-f72a0e0c8f03",
+      "checked_status": "Proved",
+      "theorem_id": "2a738657-7a0d-4c69-bdf2-d390d1a71648",
+      "visibility": "public"
+    },
+    "ShiShallow.product_eigenbasis_sum_form_three": {
+      "accepted_submission_id": "f52985f5-b2da-432e-af1d-b273dfcf7efd",
+      "checked_status": "Proved",
+      "theorem_id": "20c763ba-b099-4adc-a222-b193385f6669",
+      "visibility": "public"
+    },
+    "ShiShallow.product_family_orthonormal_three": {
+      "accepted_submission_id": "fa4835f1-6bd2-41a5-98a4-fcb6cbc4e37c",
+      "checked_status": "Proved",
+      "theorem_id": "c8a96f04-3105-4a5f-8038-a26c3e9a9e4f",
+      "visibility": "public"
+    },
+    "ShiShallow.product_family_parseval_three": {
+      "accepted_submission_id": "34fe316e-4828-4685-bb05-2cd053c862d4",
+      "checked_status": "Proved",
+      "theorem_id": "8dacc7a9-21f8-44c0-9a12-ed423784a150",
+      "visibility": "public"
+    },
+    "ShiShallow.projOut_majority_inclusion_exclusion": {
+      "accepted_submission_id": "96acb7af-192a-4f31-b713-1c6217c95972",
+      "checked_status": "Proved",
+      "theorem_id": "f68cb5bb-ddc6-46d4-b883-33bed93be5d9",
+      "visibility": "public"
+    },
+    "ShiShallow.quadratic_form_majority_le_of_eigenbasis": {
+      "accepted_submission_id": "4c4f1260-6690-4a23-b67f-41ae0fe156f0",
+      "checked_status": "Proved",
+      "theorem_id": "498cdb64-12d2-4620-9ca3-89fd07fb59e7",
+      "visibility": "public"
+    },
+    "ShiShallow.quadratic_form_transport_and_two_bridge": {
+      "accepted_submission_id": "0bd83238-1a17-4558-a233-409ccd34c074",
+      "checked_status": "Proved",
+      "theorem_id": "15d5eac5-b770-466b-80d5-1b0ac17b5350",
+      "visibility": "public"
+    },
+    "ShiShallow.runLayered_append_action_readout": {
+      "accepted_submission_id": "ba077617-3f13-469b-9474-41877834044f",
+      "checked_status": "Proved",
+      "theorem_id": "8ee3ac79-eeab-46fd-8409-dbfd4c7b4904",
+      "visibility": "public"
+    },
+    "ShiShallow.runLayered_eq_circMatrix_mulVec": {
+      "accepted_submission_id": "1cefd19f-c51c-4e1f-9ac1-b52469e582cf",
+      "checked_status": "Proved",
+      "theorem_id": "25a6aea0-e59e-4442-a926-77742b6e0c4f",
+      "visibility": "public"
+    },
+    "ShiSpread.embedInstr_apply_spread": {
+      "accepted_submission_id": "d1a6d687-fd84-472a-9330-1f42254252e4",
+      "checked_status": "Proved",
+      "theorem_id": "2ae3a434-0028-41b7-9285-44761520ad47",
+      "visibility": "public"
+    },
+    "ShiSpread.runLayered_embedCirc_spread": {
+      "accepted_submission_id": "9f5b1232-e391-4bd3-b739-4a3d59271db5",
+      "checked_status": "Proved",
+      "theorem_id": "8458ef72-fc8e-4851-a34e-54082641edd2",
+      "visibility": "public"
+    },
+    "ShiSpread.sum_spread_reindex_of_injective": {
+      "accepted_submission_id": "e1e05793-5dbf-41ff-845c-3611904a5917",
+      "checked_status": "Proved",
+      "theorem_id": "b794e325-1c59-4c3e-aff3-b432467efab0",
+      "visibility": "public"
+    },
+    "ShiTM.branch_loop_transfers_prefix_until_symbol": {
+      "accepted_submission_id": "7c2def0d-efe3-4cf0-95f3-b420125b907f",
+      "checked_status": "Proved",
+      "theorem_id": "2a8a9d85-eda1-4d90-8f57-ec588cc52e3f",
+      "visibility": "public"
+    },
+    "ShiTM.comp_outputsInTime": {
+      "accepted_submission_id": "a8e9f96b-d072-431e-bb5d-30b00dae66bc",
+      "checked_status": "Proved",
+      "theorem_id": "00e1a196-286b-4a3d-a968-4f56c9a58229",
+      "visibility": "public"
+    },
+    "ShiTM.copy_loop_transfers_stack": {
+      "accepted_submission_id": "7cf41e64-c5f5-4365-8979-dc57c07ad81f",
+      "checked_status": "Proved",
+      "theorem_id": "5a45c2e0-bb53-40d8-872b-0a66077ce607",
+      "visibility": "public"
+    },
+    "ShiTM.copy_phase_transfers_output_state": {
+      "accepted_submission_id": "8189d8d1-1ccc-4cb2-b56e-a79a4805d336",
+      "checked_status": "Proved",
+      "theorem_id": "57e6e198-0371-4814-8197-d9001329870b",
+      "visibility": "public"
+    },
+    "ShiTM.counted_loop_transfers_prefix_with_marks": {
+      "accepted_submission_id": "ef51ead2-7327-4154-9403-1b8a91dc386a",
+      "checked_status": "Proved",
+      "theorem_id": "5350183e-d663-4f5f-bb2b-ecc6a10c4470",
+      "visibility": "public"
+    },
+    "ShiTM.encInstr_of_embedInstr_tag_preserved_index_remapped": {
+      "accepted_submission_id": "9c71a56b-17c8-436f-b4df-c1271d0f96d4",
+      "checked_status": "Proved",
+      "theorem_id": "3842623a-5db8-4348-9526-4831c31ac72a",
+      "visibility": "public"
+    },
+    "ShiTM.encNat_parser_block": {
+      "accepted_submission_id": "be35e52f-98e6-4e9c-a6e9-a42fb5882aa5",
+      "checked_status": "Proved",
+      "theorem_id": "ab5d20db-a162-4bf3-b813-a634e880755d",
+      "visibility": "public"
+    },
+    "ShiTM.encoding_length_formulas_and_size_bound": {
+      "accepted_submission_id": "6790b8d1-a24d-4cc3-a277-a32c6643cd32",
+      "checked_status": "Proved",
+      "theorem_id": "af1a55e1-aed6-4ae9-9d6e-e93d3d8b9b40",
+      "visibility": "public"
+    },
+    "ShiTM.exists_stepAux_stack_growth_bound": {
+      "accepted_submission_id": "ea70826f-21ec-4fd9-a24f-3dae88f47ebf",
+      "checked_status": "Proved",
+      "theorem_id": "2fb8b590-f01a-4cad-8547-43da9b5402f2",
+      "visibility": "public"
+    },
+    "ShiTM.initList_haltList_comp": {
+      "accepted_submission_id": "847e68b1-2edb-4da0-8cdd-04bc814c277c",
+      "checked_status": "Proved",
+      "theorem_id": "8c827b9b-13c5-4762-b35d-fde774f3538d",
+      "visibility": "public"
+    },
+    "ShiTM.initList_haltList_laws": {
+      "accepted_submission_id": "dd6cb491-50ed-40e3-8dd6-da810c7e1467",
+      "checked_status": "Proved",
+      "theorem_id": "adabe404-9532-456d-8ce1-1a4c04c4c3c2",
+      "visibility": "public"
+    },
+    "ShiTM.iterate_compM_one_simulation": {
+      "accepted_submission_id": "c765cfce-ba25-4a63-b5b3-ba81381512da",
+      "checked_status": "Proved",
+      "theorem_id": "3bd48964-3ac8-460e-84e8-9649b1ff4386",
+      "visibility": "public"
+    },
+    "ShiTM.iterate_compM_two_simulation": {
+      "accepted_submission_id": "8d2c7373-7fbd-4c5c-87db-4e5c7259a1f5",
+      "checked_status": "Proved",
+      "theorem_id": "0ffad2aa-2b1b-496f-a74b-6384af3a5bfc",
+      "visibility": "public"
+    },
+    "ShiTM.outputLength_le_of_outputsInTime": {
+      "accepted_submission_id": "cb271df5-f837-4b14-89e1-2b1651b10c41",
+      "checked_status": "Proved",
+      "theorem_id": "ed2e4548-2f17-489d-bd7d-4b304b73c2e0",
+      "visibility": "public"
+    },
+    "ShiTM.piece_list_reload_pass": {
+      "accepted_submission_id": "ca02a69e-1adc-4bcf-99f2-0fb20adb8d12",
+      "checked_status": "Proved",
+      "theorem_id": "e9217a5a-7886-40df-9d01-3162852099bc",
+      "visibility": "public"
+    },
+    "ShiTM.piecewise_layout_block_residual_stack_lengths_are_exact": {
+      "accepted_submission_id": "a130afe4-ccce-4807-ab43-9379c603f3c3",
+      "checked_status": "Proved",
+      "theorem_id": "63e3f1df-f51e-430c-bb27-7d5a31b8488b",
+      "visibility": "public"
+    },
+    "ShiTM.stack_supplied_index_emitter_block": {
+      "accepted_submission_id": "e2ca34aa-f536-4a1b-9720-e9c01efe1d66",
+      "checked_status": "Proved",
+      "theorem_id": "106048d8-114e-4ea6-9fed-d459f07b4dae",
+      "visibility": "public"
+    },
+    "ShiTM.stepAux_trStmt_one_simulation": {
+      "accepted_submission_id": "3192aa17-1830-4376-9ba6-9c3a7c0074dd",
+      "checked_status": "Proved",
+      "theorem_id": "90638f3a-59ca-49a7-ab90-16ae0a4d4749",
+      "visibility": "public"
+    },
+    "ShiTM.stepAux_trStmt_two_simulation": {
+      "accepted_submission_id": "75558e16-1796-4ede-9260-0649303d1a9c",
+      "checked_status": "Proved",
+      "theorem_id": "8175d49c-3fd9-4e53-b5b1-4a3e49212be3",
+      "visibility": "public"
+    },
+    "ShiTM.unary_count_to_dispatch_symbol": {
+      "accepted_submission_id": "126a4c88-5c96-4fc1-bacd-717f14947cb5",
+      "checked_status": "Proved",
+      "theorem_id": "5ad941ff-43f1-4155-8929-4cc7a4c9d7c1",
+      "visibility": "public"
+    },
+    "ShiTensor.accept_weight_or_form_eq_count_form_three_copies": {
+      "accepted_submission_id": "5cf7aa64-6e6b-4e3a-a784-9303bbc610a8",
+      "checked_status": "Proved",
+      "theorem_id": "14669888-bc13-44f3-a5e0-e5a2b33e05b8",
+      "visibility": "public"
+    },
+    "ShiTensor.conjTranspose_majority_compression_three_blocks": {
+      "accepted_submission_id": "6292bd8c-308c-4865-badb-9622b9b2d1ce",
+      "checked_status": "Proved",
+      "theorem_id": "3c747b70-bfc2-43d4-9383-780f80c9fe8f",
+      "visibility": "public"
+    },
+    "ShiTensor.mulVec_block_extend_right_tensor_eigenvector": {
+      "accepted_submission_id": "13d15777-5471-4b11-913a-0e96b873f99d",
+      "checked_status": "Proved",
+      "theorem_id": "1a1ceb54-cd6d-4b82-b77e-cb909026abbf",
+      "visibility": "public"
+    },
+    "ShiTensor.mulVec_block_extend_tensor_eigenvector": {
+      "accepted_submission_id": "25b5c860-4bc9-44af-8958-5aaa437b28fc",
+      "checked_status": "Proved",
+      "theorem_id": "384389d6-fb2a-457a-9ec0-5070597311de",
+      "visibility": "public"
+    },
+    "ShiTensor.quadratic_form_three_block_majority_le_of_bound": {
+      "accepted_submission_id": "85903a38-5d0f-462b-b0a5-e4bef06284f1",
+      "checked_status": "Proved",
+      "theorem_id": "17261a6d-d4f0-4762-b63c-92dc15fc95a7",
+      "visibility": "public"
+    },
+    "ShiTensor.runLayered_embed_three_blocks": {
+      "accepted_submission_id": "0b565a39-ea58-4c5c-b3b0-e6727aafc6d6",
+      "checked_status": "Proved",
+      "theorem_id": "791cc4cb-5a72-4f94-8b7d-18075c7813c6",
+      "visibility": "public"
+    },
+    "ShiTensor.sum_normSq_tensor_three": {
+      "accepted_submission_id": "53897175-c488-4b77-860d-e3465d0dd9ff",
+      "checked_status": "Proved",
+      "theorem_id": "7ae3395e-3b64-4042-9b09-54c7d7bca789",
+      "visibility": "public"
+    },
+    "ShiTensor.sum_split_factor": {
+      "accepted_submission_id": "2b8d15fe-ab7b-41c3-aeb5-bd775e0c6d32",
+      "checked_status": "Proved",
+      "theorem_id": "dca02963-31ee-4ed7-af60-bd51d9201d07",
+      "visibility": "public"
+    },
+    "ShiTensor.tensor_majority_three_accept_weight_closed_form": {
+      "accepted_submission_id": "f6df295e-7008-49e5-b199-096bfece28a6",
+      "checked_status": "Proved",
+      "theorem_id": "2d8b195c-19e7-48aa-b6a0-144a78cfa405",
+      "visibility": "public"
+    },
+    "ShiTensor.tensor_split_append_inverse": {
+      "accepted_submission_id": "c7bc3038-9e9e-4782-9f96-cd64b090c8e6",
+      "checked_status": "Proved",
+      "theorem_id": "61c0e3a6-4018-4538-8c86-d3eb665bb71c",
+      "visibility": "public"
+    },
+    "ShiTensor.three_copy_acceptance_operators_are_block_liftings": {
+      "accepted_submission_id": "ea77c8ae-5b47-4588-90aa-859a27d09a25",
+      "checked_status": "Proved",
+      "theorem_id": "fad6820c-4d29-4f20-b734-e40bfd5451ee",
+      "visibility": "public"
+    }
+  },
+  "solved_by_account": 89,
+  "submitted_by_account": 88
+}

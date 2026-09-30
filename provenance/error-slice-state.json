@@ -1,0 +1,77 @@
+{
+  "environment": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true,
+  "proofs": {
+    "ShiQMAErrorIteration.copies_roundsFor_le": {
+      "intent": true,
+      "solution_sha256": "1354bf9eac3d27c6dc40b461ab49f33b37c09d2c365adf84d95e3ba4ea3de3ea",
+      "status": "ACCEPTED",
+      "submission_id": "9129fbd8-80a8-4ba5-ba60-62f64b8fce2c"
+    },
+    "ShiQMAErrorIteration.dyadic_error_bound": {
+      "intent": true,
+      "solution_sha256": "37b33ed2cec6c70e50613c3323c12443712b4034850f72ededadf8dca24023f3",
+      "status": "ACCEPTED",
+      "submission_id": "34914c99-0be1-41ed-b13e-83d1cb2fde9e"
+    },
+    "ShiQMAErrorIteration.error_roundsFor": {
+      "intent": true,
+      "solution_sha256": "6e0301c73eb63499ab74e3358f6d40de3915f7236e822da01fbb5495c6275557",
+      "status": "ACCEPTED",
+      "submission_id": "228002a3-7db0-4506-b0c0-2127274fe838"
+    },
+    "ShiQMAErrorIteration.scaled_error_bound": {
+      "intent": true,
+      "solution_sha256": "f76b11520a1718012fd392fa31ee043104ca16950803a3c3bff05b32781587e7",
+      "status": "ACCEPTED",
+      "submission_id": "c9961e58-7004-4def-aa89-4d78e8ff35f5"
+    }
+  },
+  "publications": {
+    "ShiQMAErrorIteration": {
+      "content_sha256": "1e67524d4c062bccb6f1b9884069bae70aeceaf9785d21ea25f53d4624a7d33f",
+      "intent": true,
+      "job_id": "57651d36-ba5b-4b4e-83f1-98836f36db46",
+      "kind": "definition",
+      "status": "PUBLISHED",
+      "theorem_id": "bf80d5e5-e7c5-4a60-9ce8-f5c0f5c40653"
+    },
+    "ShiQMAErrorIteration.copies_roundsFor_le": {
+      "content_sha256": "e314b47438296162da6789c84e1b8ae7f60b2c6f13a1fd9cbcd08599f2707681",
+      "intent": true,
+      "job_id": "ffc55d0d-0cd1-4824-987a-689f73ab8c6b",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "e0041bdf-23e9-4efc-a12f-a6707b68a229"
+    },
+    "ShiQMAErrorIteration.dyadic_error_bound": {
+      "content_sha256": "b378a747922e7acd9b57449f0c096175304012cdfba6489800f1384f19d29e62",
+      "intent": true,
+      "job_id": "835cac3b-b626-4ecc-8067-6672eff5f1fb",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "484a2fd8-9761-41e2-8d49-6d0510c29aa4"
+    },
+    "ShiQMAErrorIteration.error_roundsFor": {
+      "content_sha256": "e676519a0c6d159c6da53e656f0b3e7dcecbfad28acdf630c26255af5e068f68",
+      "intent": true,
+      "job_id": "eba7cd0a-c12b-43a1-bcfb-797e86925e83",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "0be0f341-5a49-4922-8e32-9626aab07e93"
+    },
+    "ShiQMAErrorIteration.scaled_error_bound": {
+      "content_sha256": "6c185c1f74b4b151b458b70bc60323f88b04e914b49886314657190b6d3ed43d",
+      "intent": true,
+      "job_id": "f796fdbe-77f0-453d-951d-2b0fa2bf8460",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "21ddfe87-99c1-42cc-9e01-44acf3724f7c"
+    }
+  },
+  "trust_after_copies_roundsFor_le": 618,
+  "trust_after_dyadic_error_bound": 616,
+  "trust_after_error_roundsFor": 617,
+  "trust_after_scaled_error_bound": 616,
+  "trust_before": 614
+}

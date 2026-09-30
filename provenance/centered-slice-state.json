@@ -1,0 +1,77 @@
+{
+  "environment": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "private": true,
+  "proofs": {
+    "ShiQMACenteredGap.biasIter_bounds": {
+      "intent": true,
+      "solution_sha256": "6b596714f70d359699e5e72a37617b5e03aa59fe2e3adf9984d8993be5df535a",
+      "status": "ACCEPTED",
+      "submission_id": "5cbabb08-ad3e-4787-9ef9-3b125389ee9a"
+    },
+    "ShiQMACenteredGap.biasIter_gapRounds": {
+      "intent": true,
+      "solution_sha256": "2819f3c37f2ff125545384be67d417389c2ba067d885c38771e5e8f0678007cd",
+      "status": "ACCEPTED",
+      "submission_id": "4ca13081-9c94-4a23-bc6c-db3d79b2a147"
+    },
+    "ShiQMACenteredGap.biasIter_growth": {
+      "intent": true,
+      "solution_sha256": "d5ccfcd57369913fb225e9286b8e07c20bdbe8ce1b3c10acd7affebe998d44d2",
+      "status": "ACCEPTED",
+      "submission_id": "b2aee495-ef12-42c7-af23-b94493f69d7d"
+    },
+    "ShiQMACenteredGap.copies_gapRounds_le": {
+      "intent": true,
+      "solution_sha256": "b891deea91601e7f8f1a4b00ae0e5b2f74240971d6f164814e07946cc9f39dbe",
+      "status": "ACCEPTED",
+      "submission_id": "f398e3e3-8b6d-438e-82f4-db0698fa5a30"
+    }
+  },
+  "publications": {
+    "ShiQMACenteredGap": {
+      "content_sha256": "c945289667445211131dab649baa11a17933fcb800d17210ade5d11a8d8428be",
+      "intent": true,
+      "job_id": "e6dcb253-ec8c-45ad-a883-463a5bd4a273",
+      "kind": "definition",
+      "status": "PUBLISHED",
+      "theorem_id": "d07acf82-6a73-4f19-89e2-106040bcc331"
+    },
+    "ShiQMACenteredGap.biasIter_bounds": {
+      "content_sha256": "832590c9a03430d4daeadd9972d35b1b8c3a55554fcc04e86ba608ff4988da49",
+      "intent": true,
+      "job_id": "ffb26319-f693-48d5-aafc-2726d39dc540",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "b4018cc4-e31d-436a-9c98-8033ab589a60"
+    },
+    "ShiQMACenteredGap.biasIter_gapRounds": {
+      "content_sha256": "feeb3a7a18faaf0366e7350a66603ccb397f951a82cb1b37470eb6e04074f9a9",
+      "intent": true,
+      "job_id": "28842059-cbbc-4555-9097-ef413eedd0fd",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "5c840c0c-66e9-4129-ab89-a158d6b82d45"
+    },
+    "ShiQMACenteredGap.biasIter_growth": {
+      "content_sha256": "0f0a8430bdb66411781606a00e82c04a75b085cd7569d8343287e2d6947ef684",
+      "intent": true,
+      "job_id": "4066e813-e9a7-41e8-aedc-248643539544",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "4d1acaa4-8846-46eb-995d-e49c7ea60209"
+    },
+    "ShiQMACenteredGap.copies_gapRounds_le": {
+      "content_sha256": "704d8219652ad0168969babfda20a40663ea91ad73e5ece2775dc4c2abb3ed7c",
+      "intent": true,
+      "job_id": "304cf587-05f3-4c28-b5f7-a44a9be8f184",
+      "kind": "theorem",
+      "status": "PUBLISHED",
+      "theorem_id": "3217fc79-f903-4c3d-b42a-c541fd199c80"
+    }
+  },
+  "trust_after_biasIter_bounds": 622,
+  "trust_after_biasIter_gapRounds": 620,
+  "trust_after_biasIter_growth": 620,
+  "trust_after_copies_gapRounds_le": 621,
+  "trust_before": 616
+}
