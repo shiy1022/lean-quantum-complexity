@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The twenty-one supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 635 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The twenty-four supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 638 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -25,6 +25,9 @@ Checked on 2026-10-01. The twenty-one supporting theorem proofs below were accep
 | `ShiQMACenteredGap.centering_from_bits_gap` | `0a1b9a59-3f46-40e8-a8b5-aaca0b90cf02` | `1c4445a8-d62b-4263-9dac-f460823b3530` |
 | `ShiQMACenteredGap.fractionBits_numerator` | `50eb580f-1a94-4db7-a25d-175aa3fd7e8d` | `8ff31825-4494-483f-831e-a023c2247020` |
 | `ShiQMACenteredGap.encodeCoin_probability` | `4d009613-f62a-46f2-8100-f2f35fa6b9de` | `80ab34a5-369e-4dbb-9593-40e48862bad6` |
+| `ShiQMAConstructiveSchedule.eval_le_pow_budget` | `45acb3c7-cc52-4d97-9d55-817fc400cac0` | `b2b800c0-ef8b-4cda-ab1d-8468c05d119c` |
+| `ShiQMAConstructiveSchedule.error_rounds` | `42627765-22e3-47c3-88a6-da763c46126a` | `c582aaa3-ef97-4019-918e-b590a7467592` |
+| `ShiQMAConstructiveSchedule.copies_rounds_le` | `877fa307-e8f2-486e-8324-33af09f3d3fc` | `625f742e-43d5-49a9-89a4-fa309ba2317c` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
