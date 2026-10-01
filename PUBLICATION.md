@@ -18,4 +18,4 @@ Checked on 2026-09-30. The eleven supporting theorem proofs below were accepted 
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
-The witness-preserving mission proposal `ce2ab9ff-e639-4a03-a923-e30246372ab9`, “QMA Strong Error Reduction with No Witness-Length Increase,” is now [public and Reviewed](https://prove2.me/missions/6b343fda-e985-4923-ae13-ea0f23e213ca). Its main theorem and constant-gap milestone remain open. The full copy-based endpoint is locally checked but is not yet a Prove2Me theorem node.
+The witness-preserving mission proposal `ce2ab9ff-e639-4a03-a923-e30246372ab9`, “QMA Strong Error Reduction with No Witness-Length Increase,” is now [public and Reviewed](https://prove2.me/missions/QMA_Strong_Error_Reduction_with_No_Witness-Length_Increase). Its main theorem and constant-gap milestone remain open. The full copy-based endpoint is locally checked but is not yet a Prove2Me theorem node.
