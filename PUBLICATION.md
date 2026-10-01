@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The twenty-four supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 638 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The twenty-eight supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 642 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -28,6 +28,10 @@ Checked on 2026-10-01. The twenty-four supporting theorem proofs below were acce
 | `ShiQMAConstructiveSchedule.eval_le_pow_budget` | `45acb3c7-cc52-4d97-9d55-817fc400cac0` | `b2b800c0-ef8b-4cda-ab1d-8468c05d119c` |
 | `ShiQMAConstructiveSchedule.error_rounds` | `42627765-22e3-47c3-88a6-da763c46126a` | `c582aaa3-ef97-4019-918e-b590a7467592` |
 | `ShiQMAConstructiveSchedule.copies_rounds_le` | `877fa307-e8f2-486e-8324-33af09f3d3fc` | `625f742e-43d5-49a9-89a4-fa309ba2317c` |
+| `ShiQMAGeneralGap.thresholdCoinNumerator_spec` | `10c824b5-dae1-4300-98a9-beb742ea25b8` | `fe025d8f-05cb-4d4f-84e8-60ef41572107` |
+| `ShiQMAGeneralGap.thresholdCoinNumerator_lt` | `85261038-4f9c-44ef-9c3e-111cba4b5c87` | `1bcd5831-1eee-4046-93c7-18aa28312619` |
+| `ShiQMAGeneralGap.thresholdCoinBits_spec` | `ea06d46c-53ad-4fa0-a3eb-d9eb2ec82136` | `633a7d3b-2a65-4846-b42a-cad5ce383cc6` |
+| `ShiQMAGeneralGap.thresholdCoinNumerator_size` | `edd7f71d-a9f4-4aa8-8a88-1009148da546` | `1d04a985-5e02-40a0-a568-c70e223cbd7f` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
