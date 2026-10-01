@@ -10,7 +10,7 @@ The separate, unsolved goal is in [`mission-draft/Theorems/Thm_ShiQMAWitnessPres
 
 - `proofs/`: the 426 local Lean modules in the import closure of the copy-based endpoint. Generated `.olean` files and experimental drafts are excluded.
 - `Definitions/` and `Theorems/`: the 104 Prove2Me reference source modules imported by that closure. The theorem files are **statement stubs** and may contain `sorry`; their 89 matching platform theorems have separately accepted proofs. The local closed endpoint reconstructs the proof dependencies and checks its final axioms.
-- `platform-submissions/`: exact definition, theorem-statement, and solution sources for eight supporting results accepted by Prove2Me.
+- `platform-submissions/`: exact definition, theorem-statement, and solution sources for ten supporting results accepted by Prove2Me.
 - `mission-draft/`: the three-item witness-preserving proposal and its description.
 - `provenance/`: Prove2Me theorem IDs and verification records, without credentials. See [PUBLICATION.md](PUBLICATION.md).
 
