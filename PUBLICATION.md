@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The sixteen supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 630 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The twenty-one supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 635 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -20,6 +20,11 @@ Checked on 2026-10-01. The sixteen supporting theorem proofs below were accepted
 | `ShiQMACenteredGap.exists_dyadic_coin` | `c10a7e89-4cbc-48b2-bbcb-0067548ab991` | `4051c9d8-660c-4131-adc6-61796c505316` |
 | `ShiQMACenteredGap.exists_dyadic_centering` | `b60e017f-e2bb-4fca-a4c2-6fc56196eeee` | `b589c2d2-b8ac-4ab4-ac1c-1f7a0b142b1e` |
 | `ShiQMACenteredGap.coin_outcomes_le` | `06d91314-78dd-496a-b8ef-f755a7203f8b` | `d954461c-3d36-4ad7-a974-63d0f4aa8568` |
+| `ShiQMACenteredGap.centeringNumerator_value` | `baf88213-24a0-4750-81c1-0979af253e3d` | `5f935c51-ae58-4511-a0ea-0bc6e596b2ca` |
+| `ShiQMACenteredGap.centering_from_bits` | `9dcd2bd5-57f0-4ce7-aa27-8bc8e30812d1` | `694de36c-9b42-4808-aad7-b2542f31a767` |
+| `ShiQMACenteredGap.centering_from_bits_gap` | `0a1b9a59-3f46-40e8-a8b5-aaca0b90cf02` | `1c4445a8-d62b-4263-9dac-f460823b3530` |
+| `ShiQMACenteredGap.fractionBits_numerator` | `50eb580f-1a94-4db7-a25d-175aa3fd7e8d` | `8ff31825-4494-483f-831e-a023c2247020` |
+| `ShiQMACenteredGap.encodeCoin_probability` | `4d009613-f62a-46f2-8100-f2f35fa6b9de` | `80ab34a5-369e-4dbb-9593-40e48862bad6` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
