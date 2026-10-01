@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-09-30. The eleven supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 625 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The sixteen supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 630 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -15,6 +15,11 @@ Checked on 2026-09-30. The eleven supporting theorem proofs below were accepted 
 | `ShiQMAErrorIteration.error_roundsFor` | `0be0f341-5a49-4922-8e32-9626aab07e93` | `228002a3-7db0-4506-b0c0-2127274fe838` |
 | `ShiQMAErrorIteration.scaled_error_bound` | `21ddfe87-99c1-42cc-9e01-44acf3724f7c` | `c9961e58-7004-4def-aa89-4d78e8ff35f5` |
 | `ShiQMAPolynomialBound.eval_le_coeffSum_mul` | `b468078d-4547-435d-aeaf-9a40360bf4ff` | `f338034b-0538-4d8f-a7a2-5b55cb3de000` |
+| `ShiQMACenteredGap.approximate_centering` | `dc338b7f-9946-4b9e-aed0-6f006b829bb4` | `f54760be-07c9-4ef1-bc52-4cc08c7601ea` |
+| `ShiQMACenteredGap.approximate_centering_bias_budget` | `09556cec-b264-4a47-88a8-c94f99c5d0b1` | `e039cc0a-bff6-4f3a-85fa-6e35ea0f9c75` |
+| `ShiQMACenteredGap.exists_dyadic_coin` | `c10a7e89-4cbc-48b2-bbcb-0067548ab991` | `4051c9d8-660c-4131-adc6-61796c505316` |
+| `ShiQMACenteredGap.exists_dyadic_centering` | `b60e017f-e2bb-4fca-a4c2-6fc56196eeee` | `b589c2d2-b8ac-4ab4-ac1c-1f7a0b142b1e` |
+| `ShiQMACenteredGap.coin_outcomes_le` | `06d91314-78dd-496a-b8ef-f755a7203f8b` | `d954461c-3d36-4ad7-a974-63d0f4aa8568` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
