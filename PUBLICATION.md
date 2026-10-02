@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The 42 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 656 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The 43 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 657 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -49,6 +49,7 @@ Checked on 2026-10-01. The 42 supporting theorem proofs below were accepted by t
 
 | `ShiQMAVariableRounds.iter_wit` | `373f1c4d-7956-4b8d-b158-dbcf7e2be337` | `428c4fa2-bdd1-44a0-acb9-45f1bf38a467` |
 
+| `ShiQMAVariableRounds.iter_anc_le` | `245819a1-b29b-4f8c-aad2-566f7cf36b78` | `ffdf86f6-fbd0-4e3a-aed8-5817732533a9` |
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
 The witness-preserving mission proposal `ce2ab9ff-e639-4a03-a923-e30246372ab9`, “QMA Strong Error Reduction with No Witness-Length Increase,” is now [public and Reviewed](https://prove2.me/missions/QMA_Strong_Error_Reduction_with_No_Witness-Length_Increase). Its main theorem and constant-gap milestone remain open. The full copy-based endpoint is locally checked but is not yet a Prove2Me theorem node.
