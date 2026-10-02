@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The 48 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 662 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The 49 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 663 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -52,6 +52,7 @@ Checked on 2026-10-01. The 48 supporting theorem proofs below were accepted by t
 | `ShiQMAVariableRounds.iter_wit_add_anc_le` | `3901e306-079f-4378-a8a4-0cae27b231c8` | `87b3f164-0fa7-452a-8bf4-8e06446f088f` |
 | `ShiQMAVariableRounds.iter_wellFormed` | `766ac793-6665-465c-82f5-ae5395c69d02` | `e238e0d2-621a-4d3c-99f6-e8dd1dc356a3` |
 | `ShiQMAVariableRounds.variable_wellFormed` | `363c44b3-fb1c-4f23-bae1-30c8553bcf48` | `e576071a-990f-4c2a-be0d-c9bc6bdc709b` |
+| `ShiQMAVariableRounds.copies_roundsFor_le_all` | `2a166039-98d4-49ae-b8b8-63f4732d33ab` | `ad0b4a42-a3c2-4647-b982-1f1f07e56fb7` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
