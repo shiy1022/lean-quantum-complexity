@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The 43 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 657 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The 45 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 659 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -44,12 +44,12 @@ Checked on 2026-10-01. The 43 supporting theorem proofs below were accepted by t
 | `ShiQMACenteredGap.biasStep_ge` | `056fa939-7481-47e7-a3d2-d9f1ee301042` | `7cbf4991-9c88-4eec-8a16-5884259afb04` |
 | `ShiQMACenteredGap.biasIter_rounds_mono` | `b2523487-d812-47ba-b66b-77cc9239c752` | `6eb73f84-f44a-49ee-91c0-fc5e0fd23c6d` |
 | `ShiQMACenteredGap.existing_rounds_suffice` | `38e654d4-1db6-4822-bc94-4238541d1f6a` | `1220b555-4238-43c2-9168-63095dc55e0d` |
-
 | `ShiQMAVariableRounds.iter_anc_identity` | `b6b68136-dc47-4ffc-a985-87f4e153250d` | `edcaea29-ea73-4a7f-838e-cf9cadbc2e47` |
-
 | `ShiQMAVariableRounds.iter_wit` | `373f1c4d-7956-4b8d-b158-dbcf7e2be337` | `428c4fa2-bdd1-44a0-acb9-45f1bf38a467` |
-
 | `ShiQMAVariableRounds.iter_anc_le` | `245819a1-b29b-4f8c-aad2-566f7cf36b78` | `ffdf86f6-fbd0-4e3a-aed8-5817732533a9` |
+| `ShiQMAVariableRounds.iter_depth_identity` | `0c047817-f548-472b-889c-262f02ae7d4b` | `c34e80b1-2df1-46b6-8372-27236f919040` |
+| `ShiQMAVariableRounds.iter_depth_le` | `3ed956d1-2aac-468a-81d8-9ee1028e4ce8` | `bd0d6612-ed25-4809-8007-1dcb3da5561d` |
+
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
 The witness-preserving mission proposal `ce2ab9ff-e639-4a03-a923-e30246372ab9`, “QMA Strong Error Reduction with No Witness-Length Increase,” is now [public and Reviewed](https://prove2.me/missions/QMA_Strong_Error_Reduction_with_No_Witness-Length_Increase). Its main theorem and constant-gap milestone remain open. The full copy-based endpoint is locally checked but is not yet a Prove2Me theorem node.
