@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The forty supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 654 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The 42 supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 656 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -44,6 +44,10 @@ Checked on 2026-10-01. The forty supporting theorem proofs below were accepted b
 | `ShiQMACenteredGap.biasStep_ge` | `056fa939-7481-47e7-a3d2-d9f1ee301042` | `7cbf4991-9c88-4eec-8a16-5884259afb04` |
 | `ShiQMACenteredGap.biasIter_rounds_mono` | `b2523487-d812-47ba-b66b-77cc9239c752` | `6eb73f84-f44a-49ee-91c0-fc5e0fd23c6d` |
 | `ShiQMACenteredGap.existing_rounds_suffice` | `38e654d4-1db6-4822-bc94-4238541d1f6a` | `1220b555-4238-43c2-9168-63095dc55e0d` |
+
+| `ShiQMAVariableRounds.iter_anc_identity` | `b6b68136-dc47-4ffc-a985-87f4e153250d` | `edcaea29-ea73-4a7f-838e-cf9cadbc2e47` |
+
+| `ShiQMAVariableRounds.iter_wit` | `373f1c4d-7956-4b8d-b158-dbcf7e2be337` | `428c4fa2-bdd1-44a0-acb9-45f1bf38a467` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
