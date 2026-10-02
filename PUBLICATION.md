@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The twenty-eight supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 642 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The thirty-five supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 649 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -32,6 +32,13 @@ Checked on 2026-10-01. The twenty-eight supporting theorem proofs below were acc
 | `ShiQMAGeneralGap.thresholdCoinNumerator_lt` | `85261038-4f9c-44ef-9c3e-111cba4b5c87` | `1bcd5831-1eee-4046-93c7-18aa28312619` |
 | `ShiQMAGeneralGap.thresholdCoinBits_spec` | `ea06d46c-53ad-4fa0-a3eb-d9eb2ec82136` | `633a7d3b-2a65-4846-b42a-cad5ce383cc6` |
 | `ShiQMAGeneralGap.thresholdCoinNumerator_size` | `edd7f71d-a9f4-4aa8-8a88-1009148da546` | `1d04a985-5e02-40a0-a568-c70e223cbd7f` |
+| `ShiQMACenteredGap.biasStep_mono` | `25e8cff4-a6b9-4422-bb13-4dc188485769` | `de01c30c-dba6-4f26-bcb9-99ed71f7c156` |
+| `ShiQMACenteredGap.biasIter_mono` | `c98443c9-4acd-4e5e-934c-76648475a87c` | `d58f3106-3c87-46c2-b00a-3d8e3d941c2a` |
+| `ShiQMACenteredGap.biasIter_add` | `4a5ec864-8b87-4330-99ab-707a31bfeca1` | `1851759c-171c-45ac-ba73-ce0633b67c18` |
+| `ShiQMACenteredGap.normalizationRounds_suffice` | `efa84e25-a28d-4a66-9fd3-265722f1f163` | `fe697abd-8b59-41ef-850d-1c54a788746d` |
+| `ShiQMACenteredGap.generalGapRounds_suffice` | `c416209c-b990-45fb-8d6b-bf57e3eae8ab` | `566ebbed-ff24-4e0a-b973-d389e726b87c` |
+| `ShiQMACenteredGap.generalGapRounds_controller_form` | `8a6d29b9-a78c-45f3-a8c2-3a7ea275a5d3` | `f9287952-0598-4d46-ae84-639f8e788663` |
+| `ShiQMACenteredGap.copies_generalGapRounds_le` | `ce842a7a-4c62-4036-a431-401b6ac07353` | `660c1d25-cddb-4243-a523-835e34c9c99a` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
