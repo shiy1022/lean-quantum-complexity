@@ -1,0 +1,11 @@
+import Definitions.Def_ShiQMACenteredGapDominatingSchedule
+import Theorems.Thm_ShiQMACenteredGap_biasStep_ge
+import Theorems.Thm_ShiQMACenteredGap_biasIter_bounds
+
+set_option autoImplicit false
+set_option maxHeartbeats 2000000
+
+open ShiQMACenteredGap ShiQMAConstructiveSchedule
+
+theorem ShiQMACenteredGap.biasIter_rounds_mono {d : ℝ} (hd₀ : 0 ≤ d) (hd₁ : d ≤ 1 / 2)
+    {r s : Nat} (hrs : r ≤ s) : biasIter d r ≤ biasIter d s := by sorry

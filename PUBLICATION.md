@@ -1,6 +1,6 @@
 # Prove2Me publication status
 
-Checked on 2026-10-01. The thirty-five supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 649 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
+Checked on 2026-10-01. The forty supporting theorem proofs below were accepted by the Prove2Me verifier and made public. The account trust score rose from 614 to 654 as these new proofs were accepted. Public release of earlier accepted proofs did not itself increase trust.
 
 | Theorem | Theorem ID | Accepted submission ID |
 |---|---|---|
@@ -39,6 +39,11 @@ Checked on 2026-10-01. The thirty-five supporting theorem proofs below were acce
 | `ShiQMACenteredGap.generalGapRounds_suffice` | `c416209c-b990-45fb-8d6b-bf57e3eae8ab` | `566ebbed-ff24-4e0a-b973-d389e726b87c` |
 | `ShiQMACenteredGap.generalGapRounds_controller_form` | `8a6d29b9-a78c-45f3-a8c2-3a7ea275a5d3` | `f9287952-0598-4d46-ae84-639f8e788663` |
 | `ShiQMACenteredGap.copies_generalGapRounds_le` | `ce842a7a-4c62-4036-a431-401b6ac07353` | `660c1d25-cddb-4243-a523-835e34c9c99a` |
+| `ShiQMACenteredGap.affine_schedule_le_rounds` | `403a21c8-561f-4ac8-9b83-0e5d2e3966a8` | `78c5f067-0866-434b-a81f-376ce82c378c` |
+| `ShiQMACenteredGap.generalGapRounds_le_existing` | `0264337b-0d5d-44eb-b4b0-29123fa10d7b` | `5fbc4692-789b-417d-802f-364f5f1c1217` |
+| `ShiQMACenteredGap.biasStep_ge` | `056fa939-7481-47e7-a3d2-d9f1ee301042` | `7cbf4991-9c88-4eec-8a16-5884259afb04` |
+| `ShiQMACenteredGap.biasIter_rounds_mono` | `b2523487-d812-47ba-b66b-77cc9239c752` | `6eb73f84-f44a-49ee-91c0-fc5e0fd23c6d` |
+| `ShiQMACenteredGap.existing_rounds_suffice` | `38e654d4-1db6-4822-bc94-4238541d1f6a` | `1220b555-4238-43c2-9168-63095dc55e0d` |
 
 The 89 earlier reference theorems used by the local reconstruction were also checked as `Proved` and made public. Their IDs and accepted submission IDs are in [`provenance/reference-catalog-report.json`](provenance/reference-catalog-report.json).
 
