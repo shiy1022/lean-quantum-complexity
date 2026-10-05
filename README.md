@@ -1,10 +1,11 @@
 # Quantum complexity in Lean
 
-Lean 4 formalizations of quantum complexity, currently covering **BQP ⊆ PP** and **copy-based QMA amplification**. This repository continues the history of `qma-amplification-lean`.
+Lean 4 formalizations of quantum complexity, currently covering **BQP ⊆ PP**, **BQP ⊆ PSPACE** (in a corrected finite-multistack space model), and **copy-based QMA amplification**. This repository continues the history of `qma-amplification-lean`.
 
 | Project | Main result | Verification status |
 |---|---|---|
 | [BQP ⊆ PP](bqp-pp/) | `ShiBQP.bqp_subset_pp : ShiBQP.BQP ⊆ ShiClassPP.PP` | Clean Sherlock rebuild: 306 project modules, zero reused project outputs, 275 selected axiom reports |
+| [BQP ⊆ PSPACE](bqp-pspace/) | `ShiBQP.bqp_subset_pspace : ShiBQP.BQP ⊆ ShiSpace.PSPACE` (via `ShiSpace.pp_subset_pspace`) | Checked locally on a Windows workstation (not Sherlock): 28 modules, 102 axiom reports, corrected finite-multistack PSPACE |
 | [QMA amplification](qma-amplification/) | `ShiQMAGeneralGap.QMAWith_general_threshold_amplification` | Copy-based endpoint checked and axiom-audited in its source workspace; publication details in the project README |
 
 The QMA construction uses polynomially many witness copies. Its separate witness-preserving Marriott–Watrous mission remains open; the mission statements are explicitly marked as unfinished.
@@ -13,13 +14,14 @@ The QMA construction uses polynomially many witness copies. Its separate witness
 
 - `bqp-pp/src/`: the exact verified source graph for the BQP inclusion, including its reference dependencies and shared machinery.
 - `bqp-pp/verification/`: portable source/build evidence and axiom reports from the completed clean rebuild.
+- `bqp-pspace/`: the corrected PSPACE model, the PP ⊆ PSPACE enumerator, and the BQP ⊆ PSPACE composition. It consumes `bqp-pp/src` read-only.
 - `qma-amplification/`: the existing QMA project, including proofs, platform submissions, provenance, and the open mission draft.
 
 Each project has its own Lean build environment. Both pin **Lean 4.33.1** and **Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`**. Keeping their source roots separate preserves their verified imports where reference module names overlap. Source headers and QMA Git history are preserved.
 
-## Planned extensions
+## BQP ⊆ PSPACE
 
-- [BQP ⊆ PSPACE execution plan](plans/BQP_PSPACE_PLAN.md): build a corrected polynomial-space machine interface, prove PP ⊆ PSPACE by binary counting with reusable workspace, and compose the existing BQP ⊆ PP theorem. This is a plan, not a completed formalization.
+[`bqp-pspace/`](bqp-pspace/) carries out the [execution plan](plans/BQP_PSPACE_PLAN.md). It defines a corrected polynomial-space class: a total machine with a polynomial bound on the stacks of every reachable configuration, and no time bound. It proves PP ⊆ PSPACE by a concrete enumerator that reuses its workspace, and composes the published BQP ⊆ PP theorem unchanged. The class is a finite-multistack model; no equivalence with other PSPACE formulations is claimed. This result has been checked locally, not yet on Sherlock.
 
 ## Verification and building
 

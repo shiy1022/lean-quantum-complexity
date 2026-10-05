@@ -2,6 +2,8 @@
 
 Date: 2026-10-05. **Status: plan only; PP ⊆ PSPACE and BQP ⊆ PSPACE are not proved here.**
 
+> Execution note (2026-10-05): tasks S00–S16 have been carried out in [`bqp-pspace/`](../bqp-pspace/). See its [progress ledger](../bqp-pspace/verification/progress.md). Compilation was local on a Windows workstation at the user's instruction, not on Sherlock. The plan text below is kept as written.
+
 This plan targets a complete, reusable classical polynomial-space simulation of PP, followed by composition with the already proved BQP ⊆ PP theorem. It is designed for execution in small, bounded tasks by a model that benefits from explicit contracts. Do not interpret suggested signatures as already compiled Lean.
 
 ## 1. Fixed objective and baseline
