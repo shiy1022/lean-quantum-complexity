@@ -9,6 +9,7 @@
   "targets": [
     "QIP.Audit.Arithmetic",
     "QIP.Audit.Channel",
+    "QIP.Audit.Choi",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Registers",
@@ -51,6 +52,13 @@
       "sha256": "b7c9d9f017c96dd280b6a9e0b59dc7c5219ca0e93fe1e786db1985e5eba5faa6",
       "imports": [
         "Quantum.ChannelMathlib"
+      ]
+    },
+    "QIP.Audit.Choi": {
+      "path": "QIP/Audit/Choi.lean",
+      "sha256": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
+      "imports": [
+        "Quantum.Kraus"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -151,11 +159,25 @@
         "Quantum.Channel"
       ]
     },
+    "Quantum.Choi": {
+      "path": "Quantum/Choi.lean",
+      "sha256": "7471cb9fcbb6a524d734e253465759045e543f85aab33c1527b505126bf47c11",
+      "imports": [
+        "Quantum.ChannelTensor"
+      ]
+    },
     "Quantum.HilbertBridge": {
       "path": "Quantum/HilbertBridge.lean",
       "sha256": "f4af74826471586e5cc74ce9c5fa9cb56276084a6e2cd987f3dc99289fdec37f",
       "imports": [
         "Quantum.Positive"
+      ]
+    },
+    "Quantum.Kraus": {
+      "path": "Quantum/Kraus.lean",
+      "sha256": "b5eea1b2c860773b300e265b309f56feeff3226ac3bb61defdd3272378c7fcd2",
+      "imports": [
+        "Quantum.Choi"
       ]
     },
     "Quantum.MathlibImports": {

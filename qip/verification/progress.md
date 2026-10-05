@@ -15,8 +15,8 @@ the module compiled inside the full `ShiQIP` build and passed the fresh-import a
 
 Every report in `verification/audit.json` uses only `propext`, `Classical.choice` and
 `Quot.sound`. No `sorry`, `admit`, `axiom` or `proof_wanted` occurs in `src/`. The last run
-took 226 s and produced 225 reports across 8 audit files (27 sources), from `git_head`
-13e55b6 plus the Q06 changes. Source hashes are in `source-manifest.json` and `verification/audit.json`.
+took 219 s and produced 240 reports across 9 audit files (30 sources), from `git_head`
+6f42cbd plus the Q07 changes. Source hashes are in `source-manifest.json` and `verification/audit.json`.
 
 | Task | Status | Declarations / files | Evidence | Remaining gap |
 |---|---|---|---|---|
@@ -27,10 +27,11 @@ took 226 s and produced 225 reports across 8 audit files (27 sources), from `git
 | Q04 | integrated_verified (local) | `Quantum.State`, `Quantum.Measurement`: `IsDensity` (PSD ∧ trace 1, both hypotheses), `Density`, `IsDensity.mix`, `pureState`, `isDensity_pure_iff` (↔ `∑ ‖v i‖² = 1`), `isDensity_pure_iff_norm`, `maxMixed`, `isDensity_maxMixed`, `isDensity_unique_iff` (one-dimensional registers); `IsEffect` (`0 ≤ E ≤ 1`), `prob E ρ = Re tr(Eρ)`, `prob_mem_Icc`, `prob_compl`, `prob_mix`, `prob_mono`, `prob_pureState`, `basisEffect`, `prob_basisEffect_pureState` | `Audit/State.lean`: 29 reports. `|+⟩` is normalized and gives outcome 1 with probability exactly `1/2`; zero-qubit maximally mixed state | identification with `ShiShallow.acceptProb` on circuits is Q16 |
 | Q05 | integrated_verified (local) | `Quantum.PartialTrace`: `traceRight` (`[a,b] = ∑ i, M (a,i) (b,i)`, kept factor may be rectangular), `traceLeft`, `trace_traceRight`/`Left`, `traceRight_eq_sum_slice` (Kraus-type form), `posSemidef_traceRight`/`Left`, `IsDensity.traceRight`/`Left`/`kronecker`, `traceRight_kronecker`, `traceRight_local`, `traceRight_conj_unitary` (unitary on the traced factor is invisible), `trace_mul_traceRight` (duality with `A ⊗ 1`), `traceLeft_eq_traceRight_swap`, `traceRight_prod`, `traceRight_reindex_left/right`, `traceRight_unique`, `traceRight_unitRight` | `Audit/PartialTrace.lean`: 30 reports. Bell marginal is `maxMixed Bool` and provably not pure; product marginals are the factors; one-dimensional/zero-qubit traced registers are deleted | marginal invariance under an arbitrary channel on the other register belongs to Q06 (plan step 3) |
 | Q06 | integrated_verified (local) | `Quantum.Channel`, `Quantum.ChannelTensor`, `Quantum.ChannelMathlib`: `MatMap`, `liftR` (`id_k ⊗ Φ`), `IsPositiveMap`, `IsCP` (ampliation positive for every finite `k : Type`), `IsTP`, `IsChannel`; `IsCP.isPositiveMap`, `IsChannel.map_density`; identity, composition, sums, `conjMap`, `krausMap`, `isChannel_unitary`, `isChannel_discardMap` (its ampliation is the partial trace), `isChannel_prepMap`, `isChannel_dephase`, `IsInstrument` with `prob_nonneg`/`sum_prob`, `isInstrument_basis`; `reindexMap`, `liftR_liftR`, `IsChannel.liftR`/`liftL`/`tensor`, `tensorMap_kronecker`, **`traceRight_liftR` (no-signalling)**, `traceRight_liftL`; bridge `cstar_nonneg_iff_flat`, `IsCP.toCPMap`, **`isCP_iff_cpMap`** (both directions vs Mathlib `CompletelyPositiveMap`) | `Audit/Channel.lean`: 46 reports. `not_isCP_transposeMap`: the transpose is positive but not CP (Bell witness, expectation `-2`) | plan's hard review gate after Q06 is pending (see below) |
+| Q07 | integrated_verified (local) | `Quantum.Choi`, `Quantum.Kraus`: `choi` (`(a,i),(b,j) ↦ Φ (E a b) i j`, input left, unnormalized), `ofChoi`, `ofChoi_choi`, `choi_ofChoi`, `choi_eq_liftR` (`id ⊗ Φ` on `|Ω⟩⟨Ω|`), `choi_id`, `IsCP.choi_posSemidef`, `isTP_iff_traceRight_choi`, `krausOfFactor`, `ofChoi_mul_conjTranspose`, `sum_krausOfFactor`, **`isCP_iff_choi_posSemidef`**, `IsCP.exists_kraus`, **`isChannel_iff_exists_kraus`** | `Audit/Choi.lean`: 15 reports; all statements for distinct input/output registers `m`, `n` | — |
 | Q13 | integrated_verified (local) | `QIP.Syntax`, `QIP.Resources`: `Desc`, `Gate`, `Message`, `Desc.held`, `Desc.check`/`Valid`, `stdSchedule`, `HasSchedule`, `gateCount`, `totalWires`, `communication`, `serialSize`, `Desc.serialSize_le`, `Gate.toInstr?` | `Audit/Syntax.lean`. 1-, 2-, 3- (zero-width middle message) and 5-message examples are valid by `decide`. Negative examples cover use-after-send, use-before-receive, `cnot i i`, an output outside the private register, a zero-width private register, non-alternation and a verifier-first schedule | gate *semantics* bridge is Q16 |
 | Q14 | integrated_verified (local) | `QIP.Encoding`, `QIP.Decode`: `encode`, `decode`, `decodeChecked`, `decode_encode`, `encode_injective`, `decode_eq_some_iff`, `encode_length` (= `serialSize`), `encode_length_le`, `decode_proper_prefix`, `decode_encode_append`, `decNat_replicate_true`, `decGate_bad_tag` | `Audit/Syntax.lean` (30 reports with Q13) | — |
 | Q33 | integrated_verified (local) | `QIP.Arithmetic.Gap`, `.Padding`, `.Repetition`: `halving_gap`, `halving_iterate`, `padCount_le`, `halfCount_iterate_padM`, `four_pow_le_padM_sq`, `one_sub_pow_le_inv`, `repetition_bound`, `repK_le_poly`, `soundness_schedule` | `Audit/Arithmetic.lean`: 24 reports | — |
-| Q07–Q12, Q15–Q32, Q34–Q41 | not_started | — | — | — |
+| Q08–Q12, Q15–Q32, Q34–Q41 | not_started | — | — | — |
 
 ## Design decisions recorded for later tasks
 
@@ -52,7 +53,7 @@ took 226 s and produced 225 reports across 8 audit files (27 sources), from `git
 
 ## Next ready tasks
 
-Q07 (Choi/Kraus; Q06 is done), Q09 (purification; Q05 and Q03 are done) and Q34 (printer
+Q08 (dilation; Q07 is done), Q09 (purification; Q05 and Q03 are done) and Q34 (printer
 primitives; Q14 is done). Conventions fixed by Q03: positivity is Mathlib's `Matrix.PosSemidef` with `ComplexOrder`
 and `MatrixOrder`; every Hilbert norm or inner product on coordinate vectors goes through
 `toE` (`EuclideanSpace`), never the sup norm on `n → ℂ`.
