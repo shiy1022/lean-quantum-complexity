@@ -1,0 +1,1017 @@
+{
+  "schema_version": 1,
+  "status": "plan_only",
+  "baseline_commit": "1a076aa72e73b0766baebbf9503faa3f87751306",
+  "target": "ShiQIP.QIP = ShiQIP.QIPm 3",
+  "compilation_policy": "Sherlock only; no local Lean/Lake compilation",
+  "required_tasks": [
+    "Q00",
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Q10",
+    "Q11",
+    "Q12",
+    "Q13",
+    "Q14",
+    "Q15",
+    "Q16",
+    "Q17",
+    "Q18",
+    "Q19",
+    "Q20",
+    "Q21",
+    "Q22",
+    "Q23",
+    "Q24",
+    "Q25",
+    "Q26",
+    "Q27",
+    "Q28",
+    "Q29",
+    "Q30",
+    "Q31",
+    "Q32",
+    "Q33",
+    "Q34",
+    "Q35",
+    "Q36",
+    "Q37",
+    "Q38",
+    "Q39",
+    "Q40",
+    "Q41"
+  ],
+  "external_dependencies": {
+    "RV01": {
+      "status": "pending_external",
+      "description": "Unconditional polynomial-time-uniform clean reversible simulation plus exported exact theorem/encoding contract. Not available at planning time; only O02 depends on it."
+    }
+  },
+  "tasks": [
+    {
+      "id": "Q00",
+      "title": "Freeze the baseline and establish the audit harness",
+      "depends_on": [],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/verification/baseline.json",
+        "qip/verification/reuse-map.md",
+        "qip/scripts/manifest.py",
+        "qip/scripts/audit.py"
+      ],
+      "contract": "Create qip/ as an independent pinned Lean project; preserve the existing projects byte-for-byte. Record the actual Git SHA, toolchain, imports and accepted evidence.",
+      "proof_steps": [
+        "Read this plan and current Git status; do not overwrite concurrent edits.",
+        "Use module prefixes Quantum.* and QIP.* to avoid existing Space.*, Machine.* and Audit.* collisions. Import one selected baseline closure, never two different definitions with the same module name.",
+        "Reuse manifest/audit patterns from bqp-pspace, but change the compilation entry point to require a Sherlock allocation. Separate source-only checks from anything invoking Lean.",
+        "Create an audit parser self-test that rejects missing, duplicate and forbidden axiom reports."
+      ],
+      "acceptance": "Source manifests for both existing projects still pass; a tiny Mathlib-import module and its fresh audit pass on Sherlock.",
+      "do_not": "Do not install a new toolchain, run local Lean, rewrite earlier class definitions, or count an imported theorem statement as a proved lemma."
+    },
+    {
+      "id": "Q01",
+      "title": "Inventory the pinned Mathlib and proved quantum APIs",
+      "depends_on": [
+        "Q00"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/verification/mathlib-api.md",
+        "qip/src/Quantum/MathlibImports.lean"
+      ],
+      "contract": "List exact available declarations and missing bridges for matrix order, square roots, tensor products, CP maps, compactness and separation.",
+      "proof_steps": [
+        "Inspect the pinned files listed in Section 4, then use focused #check files on Sherlock.",
+        "Record the matrix norm and inner-product conventions, not just matching names.",
+        "For each reused project theorem record exact statement, source hash, and transitive axiom report."
+      ],
+      "acceptance": "The inventory distinguishes already proved, definition-only, stub, proposed and external-pending items.",
+      "do_not": "Do not invent Mathlib lemma names or decide an entire theory is absent from one failed keyword search."
+    },
+    {
+      "id": "Q02",
+      "title": "Finite registers and tensor reindexing",
+      "depends_on": [
+        "Q00"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Registers.lean",
+        "qip/src/Quantum/Reindex.lean"
+      ],
+      "contract": "Explicit equivalences for ordered register products, associativity, swap, empty registers and qubit blocks.",
+      "proof_steps": [
+        "Use finite nonempty basis types; zero qubits have a one-element basis.",
+        "Define reindexing matrices and state maps, and prove inverse, adjoint and composition laws.",
+        "Fix one tensor-factor order and prove named equivalences for every other view."
+      ],
+      "acceptance": "Associativity, swap twice, and adding/removing a zero-qubit register are exact identities.",
+      "do_not": "Do not identify differently ordered tensors by informal notation or treat a zero-qubit space as dimension zero."
+    },
+    {
+      "id": "Q03",
+      "title": "Positive matrices and finite-dimensional analytic bridges",
+      "depends_on": [
+        "Q01",
+        "Q02"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Positive.lean",
+        "qip/src/Quantum/HilbertBridge.lean"
+      ],
+      "contract": "Use Mathlib PSD/order and functional calculus to obtain factorization, positive square roots, trace positivity, and the correct Hilbert-space operator norm.",
+      "proof_steps": [
+        "Bridge coordinate functions to EuclideanSpace rather than using the default Pi sup norm.",
+        "Prove the needed trace cyclicity, adjoint, conjugation and tensor positivity lemmas.",
+        "Factor a PSD matrix as A * A\u1d34; establish the rank-one trace and inner-product identities."
+      ],
+      "acceptance": "All later order/norm claims resolve to explicit Mathlib structures; tests include non-diagonal complex matrices.",
+      "do_not": "Do not create a competing PSD definition or assume positivity is entrywise."
+    },
+    {
+      "id": "Q04",
+      "title": "Density operators and effects",
+      "depends_on": [
+        "Q03"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/State.lean",
+        "qip/src/Quantum/Measurement.lean"
+      ],
+      "contract": "Density operators are PSD matrices with trace one; effects satisfy 0 \u2264 E \u2264 I; probability is Re(trace(E\u03c1)).",
+      "proof_steps": [
+        "Prove probability lies in [0,1], complement probabilities sum to one, and affine mixtures preserve states.",
+        "Define rank-one pure states and prove normalization equivalence with squared-amplitude sums.",
+        "Define the maximally mixed state, including the one-dimensional case."
+      ],
+      "acceptance": "Pure-state measurement agrees with a direct sum of squared amplitudes.",
+      "do_not": "Do not hide normalization, positivity or an acceptance bound in an unproved structure field."
+    },
+    {
+      "id": "Q05",
+      "title": "Partial trace and locality",
+      "depends_on": [
+        "Q04"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/PartialTrace.lean"
+      ],
+      "contract": "Partial trace preserves PSD/trace; tensor and local-operation identities are proved with explicit register order.",
+      "proof_steps": [
+        "Start from partialTrace(M)[a,b] = sum_i M[(a,i),(b,i)].",
+        "Prove trace, tensor, reindexing and conjugation identities.",
+        "Derive marginal invariance under a trace-preserving operation on the other register once Q06 is available; place that corollary in Q06 to avoid an import cycle."
+      ],
+      "acceptance": "Check a Bell-state marginal, product states and tracing a zero-qubit register.",
+      "do_not": "Do not claim a prover can change the verifier-only marginal without a message exchange."
+    },
+    {
+      "id": "Q06",
+      "title": "Channels and their compositional API",
+      "depends_on": [
+        "Q05",
+        "Q01"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Channel.lean",
+        "qip/src/Quantum/ChannelTensor.lean"
+      ],
+      "contract": "A finite-dimensional channel is a linear completely positive trace-preserving map; composition, identity, tensor and local application are channels.",
+      "proof_steps": [
+        "Bridge Mathlib CompletelyPositiveMap on CStarMatrix to the chosen finite matrix representation.",
+        "Keep trace preservation as a predicate of that same linear map.",
+        "Prove state preservation and no-signalling/local marginal invariance, and represent instruments with outcome-indexed CP maps."
+      ],
+      "acceptance": "Unitary conjugation, discard, preparation and dephasing are concrete channels.",
+      "do_not": "Do not equate positivity with complete positivity or reset verifier-private memory when the prover acts."
+    },
+    {
+      "id": "Q07",
+      "title": "Choi representation and Kraus realization",
+      "depends_on": [
+        "Q06"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Choi.lean",
+        "qip/src/Quantum/Kraus.lean"
+      ],
+      "contract": "Prove Choi/map inverse identities, CP iff Choi PSD, and TP iff the output partial trace is the input identity.",
+      "proof_steps": [
+        "Freeze input/output order and matrix-unit conventions.",
+        "Prove the forward implication using the unnormalized maximally entangled vector.",
+        "Factor a PSD Choi matrix and reshape each factor column into a Kraus operator.",
+        "Prove the resulting Kraus sum is the original map and the normalization condition is exact."
+      ],
+      "acceptance": "Both directions are kernel checked, with input/output dimensions allowed to differ.",
+      "do_not": "Do not define CP to mean Choi PSD and omit its equivalence with the channel API; do not normalize the Choi matrix as a density operator."
+    },
+    {
+      "id": "Q08",
+      "title": "Finite-dimensional dilation",
+      "depends_on": [
+        "Q07"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Dilation.lean"
+      ],
+      "contract": "Every finite-dimensional channel has an isometric realization with an explicit finite environment; prove unitary extension after padding.",
+      "proof_steps": [
+        "Stack the proved Kraus operators into an isometry.",
+        "Prove discarding its environment recovers the channel.",
+        "Bound environment dimension and extend the isometry to a unitary only on compatible padded spaces."
+      ],
+      "acceptance": "The realization works with entangled reference inputs, not just pure inputs of the acted-on system.",
+      "do_not": "Do not infer an efficient verifier circuit from existence of an arbitrary channel dilation."
+    },
+    {
+      "id": "Q09",
+      "title": "Purification and same-marginal isometries",
+      "depends_on": [
+        "Q05",
+        "Q03"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Purification.lean"
+      ],
+      "contract": "Every density operator has a finite purification; purifications of the same marginal are related on a sufficiently large private register.",
+      "proof_steps": [
+        "Use the PSD square root to construct a canonical purification.",
+        "Prove its reduced state and normalization.",
+        "Prove the equal-marginal isometry/unitary lemma with explicit ancilla dimensions and rank-deficient cases."
+      ],
+      "acceptance": "Pure, mixed and rank-deficient states are covered; no full-rank assumption leaks out.",
+      "do_not": "Do not import Uhlmann as an axiom or use a same-size unitary when the purifying dimensions differ."
+    },
+    {
+      "id": "Q10",
+      "title": "Root fidelity and elementary laws",
+      "depends_on": [
+        "Q09"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Fidelity.lean"
+      ],
+      "contract": "Use one documented convention: root fidelity F(\u03c1,\u03c3) = trace(sqrt(sqrt(\u03c1) \u03c3 sqrt(\u03c1))), a real number in [0,1].",
+      "proof_steps": [
+        "Relate the square-root formula to the trace norm of sqrt(\u03c1)sqrt(\u03c3).",
+        "Prove symmetry, pure-state overlap, diagonal specialization and tensor multiplicativity using finite matrix lemmas.",
+        "Keep every occurrence of F and F\u00b2 distinct in theorem names/statements."
+      ],
+      "acceptance": "The pure-state formula is absolute inner product, while pure-state acceptance is its square.",
+      "do_not": "Do not mix squared fidelity with root fidelity."
+    },
+    {
+      "id": "Q11",
+      "title": "Uhlmann theorem with attained optimization",
+      "depends_on": [
+        "Q10",
+        "Q09"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/Uhlmann.lean"
+      ],
+      "contract": "Maximum overlap over purifications equals root fidelity, with a sufficiently large common environment and an actual maximizing isometry.",
+      "proof_steps": [
+        "Isolate the matrix polar/trace-optimization lemma first.",
+        "Prove its upper bound and optimizer construction, including zero singular values.",
+        "Translate through vectorization and Q09 to the purification statement; derive monotonicity under partial trace."
+      ],
+      "acceptance": "The theorem can supply a witness, not merely a supremum inequality.",
+      "do_not": "Do not use a supremum as though it were attained or assume a polar factor is invertible."
+    },
+    {
+      "id": "Q12",
+      "title": "Two-target fidelity inequality",
+      "depends_on": [
+        "Q11"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/Quantum/FidelityTwoTargets.lean"
+      ],
+      "contract": "For density operators \u03c1,\u03c3,\u03c4: F(\u03c1,\u03c3)^2 + F(\u03c1,\u03c4)^2 \u2264 1 + F(\u03c3,\u03c4). Only this upper bound is mandatory.",
+      "proof_steps": [
+        "Prove the norm bound for the sum of two rank-one projections on unit vectors.",
+        "Choose Uhlmann purifications relative to a fixed purification of \u03c1.",
+        "Bound the mutual overlap of those purifications by F(\u03c3,\u03c4)."
+      ],
+      "acceptance": "The inequality has no optimizer or protocol hypotheses and passes its own axiom audit.",
+      "do_not": "Do not spend time proving the exact maximum identity unless the upper bound genuinely fails to close Q31."
+    },
+    {
+      "id": "Q13",
+      "title": "Protocol syntax and resource accounting",
+      "depends_on": [
+        "Q02"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Syntax.lean",
+        "qip/src/QIP/Resources.lean"
+      ],
+      "contract": "Finite verifier descriptions explicitly store every private/message register size, alternation schedule, circuit block and output wire. Require a valid designated output qubit even when individual message or private auxiliary registers have zero qubits.",
+      "proof_steps": [
+        "Count a message as one directed transfer; a three-message protocol is P\u2192V, V\u2192P, P\u2192V.",
+        "Represent zero-length messages explicitly; all verifier gates use the established H/S/T/X/CNOT semantics.",
+        "Define gate count, total wires, communication and serialized-size targets before adding transformations."
+      ],
+      "acceptance": "Instantiate one-, two-, three- and five-message descriptions; size fields cannot conceal arbitrary functions.",
+      "do_not": "Do not call an exchange of two messages one message or omit private/message register boundaries from the description."
+    },
+    {
+      "id": "Q14",
+      "title": "Protocol encoding and strict decoder",
+      "depends_on": [
+        "Q13"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Encoding.lean",
+        "qip/src/QIP/Decode.lean"
+      ],
+      "contract": "A self-delimiting Boolean encoding with decode(encode V) = some V, injectivity and a polynomial encoded-length bound.",
+      "proof_steps": [
+        "Use tagged constructors with explicit arity and bounded wire checks.",
+        "Prove parsers retain arbitrary suffixes and reject malformed framing.",
+        "Encode all register sizes and each message boundary separately."
+      ],
+      "acceptance": "Round trip and malformed-input behavior cover empty lists and zero-qubit registers.",
+      "do_not": "Do not assume a nested length-prefix/flatten operation is injective; do not reuse the older folded QMA witness/ancilla encoding."
+    },
+    {
+      "id": "Q15",
+      "title": "Operational interaction and class definitions",
+      "depends_on": [
+        "Q06",
+        "Q13",
+        "Q14"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Execution.lean",
+        "qip/src/QIP/VerifierFamily.lean",
+        "qip/src/QIP/Classes.lean"
+      ],
+      "contract": "Define actual interaction, completeness/soundness and independently defined QIP and QIPm. Quantify over all finite private prover memories and legal channels.",
+      "proof_steps": [
+        "A verifier description is generated from x by a total PolyTimeComputable function; prepare any classical x register explicitly.",
+        "Keep prover initial memory uncorrelated with verifier-private initialized registers.",
+        "Use disjoint yes/no promise sets, with a language embedding (L, complement L).",
+        "Bound messages, wire counts, circuit sizes and generator runtime by natural-coefficient polynomials with room for n=0,1.",
+        "Define QIPm k by exactly k messages; QIP uses a polynomial bound on the generated message count."
+      ],
+      "acceptance": "Acceptance is in [0,1]; a dishonest prover has no action on private verifier registers; QIPm 3 \u2286 QIP is proved without compression.",
+      "do_not": "Do not define QIP via QIPm 3, via an SDP, or via existence of the desired transformation. Do not bound prover circuit complexity."
+    },
+    {
+      "id": "Q16",
+      "title": "Bridge existing circuit semantics",
+      "depends_on": [
+        "Q15"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/CircuitSemantics.lean",
+        "qip/src/Quantum/ShiShallowBridge.lean"
+      ],
+      "contract": "The density-channel action of each allowed circuit agrees with ShiShallow.runLayered on pure states and preserves the same gate meanings.",
+      "proof_steps": [
+        "Prove each primitive gate identity, then circuit composition and register embedding.",
+        "Relate the designated output effect to existing amplitude-sum acceptance.",
+        "Prove that an untouched reference register is preserved in the channel statement."
+      ],
+      "acceptance": "A concrete existing BQP/QMA verifier has identical acceptance in the new semantics.",
+      "do_not": "Do not silently change the gate set, layer order or output convention."
+    },
+    {
+      "id": "Q17",
+      "title": "Purified strategies and verifier normal forms",
+      "depends_on": [
+        "Q08",
+        "Q09",
+        "Q16",
+        "Q28"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Purified.lean",
+        "qip/src/QIP/NormalForm.lean"
+      ],
+      "contract": "Operational strategies admit pure/isometric private-memory implementations with identical behavior; circuit-described verifiers admit an efficient reversible form.",
+      "proof_steps": [
+        "Separate arbitrary prover dilation from efficient verifier normalization.",
+        "For verifier measurements/dephasing, retain coherent outcome copies privately; prove equivalence against arbitrary adversaries.",
+        "Allocate needed verifier ancillas at the start and preserve their ownership; pad to a fixed total unitary workspace."
+      ],
+      "acceptance": "Every normalization direction used later is proved, with unchanged message count or a stated explicit change.",
+      "do_not": "Do not let the prover receive purification registers or invoke the unfinished general reversible compiler."
+    },
+    {
+      "id": "Q18",
+      "title": "Causal strategy operators",
+      "depends_on": [
+        "Q07",
+        "Q13"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/StrategyOperator.lean"
+      ],
+      "contract": "Define PSD strategy operators with recursive causal partial-trace equations, including the trivial-input first prover action.",
+      "proof_steps": [
+        "Fix register order and define each prefix operator.",
+        "Use Q0=1 and Tr_output Qk = Q(k-1) \u2297 I_input, after proved reindexing.",
+        "Derive trace normalization and prefix uniqueness; a strategy operator is generally not trace one."
+      ],
+      "acceptance": "The one-turn case matches Choi channels, and initial state preparation appears as input dimension one.",
+      "do_not": "Do not confuse the number of prover turns with the number of exchanged messages."
+    },
+    {
+      "id": "Q19",
+      "title": "Strategy representation in both directions",
+      "depends_on": [
+        "Q18",
+        "Q08",
+        "Q09",
+        "Q15"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/StrategyRealization.lean"
+      ],
+      "contract": "An operator satisfies the causal constraints iff it is induced by an operational finite-memory strategy; prove a memory-dimension bound.",
+      "proof_steps": [
+        "Forward direction: compose the actual strategy and trace private memory.",
+        "Reverse direction: induct on turns using positive factorizations and equal-marginal isometries.",
+        "Handle singular prefixes without inserting an inverse unless supported on the correct range.",
+        "Show the bounded-memory realization reproduces behavior against every compatible verifier."
+      ],
+      "acceptance": "This is the first major independently useful theorem; both implications and memory bounds receive fresh audits.",
+      "do_not": "Do not assume causal realization or restrict the original prover to the constructed memory bound before proving equivalence."
+    },
+    {
+      "id": "Q20",
+      "title": "Verifier testers and interaction pairing",
+      "depends_on": [
+        "Q19"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Tester.lean"
+      ],
+      "contract": "Construct a PSD accepting tester from the actual verifier; prove operational acceptance equals its trace pairing with the prover strategy operator.",
+      "proof_steps": [
+        "Derive the pairing from vectorization/contraction identities.",
+        "Resolve all transpose/conjugation conventions in the definitions.",
+        "Prove tester normalization over every legal strategy and compatibility with tensor products."
+      ],
+      "acceptance": "The formula covers every operational strategy, including those with retained entangled private memory.",
+      "do_not": "Do not assume that a partial transpose preserves positivity or write a pairing formula without proving its convention."
+    },
+    {
+      "id": "Q21",
+      "title": "Compactness and attained game value",
+      "depends_on": [
+        "Q20"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Value.lean"
+      ],
+      "contract": "The operational supremum equals a maximum over the compact strategy-operator set; 0 \u2264 value V \u2264 1.",
+      "proof_steps": [
+        "Prove nonempty, closed and bounded causal feasible sets using their fixed trace.",
+        "Apply finite-dimensional compactness and continuity of the tester pairing.",
+        "Use Q19 to return an actual maximizing strategy and reconcile existential completeness with a value inequality."
+      ],
+      "acceptance": "All appearances of value=1 later yield a legal perfect prover; no finite-memory bound is assumed externally.",
+      "do_not": "Do not replace an existential perfect prover by a bare sSup equation before this theorem."
+    },
+    {
+      "id": "Q22",
+      "title": "Tailored strategy SDP and weak duality",
+      "depends_on": [
+        "Q18",
+        "Q20"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/SDP/Primal.lean",
+        "qip/src/QIP/SDP/WeakDuality.lean"
+      ],
+      "contract": "Express the strategy constraints as a finite real-linear map on Hermitian matrices; derive its dual and prove weak duality.",
+      "proof_steps": [
+        "Write the adjoint of every partial-trace constraint explicitly.",
+        "Derive the dual from the selected convention, rather than copying incompatible tensor order.",
+        "Prove positivity of trace products and the telescoping primal/dual objective bound."
+      ],
+      "acceptance": "A concrete feasible dual certificate bounds every operational prover through Q19/Q20.",
+      "do_not": "Do not run a numerical SDP solver or assume its answer certifies a bound."
+    },
+    {
+      "id": "Q23",
+      "title": "Tailored strong duality / approximate certificates",
+      "depends_on": [
+        "Q22",
+        "Q21"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/SDP/StrongDuality.lean"
+      ],
+      "contract": "For every \u03b7>0, obtain a feasible dual bound \u2264 value V + \u03b7. Exact dual attainment is optional unless actually required.",
+      "proof_steps": [
+        "First locate a proved finite-dimensional separation/Slater theorem in pinned Mathlib; instantiate every hypothesis.",
+        "If absent, prove the needed finite-dimensional separation argument in a separate file.",
+        "Exhibit a strictly feasible causal operator using depolarizing channels and explicitly prove positive definiteness.",
+        "Ensure all complex Hermitian variables are treated as a real vector space."
+      ],
+      "acceptance": "No duality hypothesis survives in the final certificate theorem; strict-feasibility witnesses are actual matrices.",
+      "do_not": "Do not assert Slater, strong duality or a solver theorem as an axiom. This is a hard review gate, not a routine automation task."
+    },
+    {
+      "id": "Q24",
+      "title": "Product bound against entangled strategies",
+      "depends_on": [
+        "Q23"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/SDP/Product.lean"
+      ],
+      "contract": "Prove value(V\u2297W) = value V * value W for all-pass parallel composition; initially the three-message case suffices.",
+      "proof_steps": [
+        "Lower bound: product of actual optimal strategies.",
+        "Upper bound: tensor feasible dual certificates and prove each recursive inequality using PSD order.",
+        "If certificates are approximate, take \u03b7\u21920 with a proved limiting inequality."
+      ],
+      "acceptance": "The upper bound quantifies over arbitrary joint strategies, not product strategies.",
+      "do_not": "Do not generalize this result to OR acceptance or arbitrary threshold repetition; do not assume independent cheating behavior."
+    },
+    {
+      "id": "Q25",
+      "title": "Operational all-pass repetition",
+      "depends_on": [
+        "Q24",
+        "Q16",
+        "Q28"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/ParallelRepeat.lean"
+      ],
+      "contract": "Build k parallel copies with batched messages and all-pass acceptance; preserve three messages and prove value(repeat V k)=value(V)^k for k\u22651.",
+      "proof_steps": [
+        "Define the reordered product message registers and batched prover strategy space.",
+        "Compile the conjunction of accept bits using proved reversible gate templates.",
+        "Prove tensor semantics and induct Q24; record wire/gate/communication counts."
+      ],
+      "acceptance": "The result applies after perfect completeness and admits a polynomial-time printer in Q38.",
+      "do_not": "Do not substitute the existing QMA copy-amplification theorem for this adversarial interactive theorem."
+    },
+    {
+      "id": "Q26",
+      "title": "Reject flag and exact half-acceptance witness",
+      "depends_on": [
+        "Q17",
+        "Q21",
+        "Q28"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/RejectFlag.lean"
+      ],
+      "contract": "Add a prover-controlled reject option without increasing the number of messages; preserve soundness and permit honest acceptance exactly 1/2 whenever original acceptance is \u22652/3.",
+      "proof_steps": [
+        "Place the flag in an existing prover-to-verifier message; keep the old computation independent of it.",
+        "For soundness, trace the flag to obtain an original strategy and use accept_new \u2264 accept_old.",
+        "For completeness, prepare an independent flag with acceptance weight 1/(2p) for an honest success probability p\u22652/3. The prover is unrestricted, so this need not be a finite-gate verifier rotation."
+      ],
+      "acceptance": "Arbitrary entanglement of a cheating flag is covered; the honest normalization and p>0 proof are explicit.",
+      "do_not": "Do not require the verifier to know p or synthesize an arbitrary real rotation."
+    },
+    {
+      "id": "Q27",
+      "title": "Bell-test perfect completeness",
+      "depends_on": [
+        "Q26",
+        "Q11",
+        "Q28"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/PerfectCompleteness.lean"
+      ],
+      "contract": "A concrete m+2-message transformation has completeness 1 and soundness \u226435/36 from thresholds 2/3 and 1/3.",
+      "proof_steps": [
+        "Implement the Bell-test construction from the reference using the fixed threshold 1/2 and exact H/CNOT gates.",
+        "Use Q26 to produce the half-acceptance honest strategy and Q09/unitary extension for its final response.",
+        "For soundness, use the unchanged verifier-only marginal and the diagonal fidelity bound; weaken the bound to 1-(1/2-1/3)^2=35/36.",
+        "Return actual verifier syntax plus semantic and resource theorems."
+      ],
+      "acceptance": "Both claims concern this constructed verifier; no arbitrary exact verifier rotations or extra perfect-completeness premise remain.",
+      "do_not": "Do not claim the result for variable thresholds without proving their encoding/computation and exact gate realization."
+    },
+    {
+      "id": "Q28",
+      "title": "Exact gate adjoints and control macros",
+      "depends_on": [
+        "Q16"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Circuit/Adjoint.lean",
+        "qip/src/QIP/Circuit/Control.lean",
+        "qip/src/QIP/Circuit/Predicates.lean"
+      ],
+      "contract": "Executable gate-list operations implement adjoints, swaps, controlled branch blocks and zero/all-pass tests in H/S/T/X/CNOT.",
+      "proof_steps": [
+        "Use H\u207b\u00b9=H, X\u207b\u00b9=X, CNOT\u207b\u00b9=CNOT, S\u207b\u00b9=S\u00b3 and T\u207b\u00b9=T\u2077. Reverse circuit order as well.",
+        "Extract a proved constant Toffoli/controlled-gate template with provenance, or prove its finite matrix identity directly.",
+        "Prove exact phase-sensitive action, ancilla cleanup, wire distinctness and per-gate expansion bounds."
+      ],
+      "acceptance": "Each macro has both semantic equality and a concrete finite encoding; protected control bits cannot be overwritten by returned messages.",
+      "do_not": "Do not treat reversing a quantum circuit as requiring the unfinished classical-machine reversible simulation theorem; do not ignore relative phases under control."
+    },
+    {
+      "id": "Q29",
+      "title": "Message padding and fixed-register normal form",
+      "depends_on": [
+        "Q17",
+        "Q28"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/PadMessages.lean",
+        "qip/src/QIP/FixedRegisters.lean"
+      ],
+      "contract": "Normalize to prover-first odd schedules and uniform message widths; pad to a suitable power-of-two-plus-one message count with identical value.",
+      "proof_steps": [
+        "Use zero-length dummy messages with prescribed ownership transfers.",
+        "Initialize, retain and ignore padding in a way that never exposes verifier-private ancillas.",
+        "Prove both strategy translations, including dishonest use of all padding qubits."
+      ],
+      "acceptance": "Message counts 1,2,3,4,5 and empty input are handled; no soundness proof assumes the prover leaves padding zero.",
+      "do_not": "Do not use mere register-dimension arithmetic as a proof of operational equivalence."
+    },
+    {
+      "id": "Q30",
+      "title": "Cut-state characterization and stitching",
+      "depends_on": [
+        "Q29",
+        "Q11",
+        "Q21"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Cut.lean",
+        "qip/src/QIP/Stitch.lean"
+      ],
+      "contract": "Relate reachable-prefix and accepting-suffix verifier marginals at a fixed cut to legal strategies; derive the fidelity bound needed for halving.",
+      "proof_steps": [
+        "Define the two cut-state sets using actual operational prefixes/suffixes.",
+        "Prove purification-based strategy stitching with explicit private-memory enlargement.",
+        "Prove branch acceptance is bounded by squared fidelity with an appropriate cut state.",
+        "Handle empty feasible sets, zero branch probability, and the final accept projector explicitly; a max over an empty set is not a prover."
+      ],
+      "acceptance": "Every state used in the soundness argument is related to a legal strategy, and every claimed witness is constructed.",
+      "do_not": "Do not replace this step by an abstract cut-consistency hypothesis or postselection available to the prover."
+    },
+    {
+      "id": "Q31",
+      "title": "One halving transformation",
+      "depends_on": [
+        "Q30",
+        "Q12",
+        "Q28"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Halve.lean"
+      ],
+      "contract": "For r\u22651, transform 2^(r+1)+1 messages into 2^r+1; preserve perfect completeness and prove value(Halve V) \u2264(1+sqrt(value V))/2.",
+      "proof_steps": [
+        "Construct the midpoint-state request and forward/backward verifier from the reference, with a private retained challenge bit and a public copy.",
+        "For honesty, send the genuine midpoint and use purified prover actions or their inverses.",
+        "For soundness, apply Q30 branch bounds and Q12 to the same midpoint marginal chosen before the challenge.",
+        "Use only the upper inequality; an exact value identity is not required."
+      ],
+      "acceptance": "The five-to-three case is proved first, then the indexed general case; challenge timing is present in the operational execution.",
+      "do_not": "Do not let the prover choose different midpoint states for the two challenge outcomes or apply the transform recursively below three messages."
+    },
+    {
+      "id": "Q32",
+      "title": "Iterated semantic compression",
+      "depends_on": [
+        "Q31",
+        "Q29"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Compress.lean"
+      ],
+      "contract": "After padding to M=2^(r+1)+1, r halvings give exactly three messages, completeness 1 and soundness \u22641-\u03b5/M\u00b2 from soundness \u22641-\u03b5.",
+      "proof_steps": [
+        "Induct on r using the one-step gap loss of at most a factor four.",
+        "Track the padded M rather than silently reusing the original unpadded message count.",
+        "Record an explicit size recurrence for transformed descriptions to be discharged in Q37/Q39."
+      ],
+      "acceptance": "r=0 returns a three-message verifier without another halving; every coercion from naturals to reals is explicit.",
+      "do_not": "Do not claim polynomial size merely because the iteration count is logarithmic."
+    },
+    {
+      "id": "Q33",
+      "title": "Scalar gap bounds and concrete repetition schedule",
+      "depends_on": [
+        "Q00"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Arithmetic/Gap.lean",
+        "qip/src/QIP/Arithmetic/Padding.lean",
+        "qip/src/QIP/Arithmetic/Repetition.lean"
+      ],
+      "contract": "Prove the scalar inequalities and an integer schedule K=72*M\u00b2 for M\u22653, \u03b4=1/(36*M\u00b2): (1-\u03b4)^K\u22641/3.",
+      "proof_steps": [
+        "Prove (1+sqrt(1-\u03b5))/2\u22641-\u03b5/4 for 0\u2264\u03b5\u22641.",
+        "Prove 4^r\u2264(2^(r+1)+1)^2 and elementary power-of-two padding bounds.",
+        "Prove (1-\u03b4)^k\u22641/(1+k*\u03b4) for 0\u2264\u03b4\u22641, by induction or a proved Bernoulli inequality.",
+        "Derive K*\u03b4=2 and K polynomially bounded from a polynomial bound on M."
+      ],
+      "acceptance": "These lemmas are protocol-independent and compile now, before quantum foundations are complete.",
+      "do_not": "Do not introduce numerical approximations, logarithm rounding assumptions or an unproved amplification hypothesis."
+    },
+    {
+      "id": "Q34",
+      "title": "Concrete classical description-transformer primitives",
+      "depends_on": [
+        "Q14",
+        "Q00"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Uniform/Primitives.lean",
+        "qip/src/QIP/Uniform/ClockedLoop.lean"
+      ],
+      "contract": "Actual TM2 polynomial-time certificates for parsing, list traversal, wire-index arithmetic, copying, concatenation and bounded iteration over encoded protocols.",
+      "proof_steps": [
+        "Reuse small audited transducer/subroutine lemmas, recording their exact input/output encodings.",
+        "Return a fixed rejection/default output on malformed input so the generator is total on every Boolean string.",
+        "Build a general bounded-loop machine whose finite control does not depend on input length; prove exact output and actual runtime."
+      ],
+      "acceptance": "Every primitive is a concrete executable machine certificate; clocks include glue, cleanup and output writing.",
+      "do_not": "Do not claim Lean recursion is polynomial time, use input-dependent finite label types, or enumerate 2^q amplitudes to print a q-qubit circuit."
+    },
+    {
+      "id": "Q35",
+      "title": "Perfect-completeness printer",
+      "depends_on": [
+        "Q27",
+        "Q34"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Uniform/PerfectCompleteness.lean"
+      ],
+      "contract": "A concrete polynomial-time transducer emits exactly the encoding of Q27, including reject-flag layout and the two new messages.",
+      "proof_steps": [
+        "Compose only certified primitives and fixed gate templates.",
+        "Prove an exact byte-level output equation, polynomial clock and output-size bound."
+      ],
+      "acceptance": "Uniformity of the actual Q27 verifier follows from composition with the original generator.",
+      "do_not": "Do not prove uniformity of a different verifier with merely the same asymptotic size."
+    },
+    {
+      "id": "Q36",
+      "title": "Halving and padding printers",
+      "depends_on": [
+        "Q31",
+        "Q29",
+        "Q34"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Uniform/Halve.lean",
+        "qip/src/QIP/Uniform/Pad.lean"
+      ],
+      "contract": "Certified transducers for message padding, midpoint layout, reverse/adjoint blocks and challenge routing.",
+      "proof_steps": [
+        "Parse full register metadata; calculate offsets with the proved arithmetic primitives.",
+        "Print branch circuits with bounded control macros and retain a protected challenge record.",
+        "Prove exact encoding agreement and per-transformation size/time inequalities."
+      ],
+      "acceptance": "The printer handles all valid parity/base cases and returns a specified result for invalid encodings.",
+      "do_not": "Do not assume the unfinished reversible-machine generator provides this description transformer."
+    },
+    {
+      "id": "Q37",
+      "title": "Uniform iterated compression",
+      "depends_on": [
+        "Q36",
+        "Q32",
+        "Q33"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Uniform/Compress.lean"
+      ],
+      "contract": "A total polynomial-time machine pads once and repeatedly halves until exactly three messages; its bytes equal Q32.",
+      "proof_steps": [
+        "Implement bounded doubling to select the padded count, then a counted halving loop.",
+        "Prove the loop invariant relating the current bytes, message count and semantic transform.",
+        "Solve the actual description-size recurrence, including wire-address encodings and branch-control growth.",
+        "Prove a polynomial bound in the original encoded length, not in Hilbert-space dimension."
+      ],
+      "acceptance": "No uniformity or loop-runtime premise remains; constant-factor-per-stage growth is justified for the selected representation.",
+      "do_not": "Do not reparse/synthesize exponential matrices or assume an arbitrary polynomial factor repeated log times is polynomial."
+    },
+    {
+      "id": "Q38",
+      "title": "Uniform parallel repetition",
+      "depends_on": [
+        "Q25",
+        "Q34",
+        "Q33"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Uniform/Repeat.lean"
+      ],
+      "contract": "A concrete polynomial-time printer emits K batched copies with AND acceptance and exactly three messages.",
+      "proof_steps": [
+        "Compute K from the padded message count using a fixed polynomial arithmetic program.",
+        "Relabel disjoint copies, batch each round and append the proved all-pass circuit.",
+        "Prove exact encoded output and polynomial overhead in K and original description size."
+      ],
+      "acceptance": "The actual resulting verifier has the product semantics established in Q25.",
+      "do_not": "Do not use sequential repetition, which would increase message count."
+    },
+    {
+      "id": "Q39",
+      "title": "Compose family resources and uniformity",
+      "depends_on": [
+        "Q35",
+        "Q37",
+        "Q38"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/FamilyConstruction.lean"
+      ],
+      "contract": "Assemble one transformed family with a real TM2 generator and explicit natural-coefficient polynomial bounds on every resource.",
+      "proof_steps": [
+        "Compose the exact printer equations in the same order as the semantic transforms.",
+        "Derive padded M and K bounds from the original family bounds.",
+        "Include input length zero/one, width, gate count, all message widths and total encoded output length."
+      ],
+      "acceptance": "The family can be inserted into QIPm 3 directly without supplying compiler/runtime/gap hypotheses.",
+      "do_not": "Do not substitute a polynomial-space generator for a polynomial-time generator."
+    },
+    {
+      "id": "Q40",
+      "title": "Public class equality",
+      "depends_on": [
+        "Q39",
+        "Q33",
+        "Q21"
+      ],
+      "difficulty": "small",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/ThreeMessage.lean"
+      ],
+      "contract": "Prove ShiQIP.qip_eq_qip3 : ShiQIP.QIP = ShiQIP.QIPm 3, for the independently fixed classes.",
+      "proof_steps": [
+        "Forward: instantiate the perfect-complete, padded/compressed, all-pass-repeated family.",
+        "Use \u03b4=1/(36*M\u00b2), K=72*M\u00b2 and Q33 to finish soundness; perfect completeness implies the required 2/3.",
+        "Reverse: use the constant polynomial message bound for a three-message family.",
+        "Derive the language-level statement by the promise embedding, rather than redefining existing BQP/PP/PSPACE."
+      ],
+      "acceptance": "An independent example has exactly the equality type; no helper assumptions or uninstantiated typeclass law fields remain.",
+      "do_not": "Do not cite QIP=PSPACE, IP=PSPACE, BQP\u2286PSPACE or the desired equality to prove this theorem."
+    },
+    {
+      "id": "Q41",
+      "title": "Final clean build and semantic audit",
+      "depends_on": [
+        "Q40"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Audit/Final.lean",
+        "qip/verification/clean-build.json",
+        "qip/verification/axioms.json",
+        "qip/README.md"
+      ],
+      "contract": "A source-matched clean Sherlock build and exact-type/transitive-axiom audit certify the complete theorem graph.",
+      "proof_steps": [
+        "Build all project dependencies without reused project objects against pinned Mathlib libraries.",
+        "Audit the endpoint, operational/strategy equivalence, Uhlmann, duality, product bound, compression and all printer certificates.",
+        "Review definitions and quantifiers independently of axioms: adversarial memory, uniformity, dimensions, message count and class thresholds.",
+        "Save sources, hashes, logs, objects and allocation metadata before releasing node scratch."
+      ],
+      "acceptance": "All reports present; allowed axioms only propext/Classical.choice/Quot.sound; zero sorryAx; zero reused project objects in the final build.",
+      "do_not": "Do not describe an incremental/local check as a clean Sherlock build or equate axiom cleanliness with correctness of the class definitions."
+    },
+    {
+      "id": "O01",
+      "title": "One-message compatibility with the existing QMA semantics",
+      "depends_on": [
+        "Q16",
+        "Q21"
+      ],
+      "difficulty": "medium",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Compatibility/QMA.lean"
+      ],
+      "contract": "At a fixed input, identify one-message verification with optimization over a witness state; connect the corrected QMAU semantics where encodings permit.",
+      "proof_steps": [
+        "Read Def_ShiClassQMAU and distinguish it from the older folded-uniformity class.",
+        "Prove pure-vs-mixed witness equivalence by linearity/spectral decomposition.",
+        "Prove only the class inclusions for which a real uniform generator translation is available."
+      ],
+      "acceptance": "Exact names/types state whether the result is semantic, a class inclusion, or a full class equality.",
+      "do_not": "Do not claim ShiClassQMA.QMA equals the new QIPm 1 merely because textbook QMA=QIP(1)."
+    },
+    {
+      "id": "O02",
+      "title": "Input-uniformity model bridge using future reversible simulation",
+      "depends_on": [
+        "O01",
+        "RV01"
+      ],
+      "difficulty": "hard",
+      "status": "not_started",
+      "files": [
+        "qip/src/QIP/Compatibility/UniformModels.lean"
+      ],
+      "contract": "Optional bridge between input-dependent verifier generators and unary-length uniform circuits that process x internally.",
+      "proof_steps": [
+        "Wait for an audited, exported unconditional reversible simulation theorem.",
+        "Prove a uniform universal evaluator for the bounded encoded verifier circuits, including controlled gate templates.",
+        "Compose coherent description generation, evaluation and cleanup, with separate proof of all size/uniformity bounds."
+      ],
+      "acceptance": "This is an additional compatibility theorem; the primary equality Q40 must not wait on it.",
+      "do_not": "Do not assume reversible simulation alone also supplies a universal circuit or this model equivalence."
+    }
+  ]
+}
