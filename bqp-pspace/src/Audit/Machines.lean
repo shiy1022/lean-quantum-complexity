@@ -1,4 +1,4 @@
-import Machine.Loop
+import Machine.Increment
 
 /-! # Fresh-import audit for wrapper machine routines (S07–S11) -/
 
@@ -14,3 +14,6 @@ import Machine.Loop
 #print axioms ShiPPPSPACE.loop_run
 #print axioms ShiPPPSPACE.size_loopOut
 #print axioms ShiPPPSPACE.loop_seg
+#print axioms ShiPPPSPACE.loopOut_single_apply
+#print axioms ShiPPPSPACE.size_incOut
+#print axioms ShiPPPSPACE.inc_seg
