@@ -3,17 +3,68 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "343ba9a45479d3484b092619f540b0bdcee99725",
-  "seconds": 31.7,
+  "git_head": "00b61f9129a26c29ae95cbb4c0f6a405d84106f9",
+  "seconds": 37.0,
   "source_sha256": {
+    "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
     "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
     "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
+    "Space/ReachableAlphabet.lean": "cc8c3a95228243604011e038e57d0108c87db5a89fbbe7346e9bf7411b2f1543",
     "Space/Run.lean": "f85facfd297a5b7669c69b14cfb0900bd70639bd7371678422bb6fa8968bc969"
   },
   "axiom_reports": {
+    "Audit/Alphabet.lean": {
+      "ShiSpace.pushed_finite": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.stepAux_symsIn": [
+        "propext"
+      ],
+      "ShiSpace.iterate_symsIn": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.reachSyms_finite": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.stackSyms_finite": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.mem_stackSyms_of_reachable": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.size_le_peakAux": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.stepAux_size_le_peakAux": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.peakAux_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.exists_transient_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "Audit/Run.lean": {
       "ShiSpace.iterate_after_halt": [
         "Quot.sound",
