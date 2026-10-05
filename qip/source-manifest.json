@@ -8,6 +8,7 @@
   ],
   "targets": [
     "QIP.Audit.Arithmetic",
+    "QIP.Audit.Channel",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Registers",
@@ -43,6 +44,13 @@
       "sha256": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
       "imports": [
         "QIP.Arithmetic.Repetition"
+      ]
+    },
+    "QIP.Audit.Channel": {
+      "path": "QIP/Audit/Channel.lean",
+      "sha256": "b7c9d9f017c96dd280b6a9e0b59dc7c5219ca0e93fe1e786db1985e5eba5faa6",
+      "imports": [
+        "Quantum.ChannelMathlib"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -120,6 +128,27 @@
       "sha256": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
       "imports": [
         "Definitions.Def_ShiShallow_Core"
+      ]
+    },
+    "Quantum.Channel": {
+      "path": "Quantum/Channel.lean",
+      "sha256": "22dc94d0257a03ffd9fb6cb01301142eb1e9d5b59b03c634b01a1646b27538fa",
+      "imports": [
+        "Quantum.PartialTrace"
+      ]
+    },
+    "Quantum.ChannelMathlib": {
+      "path": "Quantum/ChannelMathlib.lean",
+      "sha256": "e0d97f70a6187d570a62206946ff7e3ff3b6b70993171c99c9310eadf4cfb8ac",
+      "imports": [
+        "Quantum.ChannelTensor"
+      ]
+    },
+    "Quantum.ChannelTensor": {
+      "path": "Quantum/ChannelTensor.lean",
+      "sha256": "b0247bdd7f01aac94f1d375104814e804adee30c7471ada93ab2fa1d665dd23d",
+      "imports": [
+        "Quantum.Channel"
       ]
     },
     "Quantum.HilbertBridge": {
