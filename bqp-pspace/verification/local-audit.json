@@ -1,0 +1,62 @@
+{
+  "kind": "local check (not a Sherlock clean build)",
+  "host": "Windows-10-10.0.19045-SP0",
+  "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "git_head": "fb7f2020deb1a4980b8d4b7f6b9583310bdbf5ac",
+  "seconds": 19.4,
+  "source_sha256": {
+    "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
+    "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3"
+  },
+  "axiom_reports": {
+    "Audit/Space.lean": {
+      "ShiSpace.cfgSpace_initList": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.cfgSpace_haltList": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.cfgSpace_haltList_encodeBool": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.SpaceBoundedOn.mono": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.SpaceBoundedOn.input_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.SpaceBoundedOn.output_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.PolySpaceDecider.mono": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.PolySpaceDecider.length_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.mem_PSPACE": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    }
+  },
+  "errors": []
+}
