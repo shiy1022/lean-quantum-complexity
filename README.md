@@ -17,6 +17,10 @@ The QMA construction uses polynomially many witness copies. Its separate witness
 
 Each project has its own Lean build environment. Both pin **Lean 4.33.1** and **Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`**. Keeping their source roots separate preserves their verified imports where reference module names overlap. Source headers and QMA Git history are preserved.
 
+## Planned extensions
+
+- [BQP ⊆ PSPACE execution plan](plans/BQP_PSPACE_PLAN.md): build a corrected polynomial-space machine interface, prove PP ⊆ PSPACE by binary counting with reusable workspace, and compose the existing BQP ⊆ PP theorem. This is a plan, not a completed formalization.
+
 ## Verification and building
 
 See each project's README for commands and the scope of its verification. For this workspace, **run all Lean compilation on Sherlock**, inside a Slurm compute allocation. Source-manifest checks use Python and do not invoke Lean.
