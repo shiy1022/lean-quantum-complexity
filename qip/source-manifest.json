@@ -10,6 +10,7 @@
     "QIP.Audit.Arithmetic",
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
+    "QIP.Audit.Dilation",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Registers",
@@ -59,6 +60,13 @@
       "sha256": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
       "imports": [
         "Quantum.Kraus"
+      ]
+    },
+    "QIP.Audit.Dilation": {
+      "path": "QIP/Audit/Dilation.lean",
+      "sha256": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
+      "imports": [
+        "Quantum.Dilation"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -164,6 +172,13 @@
       "sha256": "7471cb9fcbb6a524d734e253465759045e543f85aab33c1527b505126bf47c11",
       "imports": [
         "Quantum.ChannelTensor"
+      ]
+    },
+    "Quantum.Dilation": {
+      "path": "Quantum/Dilation.lean",
+      "sha256": "f0a76b3a359e284df015bf43648b394ec96f6400faf06cffe324b12a7611c46a",
+      "imports": [
+        "Quantum.Kraus"
       ]
     },
     "Quantum.HilbertBridge": {
