@@ -3,17 +3,18 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "00b054920e7a4ad071bd16204915a304be3bc3ad",
-  "seconds": 117.5,
+  "git_head": "3efa3d9220bc95f9c5ed0ca550b6fc5a9a7578f1",
+  "seconds": 108.9,
   "source_sha256": {
     "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
     "Audit/Counting.lean": "9a1b3a65e5dafe2622d4659e10574f17983e9a3391f7a243c94eee95d0d1ff4c",
-    "Audit/Machines.lean": "56b61bcd5e1a4a767c496538761d4936fe3936edccf8c2a334b7ee321f01d1e4",
+    "Audit/Machines.lean": "71fe4e6a0407a65b77e6f159c29153b90705f9a8c245d56bb2f2ef350ce5c31e",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Audit/TimeToSpace.lean": "b8b57aed9ae526fecc7e81b38f0cc92620e374c61d6fe7823ea0a0cccf3520e5",
     "Count/Enumeration.lean": "e126946e54adfefbf4820bd9aeb54207101e400fa39660d2fa560b3bea05bd75",
     "Count/FixedBits.lean": "aa88e8ad82d7e808dc5a85a1ae68564cd89f24b74cf0ab559130739d05099f00",
+    "Machine/CheckerCall.lean": "78930a02390c50dc1ccff0c2476d79f002602ed597d77f8ea984c3a6508f2ee8",
     "Machine/Host.lean": "2962dfa5706d7ca28219238e7182cc83b87631ac26c78525d802055548be9329",
     "Machine/Increment.lean": "ec515e64ad18376b42aeeb35daad2d9a542b7dba9b4f2f871ff2fcfcb2e96baf",
     "Machine/Loop.lean": "12f7428e76efdc048a1399b0c96546bed493d6dd86454ef59d3814d2b00cb79e",
@@ -202,6 +203,27 @@
         "propext"
       ],
       "ShiPPPSPACE.scan_seg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.stepAux_tr": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.step_emb": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iterate_emb": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iterate_emb_halt": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.seg_emb": [
         "Classical.choice",
         "Quot.sound",
         "propext"

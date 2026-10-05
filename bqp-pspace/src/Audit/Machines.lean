@@ -1,5 +1,6 @@
 import Machine.Increment
 import Machine.MajorityTest
+import Machine.CheckerCall
 
 /-! # Fresh-import audit for wrapper machine routines (S07–S11) -/
 
@@ -28,3 +29,8 @@ example (m : ℕ) (l : List Bool) (hl : l.length = m + 1) :
 example : ShiPPPSPACE.answer (ShiPPPSPACE.scanAll (false, false, false) [false, true]) = true := rfl
 example : ShiPPPSPACE.answer (ShiPPPSPACE.scanAll (false, false, false) [true, false, true]) = true := rfl
 example : ShiPPPSPACE.answer (ShiPPPSPACE.scanAll (false, false, false) [false, true, false]) = false := rfl
+#print axioms ShiPPPSPACE.stepAux_tr
+#print axioms ShiPPPSPACE.step_emb
+#print axioms ShiPPPSPACE.iterate_emb
+#print axioms ShiPPPSPACE.iterate_emb_halt
+#print axioms ShiPPPSPACE.seg_emb
