@@ -32,7 +32,7 @@ AUDIT_DIR = SRC / 'QIP' / 'Audit'
 ALLOWED = {'propext', 'Classical.choice', 'Quot.sound'}
 LEAN_VERSION = '4.33.1'
 MATHLIB_REV = '0df444a360eaa60ab8c11dca51a86af692955474'
-REPORT = re.compile(r"'([^']+)' (?:depends on axioms: \[([^\]]*)\]|does not depend on any axioms)")
+REPORT = re.compile(r"'(\S+?)' (?:depends on axioms: \[([^\]]*)\]|does not depend on any axioms)")
 REQUEST = re.compile(r'^\s*#print\s+axioms\s+(\S+)', re.M)
 FORBIDDEN_SOURCE = re.compile(r'\b(sorry|admit|proof_wanted)\b|^\s*axiom\s', re.M)
 
@@ -87,6 +87,8 @@ def self_test():
     lake = "info: src/X.lean:3:0: 'A' depends on axioms: [propext]\n" \
            "info: src/X.lean:4:0: 'B' does not depend on any axioms\n"
     assert check_reports(src, lake)[1] == []
+    # Primed names end in an apostrophe inside the quotes.
+    assert check_reports("#print axioms f'\n", "'f'' depends on axioms: [propext]\n")[1] == []
     assert FORBIDDEN_SOURCE.search('theorem t : True := by\n  sorry\n')
     assert FORBIDDEN_SOURCE.search('axiom bad : False\n')
     assert not FORBIDDEN_SOURCE.search(strip_comments('-- a sorry in a comment\n'))

@@ -8,6 +8,7 @@
   ],
   "targets": [
     "QIP.Audit.Arithmetic",
+    "QIP.Audit.Positive",
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
     "QIP.Audit.Syntax"
@@ -40,6 +41,13 @@
       "sha256": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
       "imports": [
         "QIP.Arithmetic.Repetition"
+      ]
+    },
+    "QIP.Audit.Positive": {
+      "path": "QIP/Audit/Positive.lean",
+      "sha256": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
+      "imports": [
+        "Quantum.HilbertBridge"
       ]
     },
     "QIP.Audit.Registers": {
@@ -98,11 +106,25 @@
         "Definitions.Def_ShiShallow_Core"
       ]
     },
+    "Quantum.HilbertBridge": {
+      "path": "Quantum/HilbertBridge.lean",
+      "sha256": "f4af74826471586e5cc74ce9c5fa9cb56276084a6e2cd987f3dc99289fdec37f",
+      "imports": [
+        "Quantum.Positive"
+      ]
+    },
     "Quantum.MathlibImports": {
       "path": "Quantum/MathlibImports.lean",
       "sha256": "79abe16f90ca182da2fb7556a1126b89fb8b65cc283ed716f691d55b78801408",
       "imports": [
         "Mathlib"
+      ]
+    },
+    "Quantum.Positive": {
+      "path": "Quantum/Positive.lean",
+      "sha256": "df8f5e3088f27d8bbffc275f830c2922c42bf8a0cf3a7e1b6b4ca921e31468c5",
+      "imports": [
+        "Quantum.Reindex"
       ]
     },
     "Quantum.Registers": {
