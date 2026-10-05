@@ -91,9 +91,9 @@
     },
     "QIP.Audit.GateMatrix": {
       "path": "QIP/Audit/GateMatrix.lean",
-      "sha256": "66be250272b197cd442266f5c8d947140627cc8f953c968db7ed4e208925abc2",
+      "sha256": "cda472ccc0ca2b22e712abd7ddb6a7e286152541ecb055c558648154bdd8116f",
       "imports": [
-        "QIP.GateMatrix"
+        "QIP.CircuitSemantics"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -157,6 +157,13 @@
       "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
       "imports": [
         "Quantum.UhlmannGeneral"
+      ]
+    },
+    "QIP.CircuitSemantics": {
+      "path": "QIP/CircuitSemantics.lean",
+      "sha256": "63fb42d893a3b5ecb948103b8b8d08723ab65d859b2f8230ffb9dce3c86fa8cb",
+      "imports": [
+        "QIP.GateMatrix"
       ]
     },
     "QIP.Decode": {
