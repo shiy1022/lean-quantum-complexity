@@ -3,12 +3,12 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "79563fd30e8268ae062d29730d5033c80bd8759d",
-  "seconds": 118.0,
+  "git_head": "00b054920e7a4ad071bd16204915a304be3bc3ad",
+  "seconds": 117.5,
   "source_sha256": {
     "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
     "Audit/Counting.lean": "9a1b3a65e5dafe2622d4659e10574f17983e9a3391f7a243c94eee95d0d1ff4c",
-    "Audit/Machines.lean": "58d9520c907131ac75552c351747bbb868b4abe9ef8f60f9fb41ccdfdbfddb5b",
+    "Audit/Machines.lean": "56b61bcd5e1a4a767c496538761d4936fe3936edccf8c2a334b7ee321f01d1e4",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Audit/TimeToSpace.lean": "b8b57aed9ae526fecc7e81b38f0cc92620e374c61d6fe7823ea0a0cccf3520e5",
@@ -17,6 +17,7 @@
     "Machine/Host.lean": "2962dfa5706d7ca28219238e7182cc83b87631ac26c78525d802055548be9329",
     "Machine/Increment.lean": "ec515e64ad18376b42aeeb35daad2d9a542b7dba9b4f2f871ff2fcfcb2e96baf",
     "Machine/Loop.lean": "12f7428e76efdc048a1399b0c96546bed493d6dd86454ef59d3814d2b00cb79e",
+    "Machine/MajorityTest.lean": "7022f69d9b519bba45db2bbfc390df1a31723dc9d69f6fa21d64d5378546593a",
     "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
     "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
     "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
@@ -191,6 +192,16 @@
         "propext"
       ],
       "ShiPPPSPACE.inc_seg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.answer_scanAll": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.scan_seg": [
         "Classical.choice",
         "Quot.sound",
         "propext"
