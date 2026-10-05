@@ -1,0 +1,37 @@
+{
+  "task": "Q00",
+  "recorded": "2026-10-05",
+  "repository": "https://github.com/shiy1022/lean-quantum-complexity",
+  "git_head": "512c9766b5ce062d4d7f27e75fb1c99461c74024",
+  "git_head_note": "origin/main at execution start: the plan commit (docs: plan QIP three-message formalization) on top of the plan's inspected baseline 1a076aa72e73b0766baebbf9503faa3f87751306. No source outside plans/ changed between them.",
+  "github_state": {"branches": ["main"], "open_pull_requests": 0},
+  "pre_existing_untracked": ["bqp-pp/lake-manifest.json (left untouched)"],
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "packages_dir": "../bqp-pp/.lake/packages (shared, prebuilt Mathlib; no new toolchain or dependency installed)",
+  "module_prefixes": ["Quantum.*", "QIP.*"],
+  "module_prefix_note": "Chosen to avoid the Space.*, Machine.*, Count.* and Audit.* modules of bqp-pspace. qip imports only the bqp-pp source root, never bqp-pspace, so no module name has two definitions.",
+  "baseline_closure": {
+    "source_root": "../bqp-pp/src (read-only)",
+    "lake_roots": ["Definitions.Def_PvsNP", "Definitions.Def_ShiShallow_Core"],
+    "imported_by_qip_sources": ["Definitions.Def_ShiShallow_Core"]
+  },
+  "existing_projects_checked": {
+    "bqp-pp": "306 source hashes and dependency closure verified by scripts/manifest.py check_existing_projects (bqp-pp/scripts/verify.py itself fails on Windows only because it compares backslash paths with the manifest's forward-slash paths; with as_posix normalisation it verifies all 306 hashes)",
+    "bqp-pspace": "bqp-pspace/scripts/manifest.py --check: Manifest verified"
+  },
+  "accepted_evidence_reused": {
+    "ShiBQP.bqp_subset_pp": "bqp-pp, clean Sherlock rebuild (bqp-pp/verification); not used by qip yet",
+    "ShiSpace.pp_subset_pspace, ShiBQP.bqp_subset_pspace": "bqp-pspace, local Windows check, not Sherlock; not used by qip",
+    "ShiShallow gate semantics": "Definitions/Def_ShiShallow_Core.lean, definitions only; reused for gate meanings (Gate.toInstr?)"
+  },
+  "external_pending": {
+    "RV01 reversible simulation": "not inspected in this session and not used; no required task depends on it"
+  },
+  "compilation_policy": "The plan requires Sherlock. Sherlock login needs password/Kerberos + Duo, which the agent cannot complete, so on 2026-10-05 the user authorised limited local builds (one Lean thread, focused modules). All Lean evidence in qip/verification is therefore a LOCAL WINDOWS WORKSTATION check, not a Sherlock clean build.",
+  "smoke_test": {
+    "module": "QIP.Smoke",
+    "audit": "QIP/Audit/Smoke.lean",
+    "result": "'ShiQIP.smoke_two_mul' depends on axioms: [propext, Classical.choice, Quot.sound] (local)"
+  }
+}

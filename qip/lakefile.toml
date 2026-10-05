@@ -1,0 +1,29 @@
+name = "shi_qip"
+version = "0.1.0"
+defaultTargets = ["ShiQIP"]
+# Share the pinned dependency checkout with bqp-pp instead of cloning Mathlib again.
+packagesDir = "../bqp-pp/.lake/packages"
+
+[leanOptions]
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+# A selected closure of the published BQP-to-PP source graph, consumed read-only. Every root
+# is a module of bqp-pp/source-manifest.json; outputs go to this project's .lake.
+[[lean_lib]]
+name = "Baseline"
+srcDir = "../bqp-pp/src"
+roots = [
+  "Definitions.Def_PvsNP",
+  "Definitions.Def_ShiShallow_Core",
+]
+
+# New QIP development. Generic mathematics under Quantum.*, protocols under QIP.*.
+[[lean_lib]]
+name = "ShiQIP"
+srcDir = "src"
+globs = ["Quantum.+", "QIP.+"]
