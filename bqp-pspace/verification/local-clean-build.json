@@ -7,9 +7,9 @@
   "git_head_of_sources": "96af90d10910edc0bcfecd761e410feb648fff92",
   "seconds": 845,
   "exit_code": 0,
-  "baseline_modules_rebuilt": 238,
+  "baseline_modules_rebuilt": 306,
   "baseline_modules_total": 306,
-  "new_modules_rebuilt": 21,
+  "new_modules_rebuilt": 28,
   "new_modules_total": 28,
   "reused_project_modules": 0,
   "new_module_olean_sha256": {
