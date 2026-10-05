@@ -3,13 +3,16 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "790f31ebc596eab0eac3fc48345cc98098129768",
-  "seconds": 77.5,
+  "git_head": "2e3da52d5b7aa6ff603b41b8d156a3ad3ac914ce",
+  "seconds": 97.0,
   "source_sha256": {
     "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
+    "Audit/Counting.lean": "9a1b3a65e5dafe2622d4659e10574f17983e9a3391f7a243c94eee95d0d1ff4c",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Audit/TimeToSpace.lean": "b8b57aed9ae526fecc7e81b38f0cc92620e374c61d6fe7823ea0a0cccf3520e5",
+    "Count/Enumeration.lean": "e126946e54adfefbf4820bd9aeb54207101e400fa39660d2fa560b3bea05bd75",
+    "Count/FixedBits.lean": "aa88e8ad82d7e808dc5a85a1ae68564cd89f24b74cf0ab559130739d05099f00",
     "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
     "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
     "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
@@ -62,6 +65,65 @@
         "propext"
       ],
       "ShiSpace.exists_transient_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Audit/Counting.lean": {
+      "ShiPPPSPACE.val_lt": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.val_word": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.word_val": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.val_inc": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.inc_overflow_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.inc_word": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.word_zero": [
+        "propext"
+      ],
+      "ShiPPPSPACE.prefixCount_succ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.prefixCount_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.prefixCount_full": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.prefixCount_lt": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.pp_condition_iff": [
         "Classical.choice",
         "Quot.sound",
         "propext"
