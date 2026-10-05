@@ -3,13 +3,99 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "fb7f2020deb1a4980b8d4b7f6b9583310bdbf5ac",
-  "seconds": 19.4,
+  "git_head": "343ba9a45479d3484b092619f540b0bdcee99725",
+  "seconds": 31.7,
   "source_sha256": {
+    "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
-    "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3"
+    "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
+    "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
+    "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
+    "Space/Run.lean": "f85facfd297a5b7669c69b14cfb0900bd70639bd7371678422bb6fa8968bc969"
   },
   "axiom_reports": {
+    "Audit/Run.lean": {
+      "ShiSpace.iterate_after_halt": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.iterate_prefix": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.halted_time_unique": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.halted_unique": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.forall_reachable_of_halts": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.spaceBoundedOn_of_outputs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.le_steps_of_outputs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.stepAux_stk_of_not_writes": [
+        "propext"
+      ],
+      "ShiSpace.iterate_stk_of_not_writes": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.size_iterate_of_frame": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.trans": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.iter": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.single": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.forall_of_halted": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.of_frame": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.not_terminal_before": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.iterate_lift_before_terminal": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiSpace.Seg.lift_terminal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
     "Audit/Space.lean": {
       "ShiSpace.cfgSpace_initList": [
         "Classical.choice",
