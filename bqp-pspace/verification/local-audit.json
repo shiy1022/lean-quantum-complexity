@@ -3,16 +3,19 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "2e3da52d5b7aa6ff603b41b8d156a3ad3ac914ce",
-  "seconds": 97.0,
+  "git_head": "1ae50bf0d2bd0b8053082120ab93a52253b6798b",
+  "seconds": 87.9,
   "source_sha256": {
     "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
     "Audit/Counting.lean": "9a1b3a65e5dafe2622d4659e10574f17983e9a3391f7a243c94eee95d0d1ff4c",
+    "Audit/Machines.lean": "1d8b3b0995aaa6ea8cb5d2db32990d68af0efe6a97a9c6dfe58abe3abfdb57a4",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Audit/TimeToSpace.lean": "b8b57aed9ae526fecc7e81b38f0cc92620e374c61d6fe7823ea0a0cccf3520e5",
     "Count/Enumeration.lean": "e126946e54adfefbf4820bd9aeb54207101e400fa39660d2fa560b3bea05bd75",
     "Count/FixedBits.lean": "aa88e8ad82d7e808dc5a85a1ae68564cd89f24b74cf0ab559130739d05099f00",
+    "Machine/Host.lean": "2962dfa5706d7ca28219238e7182cc83b87631ac26c78525d802055548be9329",
+    "Machine/Loop.lean": "12f7428e76efdc048a1399b0c96546bed493d6dd86454ef59d3814d2b00cb79e",
     "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
     "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
     "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
@@ -124,6 +127,56 @@
         "propext"
       ],
       "ShiPPPSPACE.pp_condition_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Audit/Machines.lean": {
+      "ShiPPPSPACE.update_join_inr": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.update_join_inl": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.size_update": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.size_join": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loopOut_cons": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loopOut_apply_ne": [],
+      "ShiPPPSPACE.loopOut_src": [],
+      "ShiPPPSPACE.step_loop_cons": [
+        "propext"
+      ],
+      "ShiPPPSPACE.step_loop_nil": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loop_run": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.size_loopOut": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loop_seg": [
         "Classical.choice",
         "Quot.sound",
         "propext"
