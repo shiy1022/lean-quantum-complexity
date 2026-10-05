@@ -330,4 +330,4 @@ roots = [
 [[lean_lib]]
 name = "ShiSpace"
 srcDir = "src"
-globs = ["Space.+", "Count.+", "Machine.+", "Audit.+"]
+globs = ["Space.+", "Count.+", "Machine.+", "PPToPSPACE", "BQPToPSPACE", "Audit.+"]

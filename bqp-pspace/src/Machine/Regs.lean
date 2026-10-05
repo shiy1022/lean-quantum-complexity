@@ -174,8 +174,7 @@ theorem loopOut_two (src : Ext) (i₁ i₂ : κ ⊕ Ext) (f₁ : Bool → HG Γ 
       · subst hs; rw [Function.update_self]; exact loopOut_src hav _ _
       · rw [Function.update_of_ne hs]
         exact loopOut_apply_ne j (by
-          intro t ht; simp only [List.mem_cons, List.mem_singleton, List.not_mem_nil,
-            or_false] at ht
+          intro t ht; simp only [List.mem_cons, List.not_mem_nil, or_false] at ht
           rcases ht with rfl | rfl
           · exact Ne.symm hj₁
           · exact Ne.symm hj₂) hs _ _

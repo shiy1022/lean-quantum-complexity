@@ -3,22 +3,31 @@
   "host": "Windows-10-10.0.19045-SP0",
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "git_head": "3efa3d9220bc95f9c5ed0ca550b6fc5a9a7578f1",
-  "seconds": 108.9,
+  "git_head": "54769429d6178c86cbd84c5f64e493824ee87a84",
+  "seconds": 226.2,
   "source_sha256": {
     "Audit/Alphabet.lean": "61203d79d6c49edaf6e0dd558f9c6ab097cec93b3ee52f60f376eba3f26defa5",
     "Audit/Counting.lean": "9a1b3a65e5dafe2622d4659e10574f17983e9a3391f7a243c94eee95d0d1ff4c",
+    "Audit/Final.lean": "61c5c7333cf1462d76e5eb6a9bbaa617049847837586260a641fa700bf381969",
     "Audit/Machines.lean": "71fe4e6a0407a65b77e6f159c29153b90705f9a8c245d56bb2f2ef350ce5c31e",
     "Audit/Run.lean": "5c84c48b616152f5e1949bd880c2f881eab429ff1202d16d784ad8dc059f5120",
     "Audit/Space.lean": "ee937b9030bf7edf90f68ad9cba90c9adeea55aa3428e9496bf00b281d261a4b",
     "Audit/TimeToSpace.lean": "b8b57aed9ae526fecc7e81b38f0cc92620e374c61d6fe7823ea0a0cccf3520e5",
+    "BQPToPSPACE.lean": "e489e897ba8936125a115540b88947906bb8cc768ace4b446685df7269bcd636",
     "Count/Enumeration.lean": "e126946e54adfefbf4820bd9aeb54207101e400fa39660d2fa560b3bea05bd75",
     "Count/FixedBits.lean": "aa88e8ad82d7e808dc5a85a1ae68564cd89f24b74cf0ab559130739d05099f00",
     "Machine/CheckerCall.lean": "78930a02390c50dc1ccff0c2476d79f002602ed597d77f8ea984c3a6508f2ee8",
+    "Machine/EnumBasics.lean": "ede80d746351ae0823bbedf2d744997a969db0d94e1bd5153b00ff68296c5462",
+    "Machine/Enumerator.lean": "5468506f851f20f702ac49acde4b0413a77c705ca0e67311bd665b049663fbc4",
+    "Machine/EnumFinal.lean": "9ae7d53f0759c0f4cc3d58a01070b4199e5baca92c7cfaf4a129f3c4bedf9bc7",
+    "Machine/EnumInit.lean": "37b67f070e06ee40e1698ab10973bd2670786262de991c55c5e703b45357ff1f",
+    "Machine/EnumLoop.lean": "d4c2c89aa10a73eb31b8a1f800a7befead238d852269bcfb053b11a235036db1",
     "Machine/Host.lean": "2962dfa5706d7ca28219238e7182cc83b87631ac26c78525d802055548be9329",
     "Machine/Increment.lean": "ec515e64ad18376b42aeeb35daad2d9a542b7dba9b4f2f871ff2fcfcb2e96baf",
     "Machine/Loop.lean": "12f7428e76efdc048a1399b0c96546bed493d6dd86454ef59d3814d2b00cb79e",
     "Machine/MajorityTest.lean": "7022f69d9b519bba45db2bbfc390df1a31723dc9d69f6fa21d64d5378546593a",
+    "Machine/Regs.lean": "c3b3f87bf0b0be4b7a9c27e930f97bf89fdd082b498f77c39a85334bcb5f3ffc",
+    "PPToPSPACE.lean": "a2070d82366789ecd90aee4a6c4dafdc11605b263c80a1d8881d489aa7a240b9",
     "Space/Frame.lean": "acf8be0be9051df9c8ae7a92b6c4acc83dc67a4a8aad512a0cf00dfb1b1b6441",
     "Space/Model.lean": "b80b11082fcd9e5af578a26fa03f0a2c29b0ff14ae65c1c16f7ce45205de65f3",
     "Space/PeakComposition.lean": "c3fbca930630407f4519edf9481a9f3c21ca2c49059823d84f743c897f10c143",
@@ -130,6 +139,132 @@
         "propext"
       ],
       "ShiPPPSPACE.pp_condition_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "Audit/Final.lean": {
+      "ShiSpace.pp_subset_pspace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiBQP.bqp_subset_pspace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.polySpaceDecider_ppχ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.decider": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.full_run": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.head_step": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.head_upto": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.eval_boundPoly": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.init_seg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.init_round": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.init_rounds": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_prep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_check": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_ans": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_incC": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_incW": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.iter_seg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.final_seg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.initList_machine": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.haltList_machine": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.initList_stk_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.haltList_pop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loopOut_one": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loopOut_two": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiPPPSPACE.loopOut_clear": [],
+      "ShiPPPSPACE.segE_loop": [
         "Classical.choice",
         "Quot.sound",
         "propext"
