@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "369249a80f98f609d38093fc42397f5e4566929c",
-  "seconds": 290.1,
+  "git_head": "54f913f88b5da695db90ec5db7b5f76b1dec6905",
+  "seconds": 298.8,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -22,6 +22,7 @@
     "QIP/Audit/Smoke.lean": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
     "QIP/Audit/State.lean": "a88113e135fdf91dae645e9d2355b14cf76c249ea542f2bdaed7f79befd6e963",
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
+    "QIP/Audit/Uhlmann.lean": "fc1b97fc76a87d0721ac9addab2d1a9f78a2a356444e4c9d4eea07b75b29c356",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
@@ -44,7 +45,8 @@
     "Quantum/Purification.lean": "9d54174b4b341dc05ed2a7b4238bf2daea6bd0f1633b4eb682ccb1ece08d0d5a",
     "Quantum/Registers.lean": "101d227567609b35e76383d243561cbdbbc0ad8436e6fb59f66ea8c2adb91fe6",
     "Quantum/Reindex.lean": "ffbb2fdd8d87479551819248e8728dd9663ea4045af4b39db8e5ab450482c608",
-    "Quantum/State.lean": "d5b1863dee90992d71ae46fa066e457c9a63e312e8e3d4ddd62fcda96149aaa2"
+    "Quantum/State.lean": "d5b1863dee90992d71ae46fa066e457c9a63e312e8e3d4ddd62fcda96149aaa2",
+    "Quantum/Uhlmann.lean": "8c2915c24976856f5a4c4bdc0099e3b6699d22d9844a7a2050ce09b65412fefd"
   },
   "axiom_reports": {
     "QIP/Audit/Arithmetic.lean": {
@@ -1480,6 +1482,28 @@
         "propext"
       ],
       "ShiQIP.decode_proper_prefix": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Uhlmann.lean": {
+      "ShiQuantum.star_matToVec_dotProduct": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.uhlmann_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.uhlmann_attained": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_eq_max_overlap": [
+        "Classical.choice",
         "Quot.sound",
         "propext"
       ]

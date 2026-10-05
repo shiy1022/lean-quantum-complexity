@@ -18,7 +18,8 @@
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
-    "QIP.Audit.Syntax"
+    "QIP.Audit.Syntax",
+    "QIP.Audit.Uhlmann"
   ],
   "modules": {
     "QIP.Arithmetic.Gap": {
@@ -125,6 +126,13 @@
       "sha256": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
       "imports": [
         "QIP.Decode"
+      ]
+    },
+    "QIP.Audit.Uhlmann": {
+      "path": "QIP/Audit/Uhlmann.lean",
+      "sha256": "fc1b97fc76a87d0721ac9addab2d1a9f78a2a356444e4c9d4eea07b75b29c356",
+      "imports": [
+        "Quantum.Uhlmann"
       ]
     },
     "QIP.Decode": {
@@ -287,6 +295,13 @@
       "sha256": "d5b1863dee90992d71ae46fa066e457c9a63e312e8e3d4ddd62fcda96149aaa2",
       "imports": [
         "Quantum.HilbertBridge"
+      ]
+    },
+    "Quantum.Uhlmann": {
+      "path": "Quantum/Uhlmann.lean",
+      "sha256": "8c2915c24976856f5a4c4bdc0099e3b6699d22d9844a7a2050ce09b65412fefd",
+      "imports": [
+        "Quantum.Fidelity"
       ]
     }
   },
