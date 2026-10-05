@@ -8,6 +8,7 @@
   ],
   "targets": [
     "QIP.Audit.Arithmetic",
+    "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
@@ -42,6 +43,13 @@
       "sha256": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
       "imports": [
         "QIP.Arithmetic.Repetition"
+      ]
+    },
+    "QIP.Audit.PartialTrace": {
+      "path": "QIP/Audit/PartialTrace.lean",
+      "sha256": "b146b97437e9e43512d275c7f164dbe9d0e9174c8a80eb63b97f536e3b38b924",
+      "imports": [
+        "Quantum.PartialTrace"
       ]
     },
     "QIP.Audit.Positive": {
@@ -133,6 +141,13 @@
       "sha256": "772ae4efdd7ce258582ef837dc0d5c40808103d7febba802ec1fd34ca820c5c7",
       "imports": [
         "Quantum.State"
+      ]
+    },
+    "Quantum.PartialTrace": {
+      "path": "Quantum/PartialTrace.lean",
+      "sha256": "01b2c86d60e5634524ec97469e47ec672fa863ce2639cefc82d6b942b752b44c",
+      "imports": [
+        "Quantum.Measurement"
       ]
     },
     "Quantum.Positive": {
