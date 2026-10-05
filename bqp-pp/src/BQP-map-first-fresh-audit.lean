@@ -1,0 +1,37 @@
+import «BQP-map-first-polytime»
+
+#print axioms ShiTMHaltRouting.run_to_some
+#print axioms BQPMapFirst.delegated_run
+#print axioms BQPMapFirst.stacks_source
+#print axioms BQPMapFirst.stacks_extra
+#print axioms BQPMapFirst.update_input
+#print axioms BQPMapFirst.update_output
+#print axioms BQPMapFirst.update_witness
+#print axioms BQPMapFirst.update_buffer
+#print axioms BQPMapFirst.update_source
+#print axioms BQPMapFirst.scan_inl
+#print axioms BQPMapFirst.scan_inr
+#print axioms BQPMapFirst.scan_nil
+#print axioms BQPMapFirst.restoreInput_cons
+#print axioms BQPMapFirst.restoreInput_nil
+#print axioms BQPMapFirst.restoreWitness_cons
+#print axioms BQPMapFirst.restoreWitness_nil
+#print axioms BQPMapFirst.reverseResult_cons
+#print axioms BQPMapFirst.reverseResult_nil
+#print axioms BQPMapFirst.emitResult_cons
+#print axioms BQPMapFirst.emitResult_nil
+#print axioms BQPMapFirst.scan_left_run
+#print axioms BQPMapFirst.scan_right_run
+#print axioms BQPMapFirst.restoreInput_run
+#print axioms BQPMapFirst.restoreWitness_run
+#print axioms BQPMapFirst.reverseResult_run
+#print axioms BQPMapFirst.emitResult_run
+#print axioms BQPMapFirst.iterate_chain
+#print axioms BQPMapFirst.init_eq
+#print axioms BQPMapFirst.input_prefix
+#print axioms BQPMapFirst.final_stacks
+#print axioms BQPMapFirst.output_suffix
+#print axioms BQPMapFirst.map_first_polyTime
+#print axioms BQPMapFirst.outputs
+#print axioms BQPMapFirst.map_first_length_bound
+#print axioms BQPMapFirst.checker_preprocess

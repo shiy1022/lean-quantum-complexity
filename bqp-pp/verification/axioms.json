@@ -1,0 +1,2436 @@
+[
+  {
+    "declaration": "BQPPaths.reindex_amplitude",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.forward_amplitude",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.padded_input_amplitude",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.fiber_norm",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.endpointCount_le",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.endpoint_coefficient_bound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.amplitude_pair_count",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.circuit_acceptance_pair_counts",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-acceptance-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.backwardWitness_length",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.forwardRun_unique",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.phaseRun_unique",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.canonical_amplitude",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.canonical_acceptance",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.count_prefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalization-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.count_pairedPrefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalization-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.count_pairedPrefix_double",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalization-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.pairedPrefix_representation",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalization-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.normalized_long_majority",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalized-threshold-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.family_shifted_budget",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-normalized-threshold-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.machine",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.delegated_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.embedded_halt",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.delegated_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.long_prefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-prefix-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.drain_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-prefix-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.short_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.long_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPShortMachine.shortChecker_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-short-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.hadamardCount_reverse",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-recursions-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.canonical_witness_prefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-recursions-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.canonical_reversal",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-reversal-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.nonHadamard_phase_cancel",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-adjoint-fresh-audit"
+  },
+  {
+    "declaration": "BQPPaths.canonical_adjoint_phase",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-canonical-adjoint-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.checker_nonempty",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-data-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.checker",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-data-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.compile_count",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-data-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.block_transfer",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-sweeps-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.forward_sweep",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-sweeps-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.adjoint_sweep",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-sweeps-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.input_sweeps",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-sweeps-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.eval_compile_split",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-evaluation-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.phaseDifference_val_sub",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-count-bridge-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.compiled_pair_counts",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-count-bridge-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.circuitCount_checker",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-count-bridge-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_count",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-counting-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_acceptance",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-counting-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.familyH_polyBound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-majority-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.bqp_counting_reduction",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-majority-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.patchedRelation_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-majority-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.compile_length",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.encoded_compile_length",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-program-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.machine",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.delegated_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.scan_left",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-steps-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.second_right",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-steps-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.restore_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-steps-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.rejectAux_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-steps-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.scan_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-runs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.restore_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-runs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.reject_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-runs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.init_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-runs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.embedded_halt",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-runs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.good_prefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-inputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.empty_witness",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-inputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.singleton_witness",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-inputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.unequal_witness",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-inputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.good_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPPrefixMachine.pairedPrefix_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.normalized_opcode_checker_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.normalized_family_factorization",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-prefix-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_gate_count_bound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-preprocess-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_encoded_length_bound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-preprocess-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_encoded_polyBound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-preprocess-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.familyPreprocess_length",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-preprocess-size-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.familyPreprocess_polyBound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-preprocess-size-fresh-audit"
+  },
+  {
+    "declaration": "ShiTMHaltRouting.run_to_some",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.delegated_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.stacks_source",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.stacks_extra",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.update_input",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.update_output",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.update_witness",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.update_buffer",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.update_source",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.scan_inl",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.scan_inr",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.scan_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreInput_cons",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreInput_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreWitness_cons",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreWitness_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.reverseResult_cons",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.reverseResult_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.emitResult_cons",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.emitResult_nil",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.scan_left_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.scan_right_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreInput_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.restoreWitness_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.reverseResult_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.emitResult_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.iterate_chain",
+    "axioms": [],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.init_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.input_prefix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.final_stacks",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.output_suffix",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.map_first_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.map_first_length_bound",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPMapFirst.checker_preprocess",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.familyPreprocess_polyTime_of_compiler",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.normalized_family_polyTime_of_compiler",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-map-first-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeEmission.stepAux_emit",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryBlock.block_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryBlock.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPNestedBlock.block_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryCompare.compare_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryParser.parse_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPStackEmbedding.extend_update",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPStackEmbedding.stepAux_stmt",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPStackEmbedding.run_frame",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPStackEmbedding.run_iter",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOneGate.parser_stacks",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOneGate.emitter_stacks",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOneGate.parser_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOneGate.emitter_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOneGate.parse_emit_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emitter-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeEmission.encode_append",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeEmission.encode_length",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeEmission.stepAux_emit",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryBlock.block_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnaryBlock.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.checker_encode_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.wrap_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.wrap_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPNestedBlock.block_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.cnot_lt_emit",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.cnot_gt_emit",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-emission-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnot.compare_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnot.less_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnot.greater_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnot.from_indices",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnotParser.parse_pair",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnotParser.compiler_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnotParser.parse_emit_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCnotParser.parse_emit_cost_le",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPGateDispatch.tag_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPGateDispatch.one_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPGateDispatch.two_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPGateDispatch.tagged_one_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPGateDispatch.tagged_two_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounted.delegate",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounted.header_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounted.repeat_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounted.counted_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPBitTransfer.transfer_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-gate-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.instruction_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.instructionCost_le",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.archive_eq",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.encode_flatten",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.adjoint_encode_forward_order",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.adjoint_archive_drain",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.adjoint_archive_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPLayer.layer_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPLayer.cost_le",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.circuit_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.cost_le",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.emitted_forward",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchive.drain_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-archive-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchive.delegate",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-archive-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchive.body_archive_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-archive-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPBoolTransfer.transfer_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-archive-machine-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchiveGate.gate_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchiveGate.emitted_length_le",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchiveGate.cost_le",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchivePass.layer_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchivePass.circuit_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchivePass.emitted_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPArchivePass.cost_le",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.adjoint_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.archive_length_le_cost",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.cost_le",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-adjoint-pass-fresh-audit"
+  },
+  {
+    "declaration": "BQPBitBlocks.cons_step",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-bit-blocks-fresh-audit"
+  },
+  {
+    "declaration": "BQPBitBlocks.render_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-bit-blocks-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.load_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-bit-blocks-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.endpoint_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-bit-blocks-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.return_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-bit-blocks-integration-fresh-audit"
+  },
+  {
+    "declaration": "BQPCopyBits.copy_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-copy-bits-fresh-audit"
+  },
+  {
+    "declaration": "BQPCopyBits.restore_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-copy-bits-fresh-audit"
+  },
+  {
+    "declaration": "BQPCopyBits.output_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-copy-bits-fresh-audit"
+  },
+  {
+    "declaration": "BQPCopyBits.retain_copy_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-copy-bits-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.initial_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.final_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPCircuitPass.forward_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.initial_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.final_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPAdjointPass.adjoint_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-circuit-pass-outputs-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.two_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-skip-headers-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.two_time_le",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-skip-headers-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-skip-headers-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-skip-headers-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.two_unary",
+    "axioms": [],
+    "audit_module": "BQP-skip-headers-fresh-audit"
+  },
+  {
+    "declaration": "BQPTypedPolyTime.comp",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPTypedPolyTime.precompose",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPHeaderField.field_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPHeaderField.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPHeaderField.count_unary",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.one_outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPSkipHeaders.one_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPStringPrimitives.prefix_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPStringPrimitives.rename_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPBitBlocks.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.load_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.endpoint_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.return_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.description_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.circuit_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.forward_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.adjoint_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.anc_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.out_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.output_test_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.padding_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-assembly-components-fresh-audit"
+  },
+  {
+    "declaration": "BQPJoint.outputs",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPJoint.polyTimeComputable_append",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.padded_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.encoded_family_eq",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.compiler_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.familyPreprocess_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPFamilyPasses.normalized_family_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-family-compiler-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.squareRoot_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-square-root-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeCount.blocks_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeCount.codeCount_forward",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPOpcodeCount.family_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_parameter_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_squareRoot_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.suffixValue_split",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.suffixValue_overflow",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.combinedChecker_overflow",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPCounting.suffixValue_trim",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-router-preparation-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryCompare.borrow_correct",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-binary-compare-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryCompare.compare_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-binary-compare-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryCompare.compare_correct",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-binary-compare-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryAdd.add_correct",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryAdd.add_length",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryAdd.add_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.bits_value",
+    "axioms": [
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.thresholds_value",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.thresholds_length",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryAddPair.pair_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryAddPair.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairDuplicate.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairSwap.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairGeneration.pair_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_threshold_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryComparePair.pair_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPBinaryComparePair.less_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.threshold_compare_correct",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_threshold_checker_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnarySplit.pair_run",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPUnarySplit.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_split_count_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_inner_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPRouterArithmetic.family_suffix_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-arithmetic-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairCodec.decode_encode",
+    "axioms": [
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairCodec.decode_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPPairFanout.pair_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPBoolIte.polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPCheckerBoolean.ite",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.family_witness_pair_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPProgram.longRelation_polyTime",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "BQPFinal.bqp_subset_pp",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  },
+  {
+    "declaration": "ShiBQP.bqp_subset_pp",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "audit_module": "BQP-router-assembly-fresh-audit"
+  }
+]

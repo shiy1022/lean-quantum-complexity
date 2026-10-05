@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+: "${SLURM_JOB_ID:?Run compilation inside a Sherlock Slurm allocation}"
 
 cd "$(dirname "$0")/.."
 

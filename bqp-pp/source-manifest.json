@@ -1,0 +1,2984 @@
+{
+  "targets": [
+    "BQP-counting-fresh-audit",
+    "BQP-fresh-import-audit",
+    "BQP-qma-machinery-audit",
+    "BQP-gate-fresh-audit",
+    "BQP-path-fresh-audit",
+    "BQP-acceptance-fresh-audit",
+    "BQP-canonical-fresh-audit",
+    "BQP-program-fresh-audit",
+    "BQP-normalization-fresh-audit",
+    "BQP-normalized-threshold-fresh-audit",
+    "BQP-short-machine-fresh-audit",
+    "BQP-short-prefix-fresh-audit",
+    "BQP-short-outputs-fresh-audit",
+    "BQP-canonical-recursions-fresh-audit",
+    "BQP-canonical-reversal-fresh-audit",
+    "BQP-canonical-adjoint-fresh-audit",
+    "BQP-program-data-fresh-audit",
+    "BQP-program-sweeps-fresh-audit",
+    "BQP-program-evaluation-fresh-audit",
+    "BQP-program-count-bridge-fresh-audit",
+    "BQP-family-counting-fresh-audit",
+    "BQP-family-majority-fresh-audit",
+    "BQP-program-size-fresh-audit",
+    "BQP-prefix-fresh-audit",
+    "BQP-prefix-steps-fresh-audit",
+    "BQP-prefix-runs-fresh-audit",
+    "BQP-prefix-inputs-fresh-audit",
+    "BQP-prefix-outputs-fresh-audit",
+    "BQP-prefix-integration-fresh-audit",
+    "BQP-family-preprocess-size-fresh-audit",
+    "BQP-map-first-fresh-audit",
+    "BQP-map-first-integration-fresh-audit",
+    "BQP-emitter-machine-fresh-audit",
+    "BQP-emission-fresh-audit",
+    "BQP-gate-machine-fresh-audit",
+    "BQP-circuit-pass-fresh-audit",
+    "BQP-archive-machine-fresh-audit",
+    "BQP-adjoint-pass-fresh-audit",
+    "BQP-bit-blocks-fresh-audit",
+    "BQP-bit-blocks-integration-fresh-audit",
+    "BQP-copy-bits-fresh-audit",
+    "BQP-circuit-pass-outputs-fresh-audit",
+    "BQP-skip-headers-fresh-audit",
+    "BQP-assembly-components-fresh-audit",
+    "BQP-family-compiler-fresh-audit",
+    "BQP-router-square-root-fresh-audit",
+    "BQP-router-preparation-fresh-audit",
+    "BQP-binary-compare-fresh-audit",
+    "BQP-router-arithmetic-fresh-audit",
+    "BQP-router-assembly-fresh-audit"
+  ],
+  "modules": {
+    "BQP-counting-fresh-audit": {
+      "path": "BQP-counting-fresh-audit.lean",
+      "source": "src/BQP-counting-fresh-audit.lean",
+      "imports": [
+        "BQP-counting-threshold"
+      ],
+      "sha256": "b8c8209be3e591fb515a9b8880598c929fb94d5ba80adb13793e928d6d7c2f66"
+    },
+    "BQP-counting-threshold": {
+      "path": "BQP-counting-threshold.lean",
+      "source": "src/BQP-counting-threshold.lean",
+      "imports": [
+        "BQP-counting-core"
+      ],
+      "sha256": "63aa1672c54c27c282b9a79f03bcf71fb0e22ec1c861a8dbda7d2a795256bf42"
+    },
+    "BQP-counting-core": {
+      "path": "BQP-counting-core.lean",
+      "source": "src/BQP-counting-core.lean",
+      "imports": [
+        "BQP-closed-references"
+      ],
+      "sha256": "b41eccbfa49c5c4226d54b588c58bae254d3088764c8775ed57a1f29efca9ef6"
+    },
+    "BQP-closed-references": {
+      "path": "BQP-closed-references.lean",
+      "source": "src/BQP-closed-references.lean",
+      "imports": [
+        "BQP-all-candidates",
+        "AMPUNI-reference-rebuild"
+      ],
+      "sha256": "370d520f5bdfe8c54f733833bf95fcd9d3679dabc12f75996b5e8553a8fa44b7"
+    },
+    "BQP-all-candidates": {
+      "path": "BQP-all-candidates.lean",
+      "source": "src/BQP-all-candidates.lean",
+      "imports": [
+        "BQP-candidate-000",
+        "BQP-candidate-001",
+        "BQP-candidate-002",
+        "BQP-candidate-003",
+        "BQP-candidate-004",
+        "BQP-candidate-005",
+        "BQP-candidate-006",
+        "BQP-candidate-007",
+        "BQP-candidate-008",
+        "BQP-candidate-009",
+        "BQP-candidate-010",
+        "BQP-candidate-011",
+        "BQP-candidate-012",
+        "BQP-candidate-013",
+        "BQP-candidate-014",
+        "BQP-candidate-015",
+        "BQP-candidate-016",
+        "BQP-candidate-017",
+        "BQP-candidate-018",
+        "BQP-candidate-019",
+        "BQP-candidate-020",
+        "BQP-candidate-021",
+        "BQP-candidate-022",
+        "BQP-candidate-023",
+        "BQP-candidate-024",
+        "BQP-candidate-025",
+        "BQP-candidate-026",
+        "BQP-candidate-027",
+        "BQP-candidate-028",
+        "BQP-candidate-029",
+        "BQP-candidate-030",
+        "BQP-candidate-031",
+        "BQP-candidate-032",
+        "BQP-candidate-033",
+        "BQP-candidate-034",
+        "BQP-candidate-035",
+        "BQP-candidate-036",
+        "BQP-candidate-037",
+        "BQP-candidate-038",
+        "BQP-candidate-039",
+        "BQP-candidate-040",
+        "BQP-candidate-041",
+        "BQP-candidate-042",
+        "BQP-candidate-043",
+        "BQP-candidate-044",
+        "BQP-candidate-045"
+      ],
+      "sha256": "499acb169cab31b122ed28481ba790ff9b6eeb1fdd926c8de5e13210815c8c16"
+    },
+    "BQP-candidate-000": {
+      "path": "BQP-candidate-000.lean",
+      "source": "src/BQP-candidate-000.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_PvsNP_combined_checker_is_polynomial_time_via_the_lossless_pairing"
+      ],
+      "sha256": "4c29c35d08f87d658f270892c5c04b9d66db1203dc29cdf455b7d598bfbb0a3d"
+    },
+    "Definitions.Def_PvsNP": {
+      "path": "Definitions/Def_PvsNP.lean",
+      "source": "src/Definitions/Def_PvsNP.lean",
+      "imports": [
+        "Mathlib"
+      ],
+      "sha256": "54eede1f93692b8526fa83454816e38e676ae5d3b79b2a0ca2199cc8b477f29a"
+    },
+    "Theorems.Thm_PvsNP_combined_checker_is_polynomial_time_via_the_lossless_pairing": {
+      "path": "Theorems/Thm_PvsNP_combined_checker_is_polynomial_time_via_the_lossless_pairing.lean",
+      "source": "src/Theorems/Thm_PvsNP_combined_checker_is_polynomial_time_via_the_lossless_pairing.lean",
+      "imports": [
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "8711070b26e2a6733d9e6c384e94294e48fe4c369afbe342e2e34e47533be175"
+    },
+    "BQP-candidate-001": {
+      "path": "BQP-candidate-001.lean",
+      "source": "src/BQP-candidate-001.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_ShiBQP_polyBound_three_phase_compose",
+        "Theorems.Thm_ShiTM_comp_outputsInTime",
+        "Theorems.Thm_ShiTM_exists_stepAux_stack_growth_bound",
+        "Theorems.Thm_ShiTM_outputLength_le_of_outputsInTime"
+      ],
+      "sha256": "d2420961efb66dff2a00e1166dc1805f5236189c478c683928d68542f1013aff"
+    },
+    "Definitions.Def_ShiTM2_Composite": {
+      "path": "Definitions/Def_ShiTM2_Composite.lean",
+      "source": "src/Definitions/Def_ShiTM2_Composite.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "8e1cd1d4a3aafb61142649a1f04730fa9113f2cdcc141da4cc69dbbe00264aaa"
+    },
+    "Theorems.Thm_PvsNP_polyTimeComputable_comp": {
+      "path": "Theorems/Thm_PvsNP_polyTimeComputable_comp.lean",
+      "source": "src/Theorems/Thm_PvsNP_polyTimeComputable_comp.lean",
+      "imports": [
+        "Definitions.Def_PvsNPFrontier"
+      ],
+      "sha256": "fa4dc6e2ab9f472066caf13a9d429262a3bcfba839ba0271929fb03998cfb50a"
+    },
+    "Definitions.Def_PvsNPFrontier": {
+      "path": "Definitions/Def_PvsNPFrontier.lean",
+      "source": "src/Definitions/Def_PvsNPFrontier.lean",
+      "imports": [
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "8753636d41567cd73dc50153c91545691478ab0603c2f2eef0e8de81f5dd1f8e"
+    },
+    "Theorems.Thm_ShiBQP_polyBound_three_phase_compose": {
+      "path": "Theorems/Thm_ShiBQP_polyBound_three_phase_compose.lean",
+      "source": "src/Theorems/Thm_ShiBQP_polyBound_three_phase_compose.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "c6cf8096297e903eda052741525ac1b28b2e3b7919ede720d29808ce6e4040f7"
+    },
+    "Definitions.Def_ShiShallow_Core": {
+      "path": "Definitions/Def_ShiShallow_Core.lean",
+      "source": "src/Definitions/Def_ShiShallow_Core.lean",
+      "imports": [
+        "Mathlib"
+      ],
+      "sha256": "0b80cddf8832e5e40de226c9aa2814924807576cdfdcd584cadaf743f51dd889"
+    },
+    "Theorems.Thm_ShiTM_comp_outputsInTime": {
+      "path": "Theorems/Thm_ShiTM_comp_outputsInTime.lean",
+      "source": "src/Theorems/Thm_ShiTM_comp_outputsInTime.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_initList_haltList_comp",
+        "Theorems.Thm_ShiTM_iterate_compM_one_simulation",
+        "Theorems.Thm_ShiTM_iterate_compM_two_simulation",
+        "Theorems.Thm_ShiTM_copy_phase_transfers_output_state"
+      ],
+      "sha256": "a1d46d7f822b0c4bf20c0448f601ce3b3b21e16faae21aac8e99d7ed6b77310e"
+    },
+    "Theorems.Thm_ShiTM_initList_haltList_laws": {
+      "path": "Theorems/Thm_ShiTM_initList_haltList_laws.lean",
+      "source": "src/Theorems/Thm_ShiTM_initList_haltList_laws.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "076e3c68d759bcf89ec8f477e491610895bcbea0243d0d462fbac967b3a69ea6"
+    },
+    "Theorems.Thm_ShiTM_initList_haltList_comp": {
+      "path": "Theorems/Thm_ShiTM_initList_haltList_comp.lean",
+      "source": "src/Theorems/Thm_ShiTM_initList_haltList_comp.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "9fa94454f098e14a98075204fac5b729c4913e5262bc2d16e65e1cb6c0ce2376"
+    },
+    "Theorems.Thm_ShiTM_iterate_compM_one_simulation": {
+      "path": "Theorems/Thm_ShiTM_iterate_compM_one_simulation.lean",
+      "source": "src/Theorems/Thm_ShiTM_iterate_compM_one_simulation.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_one_simulation"
+      ],
+      "sha256": "35cc7e4a4ed85d74049128782a9973e56aa87f3cda0d104dffbdcee9b435dda9"
+    },
+    "Theorems.Thm_ShiTM_stepAux_trStmt_one_simulation": {
+      "path": "Theorems/Thm_ShiTM_stepAux_trStmt_one_simulation.lean",
+      "source": "src/Theorems/Thm_ShiTM_stepAux_trStmt_one_simulation.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite"
+      ],
+      "sha256": "bd7cd989eb700c003838d042f2aec3d09568043b4162acd73c4bbb454fc0e08c"
+    },
+    "Theorems.Thm_ShiTM_iterate_compM_two_simulation": {
+      "path": "Theorems/Thm_ShiTM_iterate_compM_two_simulation.lean",
+      "source": "src/Theorems/Thm_ShiTM_iterate_compM_two_simulation.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_two_simulation"
+      ],
+      "sha256": "83f8f04234d587af5129d13b39032e4b184e9d04ca5f30db9d38bc9c80e44613"
+    },
+    "Theorems.Thm_ShiTM_stepAux_trStmt_two_simulation": {
+      "path": "Theorems/Thm_ShiTM_stepAux_trStmt_two_simulation.lean",
+      "source": "src/Theorems/Thm_ShiTM_stepAux_trStmt_two_simulation.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite"
+      ],
+      "sha256": "b70121ed24ea8db8d599b9d9ca3aaa0f5d93fc222f225c4bfd4528a715d6f4e5"
+    },
+    "Theorems.Thm_ShiTM_copy_phase_transfers_output_state": {
+      "path": "Theorems/Thm_ShiTM_copy_phase_transfers_output_state.lean",
+      "source": "src/Theorems/Thm_ShiTM_copy_phase_transfers_output_state.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Theorems.Thm_ShiTM_copy_loop_transfers_stack"
+      ],
+      "sha256": "c6f1e59e0d72f873cd29b7a8d1266d3fc583145d1cb5e0c71b875530f597a0ab"
+    },
+    "Theorems.Thm_ShiTM_copy_loop_transfers_stack": {
+      "path": "Theorems/Thm_ShiTM_copy_loop_transfers_stack.lean",
+      "source": "src/Theorems/Thm_ShiTM_copy_loop_transfers_stack.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "1a724e963af7d49af7ee4dd3da644d0de036dd26ce591ce49a44b0af28d887e6"
+    },
+    "Theorems.Thm_ShiTM_exists_stepAux_stack_growth_bound": {
+      "path": "Theorems/Thm_ShiTM_exists_stepAux_stack_growth_bound.lean",
+      "source": "src/Theorems/Thm_ShiTM_exists_stepAux_stack_growth_bound.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "b339d940765fa926f93fa028d20e77b09f800d64acf4dbf77cbbd1e5aceea7a2"
+    },
+    "Theorems.Thm_ShiTM_outputLength_le_of_outputsInTime": {
+      "path": "Theorems/Thm_ShiTM_outputLength_le_of_outputsInTime.lean",
+      "source": "src/Theorems/Thm_ShiTM_outputLength_le_of_outputsInTime.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Logic.Function.Iterate",
+        "Mathlib.Data.Option.Basic",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "8ebe7c53fc21c4ab3823a96cc007501cab04e07230c4d2f883880d015e2161a1"
+    },
+    "BQP-candidate-002": {
+      "path": "BQP-candidate-002.lean",
+      "source": "src/BQP-candidate-002.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_PvsNP_polyTime_composition_and_alphabet_transport",
+        "Theorems.Thm_ShiTM_comp_outputsInTime"
+      ],
+      "sha256": "2725be53e4e97009374b44e553ccc9b1889b3c3d2d29ddf9bc0884cf7ed1c112"
+    },
+    "Theorems.Thm_PvsNP_polyTime_composition_and_alphabet_transport": {
+      "path": "Theorems/Thm_PvsNP_polyTime_composition_and_alphabet_transport.lean",
+      "source": "src/Theorems/Thm_PvsNP_polyTime_composition_and_alphabet_transport.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_ShiTM_comp_outputsInTime"
+      ],
+      "sha256": "bae14ac6f764ce362f21aceaef602bbf26fd114cd6c8c237f4140a3ab2109d16"
+    },
+    "BQP-candidate-003": {
+      "path": "BQP-candidate-003.lean",
+      "source": "src/BQP-candidate-003.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_PvsNP_tagged_transducers_untaggers_and_projections",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_outputsInTime_of_run_to_halt"
+      ],
+      "sha256": "c7ee26fdd7c3faec0c53bd4c494c6f72c5ab2b83ebbdaedbba0911f1edac4e38"
+    },
+    "Theorems.Thm_PvsNP_tagged_transducers_untaggers_and_projections": {
+      "path": "Theorems/Thm_PvsNP_tagged_transducers_untaggers_and_projections.lean",
+      "source": "src/Theorems/Thm_PvsNP_tagged_transducers_untaggers_and_projections.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Definitions.Def_PvsNP",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_outputsInTime_of_run_to_halt"
+      ],
+      "sha256": "c78340833bd586002ff5dbd5ce243e2d4b71eed23ec34b575375514e30878c2e"
+    },
+    "Theorems.Thm_ShiTM_outputsInTime_of_run_to_halt": {
+      "path": "Theorems/Thm_ShiTM_outputsInTime_of_run_to_halt.lean",
+      "source": "src/Theorems/Thm_ShiTM_outputsInTime_of_run_to_halt.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "793c8c13842d206643ed0e713cde4a3cbf1b4e2b24b764f720b355b033d85089"
+    },
+    "BQP-candidate-004": {
+      "path": "BQP-candidate-004.lean",
+      "source": "src/BQP-candidate-004.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_acceptance_agreement_for_the_route_a_compiled_program"
+      ],
+      "sha256": "3895d3527ed67d1feab8d38fa5555b4bdce6f2bd77c3d00f4af0bf2ce8048428"
+    },
+    "Theorems.Thm_ShiBQP_acceptance_agreement_for_the_route_a_compiled_program": {
+      "path": "Theorems/Thm_ShiBQP_acceptance_agreement_for_the_route_a_compiled_program.lean",
+      "source": "src/Theorems/Thm_ShiBQP_acceptance_agreement_for_the_route_a_compiled_program.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "b2cfff46e53e0b6ed9cf013018ab8b9096923b508bbc51d9e065fc7fa2943521"
+    },
+    "BQP-candidate-005": {
+      "path": "BQP-candidate-005.lean",
+      "source": "src/BQP-candidate-005.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_acceptance_as_integer_pair_counts_and_a_decidable_threshold_criterion"
+      ],
+      "sha256": "74b625d442d0a03a40a3dd1ac837262a86df1693b9fbf5af6f8c44045c629395"
+    },
+    "Definitions.Def_ShiBQP_Core": {
+      "path": "Definitions/Def_ShiBQP_Core.lean",
+      "source": "src/Definitions/Def_ShiBQP_Core.lean",
+      "imports": [
+        "Definitions.Def_ShiClass_Core",
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "1a44131f94aff041e8090426cf597402430f601ffb3ff0c743797cc930113e3a"
+    },
+    "Definitions.Def_ShiClass_Core": {
+      "path": "Definitions/Def_ShiClass_Core.lean",
+      "source": "src/Definitions/Def_ShiClass_Core.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "e501f58bebe56778b943bcc85f937b3ee308465e8d7d7b26825acea6ed0eb4d3"
+    },
+    "Definitions.Def_ShiClassPP": {
+      "path": "Definitions/Def_ShiClassPP.lean",
+      "source": "src/Definitions/Def_ShiClassPP.lean",
+      "imports": [
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "a594dff6df37844d97043199bd9d4240fda08b1203aa73bff3742a59c4931790"
+    },
+    "Theorems.Thm_ShiBQP_acceptance_as_integer_pair_counts_and_a_decidable_threshold_criterion": {
+      "path": "Theorems/Thm_ShiBQP_acceptance_as_integer_pair_counts_and_a_decidable_threshold_criterion.lean",
+      "source": "src/Theorems/Thm_ShiBQP_acceptance_as_integer_pair_counts_and_a_decidable_threshold_criterion.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "590a4ec6623ffb0cadf27171e23ec3fb0f95ae9fd4c4d602e107be895aacbc05"
+    },
+    "BQP-candidate-006": {
+      "path": "BQP-candidate-006.lean",
+      "source": "src/BQP-candidate-006.lean",
+      "imports": [
+        "Definitions.Def_ShiClassRel",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_acceptance_in_the_ring_adjoining_root_two_decides_pp_membership"
+      ],
+      "sha256": "cda73c1492c56dce37414ba29ae36657a87723b82e92f3e933d4804838b7e2e8"
+    },
+    "Definitions.Def_ShiClassRel": {
+      "path": "Definitions/Def_ShiClassRel.lean",
+      "source": "src/Definitions/Def_ShiClassRel.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "02c5df840d5db193cce0750f440528bf44c5bbf280a38b68e7f72758cdc2f17a"
+    },
+    "Theorems.Thm_ShiBQP_acceptance_in_the_ring_adjoining_root_two_decides_pp_membership": {
+      "path": "Theorems/Thm_ShiBQP_acceptance_in_the_ring_adjoining_root_two_decides_pp_membership.lean",
+      "source": "src/Theorems/Thm_ShiBQP_acceptance_in_the_ring_adjoining_root_two_decides_pp_membership.lean",
+      "imports": [
+        "Definitions.Def_ShiClassRel"
+      ],
+      "sha256": "26f253abf0ed430a24495ce619de6aabcf83ea35e108d07fa4e19f0f66ca9e79"
+    },
+    "BQP-candidate-007": {
+      "path": "BQP-candidate-007.lean",
+      "source": "src/BQP-candidate-007.lean",
+      "imports": [
+        "Definitions.Def_ShiClassRel",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_accepting_sum_of_squared_path_amplitudes_is_a_common_endpoint_pair_count"
+      ],
+      "sha256": "051e6f081c444dae98ff3080090678e2649976b5a04caabf0239617780d26560"
+    },
+    "Theorems.Thm_ShiBQP_accepting_sum_of_squared_path_amplitudes_is_a_common_endpoint_pair_count": {
+      "path": "Theorems/Thm_ShiBQP_accepting_sum_of_squared_path_amplitudes_is_a_common_endpoint_pair_count.lean",
+      "source": "src/Theorems/Thm_ShiBQP_accepting_sum_of_squared_path_amplitudes_is_a_common_endpoint_pair_count.lean",
+      "imports": [
+        "Definitions.Def_ShiClassRel"
+      ],
+      "sha256": "5b24c5996749c52c97fff74c728403cf768f4eba013bf0a5cf2339c07b5c6808"
+    },
+    "BQP-candidate-008": {
+      "path": "BQP-candidate-008.lean",
+      "source": "src/BQP-candidate-008.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.Nat.Sqrt",
+        "Mathlib.Tactic.NormNum",
+        "Mathlib.Tactic.Ring",
+        "Theorems.Thm_ShiBQP_digit_by_digit_integer_square_root_and_bit_serial_subtractor"
+      ],
+      "sha256": "c2d35eda4d0753acd1a1dc2630af8158eca08282484e06cb791ea41d598947b4"
+    },
+    "Theorems.Thm_ShiBQP_digit_by_digit_integer_square_root_and_bit_serial_subtractor": {
+      "path": "Theorems/Thm_ShiBQP_digit_by_digit_integer_square_root_and_bit_serial_subtractor.lean",
+      "source": "src/Theorems/Thm_ShiBQP_digit_by_digit_integer_square_root_and_bit_serial_subtractor.lean",
+      "imports": [
+        "Mathlib.Data.Nat.Sqrt",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Tactic.Ring",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "sha256": "e96cf7f368bee64651cb1c69f53b2687864fe0328a9716cd0337558ac5741cba"
+    },
+    "BQP-candidate-009": {
+      "path": "BQP-candidate-009.lean",
+      "source": "src/BQP-candidate-009.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Data.List.OfFn",
+        "Mathlib.Data.ZMod.Basic",
+        "Mathlib.Logic.Equiv.Fin.Basic",
+        "Theorems.Thm_ShiBQP_doubled_program_single_run_count_equals_the_ordered_pair_count_with_instance"
+      ],
+      "sha256": "120c6e6728438aa37d5f3b6a1237b714d50810a145a84d53e1fb34cbaa8ee789"
+    },
+    "Theorems.Thm_ShiBQP_doubled_program_single_run_count_equals_the_ordered_pair_count_with_instance": {
+      "path": "Theorems/Thm_ShiBQP_doubled_program_single_run_count_equals_the_ordered_pair_count_with_instance.lean",
+      "source": "src/Theorems/Thm_ShiBQP_doubled_program_single_run_count_equals_the_ordered_pair_count_with_instance.lean",
+      "imports": [
+        "Mathlib.Data.Fintype.Pi",
+        "Mathlib.Data.Fintype.Prod",
+        "Mathlib.Logic.Equiv.Fin.Basic",
+        "Mathlib.Data.List.OfFn",
+        "Mathlib.Algebra.Group.Basic",
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "d914d8f82d7c475590831b2866191464864b7afdc017570db66d8aae09d3ff67"
+    },
+    "BQP-candidate-010": {
+      "path": "BQP-candidate-010.lean",
+      "source": "src/BQP-candidate-010.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_explicit_combined_checker_and_the_conditional_pp_membership"
+      ],
+      "sha256": "9c41beee261065419a0f04125ac4b20fcddcddb6266a7e931a4ac45129a3faf7"
+    },
+    "Theorems.Thm_ShiBQP_explicit_combined_checker_and_the_conditional_pp_membership": {
+      "path": "Theorems/Thm_ShiBQP_explicit_combined_checker_and_the_conditional_pp_membership.lean",
+      "source": "src/Theorems/Thm_ShiBQP_explicit_combined_checker_and_the_conditional_pp_membership.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "5dd565cecaeebc8f946a912877edd8a4629f7d25a3774893495d7f3b148b455f"
+    },
+    "BQP-candidate-011": {
+      "path": "BQP-candidate-011.lean",
+      "source": "src/BQP-candidate-011.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_gate_predicate_counts_are_polynomially_dominated_above_length_one_and_provably_not_at_zero_or_one",
+        "Theorems.Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core"
+      ],
+      "sha256": "5f81bab2fd7f4d9771c5e17281adf6dfb3d77c761560d5802225049ec12bcd9f"
+    },
+    "Theorems.Thm_ShiBQP_gate_predicate_counts_are_polynomially_dominated_above_length_one_and_provably_not_at_zero_or_one": {
+      "path": "Theorems/Thm_ShiBQP_gate_predicate_counts_are_polynomially_dominated_above_length_one_and_provably_not_at_zero_or_one.lean",
+      "source": "src/Theorems/Thm_ShiBQP_gate_predicate_counts_are_polynomially_dominated_above_length_one_and_provably_not_at_zero_or_one.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Theorems.Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core"
+      ],
+      "sha256": "ce22e57994e796e3ab89bc490e2e1122b6c04f32b0898eeb27d459e5c733b400"
+    },
+    "Theorems.Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core": {
+      "path": "Theorems/Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core.lean",
+      "source": "src/Theorems/Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "849ef10d5ba50dcb8ff6853417693bf2308b84ffb40d16cd253eaec26738ec03"
+    },
+    "BQP-candidate-012": {
+      "path": "BQP-candidate-012.lean",
+      "source": "src/BQP-candidate-012.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_modulus_squared_of_eighth_root_sum_lies_in_the_ring_adjoining_root_two"
+      ],
+      "sha256": "8aa7a78197315e5061d955e9657d758f15e7bece7ce65721e9cbff7a582daaf6"
+    },
+    "Theorems.Thm_ShiBQP_modulus_squared_of_eighth_root_sum_lies_in_the_ring_adjoining_root_two": {
+      "path": "Theorems/Thm_ShiBQP_modulus_squared_of_eighth_root_sum_lies_in_the_ring_adjoining_root_two.lean",
+      "source": "src/Theorems/Thm_ShiBQP_modulus_squared_of_eighth_root_sum_lies_in_the_ring_adjoining_root_two.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "ec0e7926fe234b5b359c18c3f00a18b1ec785d153a195f4d868731f3a16349b4"
+    },
+    "BQP-candidate-013": {
+      "path": "BQP-candidate-013.lean",
+      "source": "src/BQP-candidate-013.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_ShiBQP_one_polynomial_time_compiler_over_the_flat_encoding_composed_with_the_layer_stripping_transducer",
+        "Theorems.Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one",
+        "Theorems.Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run",
+        "Theorems.Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities",
+        "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside"
+      ],
+      "sha256": "c04950f1df1d714aef2c6761b2ae4ba056988b8ec415ba3db470e0befe3619fa"
+    },
+    "Theorems.Thm_ShiBQP_one_polynomial_time_compiler_over_the_flat_encoding_composed_with_the_layer_stripping_transducer": {
+      "path": "Theorems/Thm_ShiBQP_one_polynomial_time_compiler_over_the_flat_encoding_composed_with_the_layer_stripping_transducer.lean",
+      "source": "src/Theorems/Thm_ShiBQP_one_polynomial_time_compiler_over_the_flat_encoding_composed_with_the_layer_stripping_transducer.lean",
+      "imports": [
+        "Theorems.Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities",
+        "Theorems.Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run",
+        "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside",
+        "Theorems.Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one"
+      ],
+      "sha256": "e43eed7fcf5e10fb79435524e38246c31501544353018f90e7b0ce0b4f6a50d8"
+    },
+    "Theorems.Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities": {
+      "path": "Theorems/Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities.lean",
+      "source": "src/Theorems/Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Theorems.Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core"
+      ],
+      "sha256": "ecd24cc2552941bb626422cd822db64b1e725f5bfa2ae62c42baa87ad272d3d4"
+    },
+    "Theorems.Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run": {
+      "path": "Theorems/Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run.lean",
+      "source": "src/Theorems/Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run.lean",
+      "imports": [
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "610c1b762465b7f6f313ae21b9e63115fa7447959f0ad58a78134eb0eaf0ace8"
+    },
+    "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside": {
+      "path": "Theorems/Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside.lean",
+      "source": "src/Theorems/Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "ea9785b24ce9e39204ec5de6c773afa8299cfc559ddb5a93d0d02648eab213b9"
+    },
+    "Theorems.Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one": {
+      "path": "Theorems/Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one.lean",
+      "source": "src/Theorems/Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core"
+      ],
+      "sha256": "8bb53d405c0aa8d785d7d13f849dc8c863e28d02e69580bd97c423913b8e9cb9"
+    },
+    "BQP-candidate-014": {
+      "path": "BQP-candidate-014.lean",
+      "source": "src/BQP-candidate-014.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_one_polynomial_time_transducer_carrying_the_layered_encoding_to_the_flat_one"
+      ],
+      "sha256": "4417f1b8cb61000b780f2102794ac339e20f3d19555adf9c4c42b67d10b6be81"
+    },
+    "BQP-candidate-015": {
+      "path": "BQP-candidate-015.lean",
+      "source": "src/BQP-candidate-015.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Data.ZMod.Basic",
+        "Theorems.Thm_ShiBQP_opcode_stream_head_safety_and_adjoint_blocks"
+      ],
+      "sha256": "e78711992b42b599a0b573614fdc8483bf588a8064678bb925cd9dc22b703b88"
+    },
+    "Theorems.Thm_ShiBQP_opcode_stream_head_safety_and_adjoint_blocks": {
+      "path": "Theorems/Thm_ShiBQP_opcode_stream_head_safety_and_adjoint_blocks.lean",
+      "source": "src/Theorems/Thm_ShiBQP_opcode_stream_head_safety_and_adjoint_blocks.lean",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "5f0d25402fd25527283fbd7719e6df650e595704f84cc4bcbaadc99c260d7b6d"
+    },
+    "BQP-candidate-016": {
+      "path": "BQP-candidate-016.lean",
+      "source": "src/BQP-candidate-016.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_polyBound_three_phase_compose"
+      ],
+      "sha256": "a3de62bb74fff22781368009d922405e32675f410c6109051af29b7b300666dd"
+    },
+    "BQP-candidate-017": {
+      "path": "BQP-candidate-017.lean",
+      "source": "src/BQP-candidate-017.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_polyTimeComputable_bridge_for_generic_pairing_decoders",
+        "Theorems.Thm_ShiTM_polyTimeComputable_of_machine_polybound"
+      ],
+      "sha256": "10b72109e995df9d3bdfb7ae28984ea2ae2c914accb3ef66a6483478fa4f0502"
+    },
+    "Theorems.Thm_ShiBQP_polyTimeComputable_bridge_for_generic_pairing_decoders": {
+      "path": "Theorems/Thm_ShiBQP_polyTimeComputable_bridge_for_generic_pairing_decoders.lean",
+      "source": "src/Theorems/Thm_ShiBQP_polyTimeComputable_bridge_for_generic_pairing_decoders.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Theorems.Thm_ShiTM_polyTimeComputable_of_machine_polybound"
+      ],
+      "sha256": "4d28ea350d4cbbd71cbbad5b75881700c8d856a9e94b927a1b451188357db34b"
+    },
+    "Theorems.Thm_ShiTM_polyTimeComputable_of_machine_polybound": {
+      "path": "Theorems/Thm_ShiTM_polyTimeComputable_of_machine_polybound.lean",
+      "source": "src/Theorems/Thm_ShiTM_polyTimeComputable_of_machine_polybound.lean",
+      "imports": [
+        "Definitions.Def_PvsNP"
+      ],
+      "sha256": "321c9ae99a632528d40f0e5688d91c3e0d8e8e7e9b1b26a9e7d0918ecaddc0e5"
+    },
+    "BQP-candidate-018": {
+      "path": "BQP-candidate-018.lean",
+      "source": "src/BQP-candidate-018.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_polyTimeComputable_bridge_for_generic_pairing_decoders",
+        "Theorems.Thm_ShiBQP_polyTimeComputable_string_level_compiler_from_an_affinely_bounded_run",
+        "Theorems.Thm_ShiBQP_string_level_compiler_output_budget_for_any_parser_pair"
+      ],
+      "sha256": "8872dcbba3d9633196ee4777ca38d0114575c507a699a2f3a6ae59b1dc3cdfc7"
+    },
+    "Theorems.Thm_ShiBQP_string_level_compiler_output_budget_for_any_parser_pair": {
+      "path": "Theorems/Thm_ShiBQP_string_level_compiler_output_budget_for_any_parser_pair.lean",
+      "source": "src/Theorems/Thm_ShiBQP_string_level_compiler_output_budget_for_any_parser_pair.lean",
+      "imports": [
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Flatten",
+        "Mathlib.Algebra.Order.BigOperators.Group.List"
+      ],
+      "sha256": "588dfb5cc0090bd984dd47cb0244a49b76353d4a0340bfcd2bc9136f80578333"
+    },
+    "BQP-candidate-019": {
+      "path": "BQP-candidate-019.lean",
+      "source": "src/BQP-candidate-019.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiBQP_single_run_checker_is_polynomial_time_and_counts_branches_by_phase",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "86baaa92fbe046d45014753226b9cc3d727bc33a26401f9d92ebb2df1a04e660"
+    },
+    "Theorems.Thm_ShiBQP_single_run_checker_is_polynomial_time_and_counts_branches_by_phase": {
+      "path": "Theorems/Thm_ShiBQP_single_run_checker_is_polynomial_time_and_counts_branches_by_phase.lean",
+      "source": "src/Theorems/Thm_ShiBQP_single_run_checker_is_polynomial_time_and_counts_branches_by_phase.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Definitions.Def_ShiClassPP",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "b29fef92533970072ce13e6107f212463efdad218956cb2d66428a98fc441bd6"
+    },
+    "BQP-candidate-020": {
+      "path": "BQP-candidate-020.lean",
+      "source": "src/BQP-candidate-020.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Algebra.Order.BigOperators.Group.List",
+        "Mathlib.Data.List.Basic",
+        "Mathlib.Data.List.Flatten",
+        "Theorems.Thm_ShiBQP_string_level_compiler_output_budget_for_any_parser_pair"
+      ],
+      "sha256": "cb22c519b1a490dfb4b4350cbf288e77873a9646f0543848fa285403fa012cb3"
+    },
+    "BQP-candidate-021": {
+      "path": "BQP-candidate-021.lean",
+      "source": "src/BQP-candidate-021.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiBQP_the_string_level_compiler_over_the_flat_gate_encoding_with_its_decode_and_parse_identities"
+      ],
+      "sha256": "65bd79cdd942e438f0db33457c0c03a5268baa519866f5bc8ac64e4192019db6"
+    },
+    "BQP-candidate-022": {
+      "path": "BQP-candidate-022.lean",
+      "source": "src/BQP-candidate-022.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_ShiBQP_uniform_family_encoding_is_polynomial_time_computable_from_the_input",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "14fe6204d57dec63464d5ad8f75756e820a1cdb48aa9a7c81a923afc5b748a5e"
+    },
+    "Theorems.Thm_ShiBQP_uniform_family_encoding_is_polynomial_time_computable_from_the_input": {
+      "path": "Theorems/Thm_ShiBQP_uniform_family_encoding_is_polynomial_time_computable_from_the_input.lean",
+      "source": "src/Theorems/Thm_ShiBQP_uniform_family_encoding_is_polynomial_time_computable_from_the_input.lean",
+      "imports": [
+        "Definitions.Def_ShiBQP_Core",
+        "Theorems.Thm_PvsNP_polyTimeComputable_comp",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "60e74c71e54da4d1071f304ce6b443dd772c88c2cf005b6f176d05d725c75eb0"
+    },
+    "BQP-candidate-023": {
+      "path": "BQP-candidate-023.lean",
+      "source": "src/BQP-candidate-023.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiClassPP_gap_general_integer_linear_combination"
+      ],
+      "sha256": "3fb329401807d7708f64d097dcb30abd15382429605bfa33b8bc6057d199a3ce"
+    },
+    "Theorems.Thm_ShiClassPP_gap_general_integer_linear_combination": {
+      "path": "Theorems/Thm_ShiClassPP_gap_general_integer_linear_combination.lean",
+      "source": "src/Theorems/Thm_ShiClassPP_gap_general_integer_linear_combination.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "3a50f64f652c0a2fdcd5ac468ebfd2aca48337ea119fc089b8720fc267ac97bf"
+    },
+    "BQP-candidate-024": {
+      "path": "BQP-candidate-024.lean",
+      "source": "src/BQP-candidate-024.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiClassPP_majority_counting_at_witness_lengths_zero_and_one_and_membership_from_long_inputs_plus_the_three_short_strings"
+      ],
+      "sha256": "25185020de4cb1d9ce6c449ba20944aff677b89442ca1bd5094737cba2c271a6"
+    },
+    "Theorems.Thm_ShiClassPP_majority_counting_at_witness_lengths_zero_and_one_and_membership_from_long_inputs_plus_the_three_short_strings": {
+      "path": "Theorems/Thm_ShiClassPP_majority_counting_at_witness_lengths_zero_and_one_and_membership_from_long_inputs_plus_the_three_short_strings.lean",
+      "source": "src/Theorems/Thm_ShiClassPP_majority_counting_at_witness_lengths_zero_and_one_and_membership_from_long_inputs_plus_the_three_short_strings.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "7ab0e31276c6f9d2d70363ba0e76d32d522c19595a5b46ffb84ebab04508d908"
+    },
+    "BQP-candidate-025": {
+      "path": "BQP-candidate-025.lean",
+      "source": "src/BQP-candidate-025.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiClassPP_patching_a_polynomial_time_checker_to_constants_on_the_three_shortest_instances_from_conjunction_and_equality"
+      ],
+      "sha256": "f94792e0940e383b1e5bc34df128fedb0c5b03210bb45c8afd0c192698fe8048"
+    },
+    "Theorems.Thm_ShiClassPP_patching_a_polynomial_time_checker_to_constants_on_the_three_shortest_instances_from_conjunction_and_equality": {
+      "path": "Theorems/Thm_ShiClassPP_patching_a_polynomial_time_checker_to_constants_on_the_three_shortest_instances_from_conjunction_and_equality.lean",
+      "source": "src/Theorems/Thm_ShiClassPP_patching_a_polynomial_time_checker_to_constants_on_the_three_shortest_instances_from_conjunction_and_equality.lean",
+      "imports": [
+        "Definitions.Def_ShiClassPP"
+      ],
+      "sha256": "32461e08bdb9d45ea47a2de85c0424cc33cb2a1a694d7ba20bee3adb74c3ecb4"
+    },
+    "BQP-candidate-026": {
+      "path": "BQP-candidate-026.lean",
+      "source": "src/BQP-candidate-026.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiShallow_circuit_amplitude_is_a_path_sum_over_hadamard_branches"
+      ],
+      "sha256": "15cb8a3d1333a4f3c77c268652772a30081899f53d898f1c6522831c1d9868e9"
+    },
+    "Theorems.Thm_ShiShallow_circuit_amplitude_is_a_path_sum_over_hadamard_branches": {
+      "path": "Theorems/Thm_ShiShallow_circuit_amplitude_is_a_path_sum_over_hadamard_branches.lean",
+      "source": "src/Theorems/Thm_ShiShallow_circuit_amplitude_is_a_path_sum_over_hadamard_branches.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "d714be678a0055dd6853d572aba5300f3ca8b478afa9eb6aec7633a461d40450"
+    },
+    "BQP-candidate-027": {
+      "path": "BQP-candidate-027.lean",
+      "source": "src/BQP-candidate-027.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiShallow_gateCount_le_depth_mul_width_of_layerOk_core"
+      ],
+      "sha256": "4ced1c630eba96d8e7a74f418b7da41d21fa8b57de3e21cc8d799e82ea18a771"
+    },
+    "BQP-candidate-028": {
+      "path": "BQP-candidate-028.lean",
+      "source": "src/BQP-candidate-028.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_a_compiler_host_machine_with_a_fuel_drain_and_a_total_three_way_gate_dispatch"
+      ],
+      "sha256": "603c3129ed4600bf03293cf40ec6127ff9ea8528d6d880c2fb1aadcc8259fdf8"
+    },
+    "Theorems.Thm_ShiTM_a_compiler_host_machine_with_a_fuel_drain_and_a_total_three_way_gate_dispatch": {
+      "path": "Theorems/Thm_ShiTM_a_compiler_host_machine_with_a_fuel_drain_and_a_total_three_way_gate_dispatch.lean",
+      "source": "src/Theorems/Thm_ShiTM_a_compiler_host_machine_with_a_fuel_drain_and_a_total_three_way_gate_dispatch.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "3021436134e939f9ab3691aaad5b48689989401a5a21d6f0d425b9d58b728c23"
+    },
+    "BQP-candidate-029": {
+      "path": "BQP-candidate-029.lean",
+      "source": "src/BQP-candidate-029.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_comp_outputsInTime",
+        "Theorems.Thm_ShiTM_copy_phase_transfers_output_state",
+        "Theorems.Thm_ShiTM_initList_haltList_comp",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_iterate_compM_one_simulation",
+        "Theorems.Thm_ShiTM_iterate_compM_two_simulation"
+      ],
+      "sha256": "c513f53715da31eea6534494da75e3231fcc68ff913dec836cd4f3c65c9b6929"
+    },
+    "BQP-candidate-030": {
+      "path": "BQP-candidate-030.lean",
+      "source": "src/BQP-candidate-030.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_copy_loop_transfers_stack"
+      ],
+      "sha256": "1d0257d0a8acbd3e1ec99ddbf050c38f203a23ee4dc95ea0b93277bd7350c037"
+    },
+    "BQP-candidate-031": {
+      "path": "BQP-candidate-031.lean",
+      "source": "src/BQP-candidate-031.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_copy_loop_transfers_stack",
+        "Theorems.Thm_ShiTM_copy_phase_transfers_output_state"
+      ],
+      "sha256": "dcb8b431bafb5c5695ecac6288e39ee460a2c00d6a76b7cf22b9f3db19a1ad14"
+    },
+    "BQP-candidate-032": {
+      "path": "BQP-candidate-032.lean",
+      "source": "src/BQP-candidate-032.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_exists_stepAux_stack_growth_bound"
+      ],
+      "sha256": "61c0f8c6b1da0248a15628dc18e54d6ea95cf527705de68f1524a4629a7554dd"
+    },
+    "BQP-candidate-033": {
+      "path": "BQP-candidate-033.lean",
+      "source": "src/BQP-candidate-033.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_initList_haltList_comp",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "91c02a9c663f5bbe18273bdc0f863722819d0c7f13161d47e17fa0345a86a612"
+    },
+    "BQP-candidate-034": {
+      "path": "BQP-candidate-034.lean",
+      "source": "src/BQP-candidate-034.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_initList_haltList_laws"
+      ],
+      "sha256": "4544c0360058ba385b76916fd737caa2f4eb21ef514c02bbc985bee36ec14a64"
+    },
+    "BQP-candidate-035": {
+      "path": "BQP-candidate-035.lean",
+      "source": "src/BQP-candidate-035.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Mathlib.Tactic.Ring",
+        "Theorems.Thm_ShiBQP_digit_by_digit_integer_square_root_and_bit_serial_subtractor",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_integer_square_root_machine_for_the_router_thresholds",
+        "Theorems.Thm_ShiTM_outputsInTime_of_run_to_halt"
+      ],
+      "sha256": "529238a9314edeced6586641ac9c44129069455cc8e244149620862d2d0a2bca"
+    },
+    "Theorems.Thm_ShiTM_integer_square_root_machine_for_the_router_thresholds": {
+      "path": "Theorems/Thm_ShiTM_integer_square_root_machine_for_the_router_thresholds.lean",
+      "source": "src/Theorems/Thm_ShiTM_integer_square_root_machine_for_the_router_thresholds.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Mathlib.Tactic.Ring"
+      ],
+      "sha256": "41b9782cffb57b236e6238d160218f6b01a8fd7cd62eed0551aea868ba99f036"
+    },
+    "BQP-candidate-036": {
+      "path": "BQP-candidate-036.lean",
+      "source": "src/BQP-candidate-036.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_iterate_compM_one_simulation",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_one_simulation"
+      ],
+      "sha256": "3b323db2ab6a0649060adff3586d46c4b1a5bae32ebc603b5d2dcbf2ddb7f049"
+    },
+    "BQP-candidate-037": {
+      "path": "BQP-candidate-037.lean",
+      "source": "src/BQP-candidate-037.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_iterate_compM_two_simulation",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_two_simulation"
+      ],
+      "sha256": "54ec2a8ef71deaf8f6957019c4c7db800cd7f9c98995a439cf60a3ade8c346b2"
+    },
+    "BQP-candidate-038": {
+      "path": "BQP-candidate-038.lean",
+      "source": "src/BQP-candidate-038.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Mathlib.Data.Option.Basic",
+        "Mathlib.Logic.Function.Iterate",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_outputLength_le_of_outputsInTime"
+      ],
+      "sha256": "9396c96d901af5b74cb293edcd52313a209db9530ee6d8bf39161021ebc18c65"
+    },
+    "BQP-candidate-039": {
+      "path": "BQP-candidate-039.lean",
+      "source": "src/BQP-candidate-039.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_initList_haltList_laws",
+        "Theorems.Thm_ShiTM_outputsInTime_of_run_to_halt"
+      ],
+      "sha256": "ff350aacca12f0a4056dc3aeee6211320675ef48bc96522f830d196753aa6ea6"
+    },
+    "BQP-candidate-040": {
+      "path": "BQP-candidate-040.lean",
+      "source": "src/BQP-candidate-040.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_polyTimeComputable_of_machine_polybound"
+      ],
+      "sha256": "8aae0b735da5d94e8b3e18d9458aff7b80bd911eb59c21e0b008a75b59ee8c0d"
+    },
+    "BQP-candidate-041": {
+      "path": "BQP-candidate-041.lean",
+      "source": "src/BQP-candidate-041.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_one_simulation"
+      ],
+      "sha256": "f8f96f37806abeab1d9bad2e36a16f917373245ea9fba5b78b6cade59c12a8fe"
+    },
+    "BQP-candidate-042": {
+      "path": "BQP-candidate-042.lean",
+      "source": "src/BQP-candidate-042.lean",
+      "imports": [
+        "Definitions.Def_ShiTM2_Composite",
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Theorems.Thm_ShiTM_stepAux_trStmt_two_simulation"
+      ],
+      "sha256": "be82ed678e10309f9ddaee66c785772a6e13ab8b30a2721a10abb5b6ee6ccaaa"
+    },
+    "BQP-candidate-043": {
+      "path": "BQP-candidate-043.lean",
+      "source": "src/BQP-candidate-043.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_over_the_flat_parser_seam_with_truncation_routed_aside"
+      ],
+      "sha256": "a965bfe33459c74d71948b880bc09f54d0310257505ac3a48f6b154d6f02e1b6"
+    },
+    "BQP-candidate-044": {
+      "path": "BQP-candidate-044.lean",
+      "source": "src/BQP-candidate-044.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_with_the_ill_formed_branch_discharged_as_a_machine_run"
+      ],
+      "sha256": "51ff5d04fde76951ab736f89224df672d84fdf6cb996150e0c5d9421b71bb1f5"
+    },
+    "Theorems.Thm_ShiTM_the_compiler_run_for_every_input_with_the_ill_formed_branch_discharged_as_a_machine_run": {
+      "path": "Theorems/Thm_ShiTM_the_compiler_run_for_every_input_with_the_ill_formed_branch_discharged_as_a_machine_run.lean",
+      "source": "src/Theorems/Thm_ShiTM_the_compiler_run_for_every_input_with_the_ill_formed_branch_discharged_as_a_machine_run.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "0db2f513e09d226c471d234be78fd968126ed9c7ec7fdeee68c0dc4d165284a8"
+    },
+    "BQP-candidate-045": {
+      "path": "BQP-candidate-045.lean",
+      "source": "src/BQP-candidate-045.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts",
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Theorems.Thm_ShiTM_the_mirrored_gate_loop_with_a_fifth_arm_skipping_records_whose_tag_no_renderer_accepts"
+      ],
+      "sha256": "91e772f56cd1062089e9b82568f98369a80d85211a51e20ead0a9be8084efb21"
+    },
+    "Theorems.Thm_ShiTM_the_mirrored_gate_loop_with_a_fifth_arm_skipping_records_whose_tag_no_renderer_accepts": {
+      "path": "Theorems/Thm_ShiTM_the_mirrored_gate_loop_with_a_fifth_arm_skipping_records_whose_tag_no_renderer_accepts.lean",
+      "source": "src/Theorems/Thm_ShiTM_the_mirrored_gate_loop_with_a_fifth_arm_skipping_records_whose_tag_no_renderer_accepts.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "efd7bcf083c2f066013e28e61f030484776a2f33f62002642893deb260a5f033"
+    },
+    "AMPUNI-reference-rebuild": {
+      "path": "AMPUNI-reference-rebuild.lean",
+      "source": "src/AMPUNI-reference-rebuild.lean",
+      "imports": [
+        "Lean",
+        "Lean.Util.CollectAxioms",
+        "Lean.Util.FoldConsts"
+      ],
+      "sha256": "ddc745070a5fe58c326e17cb9086ee5672289e45b07a212eb2ddeadb42d858b5"
+    },
+    "BQP-fresh-import-audit": {
+      "path": "BQP-fresh-import-audit.lean",
+      "source": "src/BQP-fresh-import-audit.lean",
+      "imports": [
+        "BQP-closed-references"
+      ],
+      "sha256": "f4a08c50fee47d4d05d18679c9854b954910a5553063867d74d8fb6686ed94f8"
+    },
+    "BQP-qma-machinery-audit": {
+      "path": "BQP-qma-machinery-audit.lean",
+      "source": "src/BQP-qma-machinery-audit.lean",
+      "imports": [
+        "AMPUNI-total-polynomial-clocked-bounds",
+        "AMPUNI-total-polynomial-function",
+        "Lean.Util.CollectAxioms"
+      ],
+      "sha256": "957846158c3dbd4e8743e9deb744a2f5c16adde14608f0f1759f4fb3351c668c"
+    },
+    "AMPUNI-total-polynomial-clocked-bounds": {
+      "path": "AMPUNI-total-polynomial-clocked-bounds.lean",
+      "source": "src/AMPUNI-total-polynomial-clocked-bounds.lean",
+      "imports": [
+        "AMPUNI-total-polynomial-clocked-machine",
+        "AMPUNI-clocked-polynomial-interface"
+      ],
+      "sha256": "b947803adcdf24d0cdac35b88648450327b4f38cb6ebf32384f3489cf2e5a05d"
+    },
+    "AMPUNI-total-polynomial-clocked-machine": {
+      "path": "AMPUNI-total-polynomial-clocked-machine.lean",
+      "source": "src/AMPUNI-total-polynomial-clocked-machine.lean",
+      "imports": [
+        "AMPUNI-polynomial-fueled-assembly",
+        "AMPUNI-clocked-cleanup-finite"
+      ],
+      "sha256": "ec7e18b0b38e241e824a116e38e476e1389ced3c52fdd9a84918e153fe924f16"
+    },
+    "AMPUNI-polynomial-fueled-assembly": {
+      "path": "AMPUNI-polynomial-fueled-assembly.lean",
+      "source": "src/AMPUNI-polynomial-fueled-assembly.lean",
+      "imports": [
+        "AMPUNI-fuel-transfer-run",
+        "AMPUNI-polynomial-fuel-frame",
+        "AMPUNI-right-frame"
+      ],
+      "sha256": "11a7695d95953961e1a76c22c35eeb5b9964524fb331a561e1b1a51047fc8c53"
+    },
+    "AMPUNI-fuel-transfer-run": {
+      "path": "AMPUNI-fuel-transfer-run.lean",
+      "source": "src/AMPUNI-fuel-transfer-run.lean",
+      "imports": [
+        "AMPUNI-fuel-transfer"
+      ],
+      "sha256": "30c3fdd781336b4caa9139034cae88fb43d2099f697d38874ae5fc14c5dd1aee"
+    },
+    "AMPUNI-fuel-transfer": {
+      "path": "AMPUNI-fuel-transfer.lean",
+      "source": "src/AMPUNI-fuel-transfer.lean",
+      "imports": [
+        "AMPUNI-fuel-frame"
+      ],
+      "sha256": "f31d60f012493dba283f98d11776a1ae2ba937cf980db48029d38a1f4031933a"
+    },
+    "AMPUNI-fuel-frame": {
+      "path": "AMPUNI-fuel-frame.lean",
+      "source": "src/AMPUNI-fuel-frame.lean",
+      "imports": [
+        "AMPUNI-fuel-run",
+        "AMPUNI-stack-frame",
+        "AMPUNI-state-frame"
+      ],
+      "sha256": "2432fd088469c0ddc08c4a57dc9e9014496b2b37f6c600f526f0ebf96701eabb"
+    },
+    "AMPUNI-fuel-run": {
+      "path": "AMPUNI-fuel-run.lean",
+      "source": "src/AMPUNI-fuel-run.lean",
+      "imports": [
+        "AMPUNI-fuel-loops",
+        "Mathlib.Tactic.Linarith",
+        "Mathlib.Tactic.Ring"
+      ],
+      "sha256": "dbd9a6604cf93cdc5693679a2039b902a4ee1d647a626ddcee097eb8dee54f8f"
+    },
+    "AMPUNI-fuel-loops": {
+      "path": "AMPUNI-fuel-loops.lean",
+      "source": "src/AMPUNI-fuel-loops.lean",
+      "imports": [
+        "AMPUNI-fuel-machine"
+      ],
+      "sha256": "d8cb7de62450dbffa21f77e5a7740a26133b2b061cd70f70f9b186c3c72528cf"
+    },
+    "AMPUNI-fuel-machine": {
+      "path": "AMPUNI-fuel-machine.lean",
+      "source": "src/AMPUNI-fuel-machine.lean",
+      "imports": [
+        "AMPUNI-subroutine-full-lift"
+      ],
+      "sha256": "8a5d9de1d5f7ca5d71e7570cb172389eca3f9df81e9ef19c50334fa996a0e253"
+    },
+    "AMPUNI-subroutine-full-lift": {
+      "path": "AMPUNI-subroutine-full-lift.lean",
+      "source": "src/AMPUNI-subroutine-full-lift.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "7e8c4af69cd8dbef96ab7b62421930081bb2a4bc99b0a39e2a12b1054198b3be"
+    },
+    "AMPUNI-subroutine-lift": {
+      "path": "AMPUNI-subroutine-lift.lean",
+      "source": "src/AMPUNI-subroutine-lift.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "db2ef5125556692939a7bfc1b57083aeb6bd5e337c464167fc71986007c686ac"
+    },
+    "AMPUNI-stack-frame": {
+      "path": "AMPUNI-stack-frame.lean",
+      "source": "src/AMPUNI-stack-frame.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "a6fce4c251f713f45a226e42e936bf7e651c9a10909438c64c0323f1016b9869"
+    },
+    "AMPUNI-state-frame": {
+      "path": "AMPUNI-state-frame.lean",
+      "source": "src/AMPUNI-state-frame.lean",
+      "imports": [
+        "AMPUNI-subroutine-full-lift"
+      ],
+      "sha256": "49f4e87d53d4268899e7d4384188720f53abb32a99163e66274fcaeef4e16d3b"
+    },
+    "AMPUNI-polynomial-fuel-frame": {
+      "path": "AMPUNI-polynomial-fuel-frame.lean",
+      "source": "src/AMPUNI-polynomial-fuel-frame.lean",
+      "imports": [
+        "AMPUNI-polynomial-fuel-cost",
+        "AMPUNI-stack-frame",
+        "AMPUNI-state-frame"
+      ],
+      "sha256": "537bb048f7c8a06acd64a947befb64585925e9e74c4fe65e72c809399ce827f5"
+    },
+    "AMPUNI-polynomial-fuel-cost": {
+      "path": "AMPUNI-polynomial-fuel-cost.lean",
+      "source": "src/AMPUNI-polynomial-fuel-cost.lean",
+      "imports": [
+        "AMPUNI-polynomial-fuel-run"
+      ],
+      "sha256": "97ac871cf67d220762db75b4bf3a73bcd0c7855a92d4fe4c808b2bab5edec0da"
+    },
+    "AMPUNI-polynomial-fuel-run": {
+      "path": "AMPUNI-polynomial-fuel-run.lean",
+      "source": "src/AMPUNI-polynomial-fuel-run.lean",
+      "imports": [
+        "AMPUNI-polynomial-fuel-machine"
+      ],
+      "sha256": "30d825251df8c0cfc2096bb9bebcb1e8a4ace383c19cd62db62134077abcb32b"
+    },
+    "AMPUNI-polynomial-fuel-machine": {
+      "path": "AMPUNI-polynomial-fuel-machine.lean",
+      "source": "src/AMPUNI-polynomial-fuel-machine.lean",
+      "imports": [
+        "AMPUNI-fuel-run"
+      ],
+      "sha256": "23f4d4a2aafa8636894e3deaa1fce1150f2cff4f1861a71007e16c72bd49f0c5"
+    },
+    "AMPUNI-right-frame": {
+      "path": "AMPUNI-right-frame.lean",
+      "source": "src/AMPUNI-right-frame.lean",
+      "imports": [
+        "AMPUNI-stack-frame",
+        "AMPUNI-subroutine-full-lift"
+      ],
+      "sha256": "86595167231a8b0213f6bfc8d3e9f0087bc53c50c0dc60617ea48dfbcebf7041"
+    },
+    "AMPUNI-clocked-cleanup-finite": {
+      "path": "AMPUNI-clocked-cleanup-finite.lean",
+      "source": "src/AMPUNI-clocked-cleanup-finite.lean",
+      "imports": [
+        "AMPUNI-clocked-cleanup-interface"
+      ],
+      "sha256": "2b80707999d429ee15670c7a4143df3a694a5c3f5d20241fdcfa52b44cb4a4a8"
+    },
+    "AMPUNI-clocked-cleanup-interface": {
+      "path": "AMPUNI-clocked-cleanup-interface.lean",
+      "source": "src/AMPUNI-clocked-cleanup-interface.lean",
+      "imports": [
+        "AMPUNI-clocked-cleanup-machine"
+      ],
+      "sha256": "e636af7bf1067b88cddff755a727383cf300dfb206a11f809be55cbec48f53a8"
+    },
+    "AMPUNI-clocked-cleanup-machine": {
+      "path": "AMPUNI-clocked-cleanup-machine.lean",
+      "source": "src/AMPUNI-clocked-cleanup-machine.lean",
+      "imports": [
+        "AMPUNI-clock-exit-bounds",
+        "AMPUNI-generic-clock-cleanup",
+        "AMPUNI-subroutine-full-lift",
+        "AMPUNI-finite-stack-growth",
+        "Mathlib.Tactic.Linarith"
+      ],
+      "sha256": "d4173885416310fece19a85e77e36e6aad514e3d95241d648a52c3dcc50dfbd9"
+    },
+    "AMPUNI-clock-exit-bounds": {
+      "path": "AMPUNI-clock-exit-bounds.lean",
+      "source": "src/AMPUNI-clock-exit-bounds.lean",
+      "imports": [
+        "AMPUNI-clock-exit"
+      ],
+      "sha256": "8036ac629d559102057ad4c003d4cf343bb31c0dad7a203f145fe0f66ffd9b9b"
+    },
+    "AMPUNI-clock-exit": {
+      "path": "AMPUNI-clock-exit.lean",
+      "source": "src/AMPUNI-clock-exit.lean",
+      "imports": [
+        "AMPUNI-typed-timeout-two-step"
+      ],
+      "sha256": "4e30fd3a69b80df48ecf28c138b218a94959e68cc51c59083064b98cf26ad864"
+    },
+    "AMPUNI-typed-timeout-two-step": {
+      "path": "AMPUNI-typed-timeout-two-step.lean",
+      "source": "src/AMPUNI-typed-timeout-two-step.lean",
+      "imports": [
+        "AMPUNI-typed-timeout-step"
+      ],
+      "sha256": "2c4601a160f4d7e2f9966a65448c178afef5f915773fabd77c2dc355d2e73200"
+    },
+    "AMPUNI-typed-timeout-step": {
+      "path": "AMPUNI-typed-timeout-step.lean",
+      "source": "src/AMPUNI-typed-timeout-step.lean",
+      "imports": [
+        "AMPUNI-typed-timeout-skeleton"
+      ],
+      "sha256": "3d6064561be70940a6b8087b9e5382468c4059fdb9096722f320a75d32d8c8a7"
+    },
+    "AMPUNI-typed-timeout-skeleton": {
+      "path": "AMPUNI-typed-timeout-skeleton.lean",
+      "source": "src/AMPUNI-typed-timeout-skeleton.lean",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable"
+      ],
+      "sha256": "c1338492788419c451b8d4d64acd62735b930ced32d77244d7da7ebb4ee4f2b2"
+    },
+    "AMPUNI-generic-clock-cleanup": {
+      "path": "AMPUNI-generic-clock-cleanup.lean",
+      "source": "src/AMPUNI-generic-clock-cleanup.lean",
+      "imports": [
+        "AMPUNI-run-stack-growth",
+        "Mathlib.Data.Finset.Card",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise"
+      ],
+      "sha256": "cd2b4011b9b933fd5cb1fd692b03e0bd6f02a1b2c44254d984fbd094dfef4e03"
+    },
+    "AMPUNI-run-stack-growth": {
+      "path": "AMPUNI-run-stack-growth.lean",
+      "source": "src/AMPUNI-run-stack-growth.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "09d3384e9ee7f58fa614c88cda64762393f53089508a4c9a1d697518a40beb14"
+    },
+    "AMPUNI-finite-stack-growth": {
+      "path": "AMPUNI-finite-stack-growth.lean",
+      "source": "src/AMPUNI-finite-stack-growth.lean",
+      "imports": [
+        "AMPUNI-run-stack-growth",
+        "Mathlib.Algebra.BigOperators.Group.Finset.Piecewise"
+      ],
+      "sha256": "54b96b656755eaafc2c745ed54295cfca5bb62e1869f02e31b6903c7eeb934ea"
+    },
+    "AMPUNI-clocked-polynomial-interface": {
+      "path": "AMPUNI-clocked-polynomial-interface.lean",
+      "source": "src/AMPUNI-clocked-polynomial-interface.lean",
+      "imports": [
+        "AMPUNI-clocked-cleanup-interface"
+      ],
+      "sha256": "333d2af4d1b90dc21f36b2a68a0b4fab7e46c88f4e9d7b6cae96ad63a58602fd"
+    },
+    "AMPUNI-total-polynomial-function": {
+      "path": "AMPUNI-total-polynomial-function.lean",
+      "source": "src/AMPUNI-total-polynomial-function.lean",
+      "imports": [
+        "AMPUNI-total-function"
+      ],
+      "sha256": "f152919d0add2e861dbb5879d7a4b7c75413f2f3c42bbf378aa8bc8ec7f35db5"
+    },
+    "AMPUNI-total-function": {
+      "path": "AMPUNI-total-function.lean",
+      "source": "src/AMPUNI-total-function.lean",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "9737d694a624ba6a922c2d8871276d296a97e6a9c5718eeb21b8792b23c49106"
+    },
+    "BQP-gate-fresh-audit": {
+      "path": "BQP-gate-fresh-audit.lean",
+      "source": "src/BQP-gate-fresh-audit.lean",
+      "imports": [
+        "BQP-gate-semantics"
+      ],
+      "sha256": "b9bbdd22ee074c2e1b2f03c7beb69d902d4efcb2cbaf81aac769d79907a99768"
+    },
+    "BQP-gate-semantics": {
+      "path": "BQP-gate-semantics.lean",
+      "source": "src/BQP-gate-semantics.lean",
+      "imports": [
+        "BQP-closed-references"
+      ],
+      "sha256": "c9481bc6c500c4dd19db30bdb270df9cec719769c3275b2177ed7c7e10b342ab"
+    },
+    "BQP-path-fresh-audit": {
+      "path": "BQP-path-fresh-audit.lean",
+      "source": "src/BQP-path-fresh-audit.lean",
+      "imports": [
+        "BQP-path-correspondence",
+        "BQP-path-fiber-sum"
+      ],
+      "sha256": "0b022849a13d54e612d89e91393c75e8fb36222d37c93610ee5bf54f192393c5"
+    },
+    "BQP-path-correspondence": {
+      "path": "BQP-path-correspondence.lean",
+      "source": "src/BQP-path-correspondence.lean",
+      "imports": [
+        "BQP-gate-semantics",
+        "BQP-bridge-bijection-reference",
+        "BQP-bridge-gate-reference",
+        "BQP-bridge-phase-reference"
+      ],
+      "sha256": "5b586a168e52a62e52e3d29407ab97fa7d0fef34ee98a0c1ed6831f03e416f25"
+    },
+    "BQP-bridge-bijection-reference": {
+      "path": "BQP-bridge-bijection-reference.lean",
+      "source": "src/BQP-bridge-bijection-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "10e4a3dafb3a203716800a28d2183061c24aadfa09013bad6508ba93c80cb166"
+    },
+    "BQP-bridge-gate-reference": {
+      "path": "BQP-bridge-gate-reference.lean",
+      "source": "src/BQP-bridge-gate-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "9162d1b84cacf73d4eebc40e476d1d9b402ee6d23ac94d0858db003984ea0ff0"
+    },
+    "BQP-bridge-phase-reference": {
+      "path": "BQP-bridge-phase-reference.lean",
+      "source": "src/BQP-bridge-phase-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "11c3e87b1b2f366e5dca80e0f506de728ca70aa7db1d28d965018348a7467296"
+    },
+    "BQP-path-fiber-sum": {
+      "path": "BQP-path-fiber-sum.lean",
+      "source": "src/BQP-path-fiber-sum.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "96d32467c07f4cf7c4b8208db303d02fa3767964a4f8adc55b10b0ae86c31c00"
+    },
+    "BQP-acceptance-fresh-audit": {
+      "path": "BQP-acceptance-fresh-audit.lean",
+      "source": "src/BQP-acceptance-fresh-audit.lean",
+      "imports": [
+        "BQP-acceptance-pair-counts"
+      ],
+      "sha256": "e0a485da6ed70a299278bca45fb432430e9da759dc1689d2ef6bb5ea0ed913d0"
+    },
+    "BQP-acceptance-pair-counts": {
+      "path": "BQP-acceptance-pair-counts.lean",
+      "source": "src/BQP-acceptance-pair-counts.lean",
+      "imports": [
+        "BQP-forward-amplitude"
+      ],
+      "sha256": "b3103a104612f1874274776cc78c06a4995bfa9e6d707111fb66ab8b61da1b0d"
+    },
+    "BQP-forward-amplitude": {
+      "path": "BQP-forward-amplitude.lean",
+      "source": "src/BQP-forward-amplitude.lean",
+      "imports": [
+        "BQP-path-correspondence",
+        "BQP-path-fiber-sum"
+      ],
+      "sha256": "1facb9950dc657e735a36e0faa10527253a4963ebb8bf2d02c9f35abed73a3bd"
+    },
+    "BQP-canonical-fresh-audit": {
+      "path": "BQP-canonical-fresh-audit.lean",
+      "source": "src/BQP-canonical-fresh-audit.lean",
+      "imports": [
+        "BQP-canonical-amplitude"
+      ],
+      "sha256": "22c6c0275598caef1bcc6a3152c98d9d6ef318f6f99ffe38be07086bd95c7f2e"
+    },
+    "BQP-canonical-amplitude": {
+      "path": "BQP-canonical-amplitude.lean",
+      "source": "src/BQP-canonical-amplitude.lean",
+      "imports": [
+        "BQP-canonical-paths",
+        "BQP-acceptance-pair-counts"
+      ],
+      "sha256": "3ea4e39bb0bf16de08bcb2c92188356e8d50c24b4404b1549945ade70ba64711"
+    },
+    "BQP-canonical-paths": {
+      "path": "BQP-canonical-paths.lean",
+      "source": "src/BQP-canonical-paths.lean",
+      "imports": [
+        "BQP-gate-semantics"
+      ],
+      "sha256": "f0f187e84019fe8ee3b10cd4d141e3bbca0913f1af35952216fe343f68369969"
+    },
+    "BQP-program-fresh-audit": {
+      "path": "BQP-program-fresh-audit.lean",
+      "source": "src/BQP-program-fresh-audit.lean",
+      "imports": [
+        "BQP-program-opcode-reference",
+        "BQP-program-zipper-reference",
+        "BQP-program-compiler-reference",
+        "BQP-program-sweeps-reference",
+        "BQP-program-dictionary-reference",
+        "BQP-program-transfer-reference",
+        "BQP-program-sweep-reference",
+        "BQP-program-reversal-reference",
+        "BQP-program-adjoint-phase-reference"
+      ],
+      "sha256": "6b27a183166652bab02be7e4773e18d1f51c36849b8c5095df02bae099f537f4"
+    },
+    "BQP-program-opcode-reference": {
+      "path": "BQP-program-opcode-reference.lean",
+      "source": "src/BQP-program-opcode-reference.lean",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "37e42f9e4206285172d387bb28c7dd7e08213083ba0fbb97d6904962acd26266"
+    },
+    "BQP-program-zipper-reference": {
+      "path": "BQP-program-zipper-reference.lean",
+      "source": "src/BQP-program-zipper-reference.lean",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "7cebecd1173cc97797db5801db9b65be83bf70f2e999072c8bb157aed8cf1da7"
+    },
+    "BQP-program-compiler-reference": {
+      "path": "BQP-program-compiler-reference.lean",
+      "source": "src/BQP-program-compiler-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "1257aa0ca0783cdfbd94d7ae1736177fc3e48eabfe4202207fca6207241f4f57"
+    },
+    "BQP-program-sweeps-reference": {
+      "path": "BQP-program-sweeps-reference.lean",
+      "source": "src/BQP-program-sweeps-reference.lean",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "d30f33404e7409b3907a22fa3bebb50714617c90e95b6fe65ba19c734837218d"
+    },
+    "BQP-program-dictionary-reference": {
+      "path": "BQP-program-dictionary-reference.lean",
+      "source": "src/BQP-program-dictionary-reference.lean",
+      "imports": [
+        "Mathlib.Data.ZMod.Basic"
+      ],
+      "sha256": "a501319d3b429ecdddd4a065ef8006e57d5074ce90344fa4919eb0804317e25f"
+    },
+    "BQP-program-transfer-reference": {
+      "path": "BQP-program-transfer-reference.lean",
+      "source": "src/BQP-program-transfer-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "1babfded8cadc8ad92df7963c9a4134e6ea06052a8b1a9aad68f3fcbfc7de52e"
+    },
+    "BQP-program-sweep-reference": {
+      "path": "BQP-program-sweep-reference.lean",
+      "source": "src/BQP-program-sweep-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "679c1efbc045b6f99b4d7d81130e468cb0843ab23fac8c08037ec867721052b0"
+    },
+    "BQP-program-reversal-reference": {
+      "path": "BQP-program-reversal-reference.lean",
+      "source": "src/BQP-program-reversal-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "375896a4c04518d0a539953ed97eaf4506d23b85140bea2cc15a694c32d00183"
+    },
+    "BQP-program-adjoint-phase-reference": {
+      "path": "BQP-program-adjoint-phase-reference.lean",
+      "source": "src/BQP-program-adjoint-phase-reference.lean",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core"
+      ],
+      "sha256": "6ac1eeeb35696c2d5823dd5f15dcdf1d53e682e399a90798a4b6b5b9e7ac5766"
+    },
+    "BQP-normalization-fresh-audit": {
+      "path": "BQP-normalization-fresh-audit.lean",
+      "source": "src/BQP-normalization-fresh-audit.lean",
+      "imports": [
+        "BQP-counting-normalization"
+      ],
+      "sha256": "0b54aea97135d44cfceb77c127a380bbb80e0ceb89f8864761b48449f2716a8c"
+    },
+    "BQP-counting-normalization": {
+      "path": "BQP-counting-normalization.lean",
+      "source": "src/BQP-counting-normalization.lean",
+      "imports": [
+        "BQP-counting-core"
+      ],
+      "sha256": "6df6aa8b1c576bfd593860d0281a4ee07c2fc7b27fc413125a07d39c4b57c746"
+    },
+    "BQP-normalized-threshold-fresh-audit": {
+      "path": "BQP-normalized-threshold-fresh-audit.lean",
+      "source": "src/BQP-normalized-threshold-fresh-audit.lean",
+      "imports": [
+        "BQP-normalized-threshold"
+      ],
+      "sha256": "8b36859fee2962d6b37ac3d76ccc833b32892862c89755612bff2d4691e2e5b8"
+    },
+    "BQP-normalized-threshold": {
+      "path": "BQP-normalized-threshold.lean",
+      "source": "src/BQP-normalized-threshold.lean",
+      "imports": [
+        "BQP-counting-normalization",
+        "BQP-counting-threshold"
+      ],
+      "sha256": "19200dff6390b9bbdf9a6bebc534cfc859c80574229f52aea6d7e03a7c46f5fc"
+    },
+    "BQP-short-machine-fresh-audit": {
+      "path": "BQP-short-machine-fresh-audit.lean",
+      "source": "src/BQP-short-machine-fresh-audit.lean",
+      "imports": [
+        "BQP-short-machine"
+      ],
+      "sha256": "69ccda78aaad1f10bad10619ce7aa1d43880aedcfe99823977f04393b697d6c5"
+    },
+    "BQP-short-machine": {
+      "path": "BQP-short-machine.lean",
+      "source": "src/BQP-short-machine.lean",
+      "imports": [
+        "AMPUNI-state-frame"
+      ],
+      "sha256": "450d202500cba1e7517b23b45757d91588bd2a8bcdba8b77157d9b86da2e5a7b"
+    },
+    "BQP-short-prefix-fresh-audit": {
+      "path": "BQP-short-prefix-fresh-audit.lean",
+      "source": "src/BQP-short-prefix-fresh-audit.lean",
+      "imports": [
+        "BQP-short-machine-prefix"
+      ],
+      "sha256": "f7f589ce43a7dc69a1e2052da93c96f6af9ecef9bc0f4cfb19bd27819488c3dc"
+    },
+    "BQP-short-machine-prefix": {
+      "path": "BQP-short-machine-prefix.lean",
+      "source": "src/BQP-short-machine-prefix.lean",
+      "imports": [
+        "BQP-short-machine"
+      ],
+      "sha256": "cf2af5a5dec5e782b0097420c43f285b9ad1cfd3965fec5a8ad385de9655cec6"
+    },
+    "BQP-short-outputs-fresh-audit": {
+      "path": "BQP-short-outputs-fresh-audit.lean",
+      "source": "src/BQP-short-outputs-fresh-audit.lean",
+      "imports": [
+        "BQP-short-machine-outputs"
+      ],
+      "sha256": "1a9d8b72d0923478c55e3a62629073ab4d4f7ce0a1d2933091407e252d9f3079"
+    },
+    "BQP-short-machine-outputs": {
+      "path": "BQP-short-machine-outputs.lean",
+      "source": "src/BQP-short-machine-outputs.lean",
+      "imports": [
+        "BQP-short-machine-prefix",
+        "BQP-counting-threshold"
+      ],
+      "sha256": "7cb16ce81958852df1657c8f31a6d5443a4838e756f8166bc82e4b9fa8d8ca91"
+    },
+    "BQP-canonical-recursions-fresh-audit": {
+      "path": "BQP-canonical-recursions-fresh-audit.lean",
+      "source": "src/BQP-canonical-recursions-fresh-audit.lean",
+      "imports": [
+        "BQP-canonical-recursions"
+      ],
+      "sha256": "43b326fd2e169b4a615d5548b4763885bf1c064eb78aabfa04a2d0962f2caa5e"
+    },
+    "BQP-canonical-recursions": {
+      "path": "BQP-canonical-recursions.lean",
+      "source": "src/BQP-canonical-recursions.lean",
+      "imports": [
+        "BQP-canonical-paths"
+      ],
+      "sha256": "826ee1f73757e8d1326c1dcf2e97545e614cf4eb2d9260123337db7a12571742"
+    },
+    "BQP-canonical-reversal-fresh-audit": {
+      "path": "BQP-canonical-reversal-fresh-audit.lean",
+      "source": "src/BQP-canonical-reversal-fresh-audit.lean",
+      "imports": [
+        "BQP-canonical-reversal"
+      ],
+      "sha256": "948a2fd5b9c28cf4c13dca5d3646a22d0b55abb584d3b23a8354cafa5913046c"
+    },
+    "BQP-canonical-reversal": {
+      "path": "BQP-canonical-reversal.lean",
+      "source": "src/BQP-canonical-reversal.lean",
+      "imports": [
+        "BQP-canonical-paths",
+        "BQP-program-reversal-reference"
+      ],
+      "sha256": "9a22d9a7c11a6a5b0475239a37ebd3027243c6cd8a5abb52aa903265be6c189b"
+    },
+    "BQP-canonical-adjoint-fresh-audit": {
+      "path": "BQP-canonical-adjoint-fresh-audit.lean",
+      "source": "src/BQP-canonical-adjoint-fresh-audit.lean",
+      "imports": [
+        "BQP-canonical-adjoint"
+      ],
+      "sha256": "52df546c4a560c5decc39f67003030c0991e45b5f647773edd693f197062540c"
+    },
+    "BQP-canonical-adjoint": {
+      "path": "BQP-canonical-adjoint.lean",
+      "source": "src/BQP-canonical-adjoint.lean",
+      "imports": [
+        "BQP-canonical-reversal",
+        "BQP-program-adjoint-phase-reference"
+      ],
+      "sha256": "1f58e8dba20013ef35903808e9dc5860a43492ceb6062eb30ef7a82b7609f6e9"
+    },
+    "BQP-program-data-fresh-audit": {
+      "path": "BQP-program-data-fresh-audit.lean",
+      "source": "src/BQP-program-data-fresh-audit.lean",
+      "imports": [
+        "BQP-program-count"
+      ],
+      "sha256": "30a243c3c9392b1e37828fe6d8b6a0ff9ffc7be2445f1278e34ad61f3b502d54"
+    },
+    "BQP-program-count": {
+      "path": "BQP-program-count.lean",
+      "source": "src/BQP-program-count.lean",
+      "imports": [
+        "BQP-program-data"
+      ],
+      "sha256": "0f398a836212e90f55511d0de8025947fbe6750c47ddeec226dfc5e8f5d9837a"
+    },
+    "BQP-program-data": {
+      "path": "BQP-program-data.lean",
+      "source": "src/BQP-program-data.lean",
+      "imports": [
+        "BQP-closed-references",
+        "BQP-canonical-paths"
+      ],
+      "sha256": "7702c0b5851ddbe32ae6ab6e1b2e3905e2d037ca8113e1841ccbc75f8d3b9ec9"
+    },
+    "BQP-program-sweeps-fresh-audit": {
+      "path": "BQP-program-sweeps-fresh-audit.lean",
+      "source": "src/BQP-program-sweeps-fresh-audit.lean",
+      "imports": [
+        "BQP-program-sweeps"
+      ],
+      "sha256": "0e686327cd40cf346b1bb7a2b1c93c55f8bfe29d17239a622c55d17653ae07f9"
+    },
+    "BQP-program-sweeps": {
+      "path": "BQP-program-sweeps.lean",
+      "source": "src/BQP-program-sweeps.lean",
+      "imports": [
+        "BQP-program-block-transfer",
+        "BQP-program-sweep-reference",
+        "BQP-program-sweeps-reference"
+      ],
+      "sha256": "ee0478a2e9e440540d562e02c3f796260d15703a6ae8378b24cdd325d8695945"
+    },
+    "BQP-program-block-transfer": {
+      "path": "BQP-program-block-transfer.lean",
+      "source": "src/BQP-program-block-transfer.lean",
+      "imports": [
+        "BQP-program-data",
+        "BQP-canonical-adjoint",
+        "BQP-program-dictionary-reference",
+        "BQP-program-transfer-reference",
+        "BQP-bridge-gate-reference"
+      ],
+      "sha256": "9d4f6460d5581373bdc43a9ef2112096ea5c496247e26a6472855bfef6dafe0e"
+    },
+    "BQP-program-evaluation-fresh-audit": {
+      "path": "BQP-program-evaluation-fresh-audit.lean",
+      "source": "src/BQP-program-evaluation-fresh-audit.lean",
+      "imports": [
+        "BQP-program-evaluation"
+      ],
+      "sha256": "ab9aecf0920036edb1e52feb646de25837fc5deecf42225d7e08f5d34f5726ce"
+    },
+    "BQP-program-evaluation": {
+      "path": "BQP-program-evaluation.lean",
+      "source": "src/BQP-program-evaluation.lean",
+      "imports": [
+        "BQP-program-sweeps",
+        "BQP-canonical-recursions"
+      ],
+      "sha256": "525af01c5e3c0b141a7699e0e2156f3fec5ecddb5ef82a612213768cf1551842"
+    },
+    "BQP-program-count-bridge-fresh-audit": {
+      "path": "BQP-program-count-bridge-fresh-audit.lean",
+      "source": "src/BQP-program-count-bridge-fresh-audit.lean",
+      "imports": [
+        "BQP-program-count-bridge"
+      ],
+      "sha256": "7624617dbf7809afe34717d2128e44e8c54446be1dcddd78ae1e6f014acf12c5"
+    },
+    "BQP-program-count-bridge": {
+      "path": "BQP-program-count-bridge.lean",
+      "source": "src/BQP-program-count-bridge.lean",
+      "imports": [
+        "BQP-program-evaluation",
+        "BQP-program-count",
+        "BQP-canonical-amplitude"
+      ],
+      "sha256": "73ed1014b0e13913946e5526e32735f9aadf9ebc44ff924c7e383b036d6cd9fb"
+    },
+    "BQP-family-counting-fresh-audit": {
+      "path": "BQP-family-counting-fresh-audit.lean",
+      "source": "src/BQP-family-counting-fresh-audit.lean",
+      "imports": [
+        "BQP-family-counting"
+      ],
+      "sha256": "1cf512aa39f6fdfff2903b20e55c08d0acb62be1c55d955bda96ef6cf6701b11"
+    },
+    "BQP-family-counting": {
+      "path": "BQP-family-counting.lean",
+      "source": "src/BQP-family-counting.lean",
+      "imports": [
+        "BQP-program-count-bridge",
+        "BQP-normalized-threshold"
+      ],
+      "sha256": "cb14d7e1c2632204dfe78d951ac769b0973f0871d849c3dd7316c222bbf95055"
+    },
+    "BQP-family-majority-fresh-audit": {
+      "path": "BQP-family-majority-fresh-audit.lean",
+      "source": "src/BQP-family-majority-fresh-audit.lean",
+      "imports": [
+        "BQP-family-majority"
+      ],
+      "sha256": "8b0034bf0bfd4136d57d5b30d8dacb3a09e9c96ff6b5d74ab5d35f07824792af"
+    },
+    "BQP-family-majority": {
+      "path": "BQP-family-majority.lean",
+      "source": "src/BQP-family-majority.lean",
+      "imports": [
+        "BQP-family-counting",
+        "BQP-short-machine-outputs"
+      ],
+      "sha256": "2351b94fd008d37f0e0c325393bc6549152e3e257aa8621d12acf33f582340da"
+    },
+    "BQP-program-size-fresh-audit": {
+      "path": "BQP-program-size-fresh-audit.lean",
+      "source": "src/BQP-program-size-fresh-audit.lean",
+      "imports": [
+        "BQP-program-size"
+      ],
+      "sha256": "1b84cc402a3714bda0c84048eb446fbbb65d2e5f869ccf788f4fbdd685548856"
+    },
+    "BQP-program-size": {
+      "path": "BQP-program-size.lean",
+      "source": "src/BQP-program-size.lean",
+      "imports": [
+        "BQP-program-data"
+      ],
+      "sha256": "cd07b31f56fc05108b000c54fc1a9f8f71396989443de261f502757c0727c009"
+    },
+    "BQP-prefix-fresh-audit": {
+      "path": "BQP-prefix-fresh-audit.lean",
+      "source": "src/BQP-prefix-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-machine"
+      ],
+      "sha256": "09fb3423bb2157befee5833a4aeb1fedcdacf7d1767eeb2bbb8a7ada113a5ddb"
+    },
+    "BQP-prefix-machine": {
+      "path": "BQP-prefix-machine.lean",
+      "source": "src/BQP-prefix-machine.lean",
+      "imports": [
+        "AMPUNI-stack-frame",
+        "AMPUNI-state-frame",
+        "Mathlib.Tactic.DeriveFintype"
+      ],
+      "sha256": "4fb57c97e6c00dea62a330cd348bfb576f97c8ecb4f4b74e9646877938c2f303"
+    },
+    "BQP-prefix-steps-fresh-audit": {
+      "path": "BQP-prefix-steps-fresh-audit.lean",
+      "source": "src/BQP-prefix-steps-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-steps"
+      ],
+      "sha256": "5b2b2566f61a92a6cbdf38692f5c13271a8023ff77fb21b2744c644024671ef7"
+    },
+    "BQP-prefix-steps": {
+      "path": "BQP-prefix-steps.lean",
+      "source": "src/BQP-prefix-steps.lean",
+      "imports": [
+        "BQP-prefix-machine",
+        "BQP-short-machine-prefix"
+      ],
+      "sha256": "3cde82b781dc47f93f20d232fa886873eff827cd4568dfb0fb16bff8000bab2c"
+    },
+    "BQP-prefix-runs-fresh-audit": {
+      "path": "BQP-prefix-runs-fresh-audit.lean",
+      "source": "src/BQP-prefix-runs-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-runs"
+      ],
+      "sha256": "11e1672285ab5ea72f2ba871fc6856675fa5c2d22bd35d438834a02045ad7f86"
+    },
+    "BQP-prefix-runs": {
+      "path": "BQP-prefix-runs.lean",
+      "source": "src/BQP-prefix-runs.lean",
+      "imports": [
+        "BQP-prefix-steps"
+      ],
+      "sha256": "ee6013ddd52749ff3e18964c318de7ebbc3af5f677d3340852ada1b989d7e0c7"
+    },
+    "BQP-prefix-inputs-fresh-audit": {
+      "path": "BQP-prefix-inputs-fresh-audit.lean",
+      "source": "src/BQP-prefix-inputs-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-inputs"
+      ],
+      "sha256": "d3f36b86647decfb35fa30c227c305aa380f44f3073537c702e7abf4ca4d4e4e"
+    },
+    "BQP-prefix-inputs": {
+      "path": "BQP-prefix-inputs.lean",
+      "source": "src/BQP-prefix-inputs.lean",
+      "imports": [
+        "BQP-prefix-runs"
+      ],
+      "sha256": "006338bcf6b24aaa4e83daab0b68c0c855fdf4bbff7ad5a701347a179890bf9c"
+    },
+    "BQP-prefix-outputs-fresh-audit": {
+      "path": "BQP-prefix-outputs-fresh-audit.lean",
+      "source": "src/BQP-prefix-outputs-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-outputs"
+      ],
+      "sha256": "0b47461621f055e972aee86eee607bd3e4f655c40d2e525a1e2e8822763a4170"
+    },
+    "BQP-prefix-outputs": {
+      "path": "BQP-prefix-outputs.lean",
+      "source": "src/BQP-prefix-outputs.lean",
+      "imports": [
+        "BQP-prefix-inputs",
+        "BQP-counting-normalization"
+      ],
+      "sha256": "edad14f386f948181bd05c755d43cf79922e59dabaa6bdf9c8f8209faa8fec51"
+    },
+    "BQP-prefix-integration-fresh-audit": {
+      "path": "BQP-prefix-integration-fresh-audit.lean",
+      "source": "src/BQP-prefix-integration-fresh-audit.lean",
+      "imports": [
+        "BQP-prefix-integration"
+      ],
+      "sha256": "e93a1cd7c2957c6ba3d4dbe15c1516189b7822b38ae8cb00d6865be851b82c07"
+    },
+    "BQP-prefix-integration": {
+      "path": "BQP-prefix-integration.lean",
+      "source": "src/BQP-prefix-integration.lean",
+      "imports": [
+        "BQP-prefix-outputs",
+        "BQP-family-counting"
+      ],
+      "sha256": "2909fb6734f301737067b5efefdbccc3bdfd567a37dbc5dcb5557e2f7ac4d54c"
+    },
+    "BQP-family-preprocess-size-fresh-audit": {
+      "path": "BQP-family-preprocess-size-fresh-audit.lean",
+      "source": "src/BQP-family-preprocess-size-fresh-audit.lean",
+      "imports": [
+        "BQP-family-preprocess-size"
+      ],
+      "sha256": "641a737fbbdd7c3980736896e4dbd9334718de6414fd7785f773c19448b7ef0d"
+    },
+    "BQP-family-preprocess-size": {
+      "path": "BQP-family-preprocess-size.lean",
+      "source": "src/BQP-family-preprocess-size.lean",
+      "imports": [
+        "BQP-program-size",
+        "BQP-prefix-integration"
+      ],
+      "sha256": "9312f415ac2da675bc6cd4240fe162dc25e3463439f0a9ac8ebe75f0161d9722"
+    },
+    "BQP-map-first-fresh-audit": {
+      "path": "BQP-map-first-fresh-audit.lean",
+      "source": "src/BQP-map-first-fresh-audit.lean",
+      "imports": [
+        "BQP-map-first-polytime"
+      ],
+      "sha256": "85a81080100cc774722cb2bdc1194b37b0003c5af379ddb61c81009cfaf65ca5"
+    },
+    "BQP-map-first-polytime": {
+      "path": "BQP-map-first-polytime.lean",
+      "source": "src/BQP-map-first-polytime.lean",
+      "imports": [
+        "BQP-map-first-outputs",
+        "BQP-closed-references"
+      ],
+      "sha256": "e167fd741a62657cb087c9756e66e77c98ec91bca8cb9b1cc8fded0c7ebd6e71"
+    },
+    "BQP-map-first-outputs": {
+      "path": "BQP-map-first-outputs.lean",
+      "source": "src/BQP-map-first-outputs.lean",
+      "imports": [
+        "BQP-map-first-io"
+      ],
+      "sha256": "a8167446d14fd19e69d21bba89f5e524218884d74662ed3f52b80ccebadb20e4"
+    },
+    "BQP-map-first-io": {
+      "path": "BQP-map-first-io.lean",
+      "source": "src/BQP-map-first-io.lean",
+      "imports": [
+        "BQP-map-first-runs"
+      ],
+      "sha256": "fbdb61c5601c15833f8e17793cb109f3cd66042270845ee7d07d78cf5e6d846e"
+    },
+    "BQP-map-first-runs": {
+      "path": "BQP-map-first-runs.lean",
+      "source": "src/BQP-map-first-runs.lean",
+      "imports": [
+        "BQP-map-first-steps"
+      ],
+      "sha256": "d7a399ad23ae01c52e328902da1ab7e468a2c65661158fc5be7a9576b94d92d4"
+    },
+    "BQP-map-first-steps": {
+      "path": "BQP-map-first-steps.lean",
+      "source": "src/BQP-map-first-steps.lean",
+      "imports": [
+        "BQP-map-first-machine"
+      ],
+      "sha256": "8e0db987cc791a475646db4d29fab64804a31d94484601b40fa05f772b7fa7c9"
+    },
+    "BQP-map-first-machine": {
+      "path": "BQP-map-first-machine.lean",
+      "source": "src/BQP-map-first-machine.lean",
+      "imports": [
+        "BQP-halt-routing-run",
+        "AMPUNI-stack-frame",
+        "AMPUNI-state-frame",
+        "Mathlib.Tactic.DeriveFintype"
+      ],
+      "sha256": "298993b905b75d71f1ef2456dc19777278b539774858e0d1011ba605848a9828"
+    },
+    "BQP-halt-routing-run": {
+      "path": "BQP-halt-routing-run.lean",
+      "source": "src/BQP-halt-routing-run.lean",
+      "imports": [
+        "AMPUNI-halt-routing"
+      ],
+      "sha256": "216066a386b44bddd50f762706c6f4471a050fb9709c805782df5f65e4927bea"
+    },
+    "AMPUNI-halt-routing": {
+      "path": "AMPUNI-halt-routing.lean",
+      "source": "src/AMPUNI-halt-routing.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "d3d5a21c712eaa0f4ea4fa80fc7fb9b5f785bd74dd363a568d60fcc827832b8f"
+    },
+    "BQP-map-first-integration-fresh-audit": {
+      "path": "BQP-map-first-integration-fresh-audit.lean",
+      "source": "src/BQP-map-first-integration-fresh-audit.lean",
+      "imports": [
+        "BQP-map-first-integration"
+      ],
+      "sha256": "826dab0cc9171ebd726ed81cf18e7ee1a0ec6a8c8d9533fb42b044cc2c4a5101"
+    },
+    "BQP-map-first-integration": {
+      "path": "BQP-map-first-integration.lean",
+      "source": "src/BQP-map-first-integration.lean",
+      "imports": [
+        "BQP-map-first-polytime",
+        "BQP-prefix-integration"
+      ],
+      "sha256": "2313b56d481db0acd3531683ec14e8bbec942e688d5a9506686f060714fd8251"
+    },
+    "BQP-emitter-machine-fresh-audit": {
+      "path": "BQP-emitter-machine-fresh-audit.lean",
+      "source": "src/BQP-emitter-machine-fresh-audit.lean",
+      "imports": [
+        "BQP-one-gate-machine",
+        "BQP-nested-block-runs",
+        "BQP-unary-compare"
+      ],
+      "sha256": "477df53c939abc759abadbaf70d145449f652ecb86e3ff322ce1eb26e361e0e3"
+    },
+    "BQP-one-gate-machine": {
+      "path": "BQP-one-gate-machine.lean",
+      "source": "src/BQP-one-gate-machine.lean",
+      "imports": [
+        "BQP-unary-parser",
+        "BQP-unary-block-runs",
+        "BQP-stack-embedding",
+        "BQP-halt-routing-run",
+        "AMPUNI-subroutine-full-lift"
+      ],
+      "sha256": "afeb481ab8b61f27e03203a3dd455cca7ce2fbecf2bacf7045750ae90b1b2bd6"
+    },
+    "BQP-unary-parser": {
+      "path": "BQP-unary-parser.lean",
+      "source": "src/BQP-unary-parser.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "400dea8b9a0fb0d0761d7ccd06d1c959218578a0dbbc9cd320c91a71c578678b"
+    },
+    "BQP-unary-block-runs": {
+      "path": "BQP-unary-block-runs.lean",
+      "source": "src/BQP-unary-block-runs.lean",
+      "imports": [
+        "BQP-unary-block-machine"
+      ],
+      "sha256": "9ef4429a51bd417c2b4a5a3bb6926fb67b646c0324c43f39d19d3e98b05c4e3d"
+    },
+    "BQP-unary-block-machine": {
+      "path": "BQP-unary-block-machine.lean",
+      "source": "src/BQP-unary-block-machine.lean",
+      "imports": [
+        "BQP-opcode-emission",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "c4a18a4ef8c2d6cdaab4d292f79864fe10b2336aaff0ddf08c79c93216c9627f"
+    },
+    "BQP-opcode-emission": {
+      "path": "BQP-opcode-emission.lean",
+      "source": "src/BQP-opcode-emission.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "a859e5e053d40a2a64c65fd1d09a58a145a7311fb178a33979ec3d86c7ba552e"
+    },
+    "BQP-stack-embedding": {
+      "path": "BQP-stack-embedding.lean",
+      "source": "src/BQP-stack-embedding.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "fadb906d358a6d764d0f879bd7e3aee861bd48fee2f18860769f05c74ca43ada"
+    },
+    "BQP-nested-block-runs": {
+      "path": "BQP-nested-block-runs.lean",
+      "source": "src/BQP-nested-block-runs.lean",
+      "imports": [
+        "BQP-nested-block-machine"
+      ],
+      "sha256": "4e340ef71ad31c562d34106e57ed349b197edd5cec443ee69f647826c0d2ab1d"
+    },
+    "BQP-nested-block-machine": {
+      "path": "BQP-nested-block-machine.lean",
+      "source": "src/BQP-nested-block-machine.lean",
+      "imports": [
+        "BQP-opcode-emission",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "40b81ef7811f23ce402feb0ee188dbbd09adac9aa5eed36a50519835dcc98c6b"
+    },
+    "BQP-unary-compare": {
+      "path": "BQP-unary-compare.lean",
+      "source": "src/BQP-unary-compare.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "16a19d8c4b17e7855cb8e007641cae2796113a58618612b0d7120efb2ac96455"
+    },
+    "BQP-emission-fresh-audit": {
+      "path": "BQP-emission-fresh-audit.lean",
+      "source": "src/BQP-emission-fresh-audit.lean",
+      "imports": [
+        "BQP-nested-block-integration"
+      ],
+      "sha256": "d7314758f524fa6833df350b146bd07e56e45cc4ed7f9b6b1df0f660f8e23e43"
+    },
+    "BQP-nested-block-integration": {
+      "path": "BQP-nested-block-integration.lean",
+      "source": "src/BQP-nested-block-integration.lean",
+      "imports": [
+        "BQP-nested-block-runs",
+        "BQP-unary-block-integration"
+      ],
+      "sha256": "19039d2f325151f22fb79d72feb508935dd56c7d4976a7d95f1ba312695f3ecb"
+    },
+    "BQP-unary-block-integration": {
+      "path": "BQP-unary-block-integration.lean",
+      "source": "src/BQP-unary-block-integration.lean",
+      "imports": [
+        "BQP-unary-block-runs",
+        "BQP-program-data"
+      ],
+      "sha256": "d551178c54bbd832b15d530df44f6490e0bbb74f19666e9e780ad10bf145a836"
+    },
+    "BQP-gate-machine-fresh-audit": {
+      "path": "BQP-gate-machine-fresh-audit.lean",
+      "source": "src/BQP-gate-machine-fresh-audit.lean",
+      "imports": [
+        "BQP-gate-runs",
+        "BQP-counted-runs",
+        "BQP-bit-transfer"
+      ],
+      "sha256": "fea6fa918d93bee8b129df045b0cf1ee28495a54064b2c1cee3563e2a5c5c997"
+    },
+    "BQP-gate-runs": {
+      "path": "BQP-gate-runs.lean",
+      "source": "src/BQP-gate-runs.lean",
+      "imports": [
+        "BQP-gate-dispatch"
+      ],
+      "sha256": "0819569d40b60570ccb08ca4a946e3818d5523eb1a3db69d902780f449762f15"
+    },
+    "BQP-gate-dispatch": {
+      "path": "BQP-gate-dispatch.lean",
+      "source": "src/BQP-gate-dispatch.lean",
+      "imports": [
+        "BQP-cnot-complete-run",
+        "BQP-one-gate-machine",
+        "Mathlib.Tactic.NormNum"
+      ],
+      "sha256": "12a57cc4739c822db087bd5cab15852c35fbddd094afd2c67c47874c1477cd91"
+    },
+    "BQP-cnot-complete-run": {
+      "path": "BQP-cnot-complete-run.lean",
+      "source": "src/BQP-cnot-complete-run.lean",
+      "imports": [
+        "BQP-cnot-parser"
+      ],
+      "sha256": "58742ff4dd02187ee394f52b42f41cd3d1bb8262f189b495882dff8bd25a429e"
+    },
+    "BQP-cnot-parser": {
+      "path": "BQP-cnot-parser.lean",
+      "source": "src/BQP-cnot-parser.lean",
+      "imports": [
+        "BQP-cnot-runs",
+        "BQP-unary-parser"
+      ],
+      "sha256": "33fb56c6bdb418f6fe514ab3668bd23660355ad8285c9c686baf2b62d1f35bcc"
+    },
+    "BQP-cnot-runs": {
+      "path": "BQP-cnot-runs.lean",
+      "source": "src/BQP-cnot-runs.lean",
+      "imports": [
+        "BQP-cnot-machine"
+      ],
+      "sha256": "9a141b62baa68c514c0b73cf3400e287e9c188d4065c3d8f124c34e6c11350c0"
+    },
+    "BQP-cnot-machine": {
+      "path": "BQP-cnot-machine.lean",
+      "source": "src/BQP-cnot-machine.lean",
+      "imports": [
+        "BQP-unary-compare",
+        "BQP-nested-block-runs",
+        "BQP-stack-embedding",
+        "BQP-halt-routing-run",
+        "AMPUNI-subroutine-full-lift"
+      ],
+      "sha256": "e86c6145ea0713da6248295fcade3001b22ceaccaebdc6b29c14f009f54d6029"
+    },
+    "BQP-counted-runs": {
+      "path": "BQP-counted-runs.lean",
+      "source": "src/BQP-counted-runs.lean",
+      "imports": [
+        "BQP-counted-machine"
+      ],
+      "sha256": "a49aeafb413aab41fd36e8303f15b467f4fd2ad32a8d9cd96b77dc1304391163"
+    },
+    "BQP-counted-machine": {
+      "path": "BQP-counted-machine.lean",
+      "source": "src/BQP-counted-machine.lean",
+      "imports": [
+        "BQP-stack-embedding",
+        "BQP-halt-routing-run"
+      ],
+      "sha256": "f6d6438191bcbbba81f41ba0954698ccb9664a0d3ee26c5fc0be516b2f859c84"
+    },
+    "BQP-bit-transfer": {
+      "path": "BQP-bit-transfer.lean",
+      "source": "src/BQP-bit-transfer.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "191739767c98bf8e130450c7b1d7a3d35630fe32fa8f1178f3fa0e8ecc229392"
+    },
+    "BQP-circuit-pass-fresh-audit": {
+      "path": "BQP-circuit-pass-fresh-audit.lean",
+      "source": "src/BQP-circuit-pass-fresh-audit.lean",
+      "imports": [
+        "BQP-circuit-pass"
+      ],
+      "sha256": "bd457ed364049d91e7585521d403e15955d5d99d79b49b7313a6e65f2ba4e308"
+    },
+    "BQP-circuit-pass": {
+      "path": "BQP-circuit-pass.lean",
+      "source": "src/BQP-circuit-pass.lean",
+      "imports": [
+        "BQP-layer-machine"
+      ],
+      "sha256": "8c668e8aeab6bc0065937ba5a88a9de416a9da9889ea03d37f28a9704ef384f5"
+    },
+    "BQP-layer-machine": {
+      "path": "BQP-layer-machine.lean",
+      "source": "src/BQP-layer-machine.lean",
+      "imports": [
+        "BQP-counted-runs",
+        "BQP-gate-machine-integration",
+        "BQP-adjoint-archive"
+      ],
+      "sha256": "fe49eef7849d0493f95194dbb80b2d2f931ffc54c78f707d497b9bf2e08c536c"
+    },
+    "BQP-gate-machine-integration": {
+      "path": "BQP-gate-machine-integration.lean",
+      "source": "src/BQP-gate-machine-integration.lean",
+      "imports": [
+        "BQP-gate-runs",
+        "BQP-unary-block-integration"
+      ],
+      "sha256": "ddf6ac00bf17cccd9bd396e50d70288e7a44489faafd8e39303948bad2ccd997"
+    },
+    "BQP-adjoint-archive": {
+      "path": "BQP-adjoint-archive.lean",
+      "source": "src/BQP-adjoint-archive.lean",
+      "imports": [
+        "BQP-unary-block-integration",
+        "BQP-bit-transfer"
+      ],
+      "sha256": "9af51bca44a1ef6686ef14d5d31d93bfa5f0a3f2ec6eef64872c07205fe39c6b"
+    },
+    "BQP-archive-machine-fresh-audit": {
+      "path": "BQP-archive-machine-fresh-audit.lean",
+      "source": "src/BQP-archive-machine-fresh-audit.lean",
+      "imports": [
+        "BQP-archive-machine",
+        "BQP-bool-transfer"
+      ],
+      "sha256": "a550a37046b450300b8647b1754577f111736ad1cc235104a0da969d468446dd"
+    },
+    "BQP-archive-machine": {
+      "path": "BQP-archive-machine.lean",
+      "source": "src/BQP-archive-machine.lean",
+      "imports": [
+        "BQP-counted-machine"
+      ],
+      "sha256": "06a54436fc4202e702d03ece1438ff86eead8d9b55bc878039c1eb242b101adf"
+    },
+    "BQP-bool-transfer": {
+      "path": "BQP-bool-transfer.lean",
+      "source": "src/BQP-bool-transfer.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "7430e38a46a79b52dc5b32a382f233ab48bc32587d3379133331b0fb441895b9"
+    },
+    "BQP-adjoint-pass-fresh-audit": {
+      "path": "BQP-adjoint-pass-fresh-audit.lean",
+      "source": "src/BQP-adjoint-pass-fresh-audit.lean",
+      "imports": [
+        "BQP-adjoint-pass"
+      ],
+      "sha256": "712fd848f743c441ac548b357d5b68de5fe2d353c5d6f58ca96e76798a561944"
+    },
+    "BQP-adjoint-pass": {
+      "path": "BQP-adjoint-pass.lean",
+      "source": "src/BQP-adjoint-pass.lean",
+      "imports": [
+        "BQP-archive-pass"
+      ],
+      "sha256": "c68019016187a5e21e239dec878d9b9cb69ce30ba9f7ec38b24d848cfce4e1a9"
+    },
+    "BQP-archive-pass": {
+      "path": "BQP-archive-pass.lean",
+      "source": "src/BQP-archive-pass.lean",
+      "imports": [
+        "BQP-archive-gate",
+        "BQP-counted-runs",
+        "BQP-adjoint-archive"
+      ],
+      "sha256": "7f722cf54b98d5cadfcc41ea5976bf4494de8902d88bfbf87655d4d25fe35db7"
+    },
+    "BQP-archive-gate": {
+      "path": "BQP-archive-gate.lean",
+      "source": "src/BQP-archive-gate.lean",
+      "imports": [
+        "BQP-archive-machine",
+        "BQP-gate-machine-integration"
+      ],
+      "sha256": "8f0f3fdd5664920f254c56882ece730df940691ddb455ee164f0976f01e3c782"
+    },
+    "BQP-bit-blocks-fresh-audit": {
+      "path": "BQP-bit-blocks-fresh-audit.lean",
+      "source": "src/BQP-bit-blocks-fresh-audit.lean",
+      "imports": [
+        "BQP-bit-blocks"
+      ],
+      "sha256": "c57d1280b3599933f0b04ec18491b48214ba6dfae35a71ff0a0ed128dc9e7f9b"
+    },
+    "BQP-bit-blocks": {
+      "path": "BQP-bit-blocks.lean",
+      "source": "src/BQP-bit-blocks.lean",
+      "imports": [
+        "BQP-opcode-emission",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "f1f8830008d44b72b8cc519a50ff57927a92695d2e6dd93b6ef2a4e8c4505a5f"
+    },
+    "BQP-bit-blocks-integration-fresh-audit": {
+      "path": "BQP-bit-blocks-integration-fresh-audit.lean",
+      "source": "src/BQP-bit-blocks-integration-fresh-audit.lean",
+      "imports": [
+        "BQP-bit-blocks-integration"
+      ],
+      "sha256": "39f5a2a6667f559517a7fc0e7272c844da7430896427c7b4749dd6ada4c025ed"
+    },
+    "BQP-bit-blocks-integration": {
+      "path": "BQP-bit-blocks-integration.lean",
+      "source": "src/BQP-bit-blocks-integration.lean",
+      "imports": [
+        "BQP-bit-blocks",
+        "BQP-unary-block-integration"
+      ],
+      "sha256": "c7c253b2bdbcedf0da64cbd7bdfb1967fd3844f31f480c74b9fb090d64c4b036"
+    },
+    "BQP-copy-bits-fresh-audit": {
+      "path": "BQP-copy-bits-fresh-audit.lean",
+      "source": "src/BQP-copy-bits-fresh-audit.lean",
+      "imports": [
+        "BQP-copy-bits"
+      ],
+      "sha256": "f345fe1bd94badd7f769e32c52278fa487785f24042240dc683081a4a3580529"
+    },
+    "BQP-copy-bits": {
+      "path": "BQP-copy-bits.lean",
+      "source": "src/BQP-copy-bits.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "0052772a233c1b0aa78a9d618181e7f9c96bc9b457f10b931a8193aa98fdce1b"
+    },
+    "BQP-circuit-pass-outputs-fresh-audit": {
+      "path": "BQP-circuit-pass-outputs-fresh-audit.lean",
+      "source": "src/BQP-circuit-pass-outputs-fresh-audit.lean",
+      "imports": [
+        "BQP-circuit-pass-outputs"
+      ],
+      "sha256": "620acd302fdb52eac66f7f151b3e2c8e8e4ba1d9722fd20b340a1bafdaf7a8bb"
+    },
+    "BQP-circuit-pass-outputs": {
+      "path": "BQP-circuit-pass-outputs.lean",
+      "source": "src/BQP-circuit-pass-outputs.lean",
+      "imports": [
+        "BQP-circuit-pass",
+        "BQP-adjoint-pass"
+      ],
+      "sha256": "fc7e5bdcca3ea0add904630aca995c5b061b3f448ab8c5689dc2fa6046eea480"
+    },
+    "BQP-skip-headers-fresh-audit": {
+      "path": "BQP-skip-headers-fresh-audit.lean",
+      "source": "src/BQP-skip-headers-fresh-audit.lean",
+      "imports": [
+        "BQP-skip-headers"
+      ],
+      "sha256": "c253bd2a64b68328e7f6d719116fccfeb4aa133d1bc9717832ea2065914fdd58"
+    },
+    "BQP-skip-headers": {
+      "path": "BQP-skip-headers.lean",
+      "source": "src/BQP-skip-headers.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "562604f40b5aeaf0626a2c68e00cd65270db8057ffbca14e8e407fb91ecce124"
+    },
+    "BQP-assembly-components-fresh-audit": {
+      "path": "BQP-assembly-components-fresh-audit.lean",
+      "source": "src/BQP-assembly-components-fresh-audit.lean",
+      "imports": [
+        "BQP-typed-polytime",
+        "BQP-header-field",
+        "BQP-skip-one-header",
+        "BQP-string-primitives",
+        "BQP-bit-blocks-outputs",
+        "BQP-family-fields"
+      ],
+      "sha256": "00d650e82d3f5f63fdcfaa37df216100821efdc85b21902b0fadad41415dbc2a"
+    },
+    "BQP-typed-polytime": {
+      "path": "BQP-typed-polytime.lean",
+      "source": "src/BQP-typed-polytime.lean",
+      "imports": [
+        "BQP-closed-references"
+      ],
+      "sha256": "3bda3075c3a065948ed1062e37e17ec07621ba7cd72317875d1d2d9c1d6d13ae"
+    },
+    "BQP-header-field": {
+      "path": "BQP-header-field.lean",
+      "source": "src/BQP-header-field.lean",
+      "imports": [
+        "BQP-skip-headers",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "760863469c5efb38d395893a89ed4976001f6b461cff2cd82898010be1ac4f56"
+    },
+    "BQP-skip-one-header": {
+      "path": "BQP-skip-one-header.lean",
+      "source": "src/BQP-skip-one-header.lean",
+      "imports": [
+        "BQP-skip-headers"
+      ],
+      "sha256": "bedc69760e3387dc70e3f0fe1502ba624ff7ceb68c81cb62b0b720b7a851efa4"
+    },
+    "BQP-string-primitives": {
+      "path": "BQP-string-primitives.lean",
+      "source": "src/BQP-string-primitives.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "9aca78fe1cf73c0446208bf7a1f4b2abaa3dee53889251d0c8da409d4fc6421c"
+    },
+    "BQP-bit-blocks-outputs": {
+      "path": "BQP-bit-blocks-outputs.lean",
+      "source": "src/BQP-bit-blocks-outputs.lean",
+      "imports": [
+        "BQP-bit-blocks-integration"
+      ],
+      "sha256": "1e1882201da044dd57f06e8ec8a6b6e31cca957fb3b99cb25c236e4bb247419d"
+    },
+    "BQP-family-fields": {
+      "path": "BQP-family-fields.lean",
+      "source": "src/BQP-family-fields.lean",
+      "imports": [
+        "BQP-family-circuit-passes",
+        "BQP-header-field",
+        "BQP-skip-one-header",
+        "BQP-string-primitives",
+        "BQP-unary-block-integration"
+      ],
+      "sha256": "81e0bdecc3c0217f1c0592c4fe22d609c2caadd03f03e644503487030b08a322"
+    },
+    "BQP-family-circuit-passes": {
+      "path": "BQP-family-circuit-passes.lean",
+      "source": "src/BQP-family-circuit-passes.lean",
+      "imports": [
+        "BQP-typed-polytime",
+        "BQP-skip-headers",
+        "BQP-circuit-pass-outputs"
+      ],
+      "sha256": "0028f40ec5fe985632b17d114172161339c80482db6a9314a029117fb329bea3"
+    },
+    "BQP-family-compiler-fresh-audit": {
+      "path": "BQP-family-compiler-fresh-audit.lean",
+      "source": "src/BQP-family-compiler-fresh-audit.lean",
+      "imports": [
+        "BQP-family-compiler"
+      ],
+      "sha256": "45cd0a7ea028044e7093c11536eb740182980c0892974f29d7f32f228dbb8bdb"
+    },
+    "BQP-family-compiler": {
+      "path": "BQP-family-compiler.lean",
+      "source": "src/BQP-family-compiler.lean",
+      "imports": [
+        "BQP-family-fields",
+        "BQP-bit-blocks-outputs",
+        "BQP-joint-output",
+        "BQP-map-first-integration"
+      ],
+      "sha256": "e7faca08c9403afdf49aa853d8efcc9cbcca627d1affd2d6a02b5c4047ff4de9"
+    },
+    "BQP-joint-output": {
+      "path": "BQP-joint-output.lean",
+      "source": "src/BQP-joint-output.lean",
+      "imports": [
+        "BQP-closed-references",
+        "AMPUNI-subroutine-lift"
+      ],
+      "sha256": "8e035e15c276207dd984ffd210c01bc9a16aa60d209200df15082d024a317a2f"
+    },
+    "BQP-router-square-root-fresh-audit": {
+      "path": "BQP-router-square-root-fresh-audit.lean",
+      "source": "src/BQP-router-square-root-fresh-audit.lean",
+      "imports": [
+        "BQP-router-square-root"
+      ],
+      "sha256": "c4a9b75a7db3ded82a2c3c13278363ecdb90c2fe2c8383d7ecb0b3b8d3fcffa4"
+    },
+    "BQP-router-square-root": {
+      "path": "BQP-router-square-root.lean",
+      "source": "src/BQP-router-square-root.lean",
+      "imports": [
+        "BQP-typed-polytime"
+      ],
+      "sha256": "6b99c812b02e3c5235269fa3cdcea4bffe6d660fe4aee5c1c8943d19a7a6d4eb"
+    },
+    "BQP-router-preparation-fresh-audit": {
+      "path": "BQP-router-preparation-fresh-audit.lean",
+      "source": "src/BQP-router-preparation-fresh-audit.lean",
+      "imports": [
+        "BQP-router-family-seed",
+        "BQP-router-overflow"
+      ],
+      "sha256": "e1443fdc2db5227b6ebd1cb21664b0882ef94180832f92d9ddbcd6db0e34aeed"
+    },
+    "BQP-router-family-seed": {
+      "path": "BQP-router-family-seed.lean",
+      "source": "src/BQP-router-family-seed.lean",
+      "imports": [
+        "BQP-hadamard-code-count",
+        "BQP-router-square-root"
+      ],
+      "sha256": "67e8a6ed577ba2860cbc61bf74722b8221a56d0770b4160ac3441eec8c12b875"
+    },
+    "BQP-hadamard-code-count": {
+      "path": "BQP-hadamard-code-count.lean",
+      "source": "src/BQP-hadamard-code-count.lean",
+      "imports": [
+        "BQP-opcode-count",
+        "BQP-family-compiler"
+      ],
+      "sha256": "49374504c07ec8831a29b79c5e70dc0d6a9835ebbc9e852ace3aad4df2010392"
+    },
+    "BQP-opcode-count": {
+      "path": "BQP-opcode-count.lean",
+      "source": "src/BQP-opcode-count.lean",
+      "imports": [
+        "BQP-opcode-emission",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "4a326e5d0dbdc9eea92a610feb93926d3b727f2e935057607a639d363983ad72"
+    },
+    "BQP-router-overflow": {
+      "path": "BQP-router-overflow.lean",
+      "source": "src/BQP-router-overflow.lean",
+      "imports": [
+        "BQP-counting-core"
+      ],
+      "sha256": "dbbc7f771b44b612d5ca56597de234ba5e0dd1e42b68f348e290b0b66e80e023"
+    },
+    "BQP-binary-compare-fresh-audit": {
+      "path": "BQP-binary-compare-fresh-audit.lean",
+      "source": "src/BQP-binary-compare-fresh-audit.lean",
+      "imports": [
+        "BQP-binary-compare"
+      ],
+      "sha256": "c536d36a6b8e193aeb98af3e0e765fe306852945f0d0691eb7437ab9c7a4c48b"
+    },
+    "BQP-binary-compare": {
+      "path": "BQP-binary-compare.lean",
+      "source": "src/BQP-binary-compare.lean",
+      "imports": [
+        "BQP-router-overflow",
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "01ad357178805c707b4f1287073eeec01be75db8fe1f3fbfe5b8f973a90240af"
+    },
+    "BQP-router-arithmetic-fresh-audit": {
+      "path": "BQP-router-arithmetic-fresh-audit.lean",
+      "source": "src/BQP-router-arithmetic-fresh-audit.lean",
+      "imports": [
+        "BQP-router-threshold-values",
+        "BQP-binary-add-pair",
+        "BQP-pair-generation",
+        "BQP-router-threshold-polytime",
+        "BQP-binary-compare-pair",
+        "BQP-router-threshold-checker",
+        "BQP-unary-split",
+        "BQP-router-witness-pieces"
+      ],
+      "sha256": "6a2c298ef5b7398ed52a50d222d2eed901f90d288bbfce4db0f1b29689c7d655"
+    },
+    "BQP-router-threshold-values": {
+      "path": "BQP-router-threshold-values.lean",
+      "source": "src/BQP-router-threshold-values.lean",
+      "imports": [
+        "BQP-binary-add",
+        "BQP-router-square-root",
+        "BQP-router-overflow"
+      ],
+      "sha256": "869034dc8d92b5fabfbffb3fe2f8422c292d6c9299759a1521e0d7679648ea82"
+    },
+    "BQP-binary-add": {
+      "path": "BQP-binary-add.lean",
+      "source": "src/BQP-binary-add.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "a932da257f503a69157711cc98e0455f2451ba2135ced281ee1a6bac0d0baeeb"
+    },
+    "BQP-binary-add-pair": {
+      "path": "BQP-binary-add-pair.lean",
+      "source": "src/BQP-binary-add-pair.lean",
+      "imports": [
+        "BQP-binary-add",
+        "BQP-closed-references"
+      ],
+      "sha256": "03a18ce68c6f121095c19036360ee2cbe3737ae1bdc1710aa6a5b5c7c33f57db"
+    },
+    "BQP-pair-generation": {
+      "path": "BQP-pair-generation.lean",
+      "source": "src/BQP-pair-generation.lean",
+      "imports": [
+        "BQP-pair-duplicate",
+        "BQP-pair-swap",
+        "BQP-general-polytime"
+      ],
+      "sha256": "4bb5429e0f9c2f7516f362324859546551e61da2845da6f2acbdd5388d38d843"
+    },
+    "BQP-pair-duplicate": {
+      "path": "BQP-pair-duplicate.lean",
+      "source": "src/BQP-pair-duplicate.lean",
+      "imports": [
+        "BQP-map-first-polytime"
+      ],
+      "sha256": "e81137ed1ec655658eee1e47c4c3175b986fcfd11f6b9065973448ea7110c5eb"
+    },
+    "BQP-pair-swap": {
+      "path": "BQP-pair-swap.lean",
+      "source": "src/BQP-pair-swap.lean",
+      "imports": [
+        "BQP-binary-add",
+        "BQP-closed-references"
+      ],
+      "sha256": "921fbab666baba6daa182d467704ba6a7550abda1a0c3fd4c3511d7811ef1c6c"
+    },
+    "BQP-general-polytime": {
+      "path": "BQP-general-polytime.lean",
+      "source": "src/BQP-general-polytime.lean",
+      "imports": [
+        "BQP-typed-polytime"
+      ],
+      "sha256": "1760b839e1ada3d5dca4913d8d120d562efa4a80d6b64b15360555b74e4c3d46"
+    },
+    "BQP-router-threshold-polytime": {
+      "path": "BQP-router-threshold-polytime.lean",
+      "source": "src/BQP-router-threshold-polytime.lean",
+      "imports": [
+        "BQP-router-threshold-values",
+        "BQP-router-family-seed",
+        "BQP-binary-add-pair",
+        "BQP-pair-generation"
+      ],
+      "sha256": "f3832f66c62ae3a5e8960bf2bf916974aa618c34ee27638a689512822fd82508"
+    },
+    "BQP-binary-compare-pair": {
+      "path": "BQP-binary-compare-pair.lean",
+      "source": "src/BQP-binary-compare-pair.lean",
+      "imports": [
+        "BQP-binary-compare",
+        "BQP-closed-references"
+      ],
+      "sha256": "05d975b9e5f66cd6f52fbeae319835b966e2383153ac70e627324e1056b69901"
+    },
+    "BQP-router-threshold-checker": {
+      "path": "BQP-router-threshold-checker.lean",
+      "source": "src/BQP-router-threshold-checker.lean",
+      "imports": [
+        "BQP-router-threshold-polytime",
+        "BQP-binary-compare-pair"
+      ],
+      "sha256": "a188cddd36fef00a90b4c171075089f8aaf23464d9f94508ba08a3ed4af84e33"
+    },
+    "BQP-unary-split": {
+      "path": "BQP-unary-split.lean",
+      "source": "src/BQP-unary-split.lean",
+      "imports": [
+        "BQP-closed-references",
+        "AMPUNI-subroutine-lift",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "548dd485d567e034dff204dcca5bb9a29b56c10cfab34ea09cfa5e2fdfe8c4c0"
+    },
+    "BQP-router-witness-pieces": {
+      "path": "BQP-router-witness-pieces.lean",
+      "source": "src/BQP-router-witness-pieces.lean",
+      "imports": [
+        "BQP-router-threshold-polytime",
+        "BQP-unary-split"
+      ],
+      "sha256": "1cda756f2b14de311c9a67bab5994be0a00cff7270ae633f2e0e5bbced6727f8"
+    },
+    "BQP-router-assembly-fresh-audit": {
+      "path": "BQP-router-assembly-fresh-audit.lean",
+      "source": "src/BQP-router-assembly-fresh-audit.lean",
+      "imports": [
+        "BQP-pair-fanout",
+        "BQP-bool-ite",
+        "BQP-final-inclusion"
+      ],
+      "sha256": "ebee9a5c7cedbaa2e467a5d67d9f9723f4b286fd906615d866a8686c7920b6e7"
+    },
+    "BQP-pair-fanout": {
+      "path": "BQP-pair-fanout.lean",
+      "source": "src/BQP-pair-fanout.lean",
+      "imports": [
+        "BQP-pair-codec",
+        "BQP-pair-generation"
+      ],
+      "sha256": "f45af7d251d5a6ffb2283ec2ccb8611bd1b65eba00a8107088cb1250cde0ba83"
+    },
+    "BQP-pair-codec": {
+      "path": "BQP-pair-codec.lean",
+      "source": "src/BQP-pair-codec.lean",
+      "imports": [
+        "BQP-binary-add",
+        "BQP-closed-references",
+        "Mathlib.Data.List.Induction"
+      ],
+      "sha256": "fecb7d8ca2780ce01682fe79254a4280e7c93e918fd9506aee92b89c5548a609"
+    },
+    "BQP-bool-ite": {
+      "path": "BQP-bool-ite.lean",
+      "source": "src/BQP-bool-ite.lean",
+      "imports": [
+        "AMPUNI-subroutine-lift",
+        "BQP-closed-references",
+        "Mathlib.Tactic.FinCases"
+      ],
+      "sha256": "264209faa8ffa1bbca9c21e7f11a48f25ca33ea47b831b19c79427e284475864"
+    },
+    "BQP-final-inclusion": {
+      "path": "BQP-final-inclusion.lean",
+      "source": "src/BQP-final-inclusion.lean",
+      "imports": [
+        "BQP-router-complete"
+      ],
+      "sha256": "8a89cf3e0dac7262d58ba5ff980b17fcd962ab0d660325d1b0d762275c79904e"
+    },
+    "BQP-router-complete": {
+      "path": "BQP-router-complete.lean",
+      "source": "src/BQP-router-complete.lean",
+      "imports": [
+        "BQP-checker-boolean",
+        "BQP-family-majority",
+        "BQP-router-threshold-checker",
+        "BQP-router-witness-pieces"
+      ],
+      "sha256": "b8391af715b88973064b62e1c413b7206f388ef246ce7f6f8ebae0088b35d9ac"
+    },
+    "BQP-checker-boolean": {
+      "path": "BQP-checker-boolean.lean",
+      "source": "src/BQP-checker-boolean.lean",
+      "imports": [
+        "BQP-pair-fanout",
+        "BQP-bool-ite",
+        "BQP-router-threshold-polytime"
+      ],
+      "sha256": "fbe48ecb4c22cff0d8e795668dce4b05ef0c10b465c9a2bef963f725bab40e0a"
+    }
+  },
+  "lean_version": "4.33.1",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474"
+}

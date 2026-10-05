@@ -6,3 +6,13 @@
 *.log
 .DS_Store
 __pycache__/
+
+*.olean.*
+*.ir
+*.ir.*
+*.ilean.*
+bqp-pp/logs/
+bqp-pp/build-result.json
+bqp-pp/previous-build-result.json
+bqp-pp/previous-source-manifest.json
+bqp-pp/current-verification.json
