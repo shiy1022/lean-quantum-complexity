@@ -11,6 +11,7 @@
     "QIP.Audit.Positive",
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
+    "QIP.Audit.State",
     "QIP.Audit.Syntax"
   ],
   "modules": {
@@ -62,6 +63,13 @@
       "sha256": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
       "imports": [
         "QIP.Smoke"
+      ]
+    },
+    "QIP.Audit.State": {
+      "path": "QIP/Audit/State.lean",
+      "sha256": "a88113e135fdf91dae645e9d2355b14cf76c249ea542f2bdaed7f79befd6e963",
+      "imports": [
+        "Quantum.Measurement"
       ]
     },
     "QIP.Audit.Syntax": {
@@ -120,6 +128,13 @@
         "Mathlib"
       ]
     },
+    "Quantum.Measurement": {
+      "path": "Quantum/Measurement.lean",
+      "sha256": "772ae4efdd7ce258582ef837dc0d5c40808103d7febba802ec1fd34ca820c5c7",
+      "imports": [
+        "Quantum.State"
+      ]
+    },
     "Quantum.Positive": {
       "path": "Quantum/Positive.lean",
       "sha256": "df8f5e3088f27d8bbffc275f830c2922c42bf8a0cf3a7e1b6b4ca921e31468c5",
@@ -139,6 +154,13 @@
       "sha256": "ffbb2fdd8d87479551819248e8728dd9663ea4045af4b39db8e5ab450482c608",
       "imports": [
         "Quantum.Registers"
+      ]
+    },
+    "Quantum.State": {
+      "path": "Quantum/State.lean",
+      "sha256": "d5b1863dee90992d71ae46fa066e457c9a63e312e8e3d4ddd62fcda96149aaa2",
+      "imports": [
+        "Quantum.HilbertBridge"
       ]
     }
   },
