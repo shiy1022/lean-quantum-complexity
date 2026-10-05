@@ -11,6 +11,7 @@
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
     "QIP.Audit.Dilation",
+    "QIP.Audit.Fidelity",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Purification",
@@ -68,6 +69,13 @@
       "sha256": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
       "imports": [
         "Quantum.Dilation"
+      ]
+    },
+    "QIP.Audit.Fidelity": {
+      "path": "QIP/Audit/Fidelity.lean",
+      "sha256": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
+      "imports": [
+        "Quantum.Fidelity"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -189,6 +197,13 @@
         "Quantum.Kraus"
       ]
     },
+    "Quantum.Fidelity": {
+      "path": "Quantum/Fidelity.lean",
+      "sha256": "8e020fcd616913c6002475753c147c0e39f42fbd91771f4909bd908ec61ccc22",
+      "imports": [
+        "Quantum.Polar"
+      ]
+    },
     "Quantum.GramIsometry": {
       "path": "Quantum/GramIsometry.lean",
       "sha256": "4154d5bcfd2512b781dec6eed499627b77a8c7f054a3f75cb89862c4df0bdbfc",
@@ -229,6 +244,13 @@
       "sha256": "01b2c86d60e5634524ec97469e47ec672fa863ce2639cefc82d6b942b752b44c",
       "imports": [
         "Quantum.Measurement"
+      ]
+    },
+    "Quantum.Polar": {
+      "path": "Quantum/Polar.lean",
+      "sha256": "fb0142ead749d8e4fc2fb1c92e5f9d299eb990ae700f169edd90fc83316fb29a",
+      "imports": [
+        "Quantum.Purification"
       ]
     },
     "Quantum.Positive": {

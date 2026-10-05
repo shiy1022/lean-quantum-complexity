@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "7ad698a54824457e14d60f5f08fd0fc64ab50d10",
-  "seconds": 284.3,
+  "git_head": "369249a80f98f609d38093fc42397f5e4566929c",
+  "seconds": 290.1,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -14,6 +14,7 @@
     "QIP/Audit/Channel.lean": "b7c9d9f017c96dd280b6a9e0b59dc7c5219ca0e93fe1e786db1985e5eba5faa6",
     "QIP/Audit/Choi.lean": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
+    "QIP/Audit/Fidelity.lean": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
     "QIP/Audit/PartialTrace.lean": "b146b97437e9e43512d275c7f164dbe9d0e9174c8a80eb63b97f536e3b38b924",
     "QIP/Audit/Positive.lean": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
     "QIP/Audit/Purification.lean": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
@@ -31,12 +32,14 @@
     "Quantum/ChannelTensor.lean": "b0247bdd7f01aac94f1d375104814e804adee30c7471ada93ab2fa1d665dd23d",
     "Quantum/Choi.lean": "7471cb9fcbb6a524d734e253465759045e543f85aab33c1527b505126bf47c11",
     "Quantum/Dilation.lean": "f0a76b3a359e284df015bf43648b394ec96f6400faf06cffe324b12a7611c46a",
+    "Quantum/Fidelity.lean": "8e020fcd616913c6002475753c147c0e39f42fbd91771f4909bd908ec61ccc22",
     "Quantum/GramIsometry.lean": "4154d5bcfd2512b781dec6eed499627b77a8c7f054a3f75cb89862c4df0bdbfc",
     "Quantum/HilbertBridge.lean": "f4af74826471586e5cc74ce9c5fa9cb56276084a6e2cd987f3dc99289fdec37f",
     "Quantum/Kraus.lean": "b5eea1b2c860773b300e265b309f56feeff3226ac3bb61defdd3272378c7fcd2",
     "Quantum/MathlibImports.lean": "79abe16f90ca182da2fb7556a1126b89fb8b65cc283ed716f691d55b78801408",
     "Quantum/Measurement.lean": "772ae4efdd7ce258582ef837dc0d5c40808103d7febba802ec1fd34ca820c5c7",
     "Quantum/PartialTrace.lean": "01b2c86d60e5634524ec97469e47ec672fa863ce2639cefc82d6b942b752b44c",
+    "Quantum/Polar.lean": "fb0142ead749d8e4fc2fb1c92e5f9d299eb990ae700f169edd90fc83316fb29a",
     "Quantum/Positive.lean": "df8f5e3088f27d8bbffc275f830c2922c42bf8a0cf3a7e1b6b4ca921e31468c5",
     "Quantum/Purification.lean": "9d54174b4b341dc05ed2a7b4238bf2daea6bd0f1633b4eb682ccb1ece08d0d5a",
     "Quantum/Registers.lean": "101d227567609b35e76383d243561cbdbbc0ad8436e6fb59f66ea8c2adb91fe6",
@@ -512,6 +515,133 @@
         "propext"
       ],
       "ShiQuantum.halmosSq_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Fidelity.lean": {
+      "ShiQuantum.absM_mul_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.exists_polar": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.conjTranspose_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.psdSqrt_mul_conjTranspose_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.trace_absM_conjTranspose": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.trace_conjTranspose_mul_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.norm_trace_conjTranspose_mul_sq_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.norm_trace_mul_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.trace_polar_attains": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.exists_unitary_trace_eq_absM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.sandwich_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.sandwich_posSemidef": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_eq_traceNorm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_symm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_nonneg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_le_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.pureState_mul_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.psdSqrt_pureState": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.pure_sandwich": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_pure": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.prob_pure_eq_fidelity_sq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.psdSqrt_diagonal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_diagonal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.psdSqrt_kronecker": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQuantum.fidelity_kronecker": [
         "Classical.choice",
         "Quot.sound",
         "propext"
