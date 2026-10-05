@@ -13,6 +13,7 @@
     "QIP.Audit.Dilation",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
+    "QIP.Audit.Purification",
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
@@ -81,6 +82,13 @@
       "sha256": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
       "imports": [
         "Quantum.HilbertBridge"
+      ]
+    },
+    "QIP.Audit.Purification": {
+      "path": "QIP/Audit/Purification.lean",
+      "sha256": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
+      "imports": [
+        "Quantum.Purification"
       ]
     },
     "QIP.Audit.Registers": {
@@ -181,6 +189,13 @@
         "Quantum.Kraus"
       ]
     },
+    "Quantum.GramIsometry": {
+      "path": "Quantum/GramIsometry.lean",
+      "sha256": "4154d5bcfd2512b781dec6eed499627b77a8c7f054a3f75cb89862c4df0bdbfc",
+      "imports": [
+        "Quantum.HilbertBridge"
+      ]
+    },
     "Quantum.HilbertBridge": {
       "path": "Quantum/HilbertBridge.lean",
       "sha256": "f4af74826471586e5cc74ce9c5fa9cb56276084a6e2cd987f3dc99289fdec37f",
@@ -221,6 +236,14 @@
       "sha256": "df8f5e3088f27d8bbffc275f830c2922c42bf8a0cf3a7e1b6b4ca921e31468c5",
       "imports": [
         "Quantum.Reindex"
+      ]
+    },
+    "Quantum.Purification": {
+      "path": "Quantum/Purification.lean",
+      "sha256": "9d54174b4b341dc05ed2a7b4238bf2daea6bd0f1633b4eb682ccb1ece08d0d5a",
+      "imports": [
+        "Quantum.GramIsometry",
+        "Quantum.PartialTrace"
       ]
     },
     "Quantum.Registers": {
