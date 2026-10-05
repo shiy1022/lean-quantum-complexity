@@ -12,6 +12,7 @@
     "QIP.Audit.Choi",
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
+    "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Purification",
@@ -79,6 +80,13 @@
         "Quantum.Fidelity"
       ]
     },
+    "QIP.Audit.FidelityTwoTargets": {
+      "path": "QIP/Audit/FidelityTwoTargets.lean",
+      "sha256": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
+      "imports": [
+        "Quantum.FidelityTwoTargets"
+      ]
+    },
     "QIP.Audit.PartialTrace": {
       "path": "QIP/Audit/PartialTrace.lean",
       "sha256": "b146b97437e9e43512d275c7f164dbe9d0e9174c8a80eb63b97f536e3b38b924",
@@ -130,9 +138,9 @@
     },
     "QIP.Audit.Uhlmann": {
       "path": "QIP/Audit/Uhlmann.lean",
-      "sha256": "fc1b97fc76a87d0721ac9addab2d1a9f78a2a356444e4c9d4eea07b75b29c356",
+      "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
       "imports": [
-        "Quantum.Uhlmann"
+        "Quantum.UhlmannGeneral"
       ]
     },
     "QIP.Decode": {
@@ -210,6 +218,13 @@
       "sha256": "8e020fcd616913c6002475753c147c0e39f42fbd91771f4909bd908ec61ccc22",
       "imports": [
         "Quantum.Polar"
+      ]
+    },
+    "Quantum.FidelityTwoTargets": {
+      "path": "Quantum/FidelityTwoTargets.lean",
+      "sha256": "5360842d45b5af7e4c0030ee635aae533323642f9ceb4bd1b413f9108b5cc24d",
+      "imports": [
+        "Quantum.UhlmannGeneral"
       ]
     },
     "Quantum.GramIsometry": {
@@ -302,6 +317,13 @@
       "sha256": "8c2915c24976856f5a4c4bdc0099e3b6699d22d9844a7a2050ce09b65412fefd",
       "imports": [
         "Quantum.Fidelity"
+      ]
+    },
+    "Quantum.UhlmannGeneral": {
+      "path": "Quantum/UhlmannGeneral.lean",
+      "sha256": "bddd5237c29b41bf19d3c96d542638b82c3b85841e23f4b9b98cba6994f1444a",
+      "imports": [
+        "Quantum.Uhlmann"
       ]
     }
   },

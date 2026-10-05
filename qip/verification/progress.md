@@ -15,8 +15,8 @@ the module compiled inside the full `ShiQIP` build and passed the fresh-import a
 
 Every report in `verification/audit.json` uses only `propext`, `Classical.choice` and
 `Quot.sound`. No `sorry`, `admit`, `axiom` or `proof_wanted` occurs in `src/`. The last run
-took 299 s and produced 296 reports across 13 audit files (40 sources), from `git_head`
-54f913f plus the Q11 changes. Source hashes are in `source-manifest.json` and `verification/audit.json`.
+took 335 s and produced 306 reports across 14 audit files (43 sources), from `git_head`
+aa92e7a plus the Q11–Q12 changes. Source hashes are in `source-manifest.json` and `verification/audit.json`.
 
 | Task | Status | Declarations / files | Evidence | Remaining gap |
 |---|---|---|---|---|
@@ -31,11 +31,12 @@ took 299 s and produced 296 reports across 13 audit files (40 sources), from `gi
 | Q08 | integrated_verified (local) | `Quantum.Dilation`: `stinespring` (Kraus operators stacked into `n × ι ← m`), `stinespring_isometry`, `traceRight_stinespring`, **`IsChannel.exists_stinespring`** (environment exactly `m × n`), **`IsChannel.stinespring_ampliation`** (holds for `id_R ⊗ Φ` on arbitrary, entangled inputs), `ptraceMap`, `liftR_ptraceMap`; Halmos unitary extension `halmos`/`halmosSq`, `halmos_unitary`, `halmosSq_mem_unitaryGroup`, `halmosSq_inr` | `Audit/Dilation.lean`: 9 reports | the unitary extension pads by a direct sum `a ⊕ b`; qubit-register (tensor) padding of verifier circuits is Q17. No efficiency is claimed |
 | Q09 | integrated_verified (local) | `Quantum.GramIsometry`, `Quantum.Purification`: `exists_linearIsometry_of_inner_eq` (equal Gram matrices ⇒ linear isometry; no independence or rank assumption), `vecToMat`/`matToVec`, `traceRight_pureState` (marginal `M Mᴴ`), `IsPurification`, `purify` (`(i,a) ↦ √ρ i a`), `purify_isPurification`, `IsPurification.isDensity`, `exists_purification`, `linearIsometry_toMatrix_unitary`, **`exists_unitary_of_mul_conjTranspose_eq`** (`M Mᴴ = N Nᴴ ⇒ N = M U`, `U` unitary on the environment), `IsPurification.exists_unitary`, `matToVec_mul` (`(1 ⊗ Uᵀ) ψ`), **`exists_unitary_padded`** (different environments `E`, `F`, unitary on `E ⊕ F`) | `Audit/Purification.lean`: 18 reports. Rank-one example `isPurification_product`; mixed example: the Bell vector purifies `maxMixed Bool` | — |
 | Q10 | integrated_verified (local) | `Quantum.Polar`: `absM` (`√(AᴴA)`), **`exists_polar`** (`A = W |A|`, `W` unitary, no rank assumption, via Q09), `trace_absM_conjTranspose`, `norm_trace_conjTranspose_mul_sq_le` (Hilbert–Schmidt Cauchy–Schwarz), **`norm_trace_mul_le`** + **`exists_unitary_trace_eq_absM`** (`max_V ‖tr(VA)‖ = tr|A|`, attained). `Quantum.Fidelity`: `fidelity ρ σ = Re tr √(√ρ σ √ρ)` (root fidelity, the only convention), `fidelity_eq_traceNorm`, `fidelity_symm`, `fidelity_nonneg`, `fidelity_le_one`, **`fidelity_pure`** (`= ‖⟨ψ,φ⟩‖`), **`prob_pure_eq_fidelity_sq`** (acceptance `= F²`), `fidelity_diagonal` (`∑ √(p q)`), `fidelity_kronecker` | `Audit/Fidelity.lean`: 25 reports | the polar/trace-optimization lemma is the matrix core of Q11 (plan step 1) |
-| Q11 | **proof_in_progress** (proved parts integrated_verified locally) | `Quantum.Uhlmann`: `star_matToVec_dotProduct` (`⟨vec M, vec N⟩ = tr(MᴴN)`), **`uhlmann_le`** (every pair of purifications on environment `n` has overlap ≤ `F`), **`uhlmann_attained`** (explicit witness pair `purify ρ`, `√σ V` with overlap exactly `F`), `fidelity_eq_max_overlap` | `Audit/Uhlmann.lean`: 4 reports | **smallest remaining gap:** (1) the upper bound for purifications on an environment `E` of arbitrary size, which needs `‖tr(C A)‖ ≤ tr|A|` for contractions `CᴴC ≤ 1` (the same Cauchy–Schwarz argument as `norm_trace_mul_le`), combined with `exists_unitary_padded`; (2) monotonicity of fidelity under partial trace (plan step 3), which follows from (1). Q12 depends on Q11 and is not started |
+| Q11 | integrated_verified (local) | `Quantum.Uhlmann`, `Quantum.UhlmannGeneral`: `star_matToVec_dotProduct` (`⟨vec M, vec N⟩ = tr(MᴴN)`), `uhlmann_le`, **`uhlmann_attained`** (explicit witness pair `purify ρ`, `√σ V` with overlap exactly `F`), `fidelity_eq_max_overlap`; `norm_trace_mul_le_of_contraction` (`‖tr(CA)‖ ≤ tr|A|` for `CᴴC ≤ 1`), `unitary_block12_contractions`, `exists_contraction_factor` (`M Mᴴ = ρ ⇒ M = √ρ X`, `X` a contraction, any environment size), **`uhlmann_le_general`** (purifications on an arbitrary environment `E`), **`fidelity_le_fidelity_traceRight`** (monotonicity under partial trace) | `Audit/Uhlmann.lean`: 11 reports | — |
+| Q12 | integrated_verified (local) | `Quantum.FidelityTwoTargets`: **`two_overlaps_le`** (`‖⟪w,u⟫‖² + ‖⟪w,v⟫‖² ≤ 1 + ‖⟪u,v⟫‖` for unit vectors, any complex inner product space), **`fidelity_two_targets`** (`F(ρ,σ)² + F(ρ,τ)² ≤ 1 + F(σ,τ)`) | `Audit/FidelityTwoTargets.lean`: 3 reports; no optimizer or protocol hypotheses | — |
 | Q13 | integrated_verified (local) | `QIP.Syntax`, `QIP.Resources`: `Desc`, `Gate`, `Message`, `Desc.held`, `Desc.check`/`Valid`, `stdSchedule`, `HasSchedule`, `gateCount`, `totalWires`, `communication`, `serialSize`, `Desc.serialSize_le`, `Gate.toInstr?` | `Audit/Syntax.lean`. 1-, 2-, 3- (zero-width middle message) and 5-message examples are valid by `decide`. Negative examples cover use-after-send, use-before-receive, `cnot i i`, an output outside the private register, a zero-width private register, non-alternation and a verifier-first schedule | gate *semantics* bridge is Q16 |
 | Q14 | integrated_verified (local) | `QIP.Encoding`, `QIP.Decode`: `encode`, `decode`, `decodeChecked`, `decode_encode`, `encode_injective`, `decode_eq_some_iff`, `encode_length` (= `serialSize`), `encode_length_le`, `decode_proper_prefix`, `decode_encode_append`, `decNat_replicate_true`, `decGate_bad_tag` | `Audit/Syntax.lean` (30 reports with Q13) | — |
 | Q33 | integrated_verified (local) | `QIP.Arithmetic.Gap`, `.Padding`, `.Repetition`: `halving_gap`, `halving_iterate`, `padCount_le`, `halfCount_iterate_padM`, `four_pow_le_padM_sq`, `one_sub_pow_le_inv`, `repetition_bound`, `repK_le_poly`, `soundness_schedule` | `Audit/Arithmetic.lean`: 24 reports | — |
-| Q12, Q15–Q32, Q34–Q41 | not_started | — | — | — |
+| Q15–Q32, Q34–Q41 | not_started | — | — | — |
 
 ## Design decisions recorded for later tasks
 
@@ -57,7 +58,7 @@ took 299 s and produced 296 reports across 13 audit files (40 sources), from `gi
 
 ## Next ready tasks
 
-finish Q11 (gap above), Q18 (strategy operators; Q07 and Q13 are done) and Q34 (printer
+Q18 (strategy operators; Q07 and Q13 are done) and Q34 (printer
 primitives; Q14 is done). Conventions fixed by Q03: positivity is Mathlib's `Matrix.PosSemidef` with `ComplexOrder`
 and `MatrixOrder`; every Hilbert norm or inner product on coordinate vectors goes through
 `toE` (`EuclideanSpace`), never the sup norm on `n → ℂ`.
