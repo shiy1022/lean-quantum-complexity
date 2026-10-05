@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "4b5a71516e0c0e6a9e8493260afae6a0fc219ea3",
-  "seconds": 345.8,
+  "git_head": "670fd23a6d2faf0c0798f8ab67c0ab937a771755",
+  "seconds": 374.2,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -16,6 +16,7 @@
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
     "QIP/Audit/Fidelity.lean": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
     "QIP/Audit/FidelityTwoTargets.lean": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
+    "QIP/Audit/GateMatrix.lean": "66be250272b197cd442266f5c8d947140627cc8f953c968db7ed4e208925abc2",
     "QIP/Audit/PartialTrace.lean": "b146b97437e9e43512d275c7f164dbe9d0e9174c8a80eb63b97f536e3b38b924",
     "QIP/Audit/Positive.lean": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
     "QIP/Audit/Purification.lean": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
@@ -27,6 +28,7 @@
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
+    "QIP/GateMatrix.lean": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
     "QIP/Smoke.lean": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
     "QIP/StrategyOperator.lean": "e4791dfa0e3e6bf26efc10b220256bd5e0b69168ba421259c9dffa1cbb50390e",
@@ -666,6 +668,77 @@
         "propext"
       ],
       "ShiQuantum.fidelity_two_targets": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/GateMatrix.lean": {
+      "ShiQIP.splitAt_symm_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.oneQubitMat_mulVec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cnotFun_involutive": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cnotMat_mulVec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.instrMat_mulVec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.oneQubitMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cnotMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.xMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.instrMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isChannel_instr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.conjMap_instr_pureState": [
         "Classical.choice",
         "Quot.sound",
         "propext"

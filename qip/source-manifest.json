@@ -13,6 +13,7 @@
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
+    "QIP.Audit.GateMatrix",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Purification",
@@ -86,6 +87,13 @@
       "sha256": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
       "imports": [
         "Quantum.FidelityTwoTargets"
+      ]
+    },
+    "QIP.Audit.GateMatrix": {
+      "path": "QIP/Audit/GateMatrix.lean",
+      "sha256": "66be250272b197cd442266f5c8d947140627cc8f953c968db7ed4e208925abc2",
+      "imports": [
+        "QIP.GateMatrix"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -163,6 +171,14 @@
       "sha256": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
       "imports": [
         "QIP.Resources"
+      ]
+    },
+    "QIP.GateMatrix": {
+      "path": "QIP/GateMatrix.lean",
+      "sha256": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
+      "imports": [
+        "Definitions.Def_ShiShallow_Core",
+        "Quantum.Channel"
       ]
     },
     "QIP.Resources": {
