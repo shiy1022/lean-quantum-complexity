@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "aa92e7a5d33f6787b679939d0795a3b4670ed772",
-  "seconds": 334.7,
+  "git_head": "4b5a71516e0c0e6a9e8493260afae6a0fc219ea3",
+  "seconds": 345.8,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -22,12 +22,14 @@
     "QIP/Audit/Registers.lean": "6f5a183aba761bd6637a47627c9e8a5b4123f13df449a3ec0404f5ca6f7b2ad7",
     "QIP/Audit/Smoke.lean": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
     "QIP/Audit/State.lean": "a88113e135fdf91dae645e9d2355b14cf76c249ea542f2bdaed7f79befd6e963",
+    "QIP/Audit/Strategy.lean": "648c4d49256887a63f1b8acf73678bec3eae37bd080e7c5ec6952cf2d8895efd",
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
     "QIP/Smoke.lean": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
+    "QIP/StrategyOperator.lean": "e4791dfa0e3e6bf26efc10b220256bd5e0b69168ba421259c9dffa1cbb50390e",
     "QIP/Syntax.lean": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
     "Quantum/Channel.lean": "22dc94d0257a03ffd9fb6cb01301142eb1e9d5b59b03c634b01a1646b27538fa",
     "Quantum/ChannelMathlib.lean": "e0d97f70a6187d570a62206946ff7e3ff3b6b70993171c99c9310eadf4cfb8ac",
@@ -1385,6 +1387,38 @@
         "propext"
       ],
       "ShiQuantum.plusVec_sq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Strategy.lean": {
+      "ShiQIP.IsStrategy.trace_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kronecker_one_injective": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.IsStrategy.prefix_unique": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isStrategy_one_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isStrategy_one_iff_choi": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isStrategy_one_prep_iff": [
         "Classical.choice",
         "Quot.sound",
         "propext"

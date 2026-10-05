@@ -19,6 +19,7 @@
     "QIP.Audit.Registers",
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
+    "QIP.Audit.Strategy",
     "QIP.Audit.Syntax",
     "QIP.Audit.Uhlmann"
   ],
@@ -129,6 +130,13 @@
         "Quantum.Measurement"
       ]
     },
+    "QIP.Audit.Strategy": {
+      "path": "QIP/Audit/Strategy.lean",
+      "sha256": "648c4d49256887a63f1b8acf73678bec3eae37bd080e7c5ec6952cf2d8895efd",
+      "imports": [
+        "QIP.StrategyOperator"
+      ]
+    },
     "QIP.Audit.Syntax": {
       "path": "QIP/Audit/Syntax.lean",
       "sha256": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
@@ -169,6 +177,13 @@
       "sha256": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
       "imports": [
         "Mathlib"
+      ]
+    },
+    "QIP.StrategyOperator": {
+      "path": "QIP/StrategyOperator.lean",
+      "sha256": "e4791dfa0e3e6bf26efc10b220256bd5e0b69168ba421259c9dffa1cbb50390e",
+      "imports": [
+        "Quantum.Kraus"
       ]
     },
     "QIP.Syntax": {
