@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "b3a9d22df110c1fc8a06639220b4340f346fd6a0",
-  "seconds": 797.1,
+  "git_head": "6141fd11400527420b1f912183864a23de6d7453",
+  "seconds": 803.4,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -17,6 +17,7 @@
     "QIP/Audit/Choi.lean": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
     "QIP/Audit/Circuit.lean": "84263477722f5d1f2378afc840dfe9b8d63ef810b0a2f3c35266ba4f2f804ad3",
     "QIP/Audit/Classes.lean": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
+    "QIP/Audit/Compress.lean": "a64a2a54b40ec6199b937e0b2305fa35502439c88d4216cfa3f86c0991686182",
     "QIP/Audit/Controlled.lean": "e137170d6ec027e790c558d5fa5174ffd37f70d6570587589c4764ccf1b0be02",
     "QIP/Audit/Cut.lean": "5f76ab4506f6fa6fd300ef7d4fa5c5db16182c93b308ba4fcc1a9e6f8783a06d",
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
@@ -64,6 +65,7 @@
     "QIP/CircuitSemantics.lean": "63fb42d893a3b5ecb948103b8b8d08723ab65d859b2f8230ffb9dce3c86fa8cb",
     "QIP/Classes.lean": "5a33e2776b7701504e9fd56cf748d99249ef1ee1ef430ca24ffb813742d14b98",
     "QIP/Clean.lean": "cb5205484881c69fb551061b5fd3a178fa81f997d773f2338f2287c26bc8b1d9",
+    "QIP/Compress.lean": "5fc24ca0da1369a5c840afcf3d68a7fb7a97d0c599c609cf68729515bc36db17",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
     "QIP/Execution.lean": "c51d8b4016643b94364093aefbf30a4578f96dcf489e45162eb16a1a25d411e4",
@@ -2278,6 +2280,134 @@
         "propext"
       ],
       "ShiQIP.Desc.Valid.length_filterMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Compress.lean": {
+      "ShiQIP.compressR": [
+        "propext"
+      ],
+      "ShiQIP.compressR_zero": [
+        "propext"
+      ],
+      "ShiQIP.compressR_succ": [
+        "propext"
+      ],
+      "ShiQIP.compressR_spec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.compressR_sound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_wd_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.communication_le": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.held0_length_le": [
+        "propext"
+      ],
+      "ShiQIP.sum_hw_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.totalWires_halveDesc_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_swapRange": [
+        "propext"
+      ],
+      "ShiQIP.length_swapMsg": [
+        "propext"
+      ],
+      "ShiQIP.length_onF_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_onB_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_ztGates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bl": [
+        "propext"
+      ],
+      "ShiQIP.sum_bl_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bl_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.wd_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_adjB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_comp_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_ite_le": [
+        "propext"
+      ],
+      "ShiQIP.hBlock_one_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hBlock_mid_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hBlock_last_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gateCount_halveDesc_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hsize": [
+        "propext"
+      ],
+      "ShiQIP.hsize_halveDesc_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hsize_compressR_le": [
         "Classical.choice",
         "Quot.sound",
         "propext"

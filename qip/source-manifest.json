@@ -14,6 +14,7 @@
     "QIP.Audit.Choi",
     "QIP.Audit.Circuit",
     "QIP.Audit.Classes",
+    "QIP.Audit.Compress",
     "QIP.Audit.Controlled",
     "QIP.Audit.Cut",
     "QIP.Audit.Dilation",
@@ -115,6 +116,13 @@
       "sha256": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
       "imports": [
         "QIP.ValidGates"
+      ]
+    },
+    "QIP.Audit.Compress": {
+      "path": "QIP/Audit/Compress.lean",
+      "sha256": "a64a2a54b40ec6199b937e0b2305fa35502439c88d4216cfa3f86c0991686182",
+      "imports": [
+        "QIP.Compress"
       ]
     },
     "QIP.Audit.Controlled": {
@@ -459,6 +467,16 @@
         "QIP.PureRun",
         "QIP.Prefix",
         "QIP.Bell.Run"
+      ]
+    },
+    "QIP.Compress": {
+      "path": "QIP/Compress.lean",
+      "sha256": "5fc24ca0da1369a5c840afcf3d68a7fb7a97d0c599c609cf68729515bc36db17",
+      "imports": [
+        "QIP.Halve.Valid",
+        "QIP.Arithmetic.Gap",
+        "QIP.Arithmetic.Padding",
+        "QIP.Arithmetic.Repetition"
       ]
     },
     "QIP.Decode": {
