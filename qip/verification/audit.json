@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "1dd1548dcaee65d43d8b4f693bbb08dce92268d3",
-  "seconds": 508.8,
+  "git_head": "7a282a9e1faf31dd3073254b50d4ae5fdfe65ad7",
+  "seconds": 527.0,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -15,6 +15,7 @@
     "QIP/Audit/Choi.lean": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
     "QIP/Audit/Circuit.lean": "84263477722f5d1f2378afc840dfe9b8d63ef810b0a2f3c35266ba4f2f804ad3",
     "QIP/Audit/Classes.lean": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
+    "QIP/Audit/Controlled.lean": "e137170d6ec027e790c558d5fa5174ffd37f70d6570587589c4764ccf1b0be02",
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
     "QIP/Audit/Fidelity.lean": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
     "QIP/Audit/FidelityTwoTargets.lean": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
@@ -35,6 +36,7 @@
     "QIP/Audit/Value.lean": "e9144c353c363ecc739338d3213dad5359aa954e0cf7e948ec7fc1b8095c85a1",
     "QIP/Circuit/Adjoint.lean": "604b53e9270e8919476380dc01de4dcb692ed7d0e1465f30b6dd9716f0ed3c4b",
     "QIP/Circuit/Control.lean": "111e37f97eb2fa58c8d45327632309b00753d73d034f7dcb2bb9412debdaeeaa",
+    "QIP/Circuit/Controlled.lean": "3bc7e3587352bc5b1c82045c9f8abc32ad155ebea09813b6134a5ac7b0d234e3",
     "QIP/Circuit/Toffoli.lean": "785e83a0f8b3cf8d0e60ab61cc7e25ac502f020c75267cba0e13a360477c364d",
     "QIP/CircuitSemantics.lean": "63fb42d893a3b5ecb948103b8b8d08723ab65d859b2f8230ffb9dce3c86fa8cb",
     "QIP/Classes.lean": "5a33e2776b7701504e9fd56cf748d99249ef1ee1ef430ca24ffb813742d14b98",
@@ -804,6 +806,179 @@
       ],
       "ShiQIP.Desc.Valid.length_filterMap": [
         "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Controlled.lean": {
+      "ShiQIP.SliceEq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Clean": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.apply1_sliceEq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.instr_apply_sliceEq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_nil": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_cons": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_sliceEq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.instr_apply_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Clean.apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sdg": [],
+      "ShiQIP.ctrlInstr": [],
+      "ShiQIP.apply_s": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_toffoli'": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrl_x": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrl_cnot": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrl_s": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrl_t": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.apply1_apply1": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.apply1_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_tdg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_sdg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tPhase_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sht_x_sht_dag": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sht_unitary": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrl_h": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.ctrlInstrs": [],
+      "ShiQIP.runLayer_ctrlInstr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Clean.runLayer": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.runLayer_ctrlInstrs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.clean_ctrlInstrs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_toffoliInstrs": [
+        "propext"
+      ],
+      "ShiQIP.length_ctrlInstr_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.length_ctrlInstrs_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sdgGates": [],
+      "ShiQIP.ctrlGate": [],
+      "ShiQIP.ctrlGates": [],
+      "ShiQIP.length_ctrlGates_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.mem_support_of_toInstr?": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.filterMap_ctrlGate": [
+        "propext"
+      ],
+      "ShiQIP.filterMap_ctrlGates": [
         "Quot.sound",
         "propext"
       ]

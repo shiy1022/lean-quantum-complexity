@@ -12,6 +12,7 @@
     "QIP.Audit.Choi",
     "QIP.Audit.Circuit",
     "QIP.Audit.Classes",
+    "QIP.Audit.Controlled",
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
@@ -87,6 +88,13 @@
       "sha256": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
       "imports": [
         "QIP.ValidGates"
+      ]
+    },
+    "QIP.Audit.Controlled": {
+      "path": "QIP/Audit/Controlled.lean",
+      "sha256": "e137170d6ec027e790c558d5fa5174ffd37f70d6570587589c4764ccf1b0be02",
+      "imports": [
+        "QIP.Circuit.Controlled"
       ]
     },
     "QIP.Audit.Dilation": {
@@ -227,6 +235,13 @@
       "sha256": "111e37f97eb2fa58c8d45327632309b00753d73d034f7dcb2bb9412debdaeeaa",
       "imports": [
         "QIP.Circuit.Adjoint"
+      ]
+    },
+    "QIP.Circuit.Controlled": {
+      "path": "QIP/Circuit/Controlled.lean",
+      "sha256": "3bc7e3587352bc5b1c82045c9f8abc32ad155ebea09813b6134a5ac7b0d234e3",
+      "imports": [
+        "QIP.Circuit.Toffoli"
       ]
     },
     "QIP.Circuit.Toffoli": {
