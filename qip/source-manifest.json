@@ -25,7 +25,8 @@
     "QIP.Audit.Strategy",
     "QIP.Audit.Syntax",
     "QIP.Audit.Tester",
-    "QIP.Audit.Uhlmann"
+    "QIP.Audit.Uhlmann",
+    "QIP.Audit.Value"
   ],
   "modules": {
     "QIP.Arithmetic.Gap": {
@@ -183,6 +184,13 @@
         "Quantum.UhlmannGeneral"
       ]
     },
+    "QIP.Audit.Value": {
+      "path": "QIP/Audit/Value.lean",
+      "sha256": "e9144c353c363ecc739338d3213dad5359aa954e0cf7e948ec7fc1b8095c85a1",
+      "imports": [
+        "QIP.Value"
+      ]
+    },
     "QIP.Circuit.Adjoint": {
       "path": "QIP/Circuit/Adjoint.lean",
       "sha256": "604b53e9270e8919476380dc01de4dcb692ed7d0e1465f30b6dd9716f0ed3c4b",
@@ -329,6 +337,13 @@
       "sha256": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
       "imports": [
         "QIP.ShiShallowBridge"
+      ]
+    },
+    "QIP.Value": {
+      "path": "QIP/Value.lean",
+      "sha256": "9a10f7b5b1510d0d8e249e686807b4240f0a836391fb003ab2dd94f1d899c0e2",
+      "imports": [
+        "QIP.Tester"
       ]
     },
     "Quantum.Channel": {

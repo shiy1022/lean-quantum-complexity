@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "030f16c98608f15f841178104a1a6501c8d004fb",
-  "seconds": 431.0,
+  "git_head": "20c8416598f6accc8b138b9f8542525bab057025",
+  "seconds": 480.6,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -29,6 +29,7 @@
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Tester.lean": "f1e5788af9cc65c7c6b14b01b5eb6bc10bef0276907d10584c584e3f8d7712b6",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
+    "QIP/Audit/Value.lean": "e9144c353c363ecc739338d3213dad5359aa954e0cf7e948ec7fc1b8095c85a1",
     "QIP/Circuit/Adjoint.lean": "604b53e9270e8919476380dc01de4dcb692ed7d0e1465f30b6dd9716f0ed3c4b",
     "QIP/Circuit/Control.lean": "111e37f97eb2fa58c8d45327632309b00753d73d034f7dcb2bb9412debdaeeaa",
     "QIP/Circuit/Toffoli.lean": "785e83a0f8b3cf8d0e60ab61cc7e25ac502f020c75267cba0e13a360477c364d",
@@ -49,6 +50,7 @@
     "QIP/Tester.lean": "9f0f567ddfc05a727a3e90abee265023f238d96280b6fc6be8bcf9ebf530ec22",
     "QIP/TesterCore.lean": "d00967606f8d72bdebcddeaa1901eed075c3e9dc339eca79dea1ae2bb0ad13d7",
     "QIP/ValidGates.lean": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
+    "QIP/Value.lean": "9a10f7b5b1510d0d8e249e686807b4240f0a836391fb003ab2dd94f1d899c0e2",
     "Quantum/Channel.lean": "22dc94d0257a03ffd9fb6cb01301142eb1e9d5b59b03c634b01a1646b27538fa",
     "Quantum/ChannelMathlib.lean": "e0d97f70a6187d570a62206946ff7e3ff3b6b70993171c99c9310eadf4cfb8ac",
     "Quantum/ChannelTensor.lean": "b0247bdd7f01aac94f1d375104814e804adee30c7471ada93ab2fa1d665dd23d",
@@ -2253,6 +2255,113 @@
         "propext"
       ],
       "ShiQuantum.fidelity_le_fidelity_traceRight": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Value.lean": {
+      "ShiQIP.norm_apply_le_trace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isClosed_nonneg_complex": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isClosed_posSemidef": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_traceRight": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_kronecker_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isStrategy_congr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverFam_mem": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isClosed_feasible": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isCompact_entryBox": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isCompact_box": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.feasible_subset_box": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isCompact_feasible": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_pairing": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_eq_pairing_fam": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_optimal_prover": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_attained": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_le_value": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_mem_Icc": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.le_value_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_le_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_accept_eq_one_of_value_eq_one": [
         "Classical.choice",
         "Quot.sound",
         "propext"
