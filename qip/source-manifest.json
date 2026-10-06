@@ -24,6 +24,7 @@
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
     "QIP.Audit.Strategy",
+    "QIP.Audit.StrongDuality",
     "QIP.Audit.Syntax",
     "QIP.Audit.Tester",
     "QIP.Audit.Uhlmann",
@@ -171,6 +172,13 @@
         "QIP.StrategyRealize"
       ]
     },
+    "QIP.Audit.StrongDuality": {
+      "path": "QIP/Audit/StrongDuality.lean",
+      "sha256": "db6451d35e25231addd6b64eacdff52d389dd1c5a49fd5227c0268cf84903bcc",
+      "imports": [
+        "QIP.SDP.StrongDuality"
+      ]
+    },
     "QIP.Audit.Syntax": {
       "path": "QIP/Audit/Syntax.lean",
       "sha256": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
@@ -281,11 +289,26 @@
         "QIP.Syntax"
       ]
     },
+    "QIP.SDP.ConicDuality": {
+      "path": "QIP/SDP/ConicDuality.lean",
+      "sha256": "ea3e2104cf364d8a2daeccb163e6f733bd3e017c662cead0fe178c40446487c4",
+      "imports": [
+        "Quantum.MathlibImports"
+      ]
+    },
     "QIP.SDP.Primal": {
       "path": "QIP/SDP/Primal.lean",
       "sha256": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
       "imports": [
         "QIP.Value"
+      ]
+    },
+    "QIP.SDP.StrongDuality": {
+      "path": "QIP/SDP/StrongDuality.lean",
+      "sha256": "47b2402f579f207f05f4a573727e2deb872510792dc0704c975048beb807efd7",
+      "imports": [
+        "QIP.SDP.WeakDuality",
+        "QIP.SDP.ConicDuality"
       ]
     },
     "QIP.SDP.WeakDuality": {

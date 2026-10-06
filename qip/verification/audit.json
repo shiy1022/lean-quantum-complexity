@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "d98da5143dc085f367cef282a3d91bc78c350491",
-  "seconds": 465.2,
+  "git_head": "d30608fb2a069b7b8d7f5f6da4978d20ca673b22",
+  "seconds": 486.8,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -27,6 +27,7 @@
     "QIP/Audit/Smoke.lean": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
     "QIP/Audit/State.lean": "a88113e135fdf91dae645e9d2355b14cf76c249ea542f2bdaed7f79befd6e963",
     "QIP/Audit/Strategy.lean": "0a8bc2ce8fa3ce67d8d1db84bea5fa1fd952631ca6fd9e772e84b6c1c30ccbbc",
+    "QIP/Audit/StrongDuality.lean": "db6451d35e25231addd6b64eacdff52d389dd1c5a49fd5227c0268cf84903bcc",
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Tester.lean": "f1e5788af9cc65c7c6b14b01b5eb6bc10bef0276907d10584c584e3f8d7712b6",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
@@ -42,7 +43,9 @@
     "QIP/ExecutionLemmas.lean": "ea1ab11ad0f3ec916da710c128cec1add6425d4f3f79ba3c2fe36f285c897708",
     "QIP/GateMatrix.lean": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
+    "QIP/SDP/ConicDuality.lean": "ea3e2104cf364d8a2daeccb163e6f733bd3e017c662cead0fe178c40446487c4",
     "QIP/SDP/Primal.lean": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
+    "QIP/SDP/StrongDuality.lean": "47b2402f579f207f05f4a573727e2deb872510792dc0704c975048beb807efd7",
     "QIP/SDP/WeakDuality.lean": "857cdd9626def978b6430e1b3b089d9a9f48a5bcc8073fa5b4c1413c9e319a14",
     "QIP/ShiShallowBridge.lean": "389848165474fe7e9a6e21409ab475123827c781fbd0ce8f8e69b8ecbdfd3ad9",
     "QIP/Smoke.lean": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
@@ -2110,6 +2113,301 @@
         "propext"
       ],
       "ShiQIP.isStrategy_iff_realized": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/StrongDuality.lean": {
+      "ShiQuantum.conic_approx_duality": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.matrix_locallyConvexSpace": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.single_eq_re_smul_add": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_trace_rep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_herm_rep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.posSemidef_of_trace_nonneg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.le_of_trace_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.telescope": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cardProd": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cardProd_succ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cardProd_pos": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.psdCone": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.psdCone_smul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.convex_psdCone": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isClosed_psdCone": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.zeroView": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.lastView": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.constrMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.constrMap_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_constrMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.objMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.objMap_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.lastView_single_last": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.lastView_single_ne": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_objMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gauge": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gauge_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gauge_nonneg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.continuous_gauge": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isCompact_gauge_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.posDir": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.trace_causalRes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.posDir_constrMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.mixedStrategy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.mixedStrategy_posDef": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.mixedStrategy_isStrategy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.slotFun": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.zeroFun": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.constrSpace_decomp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.multW": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.multZero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.multW_spec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.multZero_spec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certW": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certZ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certW_of_lt": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certW_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certW_isHermitian": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.certZ_isHermitian": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.traceRight_certW_isHermitian": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.traceRight_zero'": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dual_slot_form": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.single_mem_psdCone": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dual_single": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_dualCert_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.reg_nonempty": [
+        "propext"
+      ],
+      "ShiQIP.pairing_le_value": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_dualCert_value": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_eq_sInf_cert": [
         "Classical.choice",
         "Quot.sound",
         "propext"
