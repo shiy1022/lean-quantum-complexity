@@ -1,4 +1,4 @@
-import QIP.CircuitSemantics
+import QIP.ShiShallowBridge
 
 /-! Fresh-import audit for the Q16 gate-matrix groundwork: exact statement types, axioms. -/
 
@@ -41,3 +41,21 @@ open ShiQIP ShiQuantum Matrix ShiShallow
 #print axioms ShiQIP.isChannel_circuit
 #print axioms ShiQIP.conjMap_circuit_pureState
 #print axioms ShiQIP.acceptProb_eq_prob
+
+/-! The BQP bridge. -/
+
+#check (accept_bqpDesc : ∀ {n m : ℕ} (c : Layered (n + m)) (x : Bits n) (out : Fin (n + m))
+  (P : Prover (bqpDesc c x out)), accept P = acceptProb c x out)
+#check (bqpDesc_valid : ∀ {n m : ℕ} (c : Layered (n + m)) (x : Bits n) (out : Fin (n + m)),
+  (bqpDesc c x out).Valid)
+
+#print axioms ShiQIP.toInstr?_toGate
+#print axioms ShiQIP.filterMap_toInstr?_map_toGate
+#print axioms ShiQIP.runLayer_append
+#print axioms ShiQIP.runLayered_eq_runLayer_flatten
+#print axioms ShiQIP.apply_x
+#print axioms ShiQIP.runLayer_xGates
+#print axioms ShiQIP.flips_apply
+#print axioms ShiQIP.runLayer_prepList_zeroVec
+#print axioms ShiQIP.bqpDesc_valid
+#print axioms ShiQIP.accept_bqpDesc
