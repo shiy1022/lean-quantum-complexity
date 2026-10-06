@@ -278,6 +278,7 @@ theorem sum_invol {X : Type} [Fintype X] {f : X → X} (hf : ∀ x, f (f x) = x)
     ∑ x, g (f x) = ∑ x, g x :=
   Equiv.sum_comp (Function.Involutive.toPerm f hf) g
 
+omit [Fintype N₀] [DecidableEq N₀] in
 /-- **Acceptance of one memory slice** of the final state. -/
 theorem accept_slice (hd : d.Valid) (F B : Qubits d.totalWires × (N₀ × MB d n) → ℂ) (μ : N₀) :
     (∑ y, if y (outW d n) = true then ‖runLayer ((ztGates (hCoin d) (hOut d) (held0 d) (hAnc d)).filterMap

@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "8a5feb152e2db2fd48756b60b68d51f3acce3617",
-  "seconds": 749.2,
+  "git_head": "b3a9d22df110c1fc8a06639220b4340f346fd6a0",
+  "seconds": 797.1,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -25,6 +25,7 @@
     "QIP/Audit/GateMatrix.lean": "74f749b86f146355481c4342ef2587e935d0aec8e6dde3228e638365737d6a3f",
     "QIP/Audit/GenModel.lean": "15fa8289566e0168380b29dbab78433e682c227f43d8c367587669369cd95fca",
     "QIP/Audit/Halve.lean": "5cf6cf2329b648767343f29b7cff344b3b01d4abdaa980eb521092ddda43191f",
+    "QIP/Audit/HalveComplete.lean": "131758c746f9e142d63520857fda2755803589c00b11ed617ef6c91babbd0c9b",
     "QIP/Audit/HalveSound.lean": "029cf4c256e2e6d503fb6d4c2898e21b442808b629fc8523f0c0cf0b7bea0bdb",
     "QIP/Audit/Pad.lean": "2fa07c0af57e3262d513119ea5b174bcd933076cba6e9e0cca3947644d6b7d21",
     "QIP/Audit/Pair.lean": "88e6a44f7ad08f383c264cd616613515a9538ccc4437cb637166a815dfa3f226",
@@ -71,12 +72,15 @@
     "QIP/Gen/Cut.lean": "cbbae2c214184b641c3299ef1067b9e6610e2aff7c2628e86190a023378f1d22",
     "QIP/Gen/Local.lean": "20be9d10448d8f67bb1eb869a93b67be9051b47aa47074e3e831eb5e18806701",
     "QIP/Gen/Model.lean": "0c27cb09de2f102709a4df0d7be28a41743b731d6dbd45ff8140e4aa07a5c255",
-    "QIP/Halve/Accept.lean": "1385a461d80213723c6000e6c79716f672840c211b72cb67124f7f97d0c79655",
+    "QIP/Halve/Accept.lean": "80131dfa108af2ab896938b1780fe6c1fdfbcebe83c24cf1aced7b3f130d488c",
     "QIP/Halve/Blocks.lean": "beeb5a1f41cb87c7f544ada4a2eb0ee1c8afa3f73743753beee407893201d535",
+    "QIP/Halve/Complete.lean": "b51236d2d93b404e3c03237f87e8382d0270f63b144b52d64525328ce289da81",
     "QIP/Halve/Desc.lean": "c79f537d89f3730bbaeb04e95eed7d0ee713cef6de1c61ef55b18b1dbef1ecf1",
     "QIP/Halve/Embed.lean": "f19760bacb5fcd6c909bfca94b9749f1c14e61ace58c0029933f865adcf64d94",
+    "QIP/Halve/Honest.lean": "8a115e9b7674647160cdc088234f0ca3463c417e7ff56d4ef79502216463fec3",
     "QIP/Halve/Run.lean": "c7dd84f5eff4abbb8688dc7fe47196b12b70195abc949b5a30d8c0e2ee1d57e1",
     "QIP/Halve/Steps.lean": "d19b456fc36a291560f9ee782845a0116cf30d0ce119ac76ef9a0e1727b7807d",
+    "QIP/Halve/Valid.lean": "7759c44fa7b60a7a3f95ee5bae63136700a6d4b7ac9309b9e9a2880dbf19c3fd",
     "QIP/Marginal.lean": "72ed8d4eb4eac6dbac061d9ac96ad6f18a37d32cb4516b113fac83fb7463a3b3",
     "QIP/PadMessages.lean": "5e8d5024788391ed03701c71547deae5e338582b5e87f6033285dd2205e9c1aa",
     "QIP/Pair/Desc.lean": "dda1769afc31a8c0c466d6a7d5f7e3eb5e5ac2ce4e153503d900b362f11060e0",
@@ -3576,6 +3580,570 @@
         "propext"
       ],
       "ShiQIP.hPriv_le_hOff": [
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/HalveComplete.lean": {
+      "ShiQIP.runLayer_comp_fam": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.liftV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hon": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hon_liftV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOp_liftV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOpH_liftV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.σSw_fst_of": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.σSw_mem": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.σSw_snd_of": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOp_σSw": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.slotIn": [
+        "propext"
+      ],
+      "ShiQIP.inReg_halve_iff": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.inReg_of_slotIn": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.RestS": [
+        "propext"
+      ],
+      "ShiQIP.eS": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.eSD": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.embU": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.embU_mem": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.embU_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.ctl": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.ctl_mem": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverOp_ctl_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_embU": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.transport": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.swL": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverOp_ctl": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hon_sw": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.comp_sw_of_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dRun": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.pureRun_dilateU_dRun": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kron_vanish": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.support_instrInv": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kronH_vanish": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tv_vanish": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.held_toV_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dRun_future": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.disp": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.DispW": [
+        "propext"
+      ],
+      "ShiQIP.DispS": [
+        "propext"
+      ],
+      "ShiQIP.disp_mem": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.disp_fst": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.disp_snd": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOp_disp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hon_disp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_disp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpy": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpy_involutive": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpyPerm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpyL": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.PA_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverOp_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverOp_cpy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.toP_iff_odd": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.copyW_lt_hPay": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpyL_fix": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.comp_cpyL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.honA": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dispF": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.liftV_vanish": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.copy_not_dispS": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.region_not_inReg": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dI_avoid_dead": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dI_avoid_future": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.slot_lt": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gF_honest": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.layer_σSw": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.blockOpH_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOpH_σSw": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bOpH_disp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kron_blockMat_mem": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dRun_undo": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tv_mul_apply": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tv_one'": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.tv_inv": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.copyW_inReg_iff": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.cpyL_of_ne": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.liftV_flip_cpy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.swL_cpyL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dispB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.gB_honest": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_liftV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_disp_wires": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kron_tv": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.nsq_tv": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_ite_eq_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.out_not_region": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.outBit_congr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.fwdP_honest": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.zero0_congr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.bwdP_honest": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.clean_after_turn": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.colOf": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.colOf_iso": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_unitary_send": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_halve_eq_one_of": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.value_halve_eq_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_of_wires": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.wires_of_okBool": [
+        "propext"
+      ],
+      "ShiQIP.cnot_ne_of_okBool": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_mono": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_swapGates": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_swapRange": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_ctrlGates": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_ztGates": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.held_halve_priv": [
+        "propext"
+      ],
+      "ShiQIP.held_halve_msg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.GoodAt": [
+        "propext"
+      ],
+      "ShiQIP.GoodAt.append": [
+        "propext"
+      ],
+      "ShiQIP.goodAt_nil": [
+        "propext"
+      ],
+      "ShiQIP.goodAt_ite": [
+        "propext"
+      ],
+      "ShiQIP.goodAt_dBlock": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.inv_wires_okBool": [
+        "propext"
+      ],
+      "ShiQIP.goodAt_adj": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.goodAt_swapMsg": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_onF": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.okBool_onB": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.hasSchedule_halveDesc": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.nodup_zt_nat": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.halveDesc_valid": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.halve_spec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.halve_pow": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.halve_five_to_three": [
+        "Classical.choice",
         "Quot.sound",
         "propext"
       ]

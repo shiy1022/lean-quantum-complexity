@@ -22,6 +22,7 @@
     "QIP.Audit.GateMatrix",
     "QIP.Audit.GenModel",
     "QIP.Audit.Halve",
+    "QIP.Audit.HalveComplete",
     "QIP.Audit.HalveSound",
     "QIP.Audit.Pad",
     "QIP.Audit.Pair",
@@ -170,6 +171,13 @@
       "sha256": "5cf6cf2329b648767343f29b7cff344b3b01d4abdaa980eb521092ddda43191f",
       "imports": [
         "QIP.Halve.Desc"
+      ]
+    },
+    "QIP.Audit.HalveComplete": {
+      "path": "QIP/Audit/HalveComplete.lean",
+      "sha256": "131758c746f9e142d63520857fda2755803589c00b11ed617ef6c91babbd0c9b",
+      "imports": [
+        "QIP.Halve.Valid"
       ]
     },
     "QIP.Audit.HalveSound": {
@@ -518,7 +526,7 @@
     },
     "QIP.Halve.Accept": {
       "path": "QIP/Halve/Accept.lean",
-      "sha256": "1385a461d80213723c6000e6c79716f672840c211b72cb67124f7f97d0c79655",
+      "sha256": "80131dfa108af2ab896938b1780fe6c1fdfbcebe83c24cf1aced7b3f130d488c",
       "imports": [
         "QIP.Halve.Steps"
       ]
@@ -529,6 +537,13 @@
       "imports": [
         "QIP.Halve.Embed",
         "QIP.Gen.Cut"
+      ]
+    },
+    "QIP.Halve.Complete": {
+      "path": "QIP/Halve/Complete.lean",
+      "sha256": "b51236d2d93b404e3c03237f87e8382d0270f63b144b52d64525328ce289da81",
+      "imports": [
+        "QIP.Halve.Honest"
       ]
     },
     "QIP.Halve.Desc": {
@@ -546,6 +561,13 @@
         "QIP.Halve.Desc"
       ]
     },
+    "QIP.Halve.Honest": {
+      "path": "QIP/Halve/Honest.lean",
+      "sha256": "8a115e9b7674647160cdc088234f0ca3463c417e7ff56d4ef79502216463fec3",
+      "imports": [
+        "QIP.Halve.Run"
+      ]
+    },
     "QIP.Halve.Run": {
       "path": "QIP/Halve/Run.lean",
       "sha256": "c7dd84f5eff4abbb8688dc7fe47196b12b70195abc949b5a30d8c0e2ee1d57e1",
@@ -560,6 +582,14 @@
       "imports": [
         "QIP.Halve.Blocks",
         "QIP.Gen.Local"
+      ]
+    },
+    "QIP.Halve.Valid": {
+      "path": "QIP/Halve/Valid.lean",
+      "sha256": "7759c44fa7b60a7a3f95ee5bae63136700a6d4b7ac9309b9e9a2880dbf19c3fd",
+      "imports": [
+        "QIP.Halve.Complete",
+        "QIP.PadMessages"
       ]
     },
     "QIP.Marginal": {
