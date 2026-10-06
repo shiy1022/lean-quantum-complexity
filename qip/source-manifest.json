@@ -8,6 +8,7 @@
   ],
   "targets": [
     "QIP.Audit.Arithmetic",
+    "QIP.Audit.BellPrefix",
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
     "QIP.Audit.Circuit",
@@ -64,6 +65,14 @@
       "sha256": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
       "imports": [
         "QIP.Arithmetic.Repetition"
+      ]
+    },
+    "QIP.Audit.BellPrefix": {
+      "path": "QIP/Audit/BellPrefix.lean",
+      "sha256": "be2745d6005f0eaf3da55f38246757a614faf77faf771741c8844ff24b388e60",
+      "imports": [
+        "QIP.Bell.Prefix",
+        "Quantum.BellBound"
       ]
     },
     "QIP.Audit.Channel": {
@@ -256,6 +265,21 @@
         "QIP.Value"
       ]
     },
+    "QIP.Bell.Desc": {
+      "path": "QIP/Bell/Desc.lean",
+      "sha256": "e774ddd1b72d0ec543bcd10bdc4ff48fbbebfee267af77d378b249bc77d4cc72",
+      "imports": [
+        "QIP.RejectFlag"
+      ]
+    },
+    "QIP.Bell.Prefix": {
+      "path": "QIP/Bell/Prefix.lean",
+      "sha256": "32f815ccc517369da864f067480bc5e9248e28f719966d61db8f75b7636a71f9",
+      "imports": [
+        "QIP.Bell.Desc",
+        "QIP.Prefix"
+      ]
+    },
     "QIP.Circuit.Adjoint": {
       "path": "QIP/Circuit/Adjoint.lean",
       "sha256": "604b53e9270e8919476380dc01de4dcb692ed7d0e1465f30b6dd9716f0ed3c4b",
@@ -376,9 +400,25 @@
         "QIP.Pair.Valid"
       ]
     },
+    "QIP.Prefix": {
+      "path": "QIP/Prefix.lean",
+      "sha256": "24cd9137d431871aa3b314fc95c325cd68499dbf114acc79ebea6419c6636ca1",
+      "imports": [
+        "QIP.PureRun",
+        "QIP.Circuit.Relabel"
+      ]
+    },
+    "QIP.PureRun": {
+      "path": "QIP/PureRun.lean",
+      "sha256": "b7f8db57b6e016f7eb95a1b63d88477a45596f40dd8348e91e6eb219104d9b1a",
+      "imports": [
+        "QIP.Purified",
+        "Quantum.Completion"
+      ]
+    },
     "QIP.Purified": {
       "path": "QIP/Purified.lean",
-      "sha256": "7451cf616641441af9506be80b550642e931b3ffaba868f3c80878bab08f8607",
+      "sha256": "4383c17f33c53337a4164da0c145778be0a07ddbeb6ef3860f0902f72e87f5f5",
       "imports": [
         "QIP.Tester",
         "QIP.ValidGates",
@@ -521,6 +561,13 @@
       "sha256": "9a10f7b5b1510d0d8e249e686807b4240f0a836391fb003ab2dd94f1d899c0e2",
       "imports": [
         "QIP.Tester"
+      ]
+    },
+    "Quantum.BellBound": {
+      "path": "Quantum/BellBound.lean",
+      "sha256": "4bdf2ae2cff6ae17c0120659bec20eb0659707c81c7989be0cd2215ce69dd61c",
+      "imports": [
+        "Quantum.UhlmannGeneral"
       ]
     },
     "Quantum.Channel": {

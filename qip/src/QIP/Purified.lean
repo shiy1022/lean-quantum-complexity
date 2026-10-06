@@ -53,7 +53,7 @@ attribute [instance] IsoStrategy.memFintype IsoStrategy.memDecEq
 variable {r : ℕ}
 
 /-- An isometric strategy as an operational strategy. -/
-noncomputable def IsoStrategy.toOp (T : IsoStrategy X Y r) : OpStrategy X Y r where
+@[reducible] noncomputable def IsoStrategy.toOp (T : IsoStrategy X Y r) : OpStrategy X Y r where
   M := T.M
   init := pureState T.init
   init_density := T.init_density
