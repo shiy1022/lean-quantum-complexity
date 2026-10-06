@@ -17,6 +17,7 @@
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.GateMatrix",
+    "QIP.Audit.Pair",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Product",
@@ -123,6 +124,14 @@
       "sha256": "74f749b86f146355481c4342ef2587e935d0aec8e6dde3228e638365737d6a3f",
       "imports": [
         "QIP.ShiShallowBridge"
+      ]
+    },
+    "QIP.Audit.Pair": {
+      "path": "QIP/Audit/Pair.lean",
+      "sha256": "88e6a44f7ad08f383c264cd616613515a9538ccc4437cb637166a815dfa3f226",
+      "imports": [
+        "QIP.TesterProduct",
+        "QIP.Circuit.Relabel"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -244,6 +253,13 @@
         "QIP.Circuit.Toffoli"
       ]
     },
+    "QIP.Circuit.Relabel": {
+      "path": "QIP/Circuit/Relabel.lean",
+      "sha256": "e31f9b62e4058c99691d0c084a07e389f1b4042798c9a772714d7c48f833ce2c",
+      "imports": [
+        "QIP.Circuit.Controlled"
+      ]
+    },
     "QIP.Circuit.Toffoli": {
       "path": "QIP/Circuit/Toffoli.lean",
       "sha256": "785e83a0f8b3cf8d0e60ab61cc7e25ac502f020c75267cba0e13a360477c364d",
@@ -333,6 +349,13 @@
         "QIP.SDP.StrongDuality"
       ]
     },
+    "QIP.SDP.Reindex": {
+      "path": "QIP/SDP/Reindex.lean",
+      "sha256": "5ec3574c806317e0d31e4a28bbe42755633d762f2395f23b3b5b79922a0ee32a",
+      "imports": [
+        "QIP.SDP.Product"
+      ]
+    },
     "QIP.SDP.StrongDuality": {
       "path": "QIP/SDP/StrongDuality.lean",
       "sha256": "47b2402f579f207f05f4a573727e2deb872510792dc0704c975048beb807efd7",
@@ -405,6 +428,13 @@
       "sha256": "d00967606f8d72bdebcddeaa1901eed075c3e9dc339eca79dea1ae2bb0ad13d7",
       "imports": [
         "QIP.StrategyRealization"
+      ]
+    },
+    "QIP.TesterProduct": {
+      "path": "QIP/TesterProduct.lean",
+      "sha256": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
+      "imports": [
+        "QIP.SDP.Reindex"
       ]
     },
     "QIP.ValidGates": {
