@@ -29,10 +29,10 @@ open scoped Kronecker
 variable {N M : ℕ}
 
 /-- The wires outside the image of `f`. -/
-abbrev Outside (f : Fin N ↪ Fin M) : Type := {w : Fin M // w ∉ Set.range f}
+abbrev Outside {α : Type} (f : α ↪ Fin M) : Type := {w : Fin M // w ∉ Set.range f}
 
 /-- Split a basis label into its image wires and the rest. -/
-noncomputable def embSplit (f : Fin N ↪ Fin M) : Qubits M ≃ Qubits N × (Outside f → Bool) where
+noncomputable def embSplit {α : Type} [Fintype α] (f : α ↪ Fin M) : Qubits M ≃ (α → Bool) × (Outside f → Bool) where
   toFun y := (fun i => y (f i), fun r => y r.1)
   invFun p w := if h : ∃ i, f i = w then p.1 (Classical.choose h) else p.2 ⟨w, by simpa using h⟩
   left_inv y := by
@@ -48,10 +48,10 @@ noncomputable def embSplit (f : Fin N ↪ Fin M) : Qubits M ≃ Qubits N × (Out
     · have h : ¬ ∃ i, f i = r.1 := fun ⟨i, hi⟩ => r.2 ⟨i, hi⟩
       simp only [dif_neg h]
 
-theorem embSplit_fst (f : Fin N ↪ Fin M) (y : Qubits M) (i : Fin N) :
+theorem embSplit_fst {α : Type} [Fintype α] (f : α ↪ Fin M) (y : Qubits M) (i : α) :
     (embSplit f y).1 i = y (f i) := rfl
 
-theorem embSplit_snd (f : Fin N ↪ Fin M) (y : Qubits M) (r : Outside f) :
+theorem embSplit_snd {α : Type} [Fintype α] (f : α ↪ Fin M) (y : Qubits M) (r : Outside f) :
     (embSplit f y).2 r = y r.1 := rfl
 
 theorem embSplit_update (f : Fin N ↪ Fin M) (y : Qubits M) (i : Fin N) (b : Bool) :

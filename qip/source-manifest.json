@@ -18,6 +18,7 @@
     "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.GateMatrix",
     "QIP.Audit.Pair",
+    "QIP.Audit.ParallelRepeat",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
     "QIP.Audit.Product",
@@ -132,6 +133,13 @@
       "imports": [
         "QIP.TesterProduct",
         "QIP.Circuit.Relabel"
+      ]
+    },
+    "QIP.Audit.ParallelRepeat": {
+      "path": "QIP/Audit/ParallelRepeat.lean",
+      "sha256": "a423dccf9b7ea92a5c16b5f2956cca3a1a5b3485e5b6cd984dcb7a4b00eeb1d9",
+      "imports": [
+        "QIP.ParallelRepeat"
       ]
     },
     "QIP.Audit.PartialTrace": {
@@ -255,7 +263,7 @@
     },
     "QIP.Circuit.Relabel": {
       "path": "QIP/Circuit/Relabel.lean",
-      "sha256": "e31f9b62e4058c99691d0c084a07e389f1b4042798c9a772714d7c48f833ce2c",
+      "sha256": "264df18186f7d93fd5c5084468f9cb23dbb2c81c26963e5c224ed5ed6f842c1b",
       "imports": [
         "QIP.Circuit.Controlled"
       ]
@@ -319,6 +327,37 @@
       "imports": [
         "Definitions.Def_ShiShallow_Core",
         "Quantum.Channel"
+      ]
+    },
+    "QIP.Pair.Desc": {
+      "path": "QIP/Pair/Desc.lean",
+      "sha256": "dda1769afc31a8c0c466d6a7d5f7e3eb5e5ac2ce4e153503d900b362f11060e0",
+      "imports": [
+        "QIP.Pair.Interleave",
+        "QIP.TesterProduct",
+        "QIP.Circuit.Relabel"
+      ]
+    },
+    "QIP.Pair.Interleave": {
+      "path": "QIP/Pair/Interleave.lean",
+      "sha256": "12ec32f50afbd4cc4cda70c340f8fb2111203193b100563bdcbbae9cb4eb7961",
+      "imports": [
+        "QIP.Syntax"
+      ]
+    },
+    "QIP.Pair.Valid": {
+      "path": "QIP/Pair/Valid.lean",
+      "sha256": "070ca7b74fe8188d803d73958ebf5bf67429724206f689894f7caf71cef210a1",
+      "imports": [
+        "QIP.Pair.Desc",
+        "QIP.ValidGates"
+      ]
+    },
+    "QIP.ParallelRepeat": {
+      "path": "QIP/ParallelRepeat.lean",
+      "sha256": "aebfcc6668dac164ade4c0c9f2d84b3362eddd92381b9c53c733d591797f2358",
+      "imports": [
+        "QIP.Pair.Valid"
       ]
     },
     "QIP.Resources": {
