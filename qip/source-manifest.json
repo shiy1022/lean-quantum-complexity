@@ -19,6 +19,7 @@
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.GateMatrix",
+    "QIP.Audit.Pad",
     "QIP.Audit.Pair",
     "QIP.Audit.ParallelRepeat",
     "QIP.Audit.PartialTrace",
@@ -144,6 +145,13 @@
       "sha256": "74f749b86f146355481c4342ef2587e935d0aec8e6dde3228e638365737d6a3f",
       "imports": [
         "QIP.ShiShallowBridge"
+      ]
+    },
+    "QIP.Audit.Pad": {
+      "path": "QIP/Audit/Pad.lean",
+      "sha256": "2fa07c0af57e3262d513119ea5b174bcd933076cba6e9e0cca3947644d6b7d21",
+      "imports": [
+        "QIP.PadMessages"
       ]
     },
     "QIP.Audit.Pair": {
@@ -449,6 +457,14 @@
       "imports": [
         "QIP.Prefix",
         "QIP.SDP.Product"
+      ]
+    },
+    "QIP.PadMessages": {
+      "path": "QIP/PadMessages.lean",
+      "sha256": "5e8d5024788391ed03701c71547deae5e338582b5e87f6033285dd2205e9c1aa",
+      "imports": [
+        "QIP.Bell.Valid",
+        "QIP.Arithmetic.Padding"
       ]
     },
     "QIP.Pair.Desc": {
