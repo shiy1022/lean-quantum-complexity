@@ -29,6 +29,7 @@
     "QIP.Audit.Pair",
     "QIP.Audit.ParallelRepeat",
     "QIP.Audit.PartialTrace",
+    "QIP.Audit.Pipeline",
     "QIP.Audit.Positive",
     "QIP.Audit.Product",
     "QIP.Audit.Purification",
@@ -222,6 +223,13 @@
       "sha256": "b146b97437e9e43512d275c7f164dbe9d0e9174c8a80eb63b97f536e3b38b924",
       "imports": [
         "Quantum.PartialTrace"
+      ]
+    },
+    "QIP.Audit.Pipeline": {
+      "path": "QIP/Audit/Pipeline.lean",
+      "sha256": "24ccf7eac894e6fea0bc5b19ca98d104899c22458a96368f570631b146b847aa",
+      "imports": [
+        "QIP.Pipeline"
       ]
     },
     "QIP.Audit.Positive": {
@@ -618,6 +626,13 @@
         "QIP.SDP.Product"
       ]
     },
+    "QIP.Normalize": {
+      "path": "QIP/Normalize.lean",
+      "sha256": "3f4d7923d7e3dbd41dc4ae6c6972d5f0bac3db0174f6b91058e7c349d76d3f10",
+      "imports": [
+        "QIP.PadMessages"
+      ]
+    },
     "QIP.PadMessages": {
       "path": "QIP/PadMessages.lean",
       "sha256": "5e8d5024788391ed03701c71547deae5e338582b5e87f6033285dd2205e9c1aa",
@@ -662,6 +677,16 @@
       "sha256": "9d6857fe067ed1712ebfda607ad1a7dc8896fb4933d803085edc14ce94b13d60",
       "imports": [
         "QIP.Bell.Valid"
+      ]
+    },
+    "QIP.Pipeline": {
+      "path": "QIP/Pipeline.lean",
+      "sha256": "259ab04f5a19a48ca7828d13f509cdb2e5dc33edd531c1f5ca1e87a34f81ef7a",
+      "imports": [
+        "QIP.Compress",
+        "QIP.Normalize",
+        "QIP.PerfectCompleteness",
+        "QIP.ParallelRepeat"
       ]
     },
     "QIP.Prefix": {
