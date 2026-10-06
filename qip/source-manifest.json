@@ -44,6 +44,7 @@
     "QIP.Audit.Syntax",
     "QIP.Audit.Tester",
     "QIP.Audit.Uhlmann",
+    "QIP.Audit.Uniform",
     "QIP.Audit.Value"
   ],
   "modules": {
@@ -328,6 +329,13 @@
       "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
       "imports": [
         "Quantum.UhlmannGeneral"
+      ]
+    },
+    "QIP.Audit.Uniform": {
+      "path": "QIP/Audit/Uniform.lean",
+      "sha256": "46ee4bb537aea969212a9069e02f628118801a872efa7aa1b93e5fbbb9d4e11b",
+      "imports": [
+        "QIP.Uniform.Bridge"
       ]
     },
     "QIP.Audit.Value": {
@@ -836,6 +844,42 @@
       "sha256": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
       "imports": [
         "QIP.SDP.Reindex"
+      ]
+    },
+    "QIP.Uniform.Bridge": {
+      "path": "QIP/Uniform/Bridge.lean",
+      "sha256": "5edabb84541f598bbdf9c40662299e7c3b3f8b9c7482f1c8ed2695c0eb6167db",
+      "imports": [
+        "QIP.Uniform.PT"
+      ]
+    },
+    "QIP.Uniform.Compose": {
+      "path": "QIP/Uniform/Compose.lean",
+      "sha256": "2f0ff96735b562e853b27876121d65f0d0e776eec79ff53a0284814a47cca4d4",
+      "imports": [
+        "Mathlib.Computability.TuringMachine.Computable",
+        "Definitions.Def_PvsNP"
+      ]
+    },
+    "QIP.Uniform.Glue": {
+      "path": "QIP/Uniform/Glue.lean",
+      "sha256": "67a692e1d10d3e8d833c16373605f28a34cc6ce4a44e0bdce1fa1dc5864bc5e6",
+      "imports": [
+        "QIP.Uniform.Mach"
+      ]
+    },
+    "QIP.Uniform.Mach": {
+      "path": "QIP/Uniform/Mach.lean",
+      "sha256": "341c7d1b0337e8446e51a4b433491950d038a62f42cbd575d31c01c931cc00c9",
+      "imports": [
+        "QIP.Uniform.Compose"
+      ]
+    },
+    "QIP.Uniform.PT": {
+      "path": "QIP/Uniform/PT.lean",
+      "sha256": "ef2e01be344494b4b716eafde9c841fa95ec4bfb31ddf37428b3731685728378",
+      "imports": [
+        "QIP.Uniform.Glue"
       ]
     },
     "QIP.UnitaryProver": {

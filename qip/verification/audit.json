@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "b9372c7d00622596abc53c4c4d2c7668a3c8f9b4",
-  "seconds": 819.2,
+  "git_head": "b09df386fee1c378325a0292cd12009a608349ec",
+  "seconds": 832.6,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -47,6 +47,7 @@
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Tester.lean": "f1e5788af9cc65c7c6b14b01b5eb6bc10bef0276907d10584c584e3f8d7712b6",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
+    "QIP/Audit/Uniform.lean": "46ee4bb537aea969212a9069e02f628118801a872efa7aa1b93e5fbbb9d4e11b",
     "QIP/Audit/Value.lean": "e9144c353c363ecc739338d3213dad5359aa954e0cf7e948ec7fc1b8095c85a1",
     "QIP/Bell/Copy.lean": "48a1453348fc13cb77b008ecfd0cab24e66d20f4671ae3ebee7073d77fd0fcce",
     "QIP/Bell/Desc.lean": "5b50cade1320c4ed200b95d76cf960958cc9fb482fc20b8453fd78dbfd4f2fb3",
@@ -113,6 +114,11 @@
     "QIP/Tester.lean": "9f0f567ddfc05a727a3e90abee265023f238d96280b6fc6be8bcf9ebf530ec22",
     "QIP/TesterCore.lean": "cc6ba45baba4ed65b3b6c33fabfbd03de1801c6a5ea1c69316377cecfadd772c",
     "QIP/TesterProduct.lean": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
+    "QIP/Uniform/Bridge.lean": "5edabb84541f598bbdf9c40662299e7c3b3f8b9c7482f1c8ed2695c0eb6167db",
+    "QIP/Uniform/Compose.lean": "2f0ff96735b562e853b27876121d65f0d0e776eec79ff53a0284814a47cca4d4",
+    "QIP/Uniform/Glue.lean": "67a692e1d10d3e8d833c16373605f28a34cc6ce4a44e0bdce1fa1dc5864bc5e6",
+    "QIP/Uniform/Mach.lean": "341c7d1b0337e8446e51a4b433491950d038a62f42cbd575d31c01c931cc00c9",
+    "QIP/Uniform/PT.lean": "ef2e01be344494b4b716eafde9c841fa95ec4bfb31ddf37428b3731685728378",
     "QIP/UnitaryProver.lean": "ae9830cccd2acc1f5955345243d83ea338d942cc19741be329209c6216d3c5aa",
     "QIP/ValidGates.lean": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
     "QIP/Value.lean": "9a10f7b5b1510d0d8e249e686807b4240f0a836391fb003ab2dd94f1d899c0e2",
@@ -8711,6 +8717,816 @@
         "propext"
       ],
       "ShiQuantum.fidelity_le_fidelity_traceRight": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Uniform.lean": {
+      "ShiQIP.TMComp.CK": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.CΓ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.CΛ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.Cσ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.joinStk": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.joinStk_inl": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.joinStk_inr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.joinStk_aux": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.update_joinStk_inl": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.update_joinStk_inr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.update_joinStk_aux": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.lift₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.lift₂": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₂": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.compM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.compTM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.lab₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stepAux_lift₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stepAux_lift₂": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.initList_stk_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.initList_stk_ne": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.haltList_stk_self": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.haltList_stk_ne": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.emb₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.emb₂": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.step_emb₁": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.step_emb₂": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.iterate_none": [],
+      "ShiQIP.TMComp.iterate_sim": [
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₁_cons": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₁_nil": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₂_cons": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₂_nil": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.iterate_succ_some": [],
+      "ShiQIP.TMComp.move₁_loop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.move₂_loop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.initList_comp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.haltList_comp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.transfer": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.comp_run": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.pushes": [],
+      "ShiQIP.TMComp.stkSize": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stkSize_update": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stkSize_stepAux": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.kFinInst": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.ΛFinInst": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stepGrowth": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stkSize_step": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stkSize_iterate": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.stkSize_initList": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.length_le_stkSize_haltList": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.output_length_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.eval_mono": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.comp_inPolyTime": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.TMComp.polyTime_comp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.BS": [],
+      "ShiQIP.Uniform.Runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.Runs.of_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.Runs.of_eq₀": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.rl": [],
+      "ShiQIP.Uniform.rlLab": [],
+      "ShiQIP.Uniform.stepAux_rl": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.iterate_embed": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.basic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.seq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.loop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.ite": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_basic": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_seq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_loop_false": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_loop_true": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_ite_true": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_ite_false": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.sR": [],
+      "ShiQIP.Uniform.sL": [],
+      "ShiQIP.Uniform.vR": [],
+      "ShiQIP.Uniform.vL": [],
+      "ShiQIP.Uniform.stepAux_sR": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.stepAux_sL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.stepAux_vR": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.stepAux_vL": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.Mach.sR": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.Mach.sL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.Mach.vR": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.Mach.vL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_sR": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_sL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_vR": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_vL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.V.code": [],
+      "ShiQIP.Uniform.popTo": [],
+      "ShiQIP.Uniform.moveBody": [],
+      "ShiQIP.Uniform.moveBody2": [],
+      "ShiQIP.Uniform.moveAll": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.moveAll2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.discard": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_moveLoop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_moveAll": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_moveLoop2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_moveAll2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_discardLoop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_discard": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.parseBody": [],
+      "ShiQIP.Uniform.parseV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.parseBody_l": [],
+      "ShiQIP.Uniform.runs_parseLoop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_parseV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.enc": [],
+      "ShiQIP.Uniform.natV": [],
+      "ShiQIP.Uniform.listV": [],
+      "ShiQIP.Uniform.enc_pair": [],
+      "ShiQIP.Uniform.enc_nil": [],
+      "ShiQIP.Uniform.enc_cons": [],
+      "ShiQIP.Uniform.enc_zero": [],
+      "ShiQIP.Uniform.enc_succ": [],
+      "ShiQIP.Uniform.enc_false": [],
+      "ShiQIP.Uniform.enc_true": [],
+      "ShiQIP.Uniform.length_enc_pos": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.one": [],
+      "ShiQIP.Uniform.BM.Computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.one_inl": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.one_inr": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.castM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.castM_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.ofEnc": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.id": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.lift1": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.lift2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_lift1": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_lift2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.compB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.compB_stk₁": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.compB_stk₂": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.compB_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.comp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.comp'": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.slot3": [],
+      "ShiQIP.Uniform.pairB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.pairB_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.pair": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.reg4": [],
+      "ShiQIP.Uniform.regB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.regB_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.pop2": [],
+      "ShiQIP.Uniform.fstM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.fstM_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.sndM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.sndM_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.pushL": [],
+      "ShiQIP.Uniform.stepAux_pushL": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.constM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.constM_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.selM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.selM_runs_true": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.selM_runs_false": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.fst": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.snd": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.const": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.sel": [],
+      "ShiQIP.Uniform.PT.sel": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.ite": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.peekA": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.subM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldBody": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldLoop": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldB": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.runs_subM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldBody_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.FoldOK": [],
+      "ShiQIP.Uniform.foldS": [],
+      "ShiQIP.Uniform.foldLoop_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldOK_of": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.length_lt_enc_list": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.enc_get_lt": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldB_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.foldS_take_succ": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.foldl": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.BM.toFinTM2": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.BM.initList_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.BM.haltList_eq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.inPolyTime_of_computes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.PT.inPolyTime": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.itemT": [],
+      "ShiQIP.Uniform.enc_list_bool": [
+        "propext"
+      ],
+      "ShiQIP.Uniform.popA": [],
+      "ShiQIP.Uniform.bodyIn": [],
+      "ShiQIP.Uniform.runs_loopIn": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.rawInM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.rawInM_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.bodyOut": [],
+      "ShiQIP.Uniform.runs_loopOut": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.rawOutM": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.rawOutM_runs": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Uniform.polyTimeComputable_of_PT": [
         "Classical.choice",
         "Quot.sound",
         "propext"
