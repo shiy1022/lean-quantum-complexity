@@ -24,6 +24,7 @@
     "QIP.Audit.State",
     "QIP.Audit.Strategy",
     "QIP.Audit.Syntax",
+    "QIP.Audit.Tester",
     "QIP.Audit.Uhlmann"
   ],
   "modules": {
@@ -168,6 +169,13 @@
         "QIP.Decode"
       ]
     },
+    "QIP.Audit.Tester": {
+      "path": "QIP/Audit/Tester.lean",
+      "sha256": "f1e5788af9cc65c7c6b14b01b5eb6bc10bef0276907d10584c584e3f8d7712b6",
+      "imports": [
+        "QIP.Tester"
+      ]
+    },
     "QIP.Audit.Uhlmann": {
       "path": "QIP/Audit/Uhlmann.lean",
       "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
@@ -298,6 +306,22 @@
       "sha256": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
       "imports": [
         "Definitions.Def_ShiShallow_Core"
+      ]
+    },
+    "QIP.Tester": {
+      "path": "QIP/Tester.lean",
+      "sha256": "9f0f567ddfc05a727a3e90abee265023f238d96280b6fc6be8bcf9ebf530ec22",
+      "imports": [
+        "QIP.TesterCore",
+        "QIP.ValidGates",
+        "QIP.StrategyRealize"
+      ]
+    },
+    "QIP.TesterCore": {
+      "path": "QIP/TesterCore.lean",
+      "sha256": "d00967606f8d72bdebcddeaa1901eed075c3e9dc339eca79dea1ae2bb0ad13d7",
+      "imports": [
+        "QIP.StrategyRealization"
       ]
     },
     "QIP.ValidGates": {
