@@ -22,6 +22,7 @@
     "QIP.Audit.GateMatrix",
     "QIP.Audit.GenModel",
     "QIP.Audit.Halve",
+    "QIP.Audit.HalveSound",
     "QIP.Audit.Pad",
     "QIP.Audit.Pair",
     "QIP.Audit.ParallelRepeat",
@@ -169,6 +170,13 @@
       "sha256": "5cf6cf2329b648767343f29b7cff344b3b01d4abdaa980eb521092ddda43191f",
       "imports": [
         "QIP.Halve.Desc"
+      ]
+    },
+    "QIP.Audit.HalveSound": {
+      "path": "QIP/Audit/HalveSound.lean",
+      "sha256": "029cf4c256e2e6d503fb6d4c2898e21b442808b629fc8523f0c0cf0b7bea0bdb",
+      "imports": [
+        "QIP.Halve.Run"
       ]
     },
     "QIP.Audit.Pad": {
@@ -492,6 +500,14 @@
         "Quantum.FidelityTwoTargets"
       ]
     },
+    "QIP.Gen.Local": {
+      "path": "QIP/Gen/Local.lean",
+      "sha256": "20be9d10448d8f67bb1eb869a93b67be9051b47aa47074e3e831eb5e18806701",
+      "imports": [
+        "QIP.Gen.Cut",
+        "QIP.Bell.Run"
+      ]
+    },
     "QIP.Gen.Model": {
       "path": "QIP/Gen/Model.lean",
       "sha256": "0c27cb09de2f102709a4df0d7be28a41743b731d6dbd45ff8140e4aa07a5c255",
@@ -500,12 +516,50 @@
         "QIP.Clean"
       ]
     },
+    "QIP.Halve.Accept": {
+      "path": "QIP/Halve/Accept.lean",
+      "sha256": "1385a461d80213723c6000e6c79716f672840c211b72cb67124f7f97d0c79655",
+      "imports": [
+        "QIP.Halve.Steps"
+      ]
+    },
+    "QIP.Halve.Blocks": {
+      "path": "QIP/Halve/Blocks.lean",
+      "sha256": "beeb5a1f41cb87c7f544ada4a2eb0ee1c8afa3f73743753beee407893201d535",
+      "imports": [
+        "QIP.Halve.Embed",
+        "QIP.Gen.Cut"
+      ]
+    },
     "QIP.Halve.Desc": {
       "path": "QIP/Halve/Desc.lean",
       "sha256": "c79f537d89f3730bbaeb04e95eed7d0ee713cef6de1c61ef55b18b1dbef1ecf1",
       "imports": [
         "QIP.Circuit.Predicates",
         "QIP.Gen.Cut"
+      ]
+    },
+    "QIP.Halve.Embed": {
+      "path": "QIP/Halve/Embed.lean",
+      "sha256": "f19760bacb5fcd6c909bfca94b9749f1c14e61ace58c0029933f865adcf64d94",
+      "imports": [
+        "QIP.Halve.Desc"
+      ]
+    },
+    "QIP.Halve.Run": {
+      "path": "QIP/Halve/Run.lean",
+      "sha256": "c7dd84f5eff4abbb8688dc7fe47196b12b70195abc949b5a30d8c0e2ee1d57e1",
+      "imports": [
+        "QIP.Halve.Accept",
+        "QIP.UnitaryProver"
+      ]
+    },
+    "QIP.Halve.Steps": {
+      "path": "QIP/Halve/Steps.lean",
+      "sha256": "d19b456fc36a291560f9ee782845a0116cf30d0ce119ac76ef9a0e1727b7807d",
+      "imports": [
+        "QIP.Halve.Blocks",
+        "QIP.Gen.Local"
       ]
     },
     "QIP.Marginal": {
