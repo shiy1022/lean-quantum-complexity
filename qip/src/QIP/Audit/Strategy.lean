@@ -1,4 +1,4 @@
-import QIP.StrategyOperator
+import QIP.StrategyRealization
 
 /-! Fresh-import audit for Q18: exact statement types, then transitive axioms. -/
 
@@ -19,3 +19,16 @@ open scoped ComplexOrder
 #print axioms ShiQIP.isStrategy_one_iff
 #print axioms ShiQIP.isStrategy_one_iff_choi
 #print axioms ShiQIP.isStrategy_one_prep_iff
+
+/-! Operational strategies (Q19 forward direction). -/
+
+#check (opStrategy_isStrategy : ∀ {X Y : ℕ → Type} [∀ i, Fintype (X i)] [∀ i, Fintype (Y i)]
+  [∀ i, DecidableEq (X i)] [∀ i, DecidableEq (Y i)] {r : ℕ} (S : OpStrategy X Y r),
+  IsStrategy r (stratOp S))
+
+#print axioms ShiQIP.linkStep_posSemidef
+#print axioms ShiQIP.traceRight_link
+#print axioms ShiQIP.traceRight_linkStep
+#print axioms ShiQIP.memState_posSemidef
+#print axioms ShiQIP.stratOp_succ
+#print axioms ShiQIP.opStrategy_isStrategy

@@ -156,9 +156,9 @@
     },
     "QIP.Audit.Strategy": {
       "path": "QIP/Audit/Strategy.lean",
-      "sha256": "648c4d49256887a63f1b8acf73678bec3eae37bd080e7c5ec6952cf2d8895efd",
+      "sha256": "eee7440964cc57026303f965e3b132d47bbaccb9e032bf828c336a9a1adbbc32",
       "imports": [
-        "QIP.StrategyOperator"
+        "QIP.StrategyRealization"
       ]
     },
     "QIP.Audit.Syntax": {
@@ -276,6 +276,13 @@
       "sha256": "e4791dfa0e3e6bf26efc10b220256bd5e0b69168ba421259c9dffa1cbb50390e",
       "imports": [
         "Quantum.Kraus"
+      ]
+    },
+    "QIP.StrategyRealization": {
+      "path": "QIP/StrategyRealization.lean",
+      "sha256": "c848a23038cc948b77bafaef8677fca8529acc01313b2a432ddf5f4f5f49cd30",
+      "imports": [
+        "QIP.StrategyOperator"
       ]
     },
     "QIP.Syntax": {
