@@ -4,6 +4,7 @@ Released under the Apache License, Version 2.0.
 Authors: Yueheng Shi
 -/
 import QIP.Bell.Sound
+import QIP.Clean
 
 /-!
 # Q27 — completeness of the Bell test
@@ -186,7 +187,7 @@ theorem hVstore_iso : (hVstore T₀)ᴴ * hVstore T₀ = 1 := by
       intro hc
       apply h
       simp only [Prod.mk.injEq, EmbeddingLike.apply_eq_iff_eq, Equiv.apply_eq_iff_eq] at hc
-      first | exact hc | exact ⟨hc.1.symm, hc.2.symm⟩
+      exact hc
   · rintro ⟨r, a⟩ _ hne
     rw [if_neg, star_zero, zero_mul]
     rintro ⟨h1, h2⟩
@@ -217,7 +218,7 @@ noncomputable def hWfin (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T�
 def regBool : Reg (bellDesc d) (d.numMsgs + 1) ≃ Bool where
   toFun := oVal
   invFun b := fun _ => b
-  left_inv r := reg_m1_ext rfl
+  left_inv _ := reg_m1_ext rfl
   right_inv _ := rfl
 
 /-- The outputs of turn `m + 1`, as `O'`, the flag and a memory of turn `m + 1`. -/
@@ -310,12 +311,12 @@ theorem pureRun_hT_congr (V V' : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMe
         subst this
         rw [hT_V_m hd, hT_V_m hd]; rfl) k hk y a
 
-/-- **The restricted honest prover is `T₀`.** -/
-theorem pBell_hT (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ)
-    (hV : Vᴴ * V = 1) : pBell d hd (hT hd T₀ V hV) = accept T₀.toOp := by
-  rw [← accept_restrict hd]
-  refine accept_relabel T₀ ((bellPrefix d hd).restrict (hT hd T₀ V hV)) (fun k hk => eM T₀ hk)
-    (fun _ => rfl) (fun k hk g a g' b => ?_)
+theorem restrict_hT_V (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ)
+    (hV : Vᴴ * V = 1) (k : ℕ) (hk : k < d.numMsgs) (g : Reg d k)
+    (a : ((bellPrefix d hd).restrict (hT hd T₀ V hV)).M (k + 1)) (g' : Reg d k)
+    (b : ((bellPrefix d hd).restrict (hT hd T₀ V hV)).M k) :
+    ((bellPrefix d hd).restrict (hT hd T₀ V hV)).V k (g, a) (g', b) =
+      T₀.V k (g, eM T₀ (k := k + 1) hk a) (g', eM T₀ hk.le b) := by
   have := (bellPrefix d hd).restrict_V (T := hT hd T₀ V hV) hk
     (((bellPrefix d hd).τ k hk).symm g) (((bellPrefix d hd).τ k hk).symm g') a b
   rw [Equiv.apply_symm_apply, Equiv.apply_symm_apply] at this
@@ -323,7 +324,27 @@ theorem pBell_hT (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.n
   show T₀.V k ((bellPrefix d hd).τ k hk (((bellPrefix d hd).τ k hk).symm g), _)
     ((bellPrefix d hd).τ k hk (((bellPrefix d hd).τ k hk).symm g'), _) = _
   rw [Equiv.apply_symm_apply, Equiv.apply_symm_apply]
-  rfl
+
+/-- **The restricted honest prover is `T₀`.** -/
+theorem pBell_hT (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ)
+    (hV : Vᴴ * V = 1) : pBell d hd (hT hd T₀ V hV) = accept T₀.toOp := by
+  rw [← accept_restrict hd]
+  exact accept_relabel T₀ ((bellPrefix d hd).restrict (hT hd T₀ V hV)) (fun _ hk => eM T₀ hk)
+    (fun _ => rfl) (restrict_hT_V hd T₀ V hV)
+
+theorem pureRun_restrict_hT
+    (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ) (hV : Vᴴ * V = 1)
+    (w : Qubits d.totalWires) (a : ((bellPrefix d hd).restrict (hT hd T₀ V hV)).M d.numMsgs) :
+    pureRun ((bellPrefix d hd).restrict (hT hd T₀ V hV)) d.numMsgs (w, a) =
+      pureRun T₀ d.numMsgs (w, eM T₀ le_rfl a) :=
+  pureRun_relabel T₀ ((bellPrefix d hd).restrict (hT hd T₀ V hV)) d.numMsgs (fun _ hk => eM T₀ hk)
+    (fun _ => rfl) (restrict_hT_V hd T₀ V hV) _ le_rfl w a
+
+variable (d) in
+/-- Every wire of a message to the prover reads `0` at the end of a run of `T₀`. -/
+def CleanAt (T₀ : IsoStrategy (Reg d) (Reg d) d.numMsgs) : Prop :=
+  ∀ (j : ℕ) (w : Fin d.totalWires), toProverAt d j → inReg d j w →
+    ∀ y μ, y w = true → pureRun T₀ d.numMsgs (y, μ) = 0
 
 end Honest
 
@@ -356,11 +377,13 @@ section Support
 variable (hd : d.Valid) (T : IsoStrategy (Reg (bellDesc d)) (Reg (bellDesc d)) (bellDesc d).numMsgs)
 
 include hd in
-theorem pureRun_bell_sw (x : Fin d.totalWires) (y : Qubits (bellDesc d).totalWires)
+theorem pureRun_bell_sw (x : Fin d.totalWires) (hx : d.held d.numMsgs x = true)
+    (y : Qubits (bellDesc d).totalWires)
     (μ : T.M d.numMsgs) (hy : y (sw d x) = true) : pureRun T d.numMsgs (y, μ) = 0 := by
   rw [pureRun_bell_apply hd]
   refine embV_eq_zero hd _ _ _ (mw d x) (mw_not_mem x) ?_
-  rw [cnotFun, Function.update_of_ne (Ne.symm (wB_ne_mw x)), Function.comp_apply, σ_mw, if_pos x.2]
+  rw [cnotFun, Function.update_of_ne (Ne.symm (wB_ne_mw x)), Function.comp_apply, σ_mw,
+    if_pos ⟨x.2, hx⟩]
   exact hy
 
 include hd in
@@ -428,8 +451,54 @@ theorem hT_vanish_reg {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀
   rw [hy] at this
   exact Bool.noConfusion this
 
+/-- A wire of `d` not held during block `m` belongs to a message sent to the prover. -/
+theorem dead_of_not_held (x : Fin d.totalWires) (hx : d.held d.numMsgs x = false) :
+    ∃ j, toProverAt d j ∧ inReg d j x := by
+  have hp : d.priv ≤ (x : ℕ) := by
+    by_contra h
+    simp [Desc.held, show (x : ℕ) < d.priv by omega] at hx
+  obtain ⟨i, h1, h2⟩ := exists_segment (segs d) x (by rw [segs_sum]; exact x.2)
+  cases i with
+  | zero => simp [psum, segs] at h2; omega
+  | succ i =>
+    have hreg : inReg d i x := by
+      unfold inReg; rw [msgOffset_eq, msgWidth_eq]; exact ⟨h1, h2⟩
+    refine ⟨i, ?_, hreg⟩
+    have hi : i < d.numMsgs := by
+      by_contra hc
+      have : d.msgWidth i = 0 := by
+        rw [msgWidth_eq]; simp [segs, List.getD_eq_getElem?_getD, Desc.numMsgs] at hc ⊢
+        rw [List.getElem?_eq_none (by omega)]; rfl
+      have := hreg.2; have := hreg.1; omega
+    have hnot := hx
+    rw [Bool.eq_false_iff, ne_eq, held_iff] at hnot
+    unfold toProverAt
+    cases hdir : (d.msgs.map Message.dir).getD i .toVerifier
+    · exfalso
+      exact hnot (Or.inr ⟨i, hreg, by rw [hdir]; simp [dirOk, hi]⟩)
+    · rfl
+
+theorem pureRun_bell_sw_dead (hclean : CleanAt d T₀)
+    {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ} {hV : Vᴴ * V = 1}
+    (x : Fin d.totalWires) (hx : d.held d.numMsgs x = false) (y : Qubits (bellDesc d).totalWires)
+    (μ : (hT hd T₀ V hV).M d.numMsgs) (hy : y (sw d x) = true) :
+    pureRun (hT hd T₀ V hV) d.numMsgs (y, μ) = 0 := by
+  rw [pureRun_bell_apply hd]
+  unfold PrefixData.embV
+  split_ifs
+  · rw [pureRun_restrict_hT hd T₀ V hV]
+    obtain ⟨j, hpj, hjx⟩ := dead_of_not_held x hx
+    refine hclean j x hpj hjx _ _ ?_
+    rw [embSplit_fst]
+    change cnotFun (sw d ⟨d.out, out_lt_W hd⟩) (wB d) (y ∘ σ d d.totalWires) (sw d x) = true
+    rw [cnotFun, Function.update_of_ne (Ne.symm (wB_ne_sw x)), Function.comp_apply, σ_sw,
+      if_neg (fun h => by rw [hx] at h; exact Bool.noConfusion h.2)]
+    exact hy
+  · rfl
+
 /-- **After turn `m`, every wire other than `B` reads `0`.** -/
-theorem hT_support {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ}
+theorem hT_support (hclean : CleanAt d T₀)
+    {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ}
     {hV : Vᴴ * V = 1} (y : Qubits (bellDesc d).totalWires) (a : (hT hd T₀ V hV).M (d.numMsgs + 1))
     (w : Fin (bellDesc d).totalWires) (hwB : w ≠ wB d) (hy : y w = true) :
     pureRun (hT hd T₀ V hV) (d.numMsgs + 1) (y, a) = 0 := by
@@ -441,8 +510,11 @@ theorem hT_support {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d
         (fun y μ h => pureRun_bell_wOut hd (hT hd T₀ V hV) y μ h) y a hy
     · exact turnVec_vanish (hT hd T₀ V hV) d.numMsgs _ hm (pureRun (hT hd T₀ V hV) d.numMsgs)
         (fun y μ h => pureRun_bell_wO hd (hT hd T₀ V hV) y μ h) y a hy
-    · exact turnVec_vanish (hT hd T₀ V hV) d.numMsgs _ hm (pureRun (hT hd T₀ V hV) d.numMsgs)
-        (fun y μ h => pureRun_bell_sw hd (hT hd T₀ V hV) x y μ h) y a hy
+    · by_cases hx : d.held d.numMsgs x = true
+      · exact turnVec_vanish (hT hd T₀ V hV) d.numMsgs _ hm (pureRun (hT hd T₀ V hV) d.numMsgs)
+          (fun y μ h => pureRun_bell_sw hd (hT hd T₀ V hV) x hx y μ h) y a hy
+      · exact turnVec_vanish (hT hd T₀ V hV) d.numMsgs _ hm (pureRun (hT hd T₀ V hV) d.numMsgs)
+          (fun y μ h => pureRun_bell_sw_dead hd T₀ hclean x (by simpa using hx) y μ h) y a hy
 
 end HonestSupport
 
@@ -468,7 +540,7 @@ theorem exists_ne_of_ne_zero {n : ℕ} {z : Qubits n} (h : z ≠ zeroQ n) : ∃ 
   push Not at hc
   exact h (funext fun w => by simpa [zeroQ] using hc w)
 
-theorem margB_preT : margB (wB d) (pureRun (preT hd T₀) (d.numMsgs + 1)) =
+theorem margB_preT (hclean : CleanAt d T₀) : margB (wB d) (pureRun (preT hd T₀) (d.numMsgs + 1)) =
     traceRight (pureState (χB hd T₀)) := by
   ext x x'
   rw [margB, of_apply, Finset.sum_eq_single ⟨zeroQ _, rfl⟩]
@@ -479,20 +551,20 @@ theorem margB_preT : margB (wB d) (pureRun (preT hd T₀) (d.numMsgs + 1)) =
     obtain ⟨w, hw⟩ := exists_ne_of_ne_zero hne'
     have hwB : w ≠ wB d := fun e => by rw [e, hz] at hw; exact Bool.noConfusion hw
     refine Finset.sum_eq_zero fun a _ => ?_
-    rw [hT_support hd T₀ _ a w hwB (by rw [Function.update_of_ne hwB]; exact hw), zero_mul]
+    rw [hT_support hd T₀ hclean _ a w hwB (by rw [Function.update_of_ne hwB]; exact hw), zero_mul]
   · simp
 
-theorem isPurification_χB (h : accept T₀.toOp = 1 / 2) :
+theorem isPurification_χB (hclean : CleanAt d T₀) (h : accept T₀.toOp = 1 / 2) :
     IsPurification (χB hd T₀) (diagonal fun _ : Bool => (((1 : ℝ) / 2 : ℝ) : ℂ)) := by
   unfold IsPurification
   have hm : d.numMsgs < (bellDesc d).numMsgs := by rw [numMsgs_bellDesc]; omega
-  rw [← margB_preT, pureRun_bell_succ, margB_turnVec _ hm _ (not_inReg_wB _), margB_bell hd,
+  rw [← margB_preT hd T₀ hclean, pureRun_bell_succ, margB_turnVec _ hm _ (not_inReg_wB _), margB_bell hd,
     pBell_hT, h]
   congr 1
   funext b
   cases b <;> norm_num
 
-theorem nonempty_hMem (h : accept T₀.toOp = 1 / 2) : Nonempty (hMem T₀ (d.numMsgs + 1)) := by
+theorem nonempty_hMem (_h : accept T₀.toOp = 1 / 2) : Nonempty (hMem T₀ (d.numMsgs + 1)) := by
   have h1 := sum_norm_pureRun T₀ (le_refl d.numMsgs)
   by_contra hc
   rw [not_nonempty_iff] at hc
@@ -515,7 +587,7 @@ theorem hT_V_m1_apply {V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀
   rw [hT_V_m1 hd]
 
 /-- **The answer of the honest prover.** -/
-theorem hT_last (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ)
+theorem hT_last (hclean : CleanAt d T₀) (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.numMsgs + 1)) ℂ)
     (hV : Vᴴ * V = 1) (y : Qubits (bellDesc d).totalWires) (c : (hT hd T₀ V hV).M (d.numMsgs + 2)) :
     turnVec (hT hd T₀ V hV) (d.numMsgs + 1) (pureRun (hT hd T₀ V hV) (d.numMsgs + 1)) (y, c) =
       if (eB T₀ c).1 = false then ∑ a, V (y (wO d), (eA T₀).symm (eB T₀ c).2) a *
@@ -523,7 +595,7 @@ theorem hT_last (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.nu
   rw [PrefixData.turnVec_apply, ← regBool.symm.sum_comp, Fintype.sum_bool]
   simp only [hT_V_m1_apply hd T₀, regSet_regBool]
   have h1 : ∀ ν, pureRun (hT hd T₀ V hV) (d.numMsgs + 1) (Function.update y (wO d) true, ν) = 0 :=
-    fun ν => hT_support hd T₀ _ ν (wO d) wO_ne_wB (Function.update_self _ _ _)
+    fun ν => hT_support hd T₀ hclean _ ν (wO d) wO_ne_wB (Function.update_self _ _ _)
   simp only [h1, mul_zero, Finset.sum_const_zero, zero_add]
   trans ∑ x : (hT hd T₀ V hV).M (d.numMsgs + 1),
     (if (eB T₀ c).1 = false then V (y (wO d), (eA T₀).symm (eB T₀ c).2) x else 0) *
@@ -537,11 +609,11 @@ theorem hT_last (V : Matrix (Bool × hMem T₀ (d.numMsgs + 1)) (hMem T₀ (d.nu
 include hd in
 /-- **Completeness of the Bell test**: from a prover of `d` accepted with probability `1/2`,
 an isometric prover of `bellDesc d` accepted with certainty. -/
-theorem exists_iso_accept_one (h : accept T₀.toOp = 1 / 2) :
+theorem exists_iso_accept_one (hclean : CleanAt d T₀) (h : accept T₀.toOp = 1 / 2) :
     ∃ T : IsoStrategy (Reg (bellDesc d)) (Reg (bellDesc d)) (bellDesc d).numMsgs,
       accept T.toOp = 1 := by
-  haveI := nonempty_hMem T₀ h
-  obtain ⟨V, hV, hprob⟩ := bell_prob_eq_one (χB hd T₀) (isPurification_χB hd T₀ h)
+  have := nonempty_hMem T₀ h
+  obtain ⟨V, hV, hprob⟩ := bell_prob_eq_one (χB hd T₀) (isPurification_χB hd T₀ hclean h)
   refine ⟨hT hd T₀ V hV, ?_⟩
   rw [trace_bell_pureState] at hprob
   rw [accept_eq_bellPr hd, ← hprob, bellPr, Finset.sum_eq_single ⟨zeroQ _, rfl, rfl⟩]
@@ -558,7 +630,7 @@ theorem exists_iso_accept_one (h : accept T₀.toOp = 1 / 2) :
     have hO : Function.update (Function.update (zeroQ (bellDesc d).totalWires) (wO d) true)
         (wB d) true (wO d) = true := by
       rw [Function.update_of_ne hOB, Function.update_self]
-    simp only [hT_last hd T₀ V hV, h0, h11, hO]
+    simp only [hT_last hd T₀ hclean V hV, h0, h11, hO]
     refine (Fintype.sum_equiv ((eB T₀).trans ((Equiv.refl Bool).prodCongr (eA T₀).symm)) _
       (fun p => if p.1 = false then ‖assocVec (((1 : Matrix Bool Bool ℂ) ⊗ₖ V) *ᵥ χB hd T₀)
         ((false, false), p.2) + assocVec (((1 : Matrix Bool Bool ℂ) ⊗ₖ V) *ᵥ χB hd T₀)
@@ -579,9 +651,9 @@ theorem exists_iso_accept_one (h : accept T₀.toOp = 1 / 2) :
     have hwO : w ≠ wO d := fun e => by rw [e, hzO] at hw; exact Bool.noConfusion hw
     have hv : ∀ u : Qubits (bellDesc d).totalWires, u w = true → ∀ a,
         pureRun (preT hd T₀) (d.numMsgs + 1) (u, a) = 0 :=
-      fun u hu a => hT_support hd T₀ u a w hwB hu
+      fun u hu a => hT_support hd T₀ hclean u a w hwB hu
     refine Finset.sum_eq_zero fun c _ => ?_
-    simp only [hT_last hd T₀ V hV]
+    simp only [hT_last hd T₀ hclean V hV]
     have e1 : ∀ a : hMem T₀ (d.numMsgs + 1), pureRun (preT hd T₀) (d.numMsgs + 1)
         (Function.update z (wO d) false, a) = 0 :=
       fun a => hv _ (by rw [Function.update_of_ne hwO]; exact hw) a

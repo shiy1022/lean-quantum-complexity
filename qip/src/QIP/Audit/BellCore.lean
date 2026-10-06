@@ -1,14 +1,28 @@
-import QIP.Bell.Honest
+import QIP.PerfectCompleteness
 
-/-! Fresh-import audit for the Q27 Bell-test core: statement types, then transitive axioms. -/
+/-! Fresh-import audit for Q27 (Bell test and perfect completeness): statement types, then
+transitive axioms. -/
 
 open ShiQIP ShiQuantum Matrix
 
 #check (value_bellDesc_le : ∀ {d : Desc}, d.Valid → value d ≤ 1 / 3 → value (bellDesc d) ≤ 35 / 36)
 #check (exists_iso_accept_one : ∀ {d : Desc}, d.Valid →
-  ∀ (T₀ : IsoStrategy (Reg d) (Reg d) d.numMsgs), accept T₀.toOp = 1 / 2 →
+  ∀ (T₀ : IsoStrategy (Reg d) (Reg d) d.numMsgs), CleanAt d T₀ → accept T₀.toOp = 1 / 2 →
     ∃ T : IsoStrategy (Reg (bellDesc d)) (Reg (bellDesc d)) (bellDesc d).numMsgs,
       accept T.toOp = 1)
+#check (exists_clean : ∀ {d : Desc} (T : IsoStrategy (Reg d) (Reg d) d.numMsgs), d.Valid →
+  ∃ T' : IsoStrategy (Reg d) (Reg d) d.numMsgs, accept T'.toOp = accept T.toOp ∧
+    ∀ (j : ℕ) (w : Fin d.totalWires), toProverAt d j → inReg d j w →
+      ∀ y μ, y w = true → pureRun T' d.numMsgs (y, μ) = 0)
+#check (bellDesc_valid : ∀ {d : Desc}, d.Valid → LastToVerifier d → (bellDesc d).Valid)
+#check (perfDesc_valid : ∀ {d : Desc} {k : ℕ}, d.Valid → d.HasSchedule k → 1 ≤ k →
+  (perfDesc d).Valid)
+#check (hasSchedule_perfDesc : ∀ {d : Desc} {k : ℕ}, d.HasSchedule k → 1 ≤ k →
+  (perfDesc d).HasSchedule (k + 2))
+#check (perfDesc_complete : ∀ {d : Desc} {k : ℕ}, d.Valid → d.HasSchedule k → 1 ≤ k →
+  1 / 2 ≤ value d → ∃ P : Prover (perfDesc d), accept P = 1)
+#check (perfDesc_sound : ∀ {d : Desc} {k : ℕ}, d.Valid → d.HasSchedule k → 1 ≤ k →
+  value d ≤ 1 / 3 → value (perfDesc d) ≤ 35 / 36)
 
 #print axioms ShiQIP.reduceTo
 #print axioms ShiQIP.localOp
@@ -68,6 +82,8 @@ open ShiQIP ShiQuantum Matrix
 #print axioms ShiQIP.swapsUpTo
 #print axioms ShiQIP.runLayer_swapsUpTo
 #print axioms ShiQIP.out_lt_W
+#print axioms ShiQIP.held_out
+#print axioms ShiQIP.σ_sw_out
 #print axioms ShiQIP.sw_out_ne_wB
 #print axioms ShiQIP.bellG_eq
 #print axioms ShiQIP.bellG_mulVec
@@ -104,6 +120,55 @@ open ShiQIP ShiQuantum Matrix
 #print axioms ShiQIP.accept_restrict
 #print axioms ShiQIP.accept_bell_le
 #print axioms ShiQIP.value_bellDesc_le
+#print axioms ShiQIP.instr_apply_comp
+#print axioms ShiQIP.runLayer_comp
+#print axioms ShiQIP.Desc.Valid.support_held
+#print axioms ShiQIP.inReg_unique
+#print axioms ShiQIP.toProverAt
+#print axioms ShiQIP.lt_of_toProverAt
+#print axioms ShiQIP.not_held_of_dead
+#print axioms ShiQIP.Slots
+#print axioms ShiQIP.zeroSlots
+#print axioms ShiQIP.keepV
+#print axioms ShiQIP.swapV
+#print axioms ShiQIP.V_iso_apply
+#print axioms ShiQIP.star_ite'
+#print axioms ShiQIP.keepV_iso
+#print axioms ShiQIP.sum_slots
+#print axioms ShiQIP.swapV_iso
+#print axioms ShiQIP.cleanV
+#print axioms ShiQIP.cleanT
+#print axioms ShiQIP.DW
+#print axioms ShiQIP.merge
+#print axioms ShiQIP.good
+#print axioms ShiQIP.slot_congr
+#print axioms ShiQIP.merge_of_not
+#print axioms ShiQIP.merge_of_mem
+#print axioms ShiQIP.not_DW_of_inReg
+#print axioms ShiQIP.DW_succ
+#print axioms ShiQIP.regSet_snd
+#print axioms ShiQIP.regSet_regSet
+#print axioms ShiQIP.good_regSet
+#print axioms ShiQIP.merge_regSet
+#print axioms ShiQIP.wireSplitE_merge
+#print axioms ShiQIP.good_succ_keep
+#print axioms ShiQIP.merge_succ_keep
+#print axioms ShiQIP.merge_succ_swap
+#print axioms ShiQIP.merge_update_slot
+#print axioms ShiQIP.good_swap
+#print axioms ShiQIP.turn_clean
+#print axioms ShiQIP.kronOne_mulVec_apply
+#print axioms ShiQIP.merge_update
+#print axioms ShiQIP.good_update
+#print axioms ShiQIP.block_clean
+#print axioms ShiQIP.good_zero
+#print axioms ShiQIP.merge_zero
+#print axioms ShiQIP.pureRun_clean
+#print axioms ShiQIP.unmerge
+#print axioms ShiQIP.slotsOf
+#print axioms ShiQIP.sum_good_merge
+#print axioms ShiQIP.accept_clean
+#print axioms ShiQIP.exists_clean
 #print axioms ShiQIP.turnVec_relabel
 #print axioms ShiQIP.pureRun_relabel
 #print axioms ShiQIP.accept_relabel
@@ -141,7 +206,10 @@ open ShiQIP ShiQuantum Matrix
 #print axioms ShiQIP.hT_V_m
 #print axioms ShiQIP.hT_V_m1
 #print axioms ShiQIP.pureRun_hT_congr
+#print axioms ShiQIP.restrict_hT_V
 #print axioms ShiQIP.pBell_hT
+#print axioms ShiQIP.pureRun_restrict_hT
+#print axioms ShiQIP.CleanAt
 #print axioms ShiQIP.wO_ne_sw
 #print axioms ShiQIP.wO_ne_mw
 #print axioms ShiQIP.σ_wO
@@ -155,6 +223,8 @@ open ShiQIP ShiQuantum Matrix
 #print axioms ShiQIP.accept_eq_bellPr
 #print axioms ShiQIP.hT_V_m_apply
 #print axioms ShiQIP.hT_vanish_reg
+#print axioms ShiQIP.dead_of_not_held
+#print axioms ShiQIP.pureRun_bell_sw_dead
 #print axioms ShiQIP.hT_support
 #print axioms ShiQIP.preT
 #print axioms ShiQIP.zeroQ
@@ -167,3 +237,28 @@ open ShiQIP ShiQuantum Matrix
 #print axioms ShiQIP.hT_V_m1_apply
 #print axioms ShiQIP.hT_last
 #print axioms ShiQIP.exists_iso_accept_one
+#print axioms ShiQIP.lt_numMsgs_of_inReg
+#print axioms ShiQIP.dir_bell_lt
+#print axioms ShiQIP.dir_bell_m
+#print axioms ShiQIP.dir_bell_m1
+#print axioms ShiQIP.held_bellShift
+#print axioms ShiQIP.held_bell_priv
+#print axioms ShiQIP.held_bell_msg
+#print axioms ShiQIP.held_bell_O
+#print axioms ShiQIP.okBool_bellShift
+#print axioms ShiQIP.alternates_append_two
+#print axioms ShiQIP.getLast_dir_of_last
+#print axioms ShiQIP.bellDesc_valid
+#print axioms ShiQIP.stdSchedule_add_two
+#print axioms ShiQIP.hasSchedule_bellDesc
+#print axioms ShiQIP.perfDesc
+#print axioms ShiQIP.one_le_numMsgs_of_hasSchedule
+#print axioms ShiQIP.hasSchedule_rejectDesc
+#print axioms ShiQIP.rejectDesc_valid_of_hasSchedule
+#print axioms ShiQIP.perfDesc_valid
+#print axioms ShiQIP.hasSchedule_perfDesc
+#print axioms ShiQIP.numMsgs_perfDesc
+#print axioms ShiQIP.totalWires_perfDesc
+#print axioms ShiQIP.perfDesc_complete
+#print axioms ShiQIP.value_perfDesc_eq_one
+#print axioms ShiQIP.perfDesc_sound

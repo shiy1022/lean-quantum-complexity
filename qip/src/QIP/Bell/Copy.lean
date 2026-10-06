@@ -8,10 +8,10 @@ import QIP.Bell.Final
 /-!
 # Q27 — the copy-and-ship layer
 
-`bellG d` is `CNOT(out → B)` followed by the swap of every wire `x` of `d` (at `bellShift x`)
-with wire `x` of message `m` (at `W + 2 + x`). On basis labels (**`bellG_mulVec`**):
-`(G v) y = v (cnot (y ∘ σ))` where `σ` exchanges the two copies (`σ_sw`, `σ_mw`) and fixes
-every other wire (`σ_fix`).
+`bellG d` is `CNOT(out → B)` followed by the swap of every wire `x` of `d` held during block
+`m` (at `bellShift x`) with wire `x` of message `m` (at `W + 2 + x`). On basis labels
+(**`bellG_mulVec`**): `(G v) y = v (cnot (y ∘ σ))` where `σ` exchanges the two copies of held
+wires (`σ_sw`, `σ_mw`) and fixes every other wire (`σ_fix`).
 -/
 
 set_option linter.unusedSimpArgs false
@@ -52,51 +52,70 @@ variable (d) in
 /-- The first `k` swaps, composed. -/
 def σ : ℕ → Equiv.Perm (Fin (bellDesc d).totalWires)
   | 0 => 1
-  | k + 1 => (if h : k < d.totalWires then Equiv.swap (sw d ⟨k, h⟩) (mw d ⟨k, h⟩) else 1) * σ k
+  | k + 1 => (if h : k < d.totalWires ∧ d.held d.numMsgs k = true then
+      Equiv.swap (sw d ⟨k, h.1⟩) (mw d ⟨k, h.1⟩) else 1) * σ k
 
-theorem σ_sw : ∀ (k : ℕ) (x : Fin d.totalWires), σ d k (sw d x) = if (x : ℕ) < k then mw d x else sw d x
+theorem σ_sw : ∀ (k : ℕ) (x : Fin d.totalWires), σ d k (sw d x) =
+    if (x : ℕ) < k ∧ d.held d.numMsgs x = true then mw d x else sw d x
   | 0, x => by simp [σ]
   | k + 1, x => by
     rw [σ, Equiv.Perm.mul_apply, σ_sw k x]
-    by_cases hk : k < d.totalWires
+    by_cases hk : k < d.totalWires ∧ d.held d.numMsgs k = true
     · rw [dif_pos hk]
-      by_cases hxk : (x : ℕ) < k
-      · rw [if_pos hxk, if_pos (by omega)]
+      by_cases hx : (x : ℕ) < k ∧ d.held d.numMsgs x = true
+      · rw [if_pos hx, if_pos ⟨by omega, hx.2⟩]
         refine Equiv.swap_apply_of_ne_of_ne (Ne.symm (sw_ne_mw _ _)) (fun h => ?_)
         have := congrArg Fin.val (mw_inj h); simp at this; omega
       · by_cases hxe : (x : ℕ) = k
-        · rw [if_neg hxk, if_pos (by omega)]
-          have : x = ⟨k, hk⟩ := Fin.ext hxe
+        · rw [if_neg hx, if_pos ⟨by omega, by rw [hxe]; exact hk.2⟩]
+          have : x = ⟨k, hk.1⟩ := Fin.ext hxe
           subst this
           exact Equiv.swap_apply_left _ _
-        · rw [if_neg hxk, if_neg (by omega)]
+        · rw [if_neg hx, if_neg (fun h => hx ⟨by omega, h.2⟩)]
           refine Equiv.swap_apply_of_ne_of_ne (fun h => hxe ?_) (sw_ne_mw _ _)
           exact congrArg Fin.val (sw_inj h)
     · rw [dif_neg hk, Equiv.Perm.one_apply]
-      have : ¬ (x : ℕ) = k := by have := x.2; omega
-      split_ifs <;> first | rfl | omega
+      have e : ((x : ℕ) < k + 1 ∧ d.held d.numMsgs x = true) ↔
+          ((x : ℕ) < k ∧ d.held d.numMsgs x = true) := by
+        constructor
+        · rintro ⟨h1, h2⟩
+          refine ⟨?_, h2⟩
+          rcases Nat.lt_succ_iff_lt_or_eq.mp h1 with h1 | h1
+          · exact h1
+          · exact absurd ⟨h1 ▸ x.2, h1 ▸ h2⟩ hk
+        · rintro ⟨h1, h2⟩; exact ⟨by omega, h2⟩
+      simp only [e]
 
-theorem σ_mw : ∀ (k : ℕ) (x : Fin d.totalWires), σ d k (mw d x) = if (x : ℕ) < k then sw d x else mw d x
+theorem σ_mw : ∀ (k : ℕ) (x : Fin d.totalWires), σ d k (mw d x) =
+    if (x : ℕ) < k ∧ d.held d.numMsgs x = true then sw d x else mw d x
   | 0, x => by simp [σ]
   | k + 1, x => by
     rw [σ, Equiv.Perm.mul_apply, σ_mw k x]
-    by_cases hk : k < d.totalWires
+    by_cases hk : k < d.totalWires ∧ d.held d.numMsgs k = true
     · rw [dif_pos hk]
-      by_cases hxk : (x : ℕ) < k
-      · rw [if_pos hxk, if_pos (by omega)]
+      by_cases hx : (x : ℕ) < k ∧ d.held d.numMsgs x = true
+      · rw [if_pos hx, if_pos ⟨by omega, hx.2⟩]
         refine Equiv.swap_apply_of_ne_of_ne (fun h => ?_) (sw_ne_mw _ _)
         have := congrArg Fin.val (sw_inj h); simp at this; omega
       · by_cases hxe : (x : ℕ) = k
-        · rw [if_neg hxk, if_pos (by omega)]
-          have : x = ⟨k, hk⟩ := Fin.ext hxe
+        · rw [if_neg hx, if_pos ⟨by omega, by rw [hxe]; exact hk.2⟩]
+          have : x = ⟨k, hk.1⟩ := Fin.ext hxe
           subst this
           exact Equiv.swap_apply_right _ _
-        · rw [if_neg hxk, if_neg (by omega)]
+        · rw [if_neg hx, if_neg (fun h => hx ⟨by omega, h.2⟩)]
           refine Equiv.swap_apply_of_ne_of_ne (Ne.symm (sw_ne_mw _ _)) (fun h => hxe ?_)
           exact congrArg Fin.val (mw_inj h)
     · rw [dif_neg hk, Equiv.Perm.one_apply]
-      have : ¬ (x : ℕ) = k := by have := x.2; omega
-      split_ifs <;> first | rfl | omega
+      have e : ((x : ℕ) < k + 1 ∧ d.held d.numMsgs x = true) ↔
+          ((x : ℕ) < k ∧ d.held d.numMsgs x = true) := by
+        constructor
+        · rintro ⟨h1, h2⟩
+          refine ⟨?_, h2⟩
+          rcases Nat.lt_succ_iff_lt_or_eq.mp h1 with h1 | h1
+          · exact h1
+          · exact absurd ⟨h1 ▸ x.2, h1 ▸ h2⟩ hk
+        · rintro ⟨h1, h2⟩; exact ⟨by omega, h2⟩
+      simp only [e]
 
 theorem σ_fix (k : ℕ) (w : Fin (bellDesc d).totalWires) (h1 : ∀ x, w ≠ sw d x)
     (h2 : ∀ x, w ≠ mw d x) : σ d k w = w := by
@@ -110,8 +129,9 @@ theorem σ_fix (k : ℕ) (w : Fin (bellDesc d).totalWires) (h1 : ∀ x, w ≠ sw
 
 /-- The instructions of the first `k` swaps. -/
 noncomputable def swapsUpTo (k : ℕ) : List (Instr (bellDesc d).totalWires) :=
-  ((List.range k).flatMap fun x => swapGates (bellShift d x) (bellMsgOff d + x)).filterMap
-    (Gate.toInstr? (bellDesc d).totalWires)
+  ((List.range k).flatMap fun x =>
+    if d.held d.numMsgs x then swapGates (bellShift d x) (bellMsgOff d + x) else []).filterMap
+      (Gate.toInstr? (bellDesc d).totalWires)
 
 theorem runLayer_swapsUpTo : ∀ k ≤ d.totalWires, ∀ ψ : QState (bellDesc d).totalWires,
     runLayer (swapsUpTo (d := d) k) ψ = fun y => ψ (y ∘ σ d k)
@@ -123,14 +143,27 @@ theorem runLayer_swapsUpTo : ∀ k ≤ d.totalWires, ∀ ψ : QState (bellDesc d
           swapInstrs (sw d ⟨k, hk'⟩) (mw d ⟨k, hk'⟩) (sw_ne_mw _ _) :=
       filterMap_swapGates (sw d ⟨k, hk'⟩) (mw d ⟨k, hk'⟩) (sw_ne_mw _ _)
     rw [swapsUpTo, List.range_succ, List.flatMap_append, List.filterMap_append,
-      List.flatMap_singleton, hs, runLayer_append, ← swapsUpTo, runLayer_swapsUpTo k (by omega),
-      runLayer_swapInstrs]
-    funext y
-    rw [show σ d (k + 1) = _ * σ d k from rfl, dif_pos hk']
-    rfl
+      List.flatMap_singleton]
+    by_cases hh : d.held d.numMsgs k = true
+    · rw [if_pos hh, hs, runLayer_append, ← swapsUpTo, runLayer_swapsUpTo k (by omega),
+        runLayer_swapInstrs]
+      funext y
+      rw [show σ d (k + 1) = _ * σ d k from rfl, dif_pos ⟨hk', hh⟩]
+      rfl
+    · rw [if_neg hh, List.filterMap_nil, List.append_nil, ← swapsUpTo,
+        runLayer_swapsUpTo k (by omega)]
+      funext y
+      rw [show σ d (k + 1) = _ * σ d k from rfl, dif_neg (fun h => hh h.2), one_mul]
 
 theorem out_lt_W (hd : d.Valid) : d.out < d.totalWires := by
   have := hd.out_lt; have := priv_le_totalWires d; omega
+
+theorem held_out (hd : d.Valid) : d.held d.numMsgs d.out = true := by
+  simp [Desc.held, hd.out_lt]
+
+theorem σ_sw_out (hd : d.Valid) :
+    σ d d.totalWires (sw d ⟨d.out, out_lt_W hd⟩) = mw d ⟨d.out, out_lt_W hd⟩ := by
+  rw [σ_sw, if_pos ⟨out_lt_W hd, held_out hd⟩]
 
 theorem sw_out_ne_wB (hd : d.Valid) : sw d ⟨d.out, out_lt_W hd⟩ ≠ wB d := fun h => by
   have h1 := congrArg Fin.val h; have h2 := hd.out_lt

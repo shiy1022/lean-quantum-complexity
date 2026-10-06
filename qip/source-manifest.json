@@ -70,9 +70,9 @@
     },
     "QIP.Audit.BellCore": {
       "path": "QIP/Audit/BellCore.lean",
-      "sha256": "42e95964264bbcfa87fa6747112af6f617e4b45feac707ef87302431089e59df",
+      "sha256": "b46807ed6b5f1ade883e14579348ccfc2e7d0245deb036ff71ee9aa50a793667",
       "imports": [
-        "QIP.Bell.Honest"
+        "QIP.PerfectCompleteness"
       ]
     },
     "QIP.Audit.BellPrefix": {
@@ -275,14 +275,14 @@
     },
     "QIP.Bell.Copy": {
       "path": "QIP/Bell/Copy.lean",
-      "sha256": "eafa8f86e5aaa015a5b864343fa0e8795f96d0bed4049e20b9132c9230d577f1",
+      "sha256": "48a1453348fc13cb77b008ecfd0cab24e66d20f4671ae3ebee7073d77fd0fcce",
       "imports": [
         "QIP.Bell.Final"
       ]
     },
     "QIP.Bell.Desc": {
       "path": "QIP/Bell/Desc.lean",
-      "sha256": "e774ddd1b72d0ec543bcd10bdc4ff48fbbebfee267af77d378b249bc77d4cc72",
+      "sha256": "5b50cade1320c4ed200b95d76cf960958cc9fb482fc20b8453fd78dbfd4f2fb3",
       "imports": [
         "QIP.RejectFlag"
       ]
@@ -297,9 +297,10 @@
     },
     "QIP.Bell.Honest": {
       "path": "QIP/Bell/Honest.lean",
-      "sha256": "896bc50e1ad8914452bb4977589177dc09480ebb0ef0d58122ef48e1d513305b",
+      "sha256": "20beb76b2dd2ed58d0faa161b6e4a05fedab9382742444253c1675672fc2a314",
       "imports": [
-        "QIP.Bell.Sound"
+        "QIP.Bell.Sound",
+        "QIP.Clean"
       ]
     },
     "QIP.Bell.Prefix": {
@@ -312,7 +313,7 @@
     },
     "QIP.Bell.Run": {
       "path": "QIP/Bell/Run.lean",
-      "sha256": "0eaa4d3e5ab17de04f059b2912e073889e27cfb3702d641cdfafc468d3bf70b2",
+      "sha256": "9d62d9e744ba1df3cb76511ec8a9735580d8e07b52a373be139addcd29dfe97e",
       "imports": [
         "QIP.Bell.Copy",
         "QIP.PureRun",
@@ -333,6 +334,13 @@
       "imports": [
         "QIP.Marginal",
         "Quantum.BellBound"
+      ]
+    },
+    "QIP.Bell.Valid": {
+      "path": "QIP/Bell/Valid.lean",
+      "sha256": "7d7542ce4d4bad6cfac9be612ab4d1ec029e9332738b3e54e12022042d26d56a",
+      "imports": [
+        "QIP.Bell.Honest"
       ]
     },
     "QIP.Circuit.Adjoint": {
@@ -384,6 +392,17 @@
         "Definitions.Def_PvsNP",
         "QIP.Execution",
         "QIP.Decode"
+      ]
+    },
+    "QIP.Clean": {
+      "path": "QIP/Clean.lean",
+      "sha256": "cb5205484881c69fb551061b5fd3a178fa81f997d773f2338f2287c26bc8b1d9",
+      "imports": [
+        "QIP.Pair.Valid",
+        "QIP.Circuit.Controlled",
+        "QIP.PureRun",
+        "QIP.Prefix",
+        "QIP.Bell.Run"
       ]
     },
     "QIP.Decode": {
@@ -461,6 +480,13 @@
       "sha256": "aebfcc6668dac164ade4c0c9f2d84b3362eddd92381b9c53c733d591797f2358",
       "imports": [
         "QIP.Pair.Valid"
+      ]
+    },
+    "QIP.PerfectCompleteness": {
+      "path": "QIP/PerfectCompleteness.lean",
+      "sha256": "9d6857fe067ed1712ebfda607ad1a7dc8896fb4933d803085edc14ce94b13d60",
+      "imports": [
+        "QIP.Bell.Valid"
       ]
     },
     "QIP.Prefix": {

@@ -172,7 +172,7 @@ theorem mul_star_eq_norm_sq (z : ℂ) : z * star z = ((‖z‖ ^ 2 : ℝ) : ℂ)
 
 theorem σ_symm_mw_out (hd : d.Valid) :
     (σ d d.totalWires).symm (mw d ⟨d.out, out_lt_W hd⟩) = sw d ⟨d.out, out_lt_W hd⟩ := by
-  rw [Equiv.symm_apply_eq, σ_sw, if_pos (out_lt_W hd)]
+  rw [Equiv.symm_apply_eq, σ_sw_out hd]
 
 theorem σ_symm_wB : (σ d d.totalWires).symm (wB d) = wB d := by
   rw [Equiv.symm_apply_eq, σ_wB]
@@ -188,7 +188,7 @@ theorem pureRun_bell_update (z : Qubits (bellDesc d).totalWires) (hz : z (wB d) 
   have hc1 : cnotFun (sw d ⟨d.out, out_lt_W hd⟩) (wB d)
       (Function.update z (wB d) x ∘ σ d d.totalWires) (wB d) = xor x (z (mw d ⟨d.out, out_lt_W hd⟩)) := by
     rw [cnotFun, Function.update_self, Function.comp_apply, Function.comp_apply, σ_wB,
-      σ_sw, if_pos (out_lt_W hd), Function.update_self, Function.update_of_ne hmB]
+      σ_sw_out hd, Function.update_self, Function.update_of_ne hmB]
   split_ifs with hx
   · congr 2
     funext w
