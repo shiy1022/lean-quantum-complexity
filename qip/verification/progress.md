@@ -15,8 +15,8 @@ the module compiled inside the full `ShiQIP` build and passed the fresh-import a
 
 Every report in `verification/audit.json` uses only `propext`, `Classical.choice` and
 `Quot.sound`. No `sorry`, `admit`, `axiom` or `proof_wanted` occurs in `src/`. The last run
-took 835 s and produced 2048 reports across 39 audit files (139 sources), from `git_head`
-b09df38 plus the Q34 uniformity foundation (`QIP.Uniform.*`). Source hashes are in `source-manifest.json` and `verification/audit.json`.
+took 922 s and produced 2416 reports across 42 audit files (153 sources), from `git_head`
+dbade4a plus Q34–Q40 (`QIP.Uniform.*`, `QIP.FamilyConstruction`, `QIP.ThreeMessage`). Source hashes are in `source-manifest.json` and `verification/audit.json`.
 
 | Task | Status | Declarations / files | Evidence | Remaining gap |
 |---|---|---|---|---|
