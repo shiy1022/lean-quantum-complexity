@@ -8,6 +8,7 @@
   ],
   "targets": [
     "QIP.Audit.Arithmetic",
+    "QIP.Audit.BellCore",
     "QIP.Audit.BellPrefix",
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
@@ -65,6 +66,13 @@
       "sha256": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
       "imports": [
         "QIP.Arithmetic.Repetition"
+      ]
+    },
+    "QIP.Audit.BellCore": {
+      "path": "QIP/Audit/BellCore.lean",
+      "sha256": "42e95964264bbcfa87fa6747112af6f617e4b45feac707ef87302431089e59df",
+      "imports": [
+        "QIP.Bell.Honest"
       ]
     },
     "QIP.Audit.BellPrefix": {
@@ -265,11 +273,33 @@
         "QIP.Value"
       ]
     },
+    "QIP.Bell.Copy": {
+      "path": "QIP/Bell/Copy.lean",
+      "sha256": "eafa8f86e5aaa015a5b864343fa0e8795f96d0bed4049e20b9132c9230d577f1",
+      "imports": [
+        "QIP.Bell.Final"
+      ]
+    },
     "QIP.Bell.Desc": {
       "path": "QIP/Bell/Desc.lean",
       "sha256": "e774ddd1b72d0ec543bcd10bdc4ff48fbbebfee267af77d378b249bc77d4cc72",
       "imports": [
         "QIP.RejectFlag"
+      ]
+    },
+    "QIP.Bell.Final": {
+      "path": "QIP/Bell/Final.lean",
+      "sha256": "79e687465dc2143bdd4c46bc66e64c35328c0ffa2c13a8110d28e236b036f578",
+      "imports": [
+        "QIP.Bell.Prefix",
+        "QIP.Bell.Test"
+      ]
+    },
+    "QIP.Bell.Honest": {
+      "path": "QIP/Bell/Honest.lean",
+      "sha256": "896bc50e1ad8914452bb4977589177dc09480ebb0ef0d58122ef48e1d513305b",
+      "imports": [
+        "QIP.Bell.Sound"
       ]
     },
     "QIP.Bell.Prefix": {
@@ -278,6 +308,31 @@
       "imports": [
         "QIP.Bell.Desc",
         "QIP.Prefix"
+      ]
+    },
+    "QIP.Bell.Run": {
+      "path": "QIP/Bell/Run.lean",
+      "sha256": "0eaa4d3e5ab17de04f059b2912e073889e27cfb3702d641cdfafc468d3bf70b2",
+      "imports": [
+        "QIP.Bell.Copy",
+        "QIP.PureRun",
+        "QIP.Value"
+      ]
+    },
+    "QIP.Bell.Sound": {
+      "path": "QIP/Bell/Sound.lean",
+      "sha256": "1aa0d6dc029f06df3c5122a4eaff31e8b46c6ca5222713c15a438e66929b38d2",
+      "imports": [
+        "QIP.Bell.Run",
+        "QIP.Purified"
+      ]
+    },
+    "QIP.Bell.Test": {
+      "path": "QIP/Bell/Test.lean",
+      "sha256": "ae55fab4ad1cfa3005d2cf3ea706d581685622b118af0a8b0e7bb4ee6228d3f6",
+      "imports": [
+        "QIP.Marginal",
+        "Quantum.BellBound"
       ]
     },
     "QIP.Circuit.Adjoint": {
@@ -367,6 +422,14 @@
       "imports": [
         "Definitions.Def_ShiShallow_Core",
         "Quantum.Channel"
+      ]
+    },
+    "QIP.Marginal": {
+      "path": "QIP/Marginal.lean",
+      "sha256": "72ed8d4eb4eac6dbac061d9ac96ad6f18a37d32cb4516b113fac83fb7463a3b3",
+      "imports": [
+        "QIP.Prefix",
+        "QIP.SDP.Product"
       ]
     },
     "QIP.Pair.Desc": {
