@@ -21,6 +21,7 @@
     "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.GateMatrix",
     "QIP.Audit.GenModel",
+    "QIP.Audit.Halve",
     "QIP.Audit.Pad",
     "QIP.Audit.Pair",
     "QIP.Audit.ParallelRepeat",
@@ -161,6 +162,13 @@
       "sha256": "15fa8289566e0168380b29dbab78433e682c227f43d8c367587669369cd95fca",
       "imports": [
         "QIP.Gen.Model"
+      ]
+    },
+    "QIP.Audit.Halve": {
+      "path": "QIP/Audit/Halve.lean",
+      "sha256": "5cf6cf2329b648767343f29b7cff344b3b01d4abdaa980eb521092ddda43191f",
+      "imports": [
+        "QIP.Halve.Desc"
       ]
     },
     "QIP.Audit.Pad": {
@@ -388,6 +396,14 @@
         "QIP.Circuit.Toffoli"
       ]
     },
+    "QIP.Circuit.Predicates": {
+      "path": "QIP/Circuit/Predicates.lean",
+      "sha256": "4dd4615ead41c42025b7249f8878a50c77b934a095d9f805ab42428d6b47a374",
+      "imports": [
+        "QIP.Circuit.Controlled",
+        "QIP.ValidGates"
+      ]
+    },
     "QIP.Circuit.Relabel": {
       "path": "QIP/Circuit/Relabel.lean",
       "sha256": "264df18186f7d93fd5c5084468f9cb23dbb2c81c26963e5c224ed5ed6f842c1b",
@@ -482,6 +498,14 @@
       "imports": [
         "QIP.UnitaryProver",
         "QIP.Clean"
+      ]
+    },
+    "QIP.Halve.Desc": {
+      "path": "QIP/Halve/Desc.lean",
+      "sha256": "c79f537d89f3730bbaeb04e95eed7d0ee713cef6de1c61ef55b18b1dbef1ecf1",
+      "imports": [
+        "QIP.Circuit.Predicates",
+        "QIP.Gen.Cut"
       ]
     },
     "QIP.Marginal": {
