@@ -1,4 +1,4 @@
-import QIP.Circuit.Control
+import QIP.Circuit.Toffoli
 
 /-! Fresh-import audit for Q28 (adjoints and swap): exact statement types, then axioms. -/
 
@@ -35,3 +35,23 @@ open ShiQIP ShiQuantum Matrix ShiShallow
 #print axioms ShiQIP.runLayer_swapInstrs
 #print axioms ShiQIP.swapInstrs_mulVec
 #print axioms ShiQIP.filterMap_swapGates
+
+/-! Toffoli. -/
+
+#check (runLayer_ccz : ∀ {n : ℕ} (a b c : Fin n) (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c)
+  (ψ : QState n) (y : Bits n), runLayer (cczInstrs a b c hab hac hbc) ψ y =
+    (if y a && y b && y c then -1 else 1) * ψ y)
+#check (runLayer_toffoli : ∀ {n : ℕ} (a b c : Fin n) (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c)
+  (ψ : QState n) (y : Bits n), runLayer (toffoliInstrs a b c hab hac hbc) ψ y =
+    ψ (Function.update y c (xor (y c) (y a && y b))))
+
+#print axioms ShiQIP.update_of_eq
+#print axioms ShiQIP.apply_t
+#print axioms ShiQIP.tPhase_pow_four
+#print axioms ShiQIP.pow_eq_pow_mod_eight
+#print axioms ShiQIP.runLayer_ccz
+#print axioms ShiQIP.apply_h
+#print axioms ShiQIP.runLayer_toffoli
+#print axioms ShiQIP.toffoli_controls_preserved
+#print axioms ShiQIP.length_toffoliGates
+#print axioms ShiQIP.filterMap_toffoliGates

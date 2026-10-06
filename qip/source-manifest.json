@@ -72,9 +72,9 @@
     },
     "QIP.Audit.Circuit": {
       "path": "QIP/Audit/Circuit.lean",
-      "sha256": "fa2edd4adf29f9a61b59f915257503222d768ed124c35c679d2cb255cce9db56",
+      "sha256": "84263477722f5d1f2378afc840dfe9b8d63ef810b0a2f3c35266ba4f2f804ad3",
       "imports": [
-        "QIP.Circuit.Control"
+        "QIP.Circuit.Toffoli"
       ]
     },
     "QIP.Audit.Classes": {
@@ -187,6 +187,13 @@
       "sha256": "111e37f97eb2fa58c8d45327632309b00753d73d034f7dcb2bb9412debdaeeaa",
       "imports": [
         "QIP.Circuit.Adjoint"
+      ]
+    },
+    "QIP.Circuit.Toffoli": {
+      "path": "QIP/Circuit/Toffoli.lean",
+      "sha256": "785e83a0f8b3cf8d0e60ab61cc7e25ac502f020c75267cba0e13a360477c364d",
+      "imports": [
+        "QIP.Circuit.Control"
       ]
     },
     "QIP.CircuitSemantics": {
