@@ -25,6 +25,7 @@
     "QIP.Audit.Purification",
     "QIP.Audit.Purified",
     "QIP.Audit.Registers",
+    "QIP.Audit.RejectFlag",
     "QIP.Audit.SDP",
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
@@ -183,6 +184,13 @@
       "sha256": "6f5a183aba761bd6637a47627c9e8a5b4123f13df449a3ec0404f5ca6f7b2ad7",
       "imports": [
         "Quantum.Reindex"
+      ]
+    },
+    "QIP.Audit.RejectFlag": {
+      "path": "QIP/Audit/RejectFlag.lean",
+      "sha256": "239a063414b063c7c72f266a21bbe41a7caff139183a597fa9996b8ff1dbb894",
+      "imports": [
+        "QIP.RejectFlag"
       ]
     },
     "QIP.Audit.SDP": {
@@ -376,6 +384,13 @@
         "QIP.ValidGates",
         "Quantum.Dilation",
         "Quantum.Purification"
+      ]
+    },
+    "QIP.RejectFlag": {
+      "path": "QIP/RejectFlag.lean",
+      "sha256": "40ee5ec8788055280322e4325e61b7cb17ca6cd6597fa86da0b64f9a83a3d75f",
+      "imports": [
+        "QIP.ParallelRepeat"
       ]
     },
     "QIP.Resources": {
