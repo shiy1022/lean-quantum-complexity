@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "20c8416598f6accc8b138b9f8542525bab057025",
-  "seconds": 480.6,
+  "git_head": "d98da5143dc085f367cef282a3d91bc78c350491",
+  "seconds": 465.2,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -23,6 +23,7 @@
     "QIP/Audit/Positive.lean": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
     "QIP/Audit/Purification.lean": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
     "QIP/Audit/Registers.lean": "6f5a183aba761bd6637a47627c9e8a5b4123f13df449a3ec0404f5ca6f7b2ad7",
+    "QIP/Audit/SDP.lean": "eee2bec732366d5d4d112e341892011a6843268631e6a8e938b33e637bba0415",
     "QIP/Audit/Smoke.lean": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
     "QIP/Audit/State.lean": "a88113e135fdf91dae645e9d2355b14cf76c249ea542f2bdaed7f79befd6e963",
     "QIP/Audit/Strategy.lean": "0a8bc2ce8fa3ce67d8d1db84bea5fa1fd952631ca6fd9e772e84b6c1c30ccbbc",
@@ -41,6 +42,8 @@
     "QIP/ExecutionLemmas.lean": "ea1ab11ad0f3ec916da710c128cec1add6425d4f3f79ba3c2fe36f285c897708",
     "QIP/GateMatrix.lean": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
+    "QIP/SDP/Primal.lean": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
+    "QIP/SDP/WeakDuality.lean": "857cdd9626def978b6430e1b3b089d9a9f48a5bcc8073fa5b4c1413c9e319a14",
     "QIP/ShiShallowBridge.lean": "389848165474fe7e9a6e21409ab475123827c781fbd0ce8f8e69b8ecbdfd3ad9",
     "QIP/Smoke.lean": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
     "QIP/StrategyOperator.lean": "e4791dfa0e3e6bf26efc10b220256bd5e0b69168ba421259c9dffa1cbb50390e",
@@ -1709,6 +1712,108 @@
         "propext"
       ],
       "ShiQuantum.permMat_prodCongr": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/SDP.lean": {
+      "ShiQIP.trace_kron_one_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.trace_mul_kron_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.trace_causal_link": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.causalMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.causalMap_isHermitian": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isStrategy_iff_causalMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.trace_mul_causalRes": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.pairing_causalMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.re_trace_mul_mono": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.DualCert.weak_duality": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.DualCert.accept_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.DualCert.value_le": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.quad_le_trace_mul": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.psd_le_trace_smul_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.scalarWeight_succ": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.kron_smul_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.traceRight_smul_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.scalarCert": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.pairing_le_trace_mul_card": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_le_trace_tester": [
         "Classical.choice",
         "Quot.sound",
         "propext"

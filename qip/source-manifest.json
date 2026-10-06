@@ -20,6 +20,7 @@
     "QIP.Audit.Positive",
     "QIP.Audit.Purification",
     "QIP.Audit.Registers",
+    "QIP.Audit.SDP",
     "QIP.Audit.Smoke",
     "QIP.Audit.State",
     "QIP.Audit.Strategy",
@@ -140,6 +141,13 @@
       "sha256": "6f5a183aba761bd6637a47627c9e8a5b4123f13df449a3ec0404f5ca6f7b2ad7",
       "imports": [
         "Quantum.Reindex"
+      ]
+    },
+    "QIP.Audit.SDP": {
+      "path": "QIP/Audit/SDP.lean",
+      "sha256": "eee2bec732366d5d4d112e341892011a6843268631e6a8e938b33e637bba0415",
+      "imports": [
+        "QIP.SDP.WeakDuality"
       ]
     },
     "QIP.Audit.Smoke": {
@@ -271,6 +279,20 @@
       "sha256": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
       "imports": [
         "QIP.Syntax"
+      ]
+    },
+    "QIP.SDP.Primal": {
+      "path": "QIP/SDP/Primal.lean",
+      "sha256": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
+      "imports": [
+        "QIP.Value"
+      ]
+    },
+    "QIP.SDP.WeakDuality": {
+      "path": "QIP/SDP/WeakDuality.lean",
+      "sha256": "857cdd9626def978b6430e1b3b089d9a9f48a5bcc8073fa5b4c1413c9e319a14",
+      "imports": [
+        "QIP.SDP.Primal"
       ]
     },
     "QIP.ShiShallowBridge": {
