@@ -18,6 +18,7 @@
     "QIP.Audit.GateMatrix",
     "QIP.Audit.PartialTrace",
     "QIP.Audit.Positive",
+    "QIP.Audit.Product",
     "QIP.Audit.Purification",
     "QIP.Audit.Registers",
     "QIP.Audit.SDP",
@@ -128,6 +129,13 @@
       "sha256": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
       "imports": [
         "Quantum.HilbertBridge"
+      ]
+    },
+    "QIP.Audit.Product": {
+      "path": "QIP/Audit/Product.lean",
+      "sha256": "f375cf3395e4ccb80f0b99b3c5a7e20ddbc78b3faac736cd216e76be259e96be",
+      "imports": [
+        "QIP.SDP.Product"
       ]
     },
     "QIP.Audit.Purification": {
@@ -301,6 +309,13 @@
       "sha256": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
       "imports": [
         "QIP.Value"
+      ]
+    },
+    "QIP.SDP.Product": {
+      "path": "QIP/SDP/Product.lean",
+      "sha256": "207fd93a1e129198739e73d23cb7cf64d4eee0f2841ea46374ab642f3e6d1a2d",
+      "imports": [
+        "QIP.SDP.StrongDuality"
       ]
     },
     "QIP.SDP.StrongDuality": {
