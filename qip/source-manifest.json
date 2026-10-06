@@ -15,6 +15,7 @@
     "QIP.Audit.Circuit",
     "QIP.Audit.Classes",
     "QIP.Audit.Controlled",
+    "QIP.Audit.Cut",
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
@@ -118,6 +119,13 @@
       "sha256": "e137170d6ec027e790c558d5fa5174ffd37f70d6570587589c4764ccf1b0be02",
       "imports": [
         "QIP.Circuit.Controlled"
+      ]
+    },
+    "QIP.Audit.Cut": {
+      "path": "QIP/Audit/Cut.lean",
+      "sha256": "5f76ab4506f6fa6fd300ef7d4fa5c5db16182c93b308ba4fcc1a9e6f8783a06d",
+      "imports": [
+        "QIP.Gen.Cut"
       ]
     },
     "QIP.Audit.Dilation": {
@@ -457,6 +465,15 @@
       "imports": [
         "Definitions.Def_ShiShallow_Core",
         "Quantum.Channel"
+      ]
+    },
+    "QIP.Gen.Cut": {
+      "path": "QIP/Gen/Cut.lean",
+      "sha256": "cbbae2c214184b641c3299ef1067b9e6610e2aff7c2628e86190a023378f1d22",
+      "imports": [
+        "QIP.Gen.Model",
+        "Quantum.UhlmannAttained",
+        "Quantum.FidelityTwoTargets"
       ]
     },
     "QIP.Gen.Model": {
@@ -845,6 +862,13 @@
       "sha256": "8c2915c24976856f5a4c4bdc0099e3b6699d22d9844a7a2050ce09b65412fefd",
       "imports": [
         "Quantum.Fidelity"
+      ]
+    },
+    "Quantum.UhlmannAttained": {
+      "path": "Quantum/UhlmannAttained.lean",
+      "sha256": "29cb6cefb1afe14256f1e427977ffd80b734a5f40f1d10d427c76cfa8807e935",
+      "imports": [
+        "Quantum.UhlmannGeneral"
       ]
     },
     "Quantum.UhlmannGeneral": {
