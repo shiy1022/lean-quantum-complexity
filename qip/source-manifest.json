@@ -10,6 +10,7 @@
     "QIP.Audit.Arithmetic",
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
+    "QIP.Audit.Circuit",
     "QIP.Audit.Classes",
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
@@ -67,6 +68,13 @@
       "sha256": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
       "imports": [
         "Quantum.Kraus"
+      ]
+    },
+    "QIP.Audit.Circuit": {
+      "path": "QIP/Audit/Circuit.lean",
+      "sha256": "fa2edd4adf29f9a61b59f915257503222d768ed124c35c679d2cb255cce9db56",
+      "imports": [
+        "QIP.Circuit.Control"
       ]
     },
     "QIP.Audit.Classes": {
@@ -165,6 +173,20 @@
       "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
       "imports": [
         "Quantum.UhlmannGeneral"
+      ]
+    },
+    "QIP.Circuit.Adjoint": {
+      "path": "QIP/Circuit/Adjoint.lean",
+      "sha256": "604b53e9270e8919476380dc01de4dcb692ed7d0e1465f30b6dd9716f0ed3c4b",
+      "imports": [
+        "QIP.ShiShallowBridge"
+      ]
+    },
+    "QIP.Circuit.Control": {
+      "path": "QIP/Circuit/Control.lean",
+      "sha256": "111e37f97eb2fa58c8d45327632309b00753d73d034f7dcb2bb9412debdaeeaa",
+      "imports": [
+        "QIP.Circuit.Adjoint"
       ]
     },
     "QIP.CircuitSemantics": {
