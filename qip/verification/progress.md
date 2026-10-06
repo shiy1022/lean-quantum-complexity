@@ -68,7 +68,7 @@ took 511 s and produced 580 reports across 23 audit files (74 sources), from `gi
 
 ## Next ready tasks
 
-finish Q28 (controlled blocks, all-pass test; needed by Q25), Q25 (operational repetition, after Q28), Q34 (controlled blocks, all-pass test) and Q34 (printer
+Finish Q28 (controlled blocks, all-pass test; needed by Q17, Q25–Q27), then Q25 (operational repetition) and Q34 (printer
 primitives; Q14 is done). Conventions fixed by Q03: positivity is Mathlib's `Matrix.PosSemidef` with `ComplexOrder`
 and `MatrixOrder`; every Hilbert norm or inner product on coordinate vectors goes through
 `toE` (`EuclideanSpace`), never the sup norm on `n → ℂ`.
