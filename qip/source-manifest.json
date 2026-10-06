@@ -10,6 +10,7 @@
     "QIP.Audit.Arithmetic",
     "QIP.Audit.Channel",
     "QIP.Audit.Choi",
+    "QIP.Audit.Classes",
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
@@ -66,6 +67,13 @@
       "sha256": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
       "imports": [
         "Quantum.Kraus"
+      ]
+    },
+    "QIP.Audit.Classes": {
+      "path": "QIP/Audit/Classes.lean",
+      "sha256": "72bdc72d4803d17a3bd452239768784fdfe0d16930fac5aa5f4aeff7bc725db1",
+      "imports": [
+        "QIP.ExecutionLemmas"
       ]
     },
     "QIP.Audit.Dilation": {
@@ -166,6 +174,15 @@
         "QIP.GateMatrix"
       ]
     },
+    "QIP.Classes": {
+      "path": "QIP/Classes.lean",
+      "sha256": "5a33e2776b7701504e9fd56cf748d99249ef1ee1ef430ca24ffb813742d14b98",
+      "imports": [
+        "Definitions.Def_PvsNP",
+        "QIP.Execution",
+        "QIP.Decode"
+      ]
+    },
     "QIP.Decode": {
       "path": "QIP/Decode.lean",
       "sha256": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
@@ -178,6 +195,22 @@
       "sha256": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
       "imports": [
         "QIP.Resources"
+      ]
+    },
+    "QIP.Execution": {
+      "path": "QIP/Execution.lean",
+      "sha256": "98fe230001849f7d30e4f9f0e634197342b1c14c9ff6839834aad1f4c9f18b1c",
+      "imports": [
+        "QIP.CircuitSemantics",
+        "QIP.Resources",
+        "Quantum.ChannelTensor"
+      ]
+    },
+    "QIP.ExecutionLemmas": {
+      "path": "QIP/ExecutionLemmas.lean",
+      "sha256": "d2b004d250c029c1a26583bc41fc12e7a1e8b8da1637dcd8f9b8023a4154d67e",
+      "imports": [
+        "QIP.Classes"
       ]
     },
     "QIP.GateMatrix": {
@@ -366,6 +399,10 @@
     }
   },
   "baseline_modules": {
+    "Definitions.Def_PvsNP": {
+      "path": "Definitions/Def_PvsNP.lean",
+      "sha256": "54eede1f93692b8526fa83454816e38e676ae5d3b79b2a0ca2199cc8b477f29a"
+    },
     "Definitions.Def_ShiShallow_Core": {
       "path": "Definitions/Def_ShiShallow_Core.lean",
       "sha256": "0b80cddf8832e5e40de226c9aa2814924807576cdfdcd584cadaf743f51dd889"

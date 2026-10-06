@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "b6339f1561ec335a05f512379c21861375664beb",
-  "seconds": 361.4,
+  "git_head": "29110381352231706ecffd1d83a555fed6bbd9c5",
+  "seconds": 397.1,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -13,6 +13,7 @@
     "QIP/Audit/Arithmetic.lean": "66238b5674d6517cd44c59473afa099feca3d45aa305dae35c2e346216beb26e",
     "QIP/Audit/Channel.lean": "b7c9d9f017c96dd280b6a9e0b59dc7c5219ca0e93fe1e786db1985e5eba5faa6",
     "QIP/Audit/Choi.lean": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
+    "QIP/Audit/Classes.lean": "72bdc72d4803d17a3bd452239768784fdfe0d16930fac5aa5f4aeff7bc725db1",
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
     "QIP/Audit/Fidelity.lean": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
     "QIP/Audit/FidelityTwoTargets.lean": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
@@ -27,8 +28,11 @@
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
     "QIP/CircuitSemantics.lean": "63fb42d893a3b5ecb948103b8b8d08723ab65d859b2f8230ffb9dce3c86fa8cb",
+    "QIP/Classes.lean": "5a33e2776b7701504e9fd56cf748d99249ef1ee1ef430ca24ffb813742d14b98",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
+    "QIP/Execution.lean": "98fe230001849f7d30e4f9f0e634197342b1c14c9ff6839834aad1f4c9f18b1c",
+    "QIP/ExecutionLemmas.lean": "d2b004d250c029c1a26583bc41fc12e7a1e8b8da1637dcd8f9b8023a4154d67e",
     "QIP/GateMatrix.lean": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
     "QIP/Smoke.lean": "e58ccc6572d1578b330037ac11fb53f3f3c92be29aed39736d0be99652e6db98",
@@ -478,6 +482,130 @@
         "propext"
       ],
       "ShiQuantum.isChannel_iff_exists_kraus": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Classes.lean": {
+      "ShiQIP.msgProverOwned_ge": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.proverOwns_private": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isChannel_legalAction": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.legalAction_marginal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.blockMat_mem_unitaryGroup": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isChannel_verifierStep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isDensity_zeroVec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isChannel_proverStep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isDensity_initState": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isDensity_stateAfterBlock": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.final_isDensity": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isEffect_kronecker_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.isEffect_acceptEffect": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_mem_Icc": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.qipm_subset_qip": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.numMsgs_of_mem_qipm": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.PromiseProblem.not_yes_and_no": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.prob_kronecker_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.verifierStep_kronecker": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.conjMap_layer_pureState": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_of_numMsgs_eq_zero": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.sum_qubits_one": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.outBit_one": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_exAlways": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.accept_exNever": [
         "Classical.choice",
         "Quot.sound",
         "propext"
