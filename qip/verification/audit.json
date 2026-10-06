@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "cc13610e17fd564d2458dc07dfddf4f7a73c07ec",
-  "seconds": 426.1,
+  "git_head": "c9ecdc3f20e3b08f798f9c42893373c7b3507108",
+  "seconds": 501.4,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -14,7 +14,7 @@
     "QIP/Audit/Channel.lean": "b7c9d9f017c96dd280b6a9e0b59dc7c5219ca0e93fe1e786db1985e5eba5faa6",
     "QIP/Audit/Choi.lean": "4dd6b3e7e321f4bfbdf635b766d5197aa5e8f5e987e9c082df3f7a9148f5e432",
     "QIP/Audit/Circuit.lean": "84263477722f5d1f2378afc840dfe9b8d63ef810b0a2f3c35266ba4f2f804ad3",
-    "QIP/Audit/Classes.lean": "72bdc72d4803d17a3bd452239768784fdfe0d16930fac5aa5f4aeff7bc725db1",
+    "QIP/Audit/Classes.lean": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
     "QIP/Audit/Dilation.lean": "7ef110f0e7c69412a0718312063f65a37470f1ade0b02c854bef1a82027db2dd",
     "QIP/Audit/Fidelity.lean": "daba8a71951b7007d347d3e763a9b9337e60986808dc64698d1cbb03b173cad0",
     "QIP/Audit/FidelityTwoTargets.lean": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
@@ -35,8 +35,8 @@
     "QIP/Classes.lean": "5a33e2776b7701504e9fd56cf748d99249ef1ee1ef430ca24ffb813742d14b98",
     "QIP/Decode.lean": "83f69905d9dd2c961ff7b6f01bcb8f09d6d1f580e9fe6441606581c1a266b63e",
     "QIP/Encoding.lean": "c55a01c43682a07cf222859e6ce3e0ead94659e7e1595312c063dbc1d2d9de2c",
-    "QIP/Execution.lean": "98fe230001849f7d30e4f9f0e634197342b1c14c9ff6839834aad1f4c9f18b1c",
-    "QIP/ExecutionLemmas.lean": "d2b004d250c029c1a26583bc41fc12e7a1e8b8da1637dcd8f9b8023a4154d67e",
+    "QIP/Execution.lean": "c51d8b4016643b94364093aefbf30a4578f96dcf489e45162eb16a1a25d411e4",
+    "QIP/ExecutionLemmas.lean": "ea1ab11ad0f3ec916da710c128cec1add6425d4f3f79ba3c2fe36f285c897708",
     "QIP/GateMatrix.lean": "d43d7573a6937e83bb1d720fa95e50753ebf735d484247fd399498ad8ec0e6ca",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
     "QIP/ShiShallowBridge.lean": "389848165474fe7e9a6e21409ab475123827c781fbd0ce8f8e69b8ecbdfd3ad9",
@@ -45,6 +45,7 @@
     "QIP/StrategyRealization.lean": "c848a23038cc948b77bafaef8677fca8529acc01313b2a432ddf5f4f5f49cd30",
     "QIP/StrategyRealize.lean": "a935643d11c818614162201549d830185126fee2330946c95ab1e38b8c8a1cbf",
     "QIP/Syntax.lean": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
+    "QIP/ValidGates.lean": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
     "Quantum/Channel.lean": "22dc94d0257a03ffd9fb6cb01301142eb1e9d5b59b03c634b01a1646b27538fa",
     "Quantum/ChannelMathlib.lean": "e0d97f70a6187d570a62206946ff7e3ff3b6b70993171c99c9310eadf4cfb8ac",
     "Quantum/ChannelTensor.lean": "b0247bdd7f01aac94f1d375104814e804adee30c7471ada93ab2fa1d665dd23d",
@@ -650,20 +651,15 @@
       ]
     },
     "QIP/Audit/Classes.lean": {
-      "ShiQIP.msgProverOwned_ge": [
-        "Quot.sound",
+      "ShiQIP.inReg_ge_priv": [
         "propext"
       ],
-      "ShiQIP.proverOwns_private": [
-        "Quot.sound",
-        "propext"
-      ],
-      "ShiQIP.isChannel_legalAction": [
+      "ShiQIP.isChannel_proverStep": [
         "Classical.choice",
         "Quot.sound",
         "propext"
       ],
-      "ShiQIP.legalAction_marginal": [
+      "ShiQIP.proverStep_marginal": [
         "Classical.choice",
         "Quot.sound",
         "propext"
@@ -679,11 +675,6 @@
         "propext"
       ],
       "ShiQIP.isDensity_zeroVec": [
-        "Classical.choice",
-        "Quot.sound",
-        "propext"
-      ],
-      "ShiQIP.isChannel_proverStep": [
         "Classical.choice",
         "Quot.sound",
         "propext"
@@ -768,6 +759,37 @@
         "propext"
       ],
       "ShiQIP.accept_exNever": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.toGate_of_toInstr?": [
+        "propext"
+      ],
+      "ShiQIP.okBool_range": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.blocksOkFrom_getD": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Desc.Valid.toInstr?_isSome": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.map_toGate_filterMap": [
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Desc.Valid.map_toGate_filterMap": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.Desc.Valid.length_filterMap": [
         "Classical.choice",
         "Quot.sound",
         "propext"

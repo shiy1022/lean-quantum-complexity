@@ -45,9 +45,12 @@ theorem accept_of_numMsgs_eq_zero {d : Desc} (h : d.numMsgs = 0) (P : Prover d) 
     accept P = ∑ y, if outBit d y then
       ‖runLayer ((d.blocks.getD 0 []).filterMap (Gate.toInstr? d.totalWires))
         (zeroVec d.totalWires) y‖ ^ 2 else 0 := by
-  rw [accept, finalState, h, stateAfterBlock, initState, verifierStep_kronecker, acceptEffect,
-    prob_kronecker_one _ _ P.init_density.trace_eq_one, blockMat, conjMap_layer_pureState,
-    prob_basisEffect_pureState]
+  have hk : ∀ k, k = d.numMsgs → prob (acceptEffect d (P.M k)) (stateAfterBlock P k) =
+      prob (acceptEffect d (P.M d.numMsgs)) (stateAfterBlock P d.numMsgs) := by
+    intro k hk; subst hk; rfl
+  rw [accept, finalState, ← hk 0 h.symm, stateAfterBlock, initState, verifierStep_kronecker,
+    acceptEffect, prob_kronecker_one _ _ P.init_density.trace_eq_one, blockMat,
+    conjMap_layer_pureState, prob_basisEffect_pureState]
 
 /-! ## Examples -/
 

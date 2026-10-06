@@ -79,9 +79,9 @@
     },
     "QIP.Audit.Classes": {
       "path": "QIP/Audit/Classes.lean",
-      "sha256": "72bdc72d4803d17a3bd452239768784fdfe0d16930fac5aa5f4aeff7bc725db1",
+      "sha256": "470f46aea0680450b989730fcf3cf0f04edd1c34a7ade4949a01221b5807d25e",
       "imports": [
-        "QIP.ExecutionLemmas"
+        "QIP.ValidGates"
       ]
     },
     "QIP.Audit.Dilation": {
@@ -228,16 +228,16 @@
     },
     "QIP.Execution": {
       "path": "QIP/Execution.lean",
-      "sha256": "98fe230001849f7d30e4f9f0e634197342b1c14c9ff6839834aad1f4c9f18b1c",
+      "sha256": "c51d8b4016643b94364093aefbf30a4578f96dcf489e45162eb16a1a25d411e4",
       "imports": [
         "QIP.CircuitSemantics",
         "QIP.Resources",
-        "Quantum.ChannelTensor"
+        "QIP.StrategyRealization"
       ]
     },
     "QIP.ExecutionLemmas": {
       "path": "QIP/ExecutionLemmas.lean",
-      "sha256": "d2b004d250c029c1a26583bc41fc12e7a1e8b8da1637dcd8f9b8023a4154d67e",
+      "sha256": "ea1ab11ad0f3ec916da710c128cec1add6425d4f3f79ba3c2fe36f285c897708",
       "imports": [
         "QIP.Classes"
       ]
@@ -298,6 +298,13 @@
       "sha256": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
       "imports": [
         "Definitions.Def_ShiShallow_Core"
+      ]
+    },
+    "QIP.ValidGates": {
+      "path": "QIP/ValidGates.lean",
+      "sha256": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
+      "imports": [
+        "QIP.ShiShallowBridge"
       ]
     },
     "Quantum.Channel": {
