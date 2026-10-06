@@ -156,9 +156,9 @@
     },
     "QIP.Audit.Strategy": {
       "path": "QIP/Audit/Strategy.lean",
-      "sha256": "eee7440964cc57026303f965e3b132d47bbaccb9e032bf828c336a9a1adbbc32",
+      "sha256": "0a8bc2ce8fa3ce67d8d1db84bea5fa1fd952631ca6fd9e772e84b6c1c30ccbbc",
       "imports": [
-        "QIP.StrategyRealization"
+        "QIP.StrategyRealize"
       ]
     },
     "QIP.Audit.Syntax": {
@@ -285,6 +285,14 @@
         "QIP.StrategyOperator"
       ]
     },
+    "QIP.StrategyRealize": {
+      "path": "QIP/StrategyRealize.lean",
+      "sha256": "a935643d11c818614162201549d830185126fee2330946c95ab1e38b8c8a1cbf",
+      "imports": [
+        "QIP.StrategyRealization",
+        "Quantum.Completion"
+      ]
+    },
     "QIP.Syntax": {
       "path": "QIP/Syntax.lean",
       "sha256": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
@@ -317,6 +325,14 @@
       "path": "Quantum/Choi.lean",
       "sha256": "7471cb9fcbb6a524d734e253465759045e543f85aab33c1527b505126bf47c11",
       "imports": [
+        "Quantum.ChannelTensor"
+      ]
+    },
+    "Quantum.Completion": {
+      "path": "Quantum/Completion.lean",
+      "sha256": "f3d297715b16d52a0a65daaf5398442ef31c01d98276f38cc656b64173da2b62",
+      "imports": [
+        "Quantum.UhlmannGeneral",
         "Quantum.ChannelTensor"
       ]
     },

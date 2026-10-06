@@ -1,4 +1,4 @@
-import QIP.StrategyRealization
+import QIP.StrategyRealize
 
 /-! Fresh-import audit for Q18: exact statement types, then transitive axioms. -/
 
@@ -32,3 +32,31 @@ open scoped ComplexOrder
 #print axioms ShiQIP.memState_posSemidef
 #print axioms ShiQIP.stratOp_succ
 #print axioms ShiQIP.opStrategy_isStrategy
+
+/-! Realization (Q19 reverse direction). -/
+
+#check (exists_opStrategy_of_isStrategy : ∀ {X Y : ℕ → Type} [∀ i, Fintype (X i)]
+  [∀ i, Fintype (Y i)] [∀ i, DecidableEq (X i)] [∀ i, DecidableEq (Y i)] [∀ i, Nonempty (X i)]
+  [∀ i, Nonempty (Y i)] {r : ℕ} {Q : ∀ k, Matrix (Hist X Y k) (Hist X Y k) ℂ},
+  IsStrategy r Q → ∃ S : OpStrategy X Y r, (∀ k, S.M k = Hist X Y k) ∧ ∀ k ≤ r, stratOp S k = Q k)
+#check (isStrategy_iff_realized : ∀ {X Y : ℕ → Type} [∀ i, Fintype (X i)]
+  [∀ i, Fintype (Y i)] [∀ i, DecidableEq (X i)] [∀ i, DecidableEq (Y i)] [∀ i, Nonempty (X i)]
+  [∀ i, Nonempty (Y i)] {r : ℕ} (Q : ∀ k, Matrix (Hist X Y k) (Hist X Y k) ℂ),
+  IsStrategy r Q ↔ ∃ S : OpStrategy X Y r, ∀ k ≤ r, stratOp S k = Q k)
+
+#print axioms ShiQuantum.kronecker_pureState
+#print axioms ShiQuantum.reindex_pureState
+#print axioms ShiQuantum.liftR_conjMap_pureState
+#print axioms ShiQuantum.liftR_sum
+#print axioms ShiQuantum.completeKraus_sum
+#print axioms ShiQuantum.isChannel_completeKraus
+#print axioms ShiQuantum.completeKraus_some_mulVec
+#print axioms ShiQuantum.liftR_completeKraus_pureState
+#print axioms ShiQIP.exists_contraction_relating
+#print axioms ShiQIP.transpose_contraction
+#print axioms ShiQIP.pureState_linkVec
+#print axioms ShiQIP.isPurification_linkVec
+#print axioms ShiQIP.exists_turn
+#print axioms ShiQIP.memState_realize
+#print axioms ShiQIP.exists_opStrategy_of_isStrategy
+#print axioms ShiQIP.isStrategy_iff_realized
