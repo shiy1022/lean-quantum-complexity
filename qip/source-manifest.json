@@ -43,8 +43,11 @@
     "QIP.Audit.StrongDuality",
     "QIP.Audit.Syntax",
     "QIP.Audit.Tester",
+    "QIP.Audit.ThreeMessage",
     "QIP.Audit.Uhlmann",
     "QIP.Audit.Uniform",
+    "QIP.Audit.UniformLib",
+    "QIP.Audit.UniformPrinter",
     "QIP.Audit.Value"
   ],
   "modules": {
@@ -324,6 +327,13 @@
         "QIP.Tester"
       ]
     },
+    "QIP.Audit.ThreeMessage": {
+      "path": "QIP/Audit/ThreeMessage.lean",
+      "sha256": "6ed029f914c43b49e196893f3619e888ef900ae9108aadd4ded53c68c50d1eb0",
+      "imports": [
+        "QIP.ThreeMessage"
+      ]
+    },
     "QIP.Audit.Uhlmann": {
       "path": "QIP/Audit/Uhlmann.lean",
       "sha256": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
@@ -336,6 +346,20 @@
       "sha256": "46ee4bb537aea969212a9069e02f628118801a872efa7aa1b93e5fbbb9d4e11b",
       "imports": [
         "QIP.Uniform.Bridge"
+      ]
+    },
+    "QIP.Audit.UniformLib": {
+      "path": "QIP/Audit/UniformLib.lean",
+      "sha256": "878324233cbeee39c924508fcadf256f1acd62128cd8281ccf9cef366106fe65",
+      "imports": [
+        "QIP.Uniform.GatePT"
+      ]
+    },
+    "QIP.Audit.UniformPrinter": {
+      "path": "QIP/Audit/UniformPrinter.lean",
+      "sha256": "82b54e0964828e2af27efd12e9b39c6856e1bce932472ea0105e68279b55c198",
+      "imports": [
+        "QIP.Uniform.ThreePT"
       ]
     },
     "QIP.Audit.Value": {
@@ -522,6 +546,14 @@
       "path": "QIP/ExecutionLemmas.lean",
       "sha256": "ea1ab11ad0f3ec916da710c128cec1add6425d4f3f79ba3c2fe36f285c897708",
       "imports": [
+        "QIP.Classes"
+      ]
+    },
+    "QIP.FamilyConstruction": {
+      "path": "QIP/FamilyConstruction.lean",
+      "sha256": "2e1408b4286514d2e4251aaca4c16fad270f5d55aa5ac9ae5a3b90d65faf5171",
+      "imports": [
+        "QIP.Uniform.ThreePT",
         "QIP.Classes"
       ]
     },
@@ -846,11 +878,25 @@
         "QIP.SDP.Reindex"
       ]
     },
+    "QIP.ThreeMessage": {
+      "path": "QIP/ThreeMessage.lean",
+      "sha256": "2b1b0d8066cdae22e8418d0bc736e3204ae61e6afb2b96ec1d427d7551de7940",
+      "imports": [
+        "QIP.FamilyConstruction"
+      ]
+    },
     "QIP.Uniform.Bridge": {
       "path": "QIP/Uniform/Bridge.lean",
       "sha256": "5edabb84541f598bbdf9c40662299e7c3b3f8b9c7482f1c8ed2695c0eb6167db",
       "imports": [
         "QIP.Uniform.PT"
+      ]
+    },
+    "QIP.Uniform.Codec": {
+      "path": "QIP/Uniform/Codec.lean",
+      "sha256": "fba6cfed889eb191f6da909975a4eb7dd37dfd4a79e25e1a90d77c5efe84d273",
+      "imports": [
+        "QIP.Uniform.SynRep"
       ]
     },
     "QIP.Uniform.Compose": {
@@ -861,11 +907,43 @@
         "Definitions.Def_PvsNP"
       ]
     },
+    "QIP.Uniform.CompressPT": {
+      "path": "QIP/Uniform/CompressPT.lean",
+      "sha256": "d2be9301c1d6de6b8ff314a5fab3488ec2d99be7a57d077f5696cf2e3df034ca",
+      "imports": [
+        "QIP.Uniform.HalvePT"
+      ]
+    },
+    "QIP.Uniform.GatePT": {
+      "path": "QIP/Uniform/GatePT.lean",
+      "sha256": "a809908e280211f168eb44b777a36bd8e4b4208514b7643d9e5b9eb21de3fdf6",
+      "imports": [
+        "QIP.Uniform.SynPT",
+        "QIP.Circuit.Predicates",
+        "QIP.Circuit.Relabel",
+        "QIP.Pair.Interleave"
+      ]
+    },
     "QIP.Uniform.Glue": {
       "path": "QIP/Uniform/Glue.lean",
       "sha256": "67a692e1d10d3e8d833c16373605f28a34cc6ce4a44e0bdce1fa1dc5864bc5e6",
       "imports": [
         "QIP.Uniform.Mach"
+      ]
+    },
+    "QIP.Uniform.HalvePT": {
+      "path": "QIP/Uniform/HalvePT.lean",
+      "sha256": "bb2c405a7e11f27e40b1967b8942bcbfadbd325fcb72818706b5fcb775c4e793",
+      "imports": [
+        "QIP.Uniform.TransPT"
+      ]
+    },
+    "QIP.Uniform.Lib": {
+      "path": "QIP/Uniform/Lib.lean",
+      "sha256": "c464afc4d37f823d32348643311cbe4d51d92e0781ebd005ae268fd39bf67856",
+      "imports": [
+        "QIP.Uniform.Bridge",
+        "Mathlib.Tactic.FunProp"
       ]
     },
     "QIP.Uniform.Mach": {
@@ -880,6 +958,38 @@
       "sha256": "ef2e01be344494b4b716eafde9c841fa95ec4bfb31ddf37428b3731685728378",
       "imports": [
         "QIP.Uniform.Glue"
+      ]
+    },
+    "QIP.Uniform.SynPT": {
+      "path": "QIP/Uniform/SynPT.lean",
+      "sha256": "ca017b2a5d4e504a4b95dad76ec5ac1cc2a1c4e56db732e1a12cb5081ee01712",
+      "imports": [
+        "QIP.Uniform.Codec",
+        "QIP.Execution",
+        "QIP.Resources"
+      ]
+    },
+    "QIP.Uniform.SynRep": {
+      "path": "QIP/Uniform/SynRep.lean",
+      "sha256": "48e3c366ef14d10dde1be94abaecc5b8137eed7a427f621a1d63cbbae03e8fd6",
+      "imports": [
+        "QIP.Uniform.Lib",
+        "QIP.Encoding"
+      ]
+    },
+    "QIP.Uniform.ThreePT": {
+      "path": "QIP/Uniform/ThreePT.lean",
+      "sha256": "654c255d7a727d2c78f4fda459349392d3a85f97d89fdcb93b89bff6fcf1d3f5",
+      "imports": [
+        "QIP.Uniform.CompressPT"
+      ]
+    },
+    "QIP.Uniform.TransPT": {
+      "path": "QIP/Uniform/TransPT.lean",
+      "sha256": "9a0f66acd35703c58619af009bd28129c2cdbf7c0dd136bff23d85ef503c3bae",
+      "imports": [
+        "QIP.Uniform.GatePT",
+        "QIP.Pipeline"
       ]
     },
     "QIP.UnitaryProver": {
