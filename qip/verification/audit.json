@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "127d1338dc8a4d62628963beede11374fee37199",
-  "seconds": 580.9,
+  "git_head": "870e6598976a57ba6a9b3c855f5ed2e575468e4f",
+  "seconds": 810.0,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -26,6 +26,7 @@
     "QIP/Audit/Positive.lean": "b11e68e022e6db9e55d0ff4a7fb5f5cf7e8101c3e14b3a8ea772be9b1c30801b",
     "QIP/Audit/Product.lean": "f375cf3395e4ccb80f0b99b3c5a7e20ddbc78b3faac736cd216e76be259e96be",
     "QIP/Audit/Purification.lean": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
+    "QIP/Audit/Purified.lean": "0eb0cf0b6c4e3578cf98742069f8f5cf92bae8e55a03548e187bb312daceab25",
     "QIP/Audit/Registers.lean": "6f5a183aba761bd6637a47627c9e8a5b4123f13df449a3ec0404f5ca6f7b2ad7",
     "QIP/Audit/SDP.lean": "eee2bec732366d5d4d112e341892011a6843268631e6a8e938b33e637bba0415",
     "QIP/Audit/Smoke.lean": "bd86eee1096ad32cbb929ba73285bacf5ad121606f07e8adfff9974abb41f885",
@@ -52,6 +53,7 @@
     "QIP/Pair/Interleave.lean": "12ec32f50afbd4cc4cda70c340f8fb2111203193b100563bdcbbae9cb4eb7961",
     "QIP/Pair/Valid.lean": "070ca7b74fe8188d803d73958ebf5bf67429724206f689894f7caf71cef210a1",
     "QIP/ParallelRepeat.lean": "aebfcc6668dac164ade4c0c9f2d84b3362eddd92381b9c53c733d591797f2358",
+    "QIP/Purified.lean": "7451cf616641441af9506be80b550642e931b3ffaba868f3c80878bab08f8607",
     "QIP/Resources.lean": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
     "QIP/SDP/ConicDuality.lean": "ea3e2104cf364d8a2daeccb163e6f733bd3e017c662cead0fe178c40446487c4",
     "QIP/SDP/Primal.lean": "e32db356f2a1b91a1cc242dd4f472dc2c643ef1211620587343fbf3cc873da92",
@@ -66,7 +68,7 @@
     "QIP/StrategyRealize.lean": "a935643d11c818614162201549d830185126fee2330946c95ab1e38b8c8a1cbf",
     "QIP/Syntax.lean": "9237478b4aaf5c96b571aed7a7aa84ba4d1564d0467ff6ae10bbcce89621abf3",
     "QIP/Tester.lean": "9f0f567ddfc05a727a3e90abee265023f238d96280b6fc6be8bcf9ebf530ec22",
-    "QIP/TesterCore.lean": "d00967606f8d72bdebcddeaa1901eed075c3e9dc339eca79dea1ae2bb0ad13d7",
+    "QIP/TesterCore.lean": "cc6ba45baba4ed65b3b6c33fabfbd03de1801c6a5ea1c69316377cecfadd772c",
     "QIP/TesterProduct.lean": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
     "QIP/ValidGates.lean": "27682be9a749f863d5ae675958c805df6c777860ab88ea98a33ab0062b04578c",
     "QIP/Value.lean": "9a10f7b5b1510d0d8e249e686807b4240f0a836391fb003ab2dd94f1d899c0e2",
@@ -2719,6 +2721,104 @@
         "propext"
       ],
       "ShiQuantum.isPurification_product": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "QIP/Audit/Purified.lean": {
+      "ShiQIP.IsoStrategy": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.IsoStrategy.toOp": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.envT": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.envT_fintype": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.envT_decEq": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.stin": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.stin_spec": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.envStep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dilOut": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dilV": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dilV_iso": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.dilate": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.redE": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.regroupOut": [],
+      "ShiQIP.dilOf": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.redE_linkStep": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.redE_memState": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.stratOp_dilate": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_iso_of_op": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.exists_isoProver": [
         "Classical.choice",
         "Quot.sound",
         "propext"

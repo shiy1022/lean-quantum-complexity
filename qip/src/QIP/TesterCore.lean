@@ -31,9 +31,9 @@ def memBlock {H Mm : Type} (R : Matrix (H × Mm) (H × Mm) ℂ) (h h' : H) : Mat
   Matrix.of fun m m' => R (h, m) (h', m')
 
 /-- **Entries of the link product.** -/
-theorem linkStep_apply {H Xx Mm Mm' : Type} [Fintype H] [Fintype Xx] [DecidableEq Xx]
-    [Fintype Mm] (Φ : MatMap (Xx × Mm) (Xx × Mm')) (R : Matrix (H × Mm) (H × Mm) ℂ)
-    (h h' : H) (x x' : Xx) (q q' : Xx × Mm') :
+theorem linkStep_apply {H Xx Yy Mm Mm' : Type} [Fintype H] [Fintype Xx] [DecidableEq Xx]
+    [Fintype Mm] (Φ : MatMap (Xx × Mm) (Yy × Mm')) (R : Matrix (H × Mm) (H × Mm) ℂ)
+    (h h' : H) (x x' : Xx) (q q' : Yy × Mm') :
     linkStep Φ R ((h, x), q) ((h', x'), q') =
       Φ (Matrix.single x x' 1 ⊗ₖ memBlock R h h') q q' := by
   have hb : blockOf (Matrix.reindex (linkEquiv H Mm Xx) (linkEquiv H Mm Xx)

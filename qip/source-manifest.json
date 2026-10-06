@@ -23,6 +23,7 @@
     "QIP.Audit.Positive",
     "QIP.Audit.Product",
     "QIP.Audit.Purification",
+    "QIP.Audit.Purified",
     "QIP.Audit.Registers",
     "QIP.Audit.SDP",
     "QIP.Audit.Smoke",
@@ -168,6 +169,13 @@
       "sha256": "4e248f622e401944c988a84a803615f52ec2dcb223d65d60f43d509c0824b37f",
       "imports": [
         "Quantum.Purification"
+      ]
+    },
+    "QIP.Audit.Purified": {
+      "path": "QIP/Audit/Purified.lean",
+      "sha256": "0eb0cf0b6c4e3578cf98742069f8f5cf92bae8e55a03548e187bb312daceab25",
+      "imports": [
+        "QIP.Purified"
       ]
     },
     "QIP.Audit.Registers": {
@@ -360,6 +368,16 @@
         "QIP.Pair.Valid"
       ]
     },
+    "QIP.Purified": {
+      "path": "QIP/Purified.lean",
+      "sha256": "7451cf616641441af9506be80b550642e931b3ffaba868f3c80878bab08f8607",
+      "imports": [
+        "QIP.Tester",
+        "QIP.ValidGates",
+        "Quantum.Dilation",
+        "Quantum.Purification"
+      ]
+    },
     "QIP.Resources": {
       "path": "QIP/Resources.lean",
       "sha256": "f97c2881460a0d2ac72e1a1408fb6ea11bd447485fb8f241ffecec76e1ae237b",
@@ -464,7 +482,7 @@
     },
     "QIP.TesterCore": {
       "path": "QIP/TesterCore.lean",
-      "sha256": "d00967606f8d72bdebcddeaa1901eed075c3e9dc339eca79dea1ae2bb0ad13d7",
+      "sha256": "cc6ba45baba4ed65b3b6c33fabfbd03de1801c6a5ea1c69316377cecfadd772c",
       "imports": [
         "QIP.StrategyRealization"
       ]
