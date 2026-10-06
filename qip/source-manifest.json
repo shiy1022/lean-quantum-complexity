@@ -19,6 +19,7 @@
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
     "QIP.Audit.GateMatrix",
+    "QIP.Audit.GenModel",
     "QIP.Audit.Pad",
     "QIP.Audit.Pair",
     "QIP.Audit.ParallelRepeat",
@@ -145,6 +146,13 @@
       "sha256": "74f749b86f146355481c4342ef2587e935d0aec8e6dde3228e638365737d6a3f",
       "imports": [
         "QIP.ShiShallowBridge"
+      ]
+    },
+    "QIP.Audit.GenModel": {
+      "path": "QIP/Audit/GenModel.lean",
+      "sha256": "15fa8289566e0168380b29dbab78433e682c227f43d8c367587669369cd95fca",
+      "imports": [
+        "QIP.Gen.Model"
       ]
     },
     "QIP.Audit.Pad": {
@@ -451,6 +459,14 @@
         "Quantum.Channel"
       ]
     },
+    "QIP.Gen.Model": {
+      "path": "QIP/Gen/Model.lean",
+      "sha256": "0c27cb09de2f102709a4df0d7be28a41743b731d6dbd45ff8140e4aa07a5c255",
+      "imports": [
+        "QIP.UnitaryProver",
+        "QIP.Clean"
+      ]
+    },
     "QIP.Marginal": {
       "path": "QIP/Marginal.lean",
       "sha256": "72ed8d4eb4eac6dbac061d9ac96ad6f18a37d32cb4516b113fac83fb7463a3b3",
@@ -652,6 +668,13 @@
       "sha256": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
       "imports": [
         "QIP.SDP.Reindex"
+      ]
+    },
+    "QIP.UnitaryProver": {
+      "path": "QIP/UnitaryProver.lean",
+      "sha256": "ae9830cccd2acc1f5955345243d83ea338d942cc19741be329209c6216d3c5aa",
+      "imports": [
+        "QIP.PadMessages"
       ]
     },
     "QIP.ValidGates": {
