@@ -1,0 +1,31 @@
+{
+  "kind": "local clean build (not Sherlock)",
+  "git_head": "3e205c4fbc61a2a806ce8a374e78148711af384d",
+  "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "endpoint": {
+    "name": "ShiQIP.qip_eq_qip3",
+    "type": "ShiQIP.QIP = ShiQIP.QIPm 3",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "allowed": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "reports": 2438,
+  "audit_files": 43,
+  "axiom_sets": {
+    "none": 114,
+    "Classical.choice, Quot.sound, propext": 1904,
+    "Quot.sound": 1,
+    "Quot.sound, propext": 215,
+    "propext": 204
+  },
+  "disallowed": [],
+  "sorryAx": 0
+}

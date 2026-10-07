@@ -1,0 +1,19 @@
+{
+  "kind": "local clean build (not Sherlock)",
+  "host": "Windows-10-10.0.19045-SP0",
+  "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "lean_num_threads": 1,
+  "git_head": "3e205c4fbc61a2a806ce8a374e78148711af384d",
+  "started_unix": 1791358221,
+  "seconds": 3119.8,
+  "project_objects_before": 0,
+  "project_oleans_built": 156,
+  "project_oleans_older_than_start": [],
+  "mathlib_objects": "reused from the pinned packagesDir checkout (../bqp-pp/.lake/packages)",
+  "audit_files": 43,
+  "axiom_reports": 2438,
+  "audit_errors": [],
+  "audit_exit_code": 0,
+  "log_sha256": "1937def8c3f379961a5e3492b59a300d5edcf4d0fe7f0cea482b61d7b4cf9c50"
+}

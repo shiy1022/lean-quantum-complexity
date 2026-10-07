@@ -20,6 +20,7 @@
     "QIP.Audit.Dilation",
     "QIP.Audit.Fidelity",
     "QIP.Audit.FidelityTwoTargets",
+    "QIP.Audit.Final",
     "QIP.Audit.GateMatrix",
     "QIP.Audit.GenModel",
     "QIP.Audit.Halve",
@@ -162,6 +163,19 @@
       "path": "QIP/Audit/FidelityTwoTargets.lean",
       "sha256": "057eb3041510dc7679b1ef3f48dadc97a88e42daf004ca7f78b75fb34c7a8471",
       "imports": [
+        "Quantum.FidelityTwoTargets"
+      ]
+    },
+    "QIP.Audit.Final": {
+      "path": "QIP/Audit/Final.lean",
+      "sha256": "140f7f171babe45d98ae1de57654f22ba33b6b6d641be399e433e733ad1e4d67",
+      "imports": [
+        "QIP.ThreeMessage",
+        "QIP.SDP.Product",
+        "QIP.SDP.ConicDuality",
+        "QIP.UnitaryProver",
+        "QIP.Gen.Cut",
+        "Quantum.UhlmannAttained",
         "Quantum.FidelityTwoTargets"
       ]
     },

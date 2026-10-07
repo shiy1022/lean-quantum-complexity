@@ -15,7 +15,7 @@ the module compiled inside the full `ShiQIP` build and passed the fresh-import a
 
 Every report in `verification/audit.json` uses only `propext`, `Classical.choice` and
 `Quot.sound`. No `sorry`, `admit`, `axiom` or `proof_wanted` occurs in `src/`. The last run
-took 922 s and produced 2416 reports across 42 audit files (153 sources), from `git_head`
+took 3120 s (from scratch) and produced 2438 reports across 43 audit files (154 sources), from `git_head`
 dbade4a plus Q34–Q40 (`QIP.Uniform.*`, `QIP.FamilyConstruction`, `QIP.ThreeMessage`). Source hashes are in `source-manifest.json` and `verification/audit.json`.
 
 | Task | Status | Declarations / files | Evidence | Remaining gap |
@@ -60,7 +60,7 @@ dbade4a plus Q34–Q40 (`QIP.Uniform.*`, `QIP.FamilyConstruction`, `QIP.ThreeMes
 | Q37 | integrated_verified (local) | `QIP.Uniform.CompressPT`: code lengths (`serialSize_le_enc`, `enc_le_serialSize`, `hsize_le_enc`, `enc_le_hsize` for valid descriptions); the guarded halving `gHalve` (guard `hGuard`: `check`, `1 ≤ n`, `n` even, `n ≤ numMsgs`; identity otherwise); the halving parameters `pw M` by bounded doubling, **`pw_padM`** (`pw (padM r) = [2^r, …, 2]`), `pw_length` (`2 ^ length ≤ M + 1`); **`compG`**, **`compG_eq`** (`compG d = compressR r d` for valid `d` with schedule `padM r`); `gHalve_bound` (states are the input or valid, `hsize ≤ 2010 ^ k · hsize`); **`PT.compGU`** with the explicit bound `2010 ^ len ≤ (N + 1) ^ 11` | `Audit/UniformPrinter.lean`: 99 reports | local check (not Sherlock), same run. The guards make every intermediate state either the input or a valid description, so validity-dependent size bounds apply on all inputs; on genuine inputs the guards always pass |
 | Q38 | integrated_verified (local) | `QIP.Uniform.ThreePT`: guarded parallel repetition `rStep`, `repG`, **`repG_eq`** (`repG (d, K) = parRepeat d K` for valid `d`), `hsize_repeatAux_le`, **`PT.repGU`**; the uniform pipeline **`threeG`**, `padStage_spec`, **`threeG_eq`** (`threeG d = threeDesc d` for valid `d`); **`printer`** (`encode ∘ threeG ∘ dec`), **`printer_encode`** (`printer (encode d) = encode (threeDesc d)`), **`printer_polyTime`** (`PvsNP.PolyTimeComputable printer`) | `Audit/UniformPrinter.lean` | local check (not Sherlock), same run |
 | Q40 | integrated_verified (local) | `QIP.ThreeMessage`: `qip_subset_qip3`, **`qip_eq_qip3 : ShiQIP.QIP = ShiQIP.QIPm 3`** (`#check` with the exact type in `Audit/ThreeMessage.lean`; axioms `propext`, `Classical.choice`, `Quot.sound`) | `Audit/ThreeMessage.lean`: 8 reports | local check (not Sherlock), same run. No use of `QIP = PSPACE`, `IP = PSPACE` or `BQP ⊆ PSPACE` |
-| Q41 | not_started | Requires the source-matched clean Sherlock build (`verification/clean-build.json`, `axioms.json`) and the independent definition review; not done locally | — | — |
+| Q41 | integrated_verified (local clean build, not Sherlock) | By the user's instruction of 2026-10-07 the Sherlock build was replaced by a local from-scratch build: `scripts/clean_build.py` (no project objects before, 156 project oleans built, none older than the start, pinned Mathlib reused, one Lean thread, 3120 s), `verification/clean-build.json`, `verification/axioms.json` (2438 reports, only `propext`/`Classical.choice`/`Quot.sound`, zero `sorryAx`), `Audit/Final.lean` (endpoint with its exact type and the main certificates), `verification/definition-review.md` (written by the proof's author; independent human review still recommended) | `Audit/Final.lean`: 22 reports | local clean build PASSED at 3e205c4: 154 sources, 43 audit files, 2438 axiom reports. Not Sherlock evidence |
 
 ## Design decisions recorded for later tasks
 
@@ -107,8 +107,8 @@ dbade4a plus Q34–Q40 (`QIP.Uniform.*`, `QIP.FamilyConstruction`, `QIP.ThreeMes
 
 ## Next ready tasks
 
-Q41 (final clean Sherlock build and semantic audit; needs Sherlock access). Q00–Q40 are
-integrated and verified locally; `ShiQIP.qip_eq_qip3` has the exact equality type. Conventions fixed by Q03:
+None in the main line: Q00–Q41 are integrated and verified locally (Q41 by a local clean build in
+place of Sherlock). Optional: a Sherlock rerun of `scripts/clean_build.py`, O01, O02. Conventions fixed by Q03:
 positivity is Mathlib's `Matrix.PosSemidef` with `ComplexOrder` and `MatrixOrder`; every Hilbert
 norm or inner product on coordinate vectors goes through `toE` (`EuclideanSpace`), never the sup
 norm on `n → ℂ`.
