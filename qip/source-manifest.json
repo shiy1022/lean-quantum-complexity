@@ -1,7 +1,7 @@
 {
   "lean_version": "4.33.1",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
-  "endpoint": "ShiQIP.qip_eq_qip3 (not yet implemented)",
+  "endpoint": "ShiQIP.qip_eq_qip3",
   "baseline_lake_roots": [
     "Definitions.Def_PvsNP",
     "Definitions.Def_ShiShallow_Core"
@@ -343,7 +343,7 @@
     },
     "QIP.Audit.ThreeMessage": {
       "path": "QIP/Audit/ThreeMessage.lean",
-      "sha256": "6ed029f914c43b49e196893f3619e888ef900ae9108aadd4ded53c68c50d1eb0",
+      "sha256": "4f996e935216642434f36d78b2cdc4dab74a166f34e9793b3af53643915559fc",
       "imports": [
         "QIP.ThreeMessage"
       ]
@@ -894,7 +894,7 @@
     },
     "QIP.ThreeMessage": {
       "path": "QIP/ThreeMessage.lean",
-      "sha256": "2b1b0d8066cdae22e8418d0bc736e3204ae61e6afb2b96ec1d427d7551de7940",
+      "sha256": "1e9666d5f4af2f1e6eab2d480a90b815565d200f14f8688a4afa077a3f906231",
       "imports": [
         "QIP.FamilyConstruction"
       ]

@@ -4,8 +4,8 @@
   "lean": "Lean (version 4.33.1, x86_64-w64-windows-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
   "mathlib_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
   "lean_num_threads": 1,
-  "git_head": "3e205c4fbc61a2a806ce8a374e78148711af384d",
-  "seconds": 3116.8,
+  "git_head": "5387c5fe389321e2e1fd8788536edfb9da628899",
+  "seconds": 940.1,
   "source_sha256": {
     "QIP/Arithmetic/Gap.lean": "c567443294d6f9d231c49b1d2d6f115356de64ccd2cc625549850af9e165aa85",
     "QIP/Arithmetic/Padding.lean": "6258b80aec2d74299a6515e6b9b3185dba559e8f11d5693e116f716d20937c0e",
@@ -47,7 +47,7 @@
     "QIP/Audit/StrongDuality.lean": "db6451d35e25231addd6b64eacdff52d389dd1c5a49fd5227c0268cf84903bcc",
     "QIP/Audit/Syntax.lean": "7913fc983637d142bdd5d1e4ff8095a57fa911898bad897d79a88f0eaa852df0",
     "QIP/Audit/Tester.lean": "f1e5788af9cc65c7c6b14b01b5eb6bc10bef0276907d10584c584e3f8d7712b6",
-    "QIP/Audit/ThreeMessage.lean": "6ed029f914c43b49e196893f3619e888ef900ae9108aadd4ded53c68c50d1eb0",
+    "QIP/Audit/ThreeMessage.lean": "4f996e935216642434f36d78b2cdc4dab74a166f34e9793b3af53643915559fc",
     "QIP/Audit/Uhlmann.lean": "299edb450817854524924b71fc9d2ba426af958e5e014b7184db57459aac12a6",
     "QIP/Audit/Uniform.lean": "46ee4bb537aea969212a9069e02f628118801a872efa7aa1b93e5fbbb9d4e11b",
     "QIP/Audit/UniformLib.lean": "878324233cbeee39c924508fcadf256f1acd62128cd8281ccf9cef366106fe65",
@@ -119,7 +119,7 @@
     "QIP/Tester.lean": "9f0f567ddfc05a727a3e90abee265023f238d96280b6fc6be8bcf9ebf530ec22",
     "QIP/TesterCore.lean": "cc6ba45baba4ed65b3b6c33fabfbd03de1801c6a5ea1c69316377cecfadd772c",
     "QIP/TesterProduct.lean": "500b14a178f6b92c7000294a2f06c4a399bbaac24e6df33888ba75cbbca8b702",
-    "QIP/ThreeMessage.lean": "2b1b0d8066cdae22e8418d0bc736e3204ae61e6afb2b96ec1d427d7551de7940",
+    "QIP/ThreeMessage.lean": "1e9666d5f4af2f1e6eab2d480a90b815565d200f14f8688a4afa077a3f906231",
     "QIP/Uniform/Bridge.lean": "5edabb84541f598bbdf9c40662299e7c3b3f8b9c7482f1c8ed2695c0eb6167db",
     "QIP/Uniform/Codec.lean": "fba6cfed889eb191f6da909975a4eb7dd37dfd4a79e25e1a90d77c5efe84d273",
     "QIP/Uniform/Compose.lean": "2f0ff96735b562e853b27876121d65f0d0e776eec79ff53a0284814a47cca4d4",
@@ -8827,6 +8827,11 @@
         "propext"
       ],
       "ShiQIP.qip_eq_qip3": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "ShiQIP.ofLanguage_mem_qip_iff": [
         "Classical.choice",
         "Quot.sound",
         "propext"

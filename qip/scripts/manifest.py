@@ -67,7 +67,7 @@ def build():
     return {
         'lean_version': LEAN_VERSION,
         'mathlib_rev': MATHLIB_REV,
-        'endpoint': 'ShiQIP.qip_eq_qip3 (not yet implemented)',
+        'endpoint': 'ShiQIP.qip_eq_qip3',
         'baseline_lake_roots': lake_baseline_roots(),
         'targets': sorted(n for n in modules if n.startswith('QIP.Audit.')),
         'modules': modules,

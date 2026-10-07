@@ -21,4 +21,9 @@ has one with exactly three messages (prover, verifier, prover). -/
 theorem qip_eq_qip3 : QIP = QIPm 3 :=
   Set.Subset.antisymm qip_subset_qip3 (qipm_subset_qip 3)
 
+/-- The language-level statement, through the promise embedding `ofLanguage L = (L, Lᶜ)`. -/
+theorem ofLanguage_mem_qip_iff (L : Language Bool) :
+    ofLanguage L ∈ QIP ↔ ofLanguage L ∈ QIPm 3 := by
+  rw [qip_eq_qip3]
+
 end ShiQIP
