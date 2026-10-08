@@ -1,0 +1,18 @@
+{
+  "scope": "Every Mathlib TM2ComputableInPolyTime Boolean-string computation has an actual polynomial-time-uniform, well-formed, polynomial-size family in the established H/S/T/X/CNOT semantics; exact full-string output decoding, preserved input, and all quantum workspace zero. Uniformity is witnessed by the actual finite TM2 serializer, without a residual printer premise.",
+  "full_machine_uniform_simulation_proved": true,
+  "snapshot": "r99",
+  "job_id": "46916049",
+  "modules": 885,
+  "audited_declarations": 2724,
+  "workers": 4,
+  "threads_per_process": 1,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "endpoint": "ShiReversibleGenerator.efficient_reversible_simulation",
+  "matched_source_object_hashes": 1770,
+  "ordered_unique_audits": true
+}
