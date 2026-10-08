@@ -1,0 +1,21 @@
+name = "q_algorithms"
+version = "0.1.0"
+defaultTargets = ["QAlgorithms"]
+
+[leanOptions]
+# No auto-bound implicits: every variable in a statement must be bound on purpose.
+autoImplicit = false
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+# Statements for the algorithms field of prove2quantum, drafted by prove2quantum/pipeline.
+#   QAlgorithms.Defs.*    shared definitions, drafted once and frozen (definitions.lock in the run)
+#   QAlgorithms.DeWolf.*  de Wolf, Quantum Computing: Lecture Notes, one module per chapter chunk
+#   QAlgorithms.Childs.*  Childs, Lecture Notes on Quantum Algorithms, one module per chapter chunk
+# Theorem bodies are `sorry`: this project states results, it does not prove them yet.
+[[lean_lib]]
+name = "QAlgorithms"
+globs = ["QAlgorithms.+"]
