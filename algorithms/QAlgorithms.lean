@@ -22,6 +22,15 @@ import QAlgorithms.Defs.GradientMethods
 import QAlgorithms.Defs.BlockEncoding
 import QAlgorithms.Defs.SDP
 import QAlgorithms.Defs.Adiabatic
+import QAlgorithms.Defs.Ensemble
+import QAlgorithms.Defs.BooleanFourier
+import QAlgorithms.Defs.Learning
+import QAlgorithms.Defs.LearningHardInstances
+import QAlgorithms.Arunachalam.Ch06
+import QAlgorithms.Arunachalam.Ch07a
+import QAlgorithms.Arunachalam.Ch07b
+import QAlgorithms.Arunachalam.Ch07c
+import QAlgorithms.Arunachalam.Ch07d
 import QAlgorithms.Childs.Ch02
 import QAlgorithms.Childs.Ch05
 import QAlgorithms.Childs.Ch08
@@ -50,6 +59,9 @@ import QAlgorithms.DeWolf.Ch14
 import QAlgorithms.DeWolf.Ch15
 import QAlgorithms.DeWolf.Ch18
 import QAlgorithms.DeWolf.Ch20
+import QAlgorithms.LearningSurvey.Ch04a
+import QAlgorithms.LearningSurvey.Ch04b
+import QAlgorithms.LearningSurvey.Ch05
 import QAlgorithms.Nannicini.Ch01a
 import QAlgorithms.Nannicini.Ch01b
 import QAlgorithms.Nannicini.Ch01c
