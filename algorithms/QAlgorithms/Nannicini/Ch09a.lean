@@ -5,7 +5,7 @@ import QAlgorithms.Defs.Adiabatic
 
 G. Nannicini, *Quantum algorithms for optimizers* (arXiv:2408.07086v5), cited "Nannicini p.N"
 (PDF pages), §9.1: Proposition 9.4 (pp.209–210), Theorem 9.11 (pp.212–213), Theorem 9.17 (p.218),
-Lemma 9.18 (p.218). Lemma 9.20 (p.221) is not stated (see `HARD.md`).
+Lemma 9.18 (p.218), Lemma 9.20 (p.221, a corrected statement: the `O(k/N³)` is pinned).
 
 Standing assumptions (§9.1.2, pp.210–212). A time-dependent Hamiltonian `H(s)`, `s ∈ [0, 1]`, is
 Hermitian for every `s` (Def. 6.1) with twice differentiable entries (p.210, Rem. 9.7); `H′`, `H″`
@@ -124,6 +124,51 @@ theorem adiabatic_eigvec_deriv_bounds {ι : Type*} [Fintype ι] [DecidableEq ι]
     (N1 N2 : ℝ) (hN1 : ∀ s ∈ Set.Icc (0 : ℝ) 1, specNorm (H' s) ≤ N1)
     (hN2 : ∀ s ∈ Set.Icc (0 : ℝ) 1, specNorm (H'' s) ≤ N2) :
     ∀ s ∈ Set.Icc (0 : ℝ) 1, ‖φ' s‖ ≤ N1 / γ ∧ ‖φ'' s‖ ≤ N2 / γ + 3 * N1 ^ 2 / γ ^ 2 := by
+  sorry
+
+/-- Corrected statement. Nannicini p.221, Lemma 9.20. Printed: "Let `p_j, U_j` for
+`j = 1, …, N` be defined as in Thm. 9.17. Then:
+`‖Σ_{j=1}^k U_k U_{k−1} ⋯ U_j p_1 − Σ_{j=1}^k U_1^{k+1−j} p_1‖ ≤ 2(k + 1)k‖H′‖²/(γ²N²) + O(k/N³)`."
+
+What was changed: the printed error term `O(k/N³)` is given an explicit meaning. By Rem. 9.14
+(p.214) the `O(·)` drops every factor not depending on `N`, so the constant `C` may depend on the
+data `H, H′, H″, φ, γ, ‖H′‖, ‖H″‖, δ, T` but is quantified **before** `N` and `k`, with a threshold
+`N₀`; the bound is required **uniformly** in `1 ≤ k ≤ N`. Why: as printed the `O(k/N³)` does not
+say whether `k` is fixed as `N → ∞` (then "`k/N³`" is just `O(1/N³)`) or ranges up to `O(N)`. The
+uniform reading is the one the source relies on: the proof of Thm. 9.17 applies the lemma at
+`h = M − 1 = O(N)` and writes the remainder as `O(1/N²)` (p.221). The source's own induction
+(Eqs. (9.29)–(9.32)) adds an `O(k/N³)` remainder at each step, which accumulates to `O(k²/N³)`, so
+the printed proof does not by itself give this reading; the claim is stated as the lemma prints it.
+
+Objects (Eqs. (9.9)–(9.11), (9.20), pp.213–219): `U_j = e^{i(T/N) H(j/N)}` (`NormedSpace.exp`),
+`g_j = |φ(j/N)⟩` with the phase fixed by `⟨φ′(s)|φ(s)⟩ = 0`, and
+`p_1 = Proj_{G₁^⊥}(g_0 − g_1) = (g_0 − g_1) − ⟨g_1|g_0 − g_1⟩ g_1`. The product
+`U_k U_{k−1} ⋯ U_j` is `[U_k, U_{k−1}, …, U_j].prod`. The context of Thm. 9.17 is carried as in
+`adiabatic_theorem_zero` (without the evolution `ψ`, which plays no role); `‖H′‖` is the bound
+`N1`. -/
+theorem adiabatic_unitary_replacement {ι : Type*} [Fintype ι] [DecidableEq ι]
+    (H H' H'' : ℝ → Matrix ι ι ℂ)
+    (hH' : ∀ s ∈ Set.Icc (0 : ℝ) 1, ∀ i j,
+      HasDerivWithinAt (fun t => H t i j) (H' s i j) (Set.Icc 0 1) s)
+    (hH'' : ∀ s ∈ Set.Icc (0 : ℝ) 1, ∀ i j,
+      HasDerivWithinAt (fun t => H' t i j) (H'' s i j) (Set.Icc 0 1) s)
+    (φ φ' : ℝ → EuclideanSpace ℂ ι)
+    (hφ : ∀ s ∈ Set.Icc (0 : ℝ) 1, IsState (φ s) ∧ act (H s) (φ s) = 0)
+    (hφ' : ∀ s ∈ Set.Icc (0 : ℝ) 1, HasDerivWithinAt φ (φ' s) (Set.Icc 0 1) s)
+    (hphase : ∀ s ∈ Set.Icc (0 : ℝ) 1, inner ℂ (φ' s) (φ s) = 0)
+    (γ : ℝ) (hγ : 0 < γ) (hgap : ∀ s ∈ Set.Icc (0 : ℝ) 1, HasGapAround (H s) 0 γ)
+    (N1 N2 : ℝ) (hN1 : ∀ s ∈ Set.Icc (0 : ℝ) 1, specNorm (H' s) ≤ N1)
+    (hN2 : ∀ s ∈ Set.Icc (0 : ℝ) 1, specNorm (H'' s) ≤ N2)
+    (δ : ℝ) (hδ : 0 < δ) (T : ℝ)
+    (hT : 10 ^ 3 / δ ^ 2 * max (N1 ^ 3 / γ ^ 4) (N1 * N2 / γ ^ 3) ≤ T) :
+    ∃ C : ℝ, ∃ N₀ : ℕ, ∀ N : ℕ, N₀ ≤ N → ∀ k : ℕ, 1 ≤ k → k ≤ N →
+      let U : ℕ → Matrix ι ι ℂ := fun j =>
+        NormedSpace.exp ((Complex.I * ((T / N : ℝ) : ℂ)) • H ((j : ℝ) / N))
+      let g : ℕ → EuclideanSpace ℂ ι := fun j => φ ((j : ℝ) / N)
+      let p1 : EuclideanSpace ℂ ι := (g 0 - g 1) - inner ℂ (g 1) (g 0 - g 1) • g 1
+      ‖∑ j ∈ Finset.Icc 1 k, act ((List.range (k + 1 - j)).map fun i => U (k - i)).prod p1 -
+          ∑ j ∈ Finset.Icc 1 k, act (U 1 ^ (k + 1 - j)) p1‖ ≤
+        2 * ((k : ℝ) + 1) * k * N1 ^ 2 / (γ ^ 2 * (N : ℝ) ^ 2) + C * k / (N : ℝ) ^ 3 := by
   sorry
 
 end QAlgorithms.Nannicini

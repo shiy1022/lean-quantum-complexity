@@ -114,4 +114,82 @@ theorem genPicPolytope_sandwich {n m : ℕ} (hm : 0 < m) (A : Fin m → Matrix (
         picPolytope A b C γ (4 * R * r * θ) X ∩ {y : Fin m → ℝ | ∑ j, |y j| ≤ r} := by
   sorry
 
+/-- Chunk-local (Nannicini p.195, Prop. 8.21: the register `|ã_j⟩`). The source does not say how a
+real number is held in a register; this fixes the word-size model: a `p`-qubit register `z` holds
+the offset-binary fixed-point number `(bitsToNat z − 2^{p−1}) / 2^f` (most significant bit first,
+`f` fractional bits). -/
+noncomputable def fixedPointVal (p f : ℕ) (z : Qubits p) : ℝ :=
+  ((bitsToNat z : ℝ) - 2 ^ (p - 1)) / 2 ^ f
+
+/-- Chunk-local (Nannicini p.195, Prop. 8.21: the circuit `U`). `U` is a unitary on an index
+register of `⌈log₂ m⌉` qubits, a `p`-qubit value register and a `g`-qubit garbage register with
+`U|j⟩|0⟩|0⟩ = |j⟩|ã_j⟩|ψ_j⟩` for every `j ∈ [m]` (`j` written in binary, `natToBits`), where
+`ã_j` is a fixed-point number (`fixedPointVal p f`) with `|t_j − ã_j| ≤ θ` and `ψ_j` is a unit
+vector. With `θ = 0` it is an exact data oracle. -/
+def IsFixedPointValueOracle {m : ℕ} (p f g : ℕ) (t : Fin m → ℝ) (θ : ℝ)
+    (U : Matrix (Qubits (Nat.clog 2 m + p + g)) (Qubits (Nat.clog 2 m + p + g)) ℂ) : Prop :=
+  U ∈ Matrix.unitaryGroup (Qubits (Nat.clog 2 m + p + g)) ℂ ∧
+    ∃ code : Fin m → Qubits p, (∀ j, |t j - fixedPointVal p f (code j)| ≤ θ) ∧
+      ∀ j : Fin m, ∃ ψ : EuclideanSpace ℂ (Qubits g), IsState ψ ∧
+        act U (ket (Fin.append (Fin.append (natToBits (Nat.clog 2 m) j) (fun _ : Fin p => false))
+            (fun _ : Fin g => false))) =
+          WithLp.toLp 2 fun z : Qubits (Nat.clog 2 m + p + g) =>
+            if (fun i => z (Fin.castAdd g i)) = Fin.append (natToBits (Nat.clog 2 m) j) (code j)
+            then ψ (fun l => z (Fin.natAdd (Nat.clog 2 m + p) l)) else 0
+
+open Classical in
+/-- Corrected statement. Nannicini p.195, Proposition 8.21 (informal; the source defers the precise
+version to Lem. 16 of [van Apeldoorn et al., 2020b], not on disk). Printed: given a circuit `U`
+with `U|j⟩|0⟩|0⟩ = |j⟩|ã_j⟩|ψ_j⟩`, `|Tr(A^(j)ρ) − ã_j| ≤ θ`, a quantum algorithm with `Õ(√m)`
+calls to `U` and as many gates "with high probability returns a vector in
+`P_{4Rrθ}(X) ∩ {‖y‖₁ ≤ r}` if `P_0(X) ∩ {‖y‖₁ ≤ r}` is nonempty, and returns 'failure' if
+`P_0(X) ∩ {‖y‖₁ ≤ r}` is empty".
+
+Changes, each forced by a gap of the printed claim:
+1. *High probability*: success probability `≥ 1 − δ` for every `δ ∈ (0,1)`, with cost
+   polylogarithmic in `1/δ` (the reading of Rem. 8.20, p.194).
+2. *`Õ(√m)`*: `K √m (ln(2+m) + ln(2+1/δ) + p + 1)^e` with absolute `K, e` quantified first; the
+   suppressed factors are polylogarithmic in `m`, `1/δ` and polynomial in the word size `p`.
+3. *Cost model*: the algorithm is an oracle circuit over all two-qubit unitaries
+   (`twoQubitGateSet`), started in `|0…0⟩`, measured in the computational basis, the outcome
+   mapped classically to a vector or `none` ("failure"); calls to `U` (plain, inverse or
+   controlled) are `queryCount 0`. Numbers are `p`-bit fixed point (`fixedPointVal`).
+4. *Missing inputs*: the procedure (pp.194–195) needs `c̃` with `|Tr(Cρ) − c̃| ≤ θ` (Prop. 8.19)
+   and the points `b_j`; `c̃, γ, r, θ` are given classically, and `b` through an exact oracle `B`
+   of the same form (index `1`), whose calls are bounded too (loading `b` into gates would cost
+   `Θ(m)` gates, so the gate claim needs this access).
+5. *Failure clause*: the algorithm only sees `θ`-accurate traces, so it cannot detect emptiness
+   of `P_0(X)`, which is defined by exact traces. Stated instead: failure is returned only when
+   `P_0(X) ∩ {‖y‖₁ ≤ r}` is empty (when it is empty, the output is failure or a vector of
+   `P_{4Rrθ}(X) ∩ {‖y‖₁ ≤ r}`), which is what the procedure through Prop. 8.19 gives.
+
+The algorithm depends on `m, p, f, g, δ, γ, r, θ, c̃` only, never on `A, b, C, X, n`. Standing
+assumptions (a), (b), (c) and the hypotheses of Prop. 8.19 are binders. -/
+theorem dualVector_search :
+    ∃ (K : ℝ) (e : ℕ), 0 < K ∧
+    ∀ (m : ℕ) (hm : 0 < m) (p f g : ℕ) (δ : ℝ), 0 < δ → δ < 1 → ∀ (γ r θ ctil : ℝ),
+    ∃ (N : ℕ) (c : OracleCircuit twoQubitGateSet (fun _ : Fin 2 => Nat.clog 2 m + p + g) N)
+      (out : Qubits N → Option (Fin m → ℝ)),
+      (c.queryCount 0 : ℝ) ≤
+        K * Real.sqrt m * (Real.log (2 + m) + Real.log (2 + 1 / δ) + p + 1) ^ e ∧
+      (c.queryCount 1 : ℝ) ≤
+        K * Real.sqrt m * (Real.log (2 + m) + Real.log (2 + 1 / δ) + p + 1) ^ e ∧
+      (c.gateCount : ℝ) ≤
+        K * Real.sqrt m * (Real.log (2 + m) + Real.log (2 + 1 / δ) + p + 1) ^ e ∧
+      ∀ (n : ℕ) (A : Fin m → Matrix (Fin n) (Fin n) ℂ) (b : Fin m → ℝ)
+        (C : Matrix (Fin n) (Fin n) ℂ) (R : ℝ),
+        (∀ j, (A j).IsHermitian) → C.IsHermitian → A ⟨0, hm⟩ = 1 → b ⟨0, hm⟩ = R → 0 < R →
+        specNorm C ≤ 1 → 1 ≤ r → (∃ y : Fin m → ℝ, IsDualOptimal A C b y ∧ ∑ j, |y j| ≤ r) →
+        ∀ X : Matrix (Fin n) (Fin n) ℂ, X.PosSemidef → X.trace.re ≤ R → 0 ≤ θ →
+        |(C * ((X.trace)⁻¹ • X)).trace.re - ctil| ≤ θ →
+        ∀ U B : Matrix (Qubits (Nat.clog 2 m + p + g)) (Qubits (Nat.clog 2 m + p + g)) ℂ,
+        IsFixedPointValueOracle p f g (fun j => (A j * ((X.trace)⁻¹ • X)).trace.re) θ U →
+        IsFixedPointValueOracle p f g b 0 B →
+        probEvent (act (c.unitary fun k => if k = 0 then U else B) (zeroKet N))
+          (fun z => (∃ y, out z = some y ∧
+              y ∈ picPolytope A b C γ (4 * R * r * θ) X ∩ {y : Fin m → ℝ | ∑ j, |y j| ≤ r}) ∨
+            (out z = none ∧ picPolytope A b C γ 0 X ∩ {y : Fin m → ℝ | ∑ j, |y j| ≤ r} = ∅)) ≥
+          1 - δ := by
+  sorry
+
 end QAlgorithms.Nannicini

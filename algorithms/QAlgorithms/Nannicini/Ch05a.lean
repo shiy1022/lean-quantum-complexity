@@ -5,7 +5,7 @@ import QAlgorithms.Defs.GradientMethods
 
 G. Nannicini, *Quantum algorithms for optimizers* (arXiv:2408.07086v5), cited "Nannicini p.N"
 (PDF pages): Proposition 5.3 (p.106–108), Proposition 5.6 (p.109–111), Proposition 5.16
-(p.115), Corollary 5.18 (p.116–117). Proposition 5.25 (p.120–121) is not stated (see `HARD.md`).
+(p.115), Corollary 5.18 (p.116–117), and Proposition 5.25 (p.120–121) as a corrected statement (see its docstring).
 
 Conventions. A collection of `d` registers of `q` qubits each is indexed by `Fin d → Qubits q`
 (register `i` is the source's register `i + 1`); a `q`-bit string is read as an integer most
@@ -101,6 +101,53 @@ theorem stateTomography_euclidean :
           ∀ U ∈ Matrix.unitaryGroup (Qubits n) ℂ,
             1 - δ ≤ probEvent (act (circ.unitary fun _ => U) (zeroKet w))
               fun z => Real.sqrt (∑ j, ((act U (zeroKet n) j).im - out z j) ^ 2) ≤ ε) := by
+  sorry
+
+/-- Nannicini p.120, §5.1.4: the point `(y, t) ∈ ℝ^d` with `y ∈ ℝ^{d−1}` its first `d − 1`
+coordinates and `t` its last coordinate (`d = m + 1`). Chunk-local: used only by Prop. 5.25. -/
+noncomputable def liftPoint {m : ℕ} (y : EuclideanSpace ℝ (Fin m)) (t : ℝ) :
+    EuclideanSpace ℝ (Fin (m + 1)) :=
+  WithLp.toLp 2 (Fin.snoc (WithLp.ofLp y) t : Fin (m + 1) → ℝ)
+
+/-- Nannicini p.120, the height function `h : ℝ^{d−1} → ℝ ∪ {∞}`, `h(y) := inf_{(y,t) ∈ K} t`,
+"it is ∞ if no such value exists". Computed in `EReal`, so the infimum of the empty set is `⊤ = ∞`
+as in the source (trap 20). Chunk-local: used only by Prop. 5.25. -/
+noncomputable def heightFunction {m : ℕ} (K : Set (EuclideanSpace ℝ (Fin (m + 1))))
+    (y : EuclideanSpace ℝ (Fin m)) : EReal :=
+  sInf ((fun t : ℝ => (t : EReal)) '' {t | liftPoint y t ∈ K})
+
+/-- Corrected statement. Nannicini p.120–121, Proposition 5.25 (based on Lem. 19 and Lem. 21 of
+van Apeldoorn et al. 2020a). Let `K ⊂ ℝ^d` (`d = m + 1`) be convex with
+`B_2(0, r) ⊆ K ⊆ B_2(0, R)`, `0 < r < R`, let `ϵ > 0`, `τ > 0` (p.120) and
+`x = −τ e_d ∉ B_2(K, −ϵ)`, i.e. `B_2(x, ϵ) ⊄ K` (Def. 5.21). Then the height function `h`
+satisfies (i) it is convex (its epigraph is convex); (ii) it is finite and Lipschitz with constant
+`2R/r` on `B_2(0, r/2)`; (iii) for every `ϵ̄` and every `g ∈ ∂_ϵ̄ h(0)` (Def. 5.24, with `h = ∞`
+outside its domain), with `a = (−g, 1)`, every `z ∈ K` satisfies
+`⟨a, z⟩ ≥ ⟨a, x⟩ − b̄` for `b̄ = ϵ̄ + Rϵ/r`.
+
+Printed claim (iii): "if we take `g ∈ ∂_ϵ̄ h(0)` for an appropriately chosen value of `ϵ̄`, and let
+`a = (g, 1)`, the half-space `⟨a, z⟩ ≥ ⟨a, x⟩ − b̄` separates `x` and `K` for an appropriately
+chosen `b̄`". Changes: (1) `ϵ̄` is universally quantified, and `b̄` is the explicit value
+`ϵ̄ + Rϵ/r`. The source omits both values ("We omit a discussion on the values of ϵ̄, b̄"), and
+with `b̄` existential the claim is vacuous, because `K` is bounded. (2) `a = (−g, 1)` instead of
+`(g, 1)`. With Def. 5.24's convention `h(y) ≥ h(0) + ⟨g, y⟩ − ϵ̄`, the printed sign fails for every
+small `b̄`. Example (`d = 2`): `K = {|y| ≤ 1, |t| ≤ 1, t ≥ y/2 − 1/2}`, `r = 0.4`, `R = √2`,
+`τ = 1/2`, `g = 1/2 ∈ ∂h(0)`, and `z = (−1, −1)` gives `⟨(g,1), z⟩ − ⟨(g,1), x⟩ = −1`. -/
+theorem heightFunction_properties (m : ℕ) (K : Set (EuclideanSpace ℝ (Fin (m + 1))))
+    (hK : Convex ℝ K) (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hin : Metric.closedBall 0 r ⊆ K) (hout : K ⊆ Metric.closedBall 0 R)
+    (ε τ : ℝ) (hε : 0 < ε) (hτ : 0 < τ)
+    (hx : ¬ Metric.closedBall (liftPoint 0 (-τ)) ε ⊆ K) :
+    Convex ℝ {p : EuclideanSpace ℝ (Fin m) × ℝ | heightFunction K p.1 ≤ (p.2 : EReal)} ∧
+    (∀ y ∈ Metric.closedBall (0 : EuclideanSpace ℝ (Fin m)) (r / 2),
+      heightFunction K y ≠ ⊤ ∧ heightFunction K y ≠ ⊥) ∧
+    (∀ y₁ ∈ Metric.closedBall (0 : EuclideanSpace ℝ (Fin m)) (r / 2),
+      ∀ y₂ ∈ Metric.closedBall (0 : EuclideanSpace ℝ (Fin m)) (r / 2),
+        |(heightFunction K y₁).toReal - (heightFunction K y₂).toReal| ≤ 2 * R / r * dist y₁ y₂) ∧
+    ∀ (epsBar : ℝ) (g : EuclideanSpace ℝ (Fin m)),
+      (∀ y, heightFunction K 0 + ((inner ℝ g y - epsBar : ℝ) : EReal) ≤ heightFunction K y) →
+      ∀ z ∈ K, inner ℝ (liftPoint (-g) 1) (liftPoint 0 (-τ)) - (epsBar + R * ε / r) ≤
+        inner ℝ (liftPoint (-g) 1) z := by
   sorry
 
 end QAlgorithms.Nannicini
