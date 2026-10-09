@@ -1,6 +1,8 @@
 name = "q_algorithms"
 version = "0.1.0"
 defaultTargets = ["QAlgorithms"]
+# Share the pinned dependency checkout with bqp-pp instead of cloning Mathlib again (as qip does).
+packagesDir = "../bqp-pp/.lake/packages"
 
 [leanOptions]
 # No auto-bound implicits: every variable in a statement must be bound on purpose.
