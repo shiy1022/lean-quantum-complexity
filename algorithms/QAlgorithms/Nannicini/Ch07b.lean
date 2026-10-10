@@ -103,13 +103,13 @@ noncomputable def traceNorm {ι : Type*} [Fintype ι] [DecidableEq ι] (A : Matr
 
 /-- Corrected statement. Nannicini p.171, Proposition 7.38 (Lem. 4.15 in [van Apeldoorn, 2020]),
 as printed: "Let `H ∈ ℝ^{n×n}` be a Hermitian matrix. Let `θ ∈ (0, 1/3]`, `β > 1`, and let `d`
-be the degree of the polynomial from Lemma 7.37 when we let `ξ = θ²/(128n)`. Let `U` be a
-`(β, a, θ²/(1024 d β² n²))`-block-encoding of `H`. Then we can create a purification of a state
+be the degree of the polynomial from Lemma 7.37 when we let `ξ = θ/(128n)`. Let `U` be a
+`(β, a, θ²β/(1024² d² n²))`-block-encoding of `H`. Then we can create a purification of a state
 `ρ̃` such that `‖ρ̃ − exp(H)/Tr(exp(H))‖_Tr ≤ θ` using `Õ(√n β)` applications of `U` and
 `Õ(√n β a)` elementary gates."
 
 What was changed. (1) "The polynomial from Lemma 7.37" is a named parameter `P`: the statement
-holds for every real polynomial with the three properties of Lemma 7.37 at `ξ = θ²/(128n)`,
+holds for every real polynomial with the three properties of Lemma 7.37 at `ξ = θ/(128n)`,
 the degree bound `deg P ≤ C₀ β (log(2+β) + log(2+1/ξ))^{c₀}` (Lemma 7.37's `Õ(β)`) being stated
 with constants `C₀, c₀` quantified universally before the theorem's own constants; `d` is
 `deg P`, and the circuit may depend on `P` (it implements `P` by singular value transformation,
@@ -124,9 +124,10 @@ is not determined. The construction uses one such polynomial and needs the block
 precision for the degree of the polynomial it uses; the universally quantified `P` is that
 reading, made explicit.
 
-To review. The precision formulas `ξ = θ²/(128n)` and `θ²/(1024 d β² n²)` are read from a
-garbled text extraction of p.171 (the page could not be rendered); they should be checked
-against the PDF.
+Precision formulas checked against the rendered PDF page p.171 (2026-10-09): `ξ = θ/(128n)`,
+block-encoding error `θ²β/(1024² d² n²)`, `θ ∈ (0, 1/3]` (closed at `1/3`, as in the rendered
+page and the text layer). The first statement of this item had `θ²/(128n)` and
+`θ²/(1024 d β² n²)`, read from a garbled text extraction.
 
 Model. "Elementary gates" are two-qubit gates (`twoQubitGateSet`, as for Prop. 7.41). The circuit
 acts on the `q` system qubits and `m` further qubits, all starting in `|0⟩`, and calls `U`
@@ -138,10 +139,10 @@ theorem gibbsState_preparation :
     ∀ (C₀ : ℝ) (c₀ : ℕ), ∃ C : ℝ, 0 < C ∧ ∃ c : ℕ, ∀ (q a : ℕ) (θ β : ℝ), 0 < θ → θ ≤ 1 / 3 →
       1 < β → ∀ P : Polynomial ℝ,
       (∀ x ∈ Set.Icc (-1 : ℝ) 0,
-        |P.eval x - Real.exp (2 * β * x) / 4| ≤ θ ^ 2 / (128 * (2 : ℝ) ^ q)) →
+        |P.eval x - Real.exp (2 * β * x) / 4| ≤ θ / (128 * (2 : ℝ) ^ q)) →
       (∀ x ∈ Set.Icc (-1 : ℝ) 1, |P.eval x| ≤ 1 / 2) →
       (P.natDegree : ℝ) ≤
-        C₀ * β * (Real.log (2 + β) + Real.log (2 + 1 / (θ ^ 2 / (128 * (2 : ℝ) ^ q)))) ^ c₀ →
+        C₀ * β * (Real.log (2 + β) + Real.log (2 + 1 / (θ / (128 * (2 : ℝ) ^ q)))) ^ c₀ →
       ∃ (m : ℕ) (V : OracleCircuit twoQubitGateSet (fun _ : Fin 1 => a + q) (q + m)),
         (V.queryCount 0 : ℝ) ≤ C * Real.sqrt ((2 : ℝ) ^ q) * β *
           (Real.log (2 + (2 : ℝ) ^ q) + Real.log (2 + β) + Real.log (2 + 1 / θ) +
@@ -153,7 +154,7 @@ theorem gibbsState_preparation :
           H.IsHermitian → (∀ i j, (H i j).im = 0) →
           IsBlockEncoding (0 : Qubits a)
             (U.submatrix (qubitsAppendEquiv a q).symm (qubitsAppendEquiv a q).symm) β
-            (θ ^ 2 / (1024 * (P.natDegree : ℝ) * β ^ 2 * ((2 : ℝ) ^ q) ^ 2)) H →
+            (θ ^ 2 * β / (1024 ^ 2 * (P.natDegree : ℝ) ^ 2 * ((2 : ℝ) ^ q) ^ 2)) H →
           traceNorm (traceRight (pureDensity (WithLp.toLp 2 fun z : Qubits q × Qubits m =>
               act (V.unitary fun _ => U) (zeroKet (q + m)) ((qubitsAppendEquiv q m).symm z))) -
             gibbsState H) ≤ θ := by
