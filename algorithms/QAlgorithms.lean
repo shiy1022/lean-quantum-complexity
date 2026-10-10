@@ -26,6 +26,12 @@ import QAlgorithms.Defs.Ensemble
 import QAlgorithms.Defs.BooleanFourier
 import QAlgorithms.Defs.Learning
 import QAlgorithms.Defs.LearningHardInstances
+import QAlgorithms.Defs.Channel
+import QAlgorithms.Defs.QECC
+import QAlgorithms.Defs.BinaryStabilizer
+import QAlgorithms.Defs.LocCircuit
+import QAlgorithms.Defs.FaultTolerance
+import QAlgorithms.Defs.FTCircuit
 import QAlgorithms.Arunachalam.Ch06
 import QAlgorithms.Arunachalam.Ch07a
 import QAlgorithms.Arunachalam.Ch07b
@@ -59,6 +65,13 @@ import QAlgorithms.DeWolf.Ch14
 import QAlgorithms.DeWolf.Ch15
 import QAlgorithms.DeWolf.Ch18
 import QAlgorithms.DeWolf.Ch20
+import QAlgorithms.GottesmanIntro.Ch02
+import QAlgorithms.GottesmanIntro.Ch03
+import QAlgorithms.GottesmanIntro.Ch04
+import QAlgorithms.GottesmanIntro.Ch05a
+import QAlgorithms.GottesmanIntro.Ch05b
+import QAlgorithms.GottesmanThesis.Ch04
+import QAlgorithms.GottesmanThesis.Ch07
 import QAlgorithms.LearningSurvey.Ch04a
 import QAlgorithms.LearningSurvey.Ch04b
 import QAlgorithms.LearningSurvey.Ch05
