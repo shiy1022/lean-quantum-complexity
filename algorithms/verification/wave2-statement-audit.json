@@ -1,0 +1,75 @@
+{
+  "run": "wave2",
+  "scope": "Seven reviewed original paper target statements; proofs sorry",
+  "build": "passed",
+  "reviewed": [
+    {
+      "node_id": "paper:2601.18773",
+      "module": "QAlgorithms.Papers.RoadmapD07",
+      "theorem": "QAlgorithms.Papers.RoadmapD07.hamiltonianDQI_statePreparation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD07.lean",
+      "readback": true,
+      "rounds": 2,
+      "sha256": "eebbe44588aed3ec0ca5120b68fd21b519e7460ff06cbca1a3addc8a2c4566ee"
+    },
+    {
+      "node_id": "paper:1610.06546",
+      "module": "QAlgorithms.Papers.RoadmapA01",
+      "theorem": "QAlgorithms.Papers.RoadmapA01.optimalHamiltonianSimulation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA01.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "d773499245c7a7c6b6de179bbc5162e1e8cd98bd0378685fa3446d1189038190"
+    },
+    {
+      "node_id": "paper:2308.01501",
+      "module": "QAlgorithms.Papers.RoadmapA04",
+      "theorem": "QAlgorithms.Papers.RoadmapA04.generalizedQSP_iff",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA04.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "187d4674ea0744c0a758ab7aa9b689d072ebc0b72ec80a577b193a2f6c1ef4b3"
+    },
+    {
+      "node_id": "paper:2405.06051",
+      "module": "QAlgorithms.Papers.RoadmapA06",
+      "theorem": "QAlgorithms.Papers.RoadmapA06.generalizedYK_performance",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA06.lean",
+      "readback": true,
+      "rounds": 2,
+      "sha256": "2b10d1af239d05583a60243d5f0371e83a64b7106166194455fa6d81ea4aa5cb"
+    },
+    {
+      "node_id": "paper:1409.3305",
+      "module": "QAlgorithms.Papers.RoadmapA14",
+      "theorem": "QAlgorithms.Papers.RoadmapA14.fixedPointSearch_exact",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA14.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "e684e0d29605b931f9270f470213eb822d3fd3853da352165e6d143ef2c3108e"
+    },
+    {
+      "node_id": "paper:1504.06987",
+      "module": "QAlgorithms.Papers.RoadmapA22",
+      "theorem": "QAlgorithms.Papers.RoadmapA22.monteCarlo_boundedMean",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA22.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9f5ba80969cf552d98b5e16ea3a411b85f7716014b15bffc19994729d505a36a"
+    },
+    {
+      "node_id": "paper:2207.08628",
+      "module": "QAlgorithms.Papers.RoadmapA25",
+      "theorem": "QAlgorithms.Papers.RoadmapA25.polynomialAmplitudeSampling",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA25.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "a0ea81478b0245d4fd8842e2c39791c8d6e561a718fb097e9671eaaca1ba1fbe"
+    }
+  ],
+  "blocked": [
+    "paper:2508.10725",
+    "paper:2111.09787",
+    "paper:1804.05058"
+  ]
+}
