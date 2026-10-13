@@ -1,0 +1,48 @@
+{
+  "run": "wave6",
+  "scope": "Four independently reviewed original paper statements; proofs sorry; six blocked targets excluded",
+  "build": "passed",
+  "reviewed": [
+    {
+      "node_id": "paper:1710.02581",
+      "module": "QAlgorithms.Papers.RoadmapO03",
+      "theorem": "QAlgorithms.Papers.RoadmapO03.lowRankGibbs_sampling",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapO03.lean",
+      "readback": true,
+      "rounds": 2,
+      "sha256": "cd7e8bbd233fe7fb5c9dde59f03742bbd3f80ebe092009ba992f76bc265b8e7c",
+      "correction": {
+        "printed": "For S subset [m], Lemma 12 gives |S| * poly(log n, r_K, B_K, epsilon inverse) quantum gates and D.1/D.2 queries; D.2 writes A_j^sign / Tr(A_j^sign) without a zero-trace convention.",
+        "changed": "Require S nonempty and include an elementary address-cost factor 1 + log m in both the |S| bound and its Phi corollary. Permit arbitrary normalized D.2 outputs for zero PSD components and arbitrary unitary completions on unused qubit labels, preserving the promises on every nonzero component.",
+        "why": "The all-zero initialized elementary-gate model must prepare an m-valued address: for singleton S at a distant index this requires Omega(log m) one- or two-qubit gates, while the printed bound has no m dependence. Empty S makes the printed bound zero although K=0 has Gibbs state I/n, which is mixed for n>1. The paper explicitly applies Lemma 12 with zero components on p.29, and Lemma 11 assigns them zero selection probability; excluding them drops source cases. No nonzero quotient, Gibbs target, rank/trace bound, oracle count, accuracy, or quantifier order is changed."
+      }
+    },
+    {
+      "node_id": "paper:2007.10253",
+      "module": "QAlgorithms.Papers.RoadmapO11",
+      "theorem": "QAlgorithms.Papers.RoadmapO11.escapeSaddle_evaluationQueries",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapO11.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "e70d84cf2d31c5443ce5a312557324e4364f741640e8ff95963501591c4130b7"
+    },
+    {
+      "node_id": "paper:2504.12896",
+      "module": "QAlgorithms.Papers.RoadmapO18",
+      "theorem": "QAlgorithms.Papers.RoadmapO18.lightcone_maxCut_asymptoticallyOptimal",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapO18.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "4878fa3b8540f63bc908d641a4f9614086f958a91b23047b71c5ec973bbab6d1"
+    },
+    {
+      "node_id": "paper:2510.08509",
+      "module": "QAlgorithms.Papers.RoadmapO20",
+      "theorem": "QAlgorithms.Papers.RoadmapO20.approximateMatrixMultiplication_circuit",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapO20.lean",
+      "readback": true,
+      "rounds": 2,
+      "sha256": "1298f73397beda430d0c49e2c469d0afd4f501e01b80d893b9dd511d158fcb64"
+    }
+  ]
+}
