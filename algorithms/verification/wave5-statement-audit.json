@@ -1,0 +1,75 @@
+{
+  "run": "wave5",
+  "scope": "7 reviewed original paper target statements; proofs sorry; blocked nodes excluded",
+  "build": "passed",
+  "reviewed": [
+    {
+      "node_id": "paper:2408.01439",
+      "module": "QAlgorithms.Papers.RoadmapA05",
+      "theorem": "QAlgorithms.Papers.RoadmapA05.matrixQSVT_synthesis",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA05.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "02ef0e2ab6c5a00c98824325a1c472bcacd7d5c85186135759cb4e2565812645"
+    },
+    {
+      "node_id": "paper:2401.07561",
+      "module": "QAlgorithms.Papers.RoadmapA09",
+      "theorem": "QAlgorithms.Papers.RoadmapA09.quantumEsscherTransform_implementation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA09.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "bd8e25e83b91647dfbcc2fcd35e7bb0621c87f9b24122740a5462b7b32fcd5ea"
+    },
+    {
+      "node_id": "paper:1511.02306",
+      "module": "QAlgorithms.Papers.RoadmapA10",
+      "theorem": "QAlgorithms.Papers.RoadmapA10.fourier_qlsp",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA10.lean",
+      "readback": true,
+      "rounds": 2,
+      "sha256": "d51f2e44aba89a516941cab99f5211c3141abf3167fbeef729b7c70f94d0802b",
+      "correction": {
+        "printed": "Page 8 says a worst-case amplification guarantee needs an 'upper bound on the probability q'; page 15 writes 'τ := y_J y_K'.",
+        "changed": "Use a known positive lower bound on q for capped amplification, as Corollary 10 does, and read the maximum evolution time as y_J z_K.",
+        "why": "The required amplification work grows when q decreases; Corollary 10 provides q bounded below using known coefficient mass. The Fourier times are y_j z_k in (18), (31), (52); y_K is not the defined z cutoff."
+      }
+    },
+    {
+      "node_id": "paper:1909.05500",
+      "module": "QAlgorithms.Papers.RoadmapA12",
+      "theorem": "QAlgorithms.Papers.RoadmapA12.aqcp_finalTime_error_and_runtime",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA12.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "209d2aba29dadab9d862978bb61a546417ae9d95e357c58e56390cc8373d7dc0"
+    },
+    {
+      "node_id": "paper:1412.4687",
+      "module": "QAlgorithms.Papers.RoadmapA15",
+      "theorem": "QAlgorithms.Papers.RoadmapA15.truncatedTaylorHamiltonianSimulation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA15.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "f57606596c33eaaaa0d6e8caf1e0a70abd4df0b427ae3459f7aad3836c7451b1"
+    },
+    {
+      "node_id": "paper:2111.08152",
+      "module": "QAlgorithms.Papers.RoadmapA18",
+      "theorem": "QAlgorithms.Papers.RoadmapA18.secondDiscreteAdiabaticTheorem",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA18.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "e3594d63f17b60112b935ccd02b18765a4f2d050f14f2acd1fc0ee2bf6aa409f"
+    },
+    {
+      "node_id": "paper:2609.35660",
+      "module": "QAlgorithms.Papers.RoadmapA20",
+      "theorem": "QAlgorithms.Papers.RoadmapA20.optimalQLSP_queryComplexity",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA20.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9e8ecda200047fa2374320537f967c398ea8871b5ab05cf95a1dd3b1358f8e26"
+    }
+  ]
+}

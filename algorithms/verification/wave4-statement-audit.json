@@ -1,0 +1,94 @@
+{
+  "run": "wave4",
+  "scope": "9 reviewed original paper target statements; proofs sorry; blocked nodes excluded",
+  "build": "passed",
+  "reviewed": [
+    {
+      "node_id": "paper:0903.0566",
+      "module": "QAlgorithms.Papers.RoadmapE01",
+      "theorem": "QAlgorithms.Papers.RoadmapE01.hypergraphProduct_parameters",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapE01.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9b28cd3a8f2849b176fc21d851557d92995625d78f26a8b5a7a21e26898c72ef"
+    },
+    {
+      "node_id": "paper:2306.12470",
+      "module": "QAlgorithms.Papers.RoadmapE06",
+      "theorem": "QAlgorithms.Papers.RoadmapE06.singleShot_sequential",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapE06.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "7a2033dfa28de833ac626627d96f9abd7660ead8f399756f6bcde898544bcb5c"
+    },
+    {
+      "node_id": "paper:1504.00822",
+      "module": "QAlgorithms.Papers.RoadmapE07",
+      "theorem": "QAlgorithms.Papers.RoadmapE07.quantumExpander_adversarial_decoding",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapE07.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "59b8f19afcafc27248e0b2c9b109775c0abab0f2a4c111867ed20a40bcef737d"
+    },
+    {
+      "node_id": "paper:2605.10666",
+      "module": "QAlgorithms.Papers.RoadmapD03",
+      "theorem": "QAlgorithms.Papers.RoadmapD03.weightedDQI_optimalExpectation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD03.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "e4f477f80622188b2401389923a3faad94bfa27f38dbe50f764656ee74b5f171"
+    },
+    {
+      "node_id": "paper:2610.02145",
+      "module": "QAlgorithms.Papers.RoadmapD04",
+      "theorem": "QAlgorithms.Papers.RoadmapD04.foldedOPI_oracle_separation",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD04.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "8551a6c28486b82e0bc6a1214d7adc64dd197203a02bd0f713e7e14fe62852ef"
+    },
+    {
+      "node_id": "paper:2607.28120",
+      "module": "QAlgorithms.Papers.RoadmapD05",
+      "theorem": "QAlgorithms.Papers.RoadmapD05.dqiDistribution_moments",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD05.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "100be15973012478d57e925ee087e180cf08d2b2f8be78758d178b44a2d9e7dd"
+    },
+    {
+      "node_id": "paper:2607.16541",
+      "module": "QAlgorithms.Papers.RoadmapD08",
+      "theorem": "QAlgorithms.Papers.RoadmapD08.sunWootters_sampling_and_optimization",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD08.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "346dd233187e0f86d131a4592b43fe855066fa6c8c46228bcb8f5513a8cbff3b",
+      "correction": {
+        "printed": "For each family member put ... and define Pu,m by equations (11) to (13) with largest active weight ell_m. Then ... there is a uniform bounded-error quantum algorithm.",
+        "changed": "The finite target is defined on its positive-denominator and cutoff-at-least-three domain, and the sampling guarantees hold for every sufficiently large public parameter-family member.",
+        "why": "Theorem 7.1 itself invokes the finite Johnson inequality and postselection estimate only for all sufficiently large m. Lemmas 3.2 and 6.4 are eventual, while equation (11) uses log log ell; early undefined targets cannot be normalized by total division.",
+        "moderation": "Pending independent pipeline moderation; drafting verification is not independent approval."
+      }
+    },
+    {
+      "node_id": "paper:2607.14650",
+      "module": "QAlgorithms.Papers.RoadmapD09",
+      "theorem": "QAlgorithms.Papers.RoadmapD09.worstCaseOPI_balanced",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapD09.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "ac94c8b1be419f9c7f4be24e4cc7b9beedff3970d4b6e40bb86f771505409caf"
+    },
+    {
+      "node_id": "paper:2105.02859",
+      "module": "QAlgorithms.Papers.RoadmapA03",
+      "theorem": "QAlgorithms.Papers.RoadmapA03.amplitudeAmplification_polynomial",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapA03.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "72f8d7775b5bdc73239ba4fa4e474df6995e36adf15ab64cf65f05975eae1891"
+    }
+  ]
+}
