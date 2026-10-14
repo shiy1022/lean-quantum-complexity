@@ -1,0 +1,91 @@
+{
+  "run": "wave7",
+  "scope": "Nine approved original paper target statements; proofs sorry; one blocked target excluded",
+  "build": "passed",
+  "corrections": {
+    "paper:1205.2300": "Positive Lasso regularization mu>0, independently approved correction of omitted domain."
+  },
+  "reviewed": [
+    {
+      "node_id": "paper:1508.01797",
+      "module": "QAlgorithms.Papers.RoadmapL02",
+      "theorem": "QAlgorithms.Papers.RoadmapL02.collectivePOVM_fidelityTail",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL02.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "e3c9d9ed700fb9b1d0dd7c5b0cb79db73ff5ff814a7d8c8ef520a57190695332"
+    },
+    {
+      "node_id": "paper:1508.01907",
+      "module": "QAlgorithms.Papers.RoadmapL03",
+      "theorem": "QAlgorithms.Papers.RoadmapL03.keyl_expectedSquaredFrobeniusError",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL03.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9d1367036661d053b42a4c3768557653bcaf164a334aec4a77f4ad361ae02de2"
+    },
+    {
+      "node_id": "paper:2305.18519",
+      "module": "QAlgorithms.Papers.RoadmapL04",
+      "theorem": "QAlgorithms.Papers.RoadmapL04.relativeEntropy_collectiveTomography",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL04.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "2c10f93636ddbca00a587cae84eed8f6858fe468ccb8851315e8522a52814017"
+    },
+    {
+      "node_id": "paper:2011.09636",
+      "module": "QAlgorithms.Papers.RoadmapL07",
+      "theorem": "QAlgorithms.Papers.RoadmapL07.robustCalibration_uniformBias",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL07.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "b389c516c03de35f611fe59588fc0b1fe54a21bae275eee0e1c1787d9c1f0d61"
+    },
+    {
+      "node_id": "paper:2007.07901",
+      "module": "QAlgorithms.Papers.RoadmapL08",
+      "theorem": "QAlgorithms.Papers.RoadmapL08.sparsePauliRecovery",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL08.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "310ab4e1c649c207a8d0a82ca370ff0f4c3d873117dbe2c53cbd0034e0abd043"
+    },
+    {
+      "node_id": "paper:2106.12627",
+      "module": "QAlgorithms.Papers.RoadmapL10",
+      "theorem": "QAlgorithms.Papers.RoadmapL10.learningGroundStateRepresentations",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL10.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "8e8293805e4886cf20c453224592e57c30bd2bb84ea15c8f4b56d16adbcb7700"
+    },
+    {
+      "node_id": "paper:2204.13691",
+      "module": "QAlgorithms.Papers.RoadmapL11",
+      "theorem": "QAlgorithms.Papers.RoadmapL11.universalModels_intrinsicallyLearnable",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL11.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9d5250070e32f272468038ccd328c66d0d95a8827659b01d09ee122e293200b5"
+    },
+    {
+      "node_id": "paper:1205.2300",
+      "module": "QAlgorithms.Papers.RoadmapL13",
+      "theorem": "QAlgorithms.Papers.RoadmapL13.randomPauli_traceNormRecovery",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL13.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "265b2eb39d29b58788017f73e8960ddd6890ff7c78f1817c5e7d608f935e2ccf"
+    },
+    {
+      "node_id": "paper:0909.3304",
+      "module": "QAlgorithms.Papers.RoadmapL14",
+      "theorem": "QAlgorithms.Papers.RoadmapL14.lowRankTomography_exact",
+      "path": "algorithms/QAlgorithms/Papers/RoadmapL14.lean",
+      "readback": true,
+      "rounds": 1,
+      "sha256": "9109230cb432ad6ddea33e03007efd4a8cbbff078610e579719da9fd9b13f084"
+    }
+  ]
+}
